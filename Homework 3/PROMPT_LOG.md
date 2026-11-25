@@ -87,3 +87,10 @@ execute p3.01 to p3.05
 - Install command completed: 344 packages added in 46s; no existing-project package or lockfile changed. Resolved React/React DOM 19.3.1, React Router DOM 7.18.7, Mongoose 8.24.11, Vitest 5.1.2 and Vite 8.3.8.
 - Commands from Homework 3: npm.cmd test (frontend 1 passed; backend 1 passed), npm.cmd run lint (passed), npm.cmd run build (passed, 16 modules, 263ms), npm.cmd run check:backend (passed), npm.cmd ls react react-dom react-router-dom mongoose --depth=1 (resolved), git check-ignore --no-index for private .env/cache/dependencies/dist (all ignored).
 - Actual test output: verification/P3-01-tests.txt. Setup used verification rather than fictional behavioral RED. No database/API behavior is claimed. Updated checklist and prepared chore(hw3): initialize isolated application workspace.
+
+### P3-02 — contract completed
+
+- P3-01 actual commit: 0740ff6d4a90bee005f6ccab072ced88b233e8c1 — chore(hw3): initialize isolated application workspace.
+- Defined Player, Dossier, Evidence, Sanction and Appeal models plus route/dataset interfaces, stable-ID/relationship rules, UTC chronology/deadline boundaries, future appeal lifecycle/validation and explicit current/future system boundaries in DOMAIN_CONTRACT.md and JSDoc.
+- Manually checked all requested domain/routing/data requirements. Reference names remain inspiration only; no research/factual allegation/sanction is asserted. Fixtures must use synthetic handles/local avatars and simulation:// references. No form/API implementation introduced.
+- Documentation task uses contract review/lint rather than invented RED. Actual npm.cmd run lint passed (exit 0); checklist updated before fixture work.

@@ -11,12 +11,12 @@ Acceptance criteria: Packages install and scaffold is verified; no other project
 
 Evidence / status: Complete 2026-11-25. Independent npm workspace installed 344 packages; React 19.3.1/Router 7.18.7/Mongoose 8.24.11 resolve. Frontend/backend each pass one scaffold test. Lint, Vite production build (16 modules), backend syntax and ignore probes pass. Other projects preserved. Evidence verification/P3-01-tests.txt; actual commit recorded in PROMPT_LOG.md after creation.
 P3-02 — Product and domain contract
-- [ ] Complete and verify task.
+- [x] Complete and verify task.
 Scope: Define dossier, player, evidence, sanction, appeal, lifecycle, deadline and validation rules.
 
 Acceptance criteria: Document relationships and assumptions; distinguish simulation from fact.
 
-Evidence / status: Pending.
+Evidence / status: Complete 2026-11-25. DOMAIN_CONTRACT.md and JSDoc models define five models, ownership/IDs, chronology/lifecycle/deadline assumptions, pure fixture interfaces, routing/deep-link/404 contracts and explicit non-factual simulation boundaries. Manual requirement review before fixture and route implementation; lint verification recorded in prompt log.
 P3-03 — Simulation dataset
 - [ ] Complete and verify task.
 Scope: Prepare clearly labeled Himass/TanVuu demonstration records with stable IDs and no unsupported factual accusations.
