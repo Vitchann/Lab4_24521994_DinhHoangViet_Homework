@@ -1,0 +1,140 @@
+
+> backend@1.0.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v5.1.1 C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework 2/backend
+
+ × tests/integration/app.test.js > P2-16 Express skeleton release contract > get /api/profiles truthfully reports an unimplemented route 34ms
+   → expected {} to deeply equal { error: { code: 'NOT_FOUND', …(1) } }
+ × tests/integration/app.test.js > P2-16 Express skeleton release contract > post /api/swipe truthfully reports an unimplemented route 6ms
+   → expected {} to deeply equal { error: { code: 'NOT_FOUND', …(1) } }
+ × tests/integration/app.test.js > P2-16 Express skeleton release contract > get /api/history truthfully reports an unimplemented route 5ms
+   → expected {} to deeply equal { error: { code: 'NOT_FOUND', …(1) } }
+ ✓ tests/integration/app.test.js > P2-16 Express skeleton release contract > does not advertise the Express implementation header 5ms
+ ✓ tests/integration/app.test.js > P2-16 Express skeleton release contract > restricts CORS to the configured demo origin rather than a wildcard 3ms
+ × tests/integration/app.test.js > P2-16 Express skeleton release contract > returns safe JSON for malformed JSON without a stack or reflected payload 57ms
+   → expected {} to deeply equal { error: { …(2) } }
+ × tests/integration/app.test.js > P2-16 Express skeleton release contract > enforces the existing 16kb JSON limit with a safe 413 response 5ms
+   → expected {} to deeply equal { error: { …(2) } }
+ × tests/integration/app.test.js > P2-16 Express skeleton release contract > handles an unsupported JSON charset without leaking parser internals 5ms
+   → expected {} to deeply equal { error: { …(2) } }
+npm.cmd : 
+At line:2 char:1
++ npm.cmd test -- --reporter=verbose *> ../verification/P2-16-backend-R ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/integration/app.test.js > P2-16 Express skeleton release contract > get /api/profiles truthfully reports 
+an unimplemented route
+ FAIL  tests/integration/app.test.js > P2-16 Express skeleton release contract > post /api/swipe truthfully reports an 
+unimplemented route
+ FAIL  tests/integration/app.test.js > P2-16 Express skeleton release contract > get /api/history truthfully reports 
+an unimplemented route
+AssertionError: expected {} to deeply equal { error: { code: 'NOT_FOUND', …(1) } }
+
+- Expected
++ Received
+
+- {
+-   "error": {
+-     "code": "NOT_FOUND",
+-     "message": "Route not found",
+-   },
+- }
++ {}
+
+ ❯ tests/integration/app.test.js:11:27
+      9|     const response = await request(createApp())[method](url)
+     10|     expect(response.status).toBe(404)
+     11|     expect(response.body).toEqual({ error: { code: 'NOT_FOUND', messag…
+       |                           ^
+     12|     expect(response.headers['content-type']).toMatch(/application\/jso…
+     13|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  tests/integration/app.test.js > P2-16 Express skeleton release contract > returns safe JSON for malformed JSON 
+without a stack or reflected payload
+AssertionError: expected {} to deeply equal { error: { …(2) } }
+
+- Expected
++ Received
+
+- {
+-   "error": {
+-     "code": "INVALID_JSON",
+-     "message": "Request body must be valid JSON",
+-   },
+- }
++ {}
+
+ ❯ tests/integration/app.test.js:32:27
+     30|       .set('Content-Type', 'application/json').send('{invalid-test-pay…
+     31|     expect(response.status).toBe(400)
+     32|     expect(response.body).toEqual({ error: { code: 'INVALID_JSON', mes…
+       |                           ^
+     33|     expect(response.text).not.toMatch(/SyntaxError|stack|invalid-test-…
+     34|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  tests/integration/app.test.js > P2-16 Express skeleton release contract > enforces the existing 16kb JSON limit 
+with a safe 413 response
+AssertionError: expected {} to deeply equal { error: { …(2) } }
+
+- Expected
++ Received
+
+- {
+-   "error": {
+-     "code": "BODY_TOO_LARGE",
+-     "message": "Request body exceeds 16kb",
+-   },
+- }
++ {}
+
+ ❯ tests/integration/app.test.js:40:27
+     38|       .send({ bio: 'x'.repeat(17000) })
+     39|     expect(response.status).toBe(413)
+     40|     expect(response.body).toEqual({ error: { code: 'BODY_TOO_LARGE', m…
+       |                           ^
+     41|     expect(response.text).not.toMatch(/PayloadTooLargeError|stack|node…
+     42|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  tests/integration/app.test.js > P2-16 Express skeleton release contract > handles an unsupported JSON charset 
+without leaking parser internals
+AssertionError: expected {} to deeply equal { error: { …(2) } }
+
+- Expected
++ Received
+
+- {
+-   "error": {
+-     "code": "UNSUPPORTED_BODY",
+-     "message": "Unsupported request body encoding",
+-   },
+- }
++ {}
+
+ ❯ tests/integration/app.test.js:48:27
+     46|       .set('Content-Type', 'application/json; charset=unknown-test-cha…
+     47|     expect(response.status).toBe(415)
+     48|     expect(response.body).toEqual({ error: { code: 'UNSUPPORTED_BODY',…
+       |                           ^
+     49|     expect(response.text).not.toMatch(/UnsupportedMediaTypeError|stack…
+     50|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  6 failed | 2 passed (8)
+   Start at  13:33:38
+   Duration  1.74s (import 86%, tests 9%, transform 5%)
+

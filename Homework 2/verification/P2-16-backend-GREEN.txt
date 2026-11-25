@@ -1,0 +1,23 @@
+
+> backend@1.0.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v5.1.1 C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework 2/backend
+
+ ✓ tests/unit/errors.test.js > release error boundary > redacts unexpected errors and does not trust arbitrary error status values 5ms
+ ✓ tests/unit/errors.test.js > release error boundary > delegates after response headers are sent instead of writing twice 1ms
+ ✓ tests/integration/app.test.js > P2-16 Express skeleton release contract > get /api/profiles truthfully reports an unimplemented route 77ms
+ ✓ tests/integration/app.test.js > P2-16 Express skeleton release contract > post /api/swipe truthfully reports an unimplemented route 17ms
+ ✓ tests/integration/app.test.js > P2-16 Express skeleton release contract > get /api/history truthfully reports an unimplemented route 13ms
+ ✓ tests/integration/app.test.js > P2-16 Express skeleton release contract > does not advertise the Express implementation header 16ms
+ ✓ tests/integration/app.test.js > P2-16 Express skeleton release contract > restricts CORS to the configured demo origin rather than a wildcard 15ms
+ ✓ tests/integration/app.test.js > P2-16 Express skeleton release contract > returns safe JSON for malformed JSON without a stack or reflected payload 81ms
+ ✓ tests/integration/app.test.js > P2-16 Express skeleton release contract > enforces the existing 16kb JSON limit with a safe 413 response 15ms
+ ✓ tests/integration/app.test.js > P2-16 Express skeleton release contract > handles an unsupported JSON charset without leaking parser internals 13ms
+
+ Test Files  2 passed (2)
+      Tests  10 passed (10)
+   Start at  13:35:03
+   Duration  938ms (import 54%, tests 34%, transform 9%, worker 3%)
+
