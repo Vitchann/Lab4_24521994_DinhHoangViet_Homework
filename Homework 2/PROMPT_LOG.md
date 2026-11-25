@@ -17,6 +17,7 @@ Each actual user message received while working on this project is appended verb
 | U009 | 2026-11-25 | GitHub commit and push | Full verbatim text below | Explicit authorization to commit/push to the existing GitHub origin. Verified previous Homework 2 commits use Dinh Hoang Viet as author/committer with no AI co-author trailers; publication verification follows in final output/local Git note. |
 | U010 | 2026-11-25 | Repeat P2-15–P2-17 review | Full verbatim text below | Completed sequentially: fixed reproduced 320px overflow, frontend 103/backend 10 tests pass, lint/build/environment/audits/browser/docs checks pass. Task commits created locally; no push. Full-stack release still blocked by pending P2-09–P2-14. |
 | U011 | 2026-11-25 | Final acceptance check | Full verbatim text below | Full-stack acceptance NOT PASSED: P2-09–P2-14 unmet. Fresh frontend 103/backend 10 tests and lint/build/browser/environment checks pass; read-only MongoDB ping passes, but seed command is missing and app persistence absent. Four development entries verified (three distinct texts). Evidence/docs committed locally; no new feature or push. |
+| U012 | 2026-11-25 | Start frontend/backend | chạy be fe | Started Vite on 127.0.0.1:5173 and nodemon/Express on port 3001; HTTP checks passed. Both dev processes left running. |
 
 | User request | Task | Codex result | Actual verification |
 | --- | --- | --- | --- |
@@ -747,3 +748,16 @@ Do not push to GitHub yet.
 - Updated English README with explicit NOT PASSED verdict, the complete matrix/evidence, successful read-only MongoDB ping versus absent app persistence, four prompt-entry audit and exact separate-terminal startup commands. Documented that npm.cmd run seed exits 1 and no working seeder exists; did not add features.
 - Updated rules/checklist/audit to the current check-only/no-push scope. Final documentation commit message: `docs(acceptance): record final verdict and startup limitations`. Its actual resulting hash/full ledger is saved after creation in its attached local Git development note to avoid self-referential hashes.
 - Final documentation verification passed: eight documents, nine required README sections, eleven unique ordered prompt records/current U011 once, no broken local links; all five U011 JSON reports parsed successfully. Stopped the owned production preview; QA browsers closed through helper cleanup. Runtime source and lockfiles unchanged; unrelated projects preserved; no push.
+
+## U012 — verbatim user prompt
+
+```text
+chạy be fe
+```
+
+### U012 — actual local startup
+
+- Checked ports 3001/5173: neither was listening. Started frontend with npm.cmd run dev -- --host 127.0.0.1 --strictPort (retained session 56640); Vite ready at http://127.0.0.1:5173/.
+- Started backend with npm.cmd run dev (retained session 49743); nodemon launched src/server.js and Express reported listening on port 3001.
+- Actual HTTP checks: frontend GET / returned 200; backend GET /api/profiles returned the expected current skeleton 404 JSON NOT_FOUND. This confirms listeners are running, not that the missing business API is implemented.
+- Left both development processes running for the user. No feature/source change or push. Broader tests/build not repeated for this process-start operation.
