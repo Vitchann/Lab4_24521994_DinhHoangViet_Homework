@@ -70,7 +70,7 @@ try {
     await delay(100)
   }
   const viewports = []
-  for (const width of [375, 768, 1440]) {
+  for (const width of [320, 375, 768, 1440]) {
     await send('Emulation.setDeviceMetricsOverride', { width, height: 1000, deviceScaleFactor: 1, mobile: false })
     await delay(300)
     const result = await evaluate(`({ width: innerWidth, scrollWidth: document.documentElement.scrollWidth, clientWidth: document.documentElement.clientWidth, imagesLoaded: [...document.querySelectorAll('img')].every(img => img.complete && img.naturalWidth > 0), card: document.querySelector('.profile-heading h2')?.textContent, columns: getComputedStyle(document.querySelector('.deck-layout')).gridTemplateColumns })`)

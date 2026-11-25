@@ -1,0 +1,32 @@
+Connected to Chrome browser; creating an isolated page target.
+{
+  protocolVersion: '1.3',
+  product: 'Chrome/157.0.8103.79',
+  revision: '@6dc9bc3bdaea5c35ed6d41fceab2f7a3a2227c4f',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36',
+  jsVersion: '15.7.112.43'
+}
+node : node:internal/modules/run_main:107
+At line:2 char:62
++ ... 010-P2-15'; node scripts/verify-browser.mjs *> ../verification/U010-P ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (node:internal/modules/run_main:107:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: No horizontal overflow at 320px
+
+320 !== 305
+
+    at file:///C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework%202/frontend/scripts/verify-browser.mjs:77:12 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 320,
+  expected: 305,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.18.0

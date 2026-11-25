@@ -51,3 +51,9 @@ Final U007 verification: 103 frontend and 10 backend-skeleton tests passed, both
 Final tooling note: forcing core.autocrlf=false during a diagnostic diff check misclassified existing CRLF terminators as trailing whitespace. The repository-configured git diff --check rerun exited 0. This was a checker configuration issue; no source/history rewrite was needed.
 
 U008 Git review: staging previously untracked raw verification outputs exposed terminal trailing spaces/blank lines to git diff --cached --check. Those files are permanent evidence and were preserved verbatim; source-only staged whitespace checks passed. Fresh frontend 103/backend 10 tests, lint/build/syntax/smoke and environment/docs checks passed. No new implementation failure was observed. Existing baseline/history and unrelated projects were preserved; missing backend/persistence tasks were not fabricated as completed commits.
+
+## U010 — repeat release review
+
+| Task / category | Observed issue | Root cause | Corrective action | Actual retest |
+| --- | --- | --- | --- | --- |
+| P2-15 / responsive implementation | New 320px browser assertion failed: scrollWidth=320, clientWidth=305, exit 1 (U010-P2-15-RED.txt) | Fixed body min-width:320px exceeded the width available after a classic scrollbar | Remove the fixed minimum; keep layout responsive and assertion unchanged, without overflow hiding | Browser checks pass at 320/375/768/1440; screenshots visually inspected, 103 frontend tests and lint pass; U010-P2-15-BROWSER.json |

@@ -15,6 +15,7 @@ Each actual user message received while working on this project is appended verb
 | U007 | 2026-11-25 | P2-15–P2-17 | Full verbatim text below | Completed sequential review/preparation for the local demo. Frontend 103 and backend skeleton 10 tests passed; lint/build, production audits, browser/environment/docs checks passed. Lighthouse not run. Full-stack release blocked by pending P2-09–P2-14. No commit/deploy/push. |
 | U008 | 2026-11-25 | Atomic Git commits | Full verbatim text below | Preserved baseline; verified and committed actual frontend, backend and release-tooling groups. Final documentation checkpoint records this workflow and its own resulting hash through an attached local Git note. Automatic task commits authorized; no push/history rewrite. |
 | U009 | 2026-11-25 | GitHub commit and push | Full verbatim text below | Explicit authorization to commit/push to the existing GitHub origin. Verified previous Homework 2 commits use Dinh Hoang Viet as author/committer with no AI co-author trailers; publication verification follows in final output/local Git note. |
+| U010 | 2026-11-25 | Repeat P2-15–P2-17 review | Full verbatim text below | In progress: fresh review of the current committed demo; task commits authorized, no push authorized. |
 
 | User request | Task | Codex result | Actual verification |
 | --- | --- | --- | --- |
@@ -566,3 +567,113 @@ commit và push lên đây nhé, collaborator k có codex hay AI nào hết
 - User authorizes this commit and push. Refresh origin first, inspect outgoing commits and stage only the new Homework 2 prompt/workflow/doc-check updates. No force push or history rewrite. The resulting commit hash and actual push verification are recorded after execution in its local development Git note/final output, avoiding self-referential hashes in this file.
 - Executed `0b441927c2a4ec79f8c17b1cc620d41bb8b426b9` — `docs(homework-2): record GitHub publication request`. Push succeeded (7131bd5..0b44192 main -> main); credential-enabled git ls-remote confirmed the same remote main hash. Author/committer is Dinh Hoang Viet <24521994@gm.uit.edu.vn>, with no AI identity/co-author trailer. No collaborator was invited.
 - During the final status check, an additional Mandatory Git Workflow section appeared in project-rules.md. Preserved this newly saved content and included it in a separate scoped documentation follow-up under the same commit/push authorization, rather than overwriting it. Documentation checks rerun; other projects remain excluded. The follow-up's resulting hash/publication verification is recorded in its local Git development note and final output.
+
+
+## U010 — verbatim user prompt
+
+```text
+Perform the final engineering review and release preparation of the "Hẹn hò nhưng không yêu — Interactive Card-Swipe Deck" application.
+
+
+
+Read all project documentation and inspect the complete frontend and backend implementation.
+
+
+
+Record this user prompt verbatim in PROMPT_LOG.md.
+
+
+
+Execute tasks P2-15 through P2-17 sequentially.
+
+
+
+**Code Review and Refactoring**
+
+- Review the architecture and separation of concerns.
+- Detect duplicated logic, redundant state and unnecessary useEffect usage.
+- Detect race conditions, memory leaks and stale closures.
+- Review keyboard and pointer event handling.
+- Verify LIFO undo correctness and asymmetric score calculations.
+- Review API validation, database consistency and security.
+- Remove unused imports, dead code and deprecated APIs.
+
+**UI/UX and Accessibility**
+
+- Improve visual consistency, typography, spacing and card presentation.
+- Verify responsiveness at 375px, 768px and desktop widths.
+- Detect and resolve horizontal overflow.
+- Verify keyboard navigation and focus visibility.
+- Ensure icon-only buttons have accessible labels.
+- Support reduced-motion preferences.
+- Target WCAG 2.2 AA accessibility without claiming compliance based only on automated scores.
+
+**Release Verification**
+
+- Run all frontend and backend tests.
+- Run lint checks.
+- Run production builds.
+- Verify environment variable configuration.
+- Verify that node_modules, dist and secret .env files are excluded from Git.
+- Check browser console and network errors if browser access is available.
+- Run Lighthouse if supported by the environment; otherwise provide instructions for manual verification.
+- Fix observed failures and rerun relevant tests.
+
+**Documentation**\
+Complete the following files in English:
+
+- README.md
+- project-rules.md
+- TASK_DECOMPOSITION.md
+- AI_FAILURE_AUDIT.md
+- PROMPT_LOG.md
+
+The README must include:
+
+- Product overview.
+- System architecture.
+- Technology stack.
+- Functional requirements.
+- Directory structure.
+- Business rules.
+- REST API documentation.
+- Database configuration.
+- Installation instructions.
+- Testing instructions.
+- Actual test results.
+- Known limitations.
+
+The prompt log must contain actual user prompts and development records, clearly distinguishing user requests from agent-generated implementation tasks.
+
+
+
+The AI failure audit must contain observed issues, root causes, verification evidence and corrective actions.
+
+
+
+Do not fabricate test results, Lighthouse scores, Git commits or historical interactions.
+
+
+
+Prepare appropriate atomic Git commit messages and provide commands for running and publishing the project.
+
+
+
+Do not push to GitHub without my permission. Do not modify other projects.
+
+
+
+Provide a final completion report covering implemented features, actual test results, build status, unresolved issues and startup commands.
+```
+
+### U010 — intake (2026-11-25)
+
+- This is a new actual request with text identical to U007; the verbatim block above preserves that received text as a separate interaction. Inspected current history, rules, checklist and complete source inventory; Homework 2 was clean at intake. Read existing documentation and reviewed the unchanged domain/input/UI/Express implementation.
+- Agent-generated task sequence: P2-15 repeat responsive/accessibility/input review; P2-16 fresh package tests/lint/build/environment/security checks; P2-17 English documentation refresh. Standing task-commit authorization applies; current request prohibits pushing. Other projects are preserved.
+
+### U010 — P2-15 completed (2026-11-25)
+
+- Re-reviewed domain validation/immutable history, derived selectors, UI components and scoped keyboard/pointer hooks. Existing functional updates, revision guard and focus-listener/capture cleanup remain valid; no new redundant state, synchronization effect or dead import was identified.
+- Added 320px to the browser regression widths before changing styles. Actual RED exit 1: No horizontal overflow at 320px, actual scrollWidth=320 versus clientWidth=305 (classic scrollbar reduces available width). Evidence U010-P2-15-RED.txt.
+- Removed the body's fixed 320px minimum, allowing the existing responsive layout to fit the available width instead of hiding overflow. Kept the browser assertion unchanged. GREEN: browser exit 0 at 320/375/768/1440, assets loaded, visible focus/skip navigation, reduced motion none/0s, ten sampled text contrasts >=4.5, native keyboard/mouse, emulated touch and undo passed; zero observed console/JS/network/HTTP errors. Screenshots visually inspected. Evidence U010-P2-15-BROWSER.json, GREEN.txt and four PNGs.
+- Frontend component/domain/input suite passed 103 tests; frontend lint passed. Captured actual output in U010-P2-15-tests.txt. No WCAG compliance, physical-touch, screen-reader or full zoom audit claim. Updated checklist before P2-16 and create a scoped task commit under U008 authorization; no push.
