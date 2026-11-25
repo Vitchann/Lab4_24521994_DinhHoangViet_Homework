@@ -1,0 +1,2199 @@
+
+> frontend@0.0.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v5.1.1 C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework 2/frontend
+
+ ✓ src/domain/swipeEngine.test.js > swipe contract > left records DISLIKE with -5 points and advances once 3ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > right records LIKE with 10 points and advances once 0ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > up records SKIP with -5 points and advances once 0ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > appends immutably to frozen history without changing earlier snapshots 1ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > rejects invalid direction down even for an empty deck 0ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > rejects invalid direction RIGHT even for an empty deck 0ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > rejects invalid direction  even for an empty deck 0ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > rejects invalid direction toString even for an empty deck 0ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > rejects invalid direction __proto__ even for an empty deck 0ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > rejects invalid direction null even for an empty deck 0ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > rejects invalid direction undefined even for an empty deck 0ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > rejects invalid direction 1 even for an empty deck 0ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > returns unchanged history at completion 0ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > handles an empty deck 0ms
+ ✓ src/domain/swipeEngine.test.js > LIFO undo and derived state > starts with zero score and the first card 0ms
+ ✓ src/domain/swipeEngine.test.js > LIFO undo and derived state > uses asymmetric scoring and permits negative totals 0ms
+ ✓ src/domain/swipeEngine.test.js > LIFO undo and derived state > undo removes latest LIKE and restores its score/card 0ms
+ ✓ src/domain/swipeEngine.test.js > LIFO undo and derived state > undo removes latest DISLIKE and restores its score/card 0ms
+ ✓ src/domain/swipeEngine.test.js > LIFO undo and derived state > undo removes latest SKIP and restores its score/card 0ms
+ ✓ src/domain/swipeEngine.test.js > LIFO undo and derived state > undo on empty history is a stable no-op 0ms
+ ✓ src/domain/swipeEngine.test.js > LIFO undo and derived state > undo at completion reopens the last card and allows a replacement decision 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed deck null 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed deck {} 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed deck [null] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed deck [{"id":"","name":"Fictional","age":25}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed deck [{"id":" a ","name":"Fictional","age":25}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed deck [{"id":"a","age":25}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed deck [{"id":"a","name":" ","age":25}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed deck [{"id":"a","name":"Fictional","age":17}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed deck [{"id":"a","name":"Fictional","age":24.5}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed deck [{"id":"a","name":"Fictional","age":25,"bio":1}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed deck [{"id":"a","name":"Fictional","age":25,"imageUrl":null}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed deck [{"id":"a","name":"Fictional An","age":24},{"id":"a","name":"Fictional An","age":24}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed history null 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed history {} 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed history [null] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed history [{"action":"LIKE"}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed history [{"profileId":"","action":"LIKE"}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed history [{"profileId":" a ","action":"LIKE"}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed history [{"profileId":"a","action":"LOVE"}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed history [{"profileId":"a","action":"toString"}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed history [{"profileId":"a","action":"__proto__"}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed history [{"profileId":"a","action":"LIKE"},{"profileId":"a","action":"LIKE"}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects non-prefix history [{"profileId":"b","action":"LIKE"}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects non-prefix history [{"profileId":"a","action":"LIKE"},{"profileId":"c","action":"LIKE"}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects non-prefix history [{"profileId":"a","action":"LIKE"},{"profileId":"b","action":"LIKE"},{"profileId":"c","action":"LIKE"},{"profileId":"d","action":"LIKE"}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects nonempty history on an empty deck 0ms
+ ✓ src/App.test.jsx > P2-05 application shell and demo data > renders the Vietnamese application identity and a main landmark 187ms
+ ✓ src/App.test.jsx > P2-05 application shell and demo data > clearly labels the local fictional demonstration 37ms
+ ✓ src/App.test.jsx > P2-05 application shell and demo data > ships frozen fictional adult profiles with unique IDs and local documented artwork 4ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > mouse displacement (-50,0) commits DISLIKE once 289ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > mouse displacement (50,0) commits LIKE once 76ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > mouse displacement (0,-50) commits SKIP once 65ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > touch displacement (-65,10) commits DISLIKE once 48ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > touch displacement (65,10) commits LIKE once 37ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > touch displacement (10,-65) commits SKIP once 47ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > ignores short/downward/ambiguous displacement (49,0) 32ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > ignores short/downward/ambiguous displacement (-49,0) 32ms
+ ✓ src/components/SwipeDeck.test.jsx > P2-06 card deck and controls > shows current profile, remaining count, zero score and empty history 209ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > ArrowLeft creates exactly one DISLIKE 236ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > ArrowRight creates exactly one LIKE 55ms
+ × src/components/release-accessibility.test.jsx > P2-15 release accessibility regressions > keeps keyboard focus in the deck when completing the final card 248ms
+   → expect(element).toHaveFocus()
+
+Expected element with focus:
+  <section
+  aria-describedby="deck-help"
+  aria-label="Bộ thẻ khám phá"
+  class="deck-layout"
+  tabindex="0"
+>
+  <aside
+    class="left-column"
+  >
+    <div
+      class="discovery-note"
+    >
+      <span
+        aria-hidden="true"
+        class="note-symbol"
+      >
+        ✳
+      </span>
+      <h2>
+        Không áp lực.
+        <br />
+        Cứ là chính bạn.
+      </h2>
+      <p>
+        Một bộ thẻ, những cá tính khác nhau. Lắng nghe cảm xúc và chọn điều bạn muốn.
+      </p>
+      <span
+        class="small-rule"
+      />
+    </div>
+    <section
+      aria-labelledby="score-heading"
+      class="score-board"
+    >
+      <div
+        class="panel-heading"
+      >
+        <span
+          class="mini-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.7"
+            viewBox="0 0 24 26"
+            width="24"
+          >
+            <path
+              d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5Z"
+            />
+          </svg>
+        </span>
+        <h2
+          id="score-heading"
+        >
+          Điểm cảm xúc
+        </h2>
+      </div>
+      <output
+        aria-label="Điểm của bạn"
+        class="score-value"
+      >
+        +
+        10
+      </output>
+      <p>
+        Mỗi quyết định, một dấu ấn.
+      </p>
+      <div
+        class="score-legend"
+      >
+        <span>
+          <b>
+            +10
+          </b>
+           khi thích
+        </span>
+        <span>
+          <b>
+            −5
+          </b>
+           khi bỏ qua / không thích
+        </span>
+      </div>
+    </section>
+  </aside>
+  <div
+    class="deck-column"
+  >
+    <div
+      class="deck-progress"
+    >
+      <span>
+        <span
+          class="live-dot"
+        />
+         Khám phá hôm nay
+      </span>
+      <span>
+        Còn·
+        0
+         hồ sơ
+      </span>
+    </div>
+    <div
+      aria-label="Hồ sơ hiện tại"
+      class="card-stack is-empty"
+      data-dragging="false"
+      role="region"
+      tabindex="0"
+    >
+      <div
+        class="empty-deck"
+      >
+        <svg
+          aria-hidden="true"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.7"
+          viewBox="0 0 24 26"
+          width="24"
+        >
+          <path
+            d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5Z"
+          />
+        </svg>
+        <h2>
+          Bạn đã khám phá hết rồi!
+        </h2>
+        <p>
+          Một hành trình nhỏ, thật nhiều cảm xúc. Hoàn tác để xem lại lựa chọn của bạn.
+        </p>
+      </div>
+    </div>
+    <div
+      aria-label="Quyết định của bạn"
+      class="swipe-controls"
+      role="group"
+    >
+      <button
+        aria-keyshortcuts="Backspace"
+        aria-label="Hoàn tác"
+        class="action-button undo-button"
+      >
+        <svg
+          aria-hidden="true"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.7"
+          viewBox="0 0 24 26"
+          width="24"
+        >
+          <path
+            d="M3 10h10a7 7 0 0 1 0 14M3 10l5-5M3 10l5 5"
+          />
+        </svg>
+        <span>
+          Hoàn tác
+        </span>
+      </button>
+      <button
+        aria-keyshortcuts="ArrowLeft"
+        aria-label="Không thích"
+        class="action-button dislike-button"
+        disabled=""
+      >
+        <svg
+          aria-hidden="true"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.7"
+          viewBox="0 0 24 26"
+          width="24"
+        >
+          <path
+            d="M6 6l12 12M18 6 6 18"
+          />
+        </svg>
+        <span>
+          Không thích
+        </span>
+      </button>
+      <button
+        aria-keyshortcuts="ArrowRight"
+        aria-label="Thích"
+        class="action-button like-button"
+        disabled=""
+      >
+        <svg
+          aria-hidden="true"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.7"
+          viewBox="0 0 24 26"
+          width="24"
+        >
+          <path
+            d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"
+          />
+        </svg>
+        <span>
+          Thích
+        </span>
+      </button>
+      <button
+        aria-keyshortcuts="ArrowUp"
+        aria-label="Bỏ qua"
+        class="action-button skip-button"
+        disabled=""
+      >
+        <svg
+          aria-hidden="true"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.7"
+          viewBox="0 0 24 26"
+          width="24"
+        >
+          <path
+            d="M12 20V4M5 11l7-7 7 7"
+          />
+        </svg>
+        <span>
+          Bỏ qua
+        </span>
+      </button>
+    </div>
+    <p
+      class="deck-caption"
+    >
+      Chọn theo cảm xúc, không cần nghĩ quá nhiều.
+    </p>
+    <p
+      class="gesture-help"
+    >
+      Kéo thẻ sang trái, phải hoặc lên trên để chọn.
+    </p>
+    <p
+      class="keyboard-help"
+      id="deck-help"
+    >
+      Chọn bộ thẻ để dùng phím·
+      <kbd>
+        ←
+      </kbd>
+       không thích·
+      <kbd>
+        →
+      </kbd>
+       thích·
+      <kbd>
+        ↑
+      </kbd>
+       bỏ qua·
+      <kbd>
+        ⌫
+      </kbd>
+       hoàn tác
+    </p>
+    <p
+      aria-atomic="true"
+      aria-live="polite"
+      class="deck-announcement"
+      role="status"
+    >
+      Đã hết hồ sơ.
+    </p>
+  </div>
+  <aside
+    class="right-column"
+  >
+    <section
+      aria-labelledby="history-heading"
+      class="history-panel"
+    >
+      <div
+        class="panel-heading"
+      >
+        <h2
+          id="history-heading"
+        >
+          Lịch sử tương tác
+        </h2>
+        <span
+          class="count-badge"
+        >
+          1
+        </span>
+      </div>
+      <p
+        class="panel-description"
+      >
+        Những cảm xúc vừa đi qua.
+      </p>
+      <ol
+        class="history-list"
+        reversed=""
+      >
+        <li
+          data-action="LIKE"
+        >
+          <img
+            alt=""
+            src="/profiles/linh.svg"
+          />
+          <div>
+            <strong>
+              Linh
+            </strong>
+            <span>
+              Đã thích
+            </span>
+          </div>
+          <b
+            class="positive"
+          >
+            +
+            10
+          </b>
+        </li>
+      </ol>
+      <div
+        class="history-note"
+      >
+        <span
+          aria-hidden="true"
+        >
+          ↶
+        </span>
+         Đổi ý cũng không sao. Bạn luôn có thể hoàn tác.
+      </div>
+    </section>
+    <div
+      class="little-note"
+    >
+      <svg
+        aria-hidden="true"
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.7"
+        viewBox="0 0 24 26"
+        width="24"
+      >
+        <path
+          d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"
+        />
+      </svg>
+      <p>
+        Không cần tìm người hoàn hảo.
+        <br />
+        Chỉ cần một chút đồng điệu.
+      </p>
+    </div>
+  </aside>
+</section>
+Received element with focus:
+  <body>
+  <div>
+    <div
+      class="app-shell"
+    >
+      <header
+        class="site-header"
+      >
+        <a
+          class="brand"
+          href="#main"
+        >
+          <span … />
+           hẹn hò
+          <span … />
+        </a>
+        <span
+          class="header-note"
+        >
+          Một chút rung động. Một chút vui.
+        </span>
+        <span
+          class="demo-badge"
+        >
+          <span … />
+           Bản demo
+        </span>
+      </header>
+      <main
+        id="main"
+      >
+        <div
+          class="page-intro"
+        >
+          <p … />
+          <h1 … />
+          <p … />
+        </div>
+        <section
+          aria-describedby="deck-help"
+          aria-label="Bộ thẻ khám phá"
+          class="deck-layout"
+          tabindex="0"
+        >
+          <aside … />
+          <div … />
+          <aside … />
+        </section>
+      </main>
+      <footer
+        class="site-footer"
+      >
+        <span>
+          Tất cả hồ sơ đều hư cấu · Dữ liệu demo cục bộ
+        </span>
+        <span>
+          Chỉ để khám phá, không để hứa hẹn ♡
+        </span>
+      </footer>
+    </div>
+  </div>
+</body>
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > ignores short/downward/ambiguous displacement (0,-49) 38ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > ignores short/downward/ambiguous displacement (0,80) 32ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > ignores short/downward/ambiguous displacement (65,90) 32ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > ignores short/downward/ambiguous displacement (50,-50) 32ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > ArrowUp creates exactly one SKIP 55ms
+ ✓ src/components/SwipeDeck.test.jsx > P2-06 card deck and controls > Không thích records DISLIKE once with -5 points 130ms
+ ✓ src/components/SwipeDeck.test.jsx > P2-06 card deck and controls > Thích records LIKE once with +10 points 95ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > ignores short/downward/ambiguous displacement (0,0) 38ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > tracks movement visually but only commits on release and ignores duplicate releases 45ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > uses final displacement when a threshold-crossing drag returns to origin 46ms
+ × src/components/release-accessibility.test.jsx > P2-15 release accessibility regressions > keeps focus in the deck when the last undo disables its button 188ms
+   → expect(element).toHaveFocus()
+
+Expected element with focus:
+  <section
+  aria-describedby="deck-help"
+  aria-label="Bộ thẻ khám phá"
+  class="deck-layout"
+  tabindex="0"
+>
+  <aside
+    class="left-column"
+  >
+    <div
+      class="discovery-note"
+    >
+      <span
+        aria-hidden="true"
+        class="note-symbol"
+      >
+        ✳
+      </span>
+      <h2>
+        Không áp lực.
+        <br />
+        Cứ là chính bạn.
+      </h2>
+      <p>
+        Một bộ thẻ, những cá tính khác nhau. Lắng nghe cảm xúc và chọn điều bạn muốn.
+      </p>
+      <span
+        class="small-rule"
+      />
+    </div>
+    <section
+      aria-labelledby="score-heading"
+      class="score-board"
+    >
+      <div
+        class="panel-heading"
+      >
+        <span
+          class="mini-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.7"
+            viewBox="0 0 24 26"
+            width="24"
+          >
+            <path
+              d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5Z"
+            />
+          </svg>
+        </span>
+        <h2
+          id="score-heading"
+        >
+          Điểm cảm xúc
+        </h2>
+      </div>
+      <output
+        aria-label="Điểm của bạn"
+        class="score-value"
+      >
+        0
+      </output>
+      <p>
+        Mỗi quyết định, một dấu ấn.
+      </p>
+      <div
+        class="score-legend"
+      >
+        <span>
+          <b>
+            +10
+          </b>
+           khi thích
+        </span>
+        <span>
+          <b>
+            −5
+          </b>
+           khi bỏ qua / không thích
+        </span>
+      </div>
+    </section>
+  </aside>
+  <div
+    class="deck-column"
+  >
+    <div
+      class="deck-progress"
+    >
+      <span>
+        <span
+          class="live-dot"
+        />
+         Khám phá hôm nay
+      </span>
+      <span>
+        Còn·
+        6
+         hồ sơ
+      </span>
+    </div>
+    <div
+      aria-label="Hồ sơ hiện tại"
+      class="card-stack "
+      data-dragging="false"
+      role="region"
+      tabindex="0"
+    >
+      <div
+        class="card-entry"
+      >
+        <article
+          class="profile-card"
+        >
+          <div
+            class="profile-art"
+            style="background: rgb(230, 189, 186);"
+          >
+            <img
+              alt="Minh họa hư cấu của Linh"
+              draggable="false"
+              src="/profiles/linh.svg"
+            />
+            <span
+              class="profile-label"
+            >
+              HỒ SƠ HƯ CẤU
+            </span>
+            <span
+              class="portrait-note"
+            >
+              Illustrated people, real good vibes.
+            </span>
+          </div>
+          <div
+            class="profile-details"
+          >
+            <div
+              class="profile-heading"
+            >
+              <h2>
+                Linh
+                ,·
+                26
+              </h2>
+              <span
+                aria-hidden="true"
+                class="profile-star"
+              >
+                ✦
+              </span>
+            </div>
+            <p
+              class="profile-meta"
+            >
+              <svg
+                aria-hidden="true"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.7"
+                viewBox="0 0 24 26"
+                width="24"
+              >
+                <path
+                  d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0ZM15 10a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                />
+              </svg>················
+              Đà Lạt················
+              <span
+                aria-hidden="true"
+              >
+                ·
+              </span>················
+              Kiến trúc sư
+            </p>
+            <p
+              class="profile-bio"
+            >
+              Thích những quán cà phê yên tĩnh và những cuộc trò chuyện không cần nhìn đồng hồ. Cuối tuần, mình thường đi tìm một con đường mới.
+            </p>
+            <ul
+              aria-label="Sở thích"
+              class="interest-tags"
+            >
+              <li>
+                Cà phê
+              </li>
+              <li>
+                Kiến trúc
+              </li>
+              <li>
+                Đi bộ
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div
+      aria-label="Quyết định của bạn"
+      class="swipe-controls"
+      role="group"
+    >
+      <button
+        aria-keyshortcuts="Backspace"
+        aria-label="Hoàn tác"
+        class="action-button undo-button"
+        disabled=""
+      >
+        <svg
+          aria-hidden="true"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.7"
+          viewBox="0 0 24 26"
+          width="24"
+        >
+          <path
+            d="M3 10h10a7 7 0 0 1 0 14M3 10l5-5M3 10l5 5"
+          />
+        </svg>
+        <span>
+          Hoàn tác
+        </span>
+      </button>
+      <button
+        aria-keyshortcuts="ArrowLeft"
+        aria-label="Không thích"
+        class="action-button dislike-button"
+      >
+        <svg
+          aria-hidden="true"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.7"
+          viewBox="0 0 24 26"
+          width="24"
+        >
+          <path
+            d="M6 6l12 12M18 6 6 18"
+          />
+        </svg>
+        <span>
+          Không thích
+        </span>
+      </button>
+      <button
+        aria-keyshortcuts="ArrowRight"
+        aria-label="Thích"
+        class="action-button like-button"
+      >
+        <svg
+          aria-hidden="true"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.7"
+          viewBox="0 0 24 26"
+          width="24"
+        >
+          <path
+            d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"
+          />
+        </svg>
+        <span>
+          Thích
+        </span>
+      </button>
+      <button
+        aria-keyshortcuts="ArrowUp"
+        aria-label="Bỏ qua"
+        class="action-button skip-button"
+      >
+        <svg
+          aria-hidden="true"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.7"
+          viewBox="0 0 24 26"
+          width="24"
+        >
+          <path
+            d="M12 20V4M5 11l7-7 7 7"
+          />
+        </svg>
+        <span>
+          Bỏ qua
+        </span>
+      </button>
+    </div>
+    <p
+      class="deck-caption"
+    >
+      Chọn theo cảm xúc, không cần nghĩ quá nhiều.
+    </p>
+    <p
+      class="gesture-help"
+    >
+      Kéo thẻ sang trái, phải hoặc lên trên để chọn.
+    </p>
+    <p
+      class="keyboard-help"
+      id="deck-help"
+    >
+      Chọn bộ thẻ để dùng phím·
+      <kbd>
+        ←
+      </kbd>
+       không thích·
+      <kbd>
+        →
+      </kbd>
+       thích·
+      <kbd>
+        ↑
+      </kbd>
+       bỏ qua·
+      <kbd>
+        ⌫
+      </kbd>
+       hoàn tác
+    </p>
+    <p
+      aria-atomic="true"
+      aria-live="polite"
+      class="deck-announcement"
+      role="status"
+    >
+      Đang xem Linh. Còn 6 hồ sơ.
+    </p>
+  </div>
+  <aside
+    class="right-column"
+  >
+    <section
+      aria-labelledby="history-heading"
+      class="history-panel"
+    >
+      <div
+        class="panel-heading"
+      >
+        <h2
+          id="history-heading"
+        >
+          Lịch sử tương tác
+        </h2>
+        <span
+          class="count-badge"
+        >
+          0
+        </span>
+      </div>
+      <p
+        class="panel-description"
+      >
+        Những cảm xúc vừa đi qua.
+      </p>
+      <div
+        class="empty-history"
+      >
+        <span
+          aria-hidden="true"
+        >
+          ♡
+        </span>
+        <h3>
+          Chưa có tương tác nào
+        </h3>
+        <p>
+          Một cái thích nhỏ có thể là
+          <br />
+          khởi đầu của điều thú vị.
+        </p>
+      </div>
+      <div
+        class="history-note"
+      >
+        <span
+          aria-hidden="true"
+        >
+          ↶
+        </span>
+         Đổi ý cũng không sao. Bạn luôn có thể hoàn tác.
+      </div>
+    </section>
+    <div
+      class="little-note"
+    >
+      <svg
+        aria-hidden="true"
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.7"
+        viewBox="0 0 24 26"
+        width="24"
+      >
+        <path
+          d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"
+        />
+      </svg>
+      <p>
+        Không cần tìm người hoàn hảo.
+        <br />
+        Chỉ cần một chút đồng điệu.
+      </p>
+    </div>
+  </aside>
+</section>
+Received element with focus:
+  <body>
+  <div>
+    <div
+      class="app-shell"
+    >
+      <header
+        class="site-header"
+      >
+        <a
+          class="brand"
+          href="#main"
+        >
+          <span … />
+           hẹn hò
+          <span … />
+        </a>
+        <span
+          class="header-note"
+        >
+          Một chút rung động. Một chút vui.
+        </span>
+        <span
+          class="demo-badge"
+        >
+          <span … />
+           Bản demo
+        </span>
+      </header>
+      <main
+        id="main"
+      >
+        <div
+          class="page-intro"
+        >
+          <p … />
+          <h1 … />
+          <p … />
+        </div>
+        <section
+          aria-describedby="deck-help"
+          aria-label="Bộ thẻ khám phá"
+          class="deck-layout"
+          tabindex="0"
+        >
+          <aside … />
+          <div … />
+          <aside … />
+        </section>
+      </main>
+      <footer
+        class="site-footer"
+      >
+        <span>
+          Tất cả hồ sơ đều hư cấu · Dữ liệu demo cục bộ
+        </span>
+        <span>
+          Chỉ để khám phá, không để hứa hẹn ♡
+        </span>
+      </footer>
+    </div>
+  </div>
+</body>
+ × src/components/release-accessibility.test.jsx > P2-15 release accessibility regressions > does not submit a containing form when a swipe button is activated 101ms
+   → expected "vi.fn()" to not be called at all, but actually been called 1 times
+
+Received:
+
+  1st vi.fn() call:
+
+    Array [
+      SyntheticBaseEvent {
+        "_reactName": "onSubmit",
+        "_targetInst": null,
+        "bubbles": true,
+        "cancelable": true,
+        "currentTarget": null,
+        "defaultPrevented": true,
+        "eventPhase": 3,
+        "isDefaultPrevented": [Function functionThatReturnsTrue],
+        "isPropagationStopped": [Function functionThatReturnsFalse],
+        "isTrusted": true,
+        "nativeEvent": SubmitEvent {
+          "isTrusted": true,
+        },
+        "submitter": <button
+          aria-keyshortcuts="ArrowRight"
+          aria-label="Thích"
+          class="action-button like-button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.7"
+            viewBox="0 0 24 26"
+            width="24"
+          >
+            <path
+              d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"
+            />
+          </svg>
+          <span>
+            Thích
+          </span>
+        </button>,
+        "target": <form>
+          <div
+            class="app-shell"
+          >
+            <header
+              class="site-header"
+            >
+              <a … />
+              <span … />
+              <span … />
+            </header>
+            <main
+              id="main"
+            >
+              <div … />
+              <section … />
+            </main>
+            <footer
+              class="site-footer"
+            >
+              <span … />
+              <span … />
+            </footer>
+          </div>
+        </form>,
+        "timeStamp": 1795588144822,
+        "type": "submit",
+      },
+    ]
+
+
+Number of calls: 1
+
+ ✓ src/components/release-accessibility.test.jsx > P2-15 release accessibility regressions > leaves composing and already-handled keyboard events alone 34ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > Backspace undoes the last action and restores derived score/card 115ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > is focusable, prevents handled defaults and suppresses held/repeat actions 69ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > does not intercept keys outside the deck 24ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > pointerCancel resets and prevents a later release from committing 68ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > lostPointerCapture resets and prevents a later release from committing 60ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > captures/releases the pointer and ignores unrelated pointer IDs 27ms
+ ✓ src/components/SwipeDeck.test.jsx > P2-06 card deck and controls > Bỏ qua records SKIP once with -5 points 84ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > leaves input editing alone even inside the deck 23ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > leaves textarea editing alone even inside the deck 17ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > leaves select editing alone even inside the deck 17ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > leaves contenteditable editing alone even inside the deck 18ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > leaves textbox editing alone even inside the deck 21ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > preserves shortcuts with ctrlKey 16ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > ignores nonprimary input {"button":2} 16ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > ignores nonprimary input {"isPrimary":false} 21ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > cancels when a second touch arrives 19ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > never swipes the new card when a button changes history during a drag 56ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > preserves shortcuts with metaKey 18ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > preserves shortcuts with altKey 20ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > preserves shortcuts with shiftKey 22ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > ignores orphan releases and safely handles an empty deck 35ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > resets an interrupted gesture when the browser loses focus 84ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > resets held keys when focus leaves the deck 76ms
+ ✓ src/components/SwipeDeck.test.jsx > P2-06 card deck and controls > undoes LIFO and derives restored score and card after mixed actions 332ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > supports shortcuts from a focused control and native Enter without duplication 105ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > Backspace on empty history and arrows on empty deck are safe 117ms
+ ✓ src/components/SwipeDeck.test.jsx > P2-06 card deck and controls > disables swipes at completion and undo reopens the last card 142ms
+ ✓ src/components/SwipeDeck.test.jsx > P2-06 card deck and controls > handles a genuinely empty deck and history without broken controls 34ms
+npm.cmd : 
+At line:2 char:1
++ npm.cmd test -- --reporter=verbose *> ../verification/P2-15-RED.txt;  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/components/release-accessibility.test.jsx > P2-15 release accessibility regressions > keeps keyboard focus 
+in the deck when completing the final card
+Error: expect(element).toHaveFocus()
+
+Expected element with focus:
+  <section
+  aria-describedby="deck-help"
+  aria-label="Bộ thẻ khám phá"
+  class="deck-layout"
+  tabindex="0"
+>
+  <aside
+    class="left-column"
+  >
+    <div
+      class="discovery-note"
+    >
+      <span
+        aria-hidden="true"
+        class="note-symbol"
+      >
+        ✳
+      </span>
+      <h2>
+        Không áp lực.
+        <br />
+        Cứ là chính bạn.
+      </h2>
+      <p>
+        Một bộ thẻ, những cá tính khác nhau. Lắng nghe cảm xúc và chọn điều bạn muốn.
+      </p>
+      <span
+        class="small-rule"
+      />
+    </div>
+    <section
+      aria-labelledby="score-heading"
+      class="score-board"
+    >
+      <div
+        class="panel-heading"
+      >
+        <span
+          class="mini-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.7"
+            viewBox="0 0 24 26"
+            width="24"
+          >
+            <path
+              d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5Z"
+            />
+          </svg>
+        </span>
+        <h2
+          id="score-heading"
+        >
+          Điểm cảm xúc
+        </h2>
+      </div>
+      <output
+        aria-label="Điểm của bạn"
+        class="score-value"
+      >
+        +
+        10
+      </output>
+      <p>
+        Mỗi quyết định, một dấu ấn.
+      </p>
+      <div
+        class="score-legend"
+      >
+        <span>
+          <b>
+            +10
+          </b>
+           khi thích
+        </span>
+        <span>
+          <b>
+            −5
+          </b>
+           khi bỏ qua / không thích
+        </span>
+      </div>
+    </section>
+  </aside>
+  <div
+    class="deck-column"
+  >
+    <div
+      class="deck-progress"
+    >
+      <span>
+        <span
+          class="live-dot"
+        />
+         Khám phá hôm nay
+      </span>
+      <span>
+        Còn·
+        0
+         hồ sơ
+      </span>
+    </div>
+    <div
+      aria-label="Hồ sơ hiện tại"
+      class="card-stack is-empty"
+      data-dragging="false"
+      role="region"
+      tabindex="0"
+    >
+      <div
+        class="empty-deck"
+      >
+        <svg
+          aria-hidden="true"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.7"
+          viewBox="0 0 24 26"
+          width="24"
+        >
+          <path
+            d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5Z"
+          />
+        </svg>
+        <h2>
+          Bạn đã khám phá hết rồi!
+        </h2>
+        <p>
+          Một hành trình nhỏ, thật nhiều cảm xúc. Hoàn tác để xem lại lựa chọn của bạn.
+        </p>
+      </div>
+    </div>
+    <div
+      aria-label="Quyết định của bạn"
+      class="swipe-controls"
+      role="group"
+    >
+      <button
+        aria-keyshortcuts="Backspace"
+        aria-label="Hoàn tác"
+        class="action-button undo-button"
+      >
+        <svg
+          aria-hidden="true"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.7"
+          viewBox="0 0 24 26"
+          width="24"
+        >
+          <path
+            d="M3 10h10a7 7 0 0 1 0 14M3 10l5-5M3 10l5 5"
+          />
+        </svg>
+        <span>
+          Hoàn tác
+        </span>
+      </button>
+      <button
+        aria-keyshortcuts="ArrowLeft"
+        aria-label="Không thích"
+        class="action-button dislike-button"
+        disabled=""
+      >
+        <svg
+          aria-hidden="true"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.7"
+          viewBox="0 0 24 26"
+          width="24"
+        >
+          <path
+            d="M6 6l12 12M18 6 6 18"
+          />
+        </svg>
+        <span>
+          Không thích
+        </span>
+      </button>
+      <button
+        aria-keyshortcuts="ArrowRight"
+        aria-label="Thích"
+        class="action-button like-button"
+        disabled=""
+      >
+        <svg
+          aria-hidden="true"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.7"
+          viewBox="0 0 24 26"
+          width="24"
+        >
+          <path
+            d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"
+          />
+        </svg>
+        <span>
+          Thích
+        </span>
+      </button>
+      <button
+        aria-keyshortcuts="ArrowUp"
+        aria-label="Bỏ qua"
+        class="action-button skip-button"
+        disabled=""
+      >
+        <svg
+          aria-hidden="true"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.7"
+          viewBox="0 0 24 26"
+          width="24"
+        >
+          <path
+            d="M12 20V4M5 11l7-7 7 7"
+          />
+        </svg>
+        <span>
+          Bỏ qua
+        </span>
+      </button>
+    </div>
+    <p
+      class="deck-caption"
+    >
+      Chọn theo cảm xúc, không cần nghĩ quá nhiều.
+    </p>
+    <p
+      class="gesture-help"
+    >
+      Kéo thẻ sang trái, phải hoặc lên trên để chọn.
+    </p>
+    <p
+      class="keyboard-help"
+      id="deck-help"
+    >
+      Chọn bộ thẻ để dùng phím·
+      <kbd>
+        ←
+      </kbd>
+       không thích·
+      <kbd>
+        →
+      </kbd>
+       thích·
+      <kbd>
+        ↑
+      </kbd>
+       bỏ qua·
+      <kbd>
+        ⌫
+      </kbd>
+       hoàn tác
+    </p>
+    <p
+      aria-atomic="true"
+      aria-live="polite"
+      class="deck-announcement"
+      role="status"
+    >
+      Đã hết hồ sơ.
+    </p>
+  </div>
+  <aside
+    class="right-column"
+  >
+    <section
+      aria-labelledby="history-heading"
+      class="history-panel"
+    >
+      <div
+        class="panel-heading"
+      >
+        <h2
+          id="history-heading"
+        >
+          Lịch sử tương tác
+        </h2>
+        <span
+          class="count-badge"
+        >
+          1
+        </span>
+      </div>
+      <p
+        class="panel-description"
+      >
+        Những cảm xúc vừa đi qua.
+      </p>
+      <ol
+        class="history-list"
+        reversed=""
+      >
+        <li
+          data-action="LIKE"
+        >
+          <img
+            alt=""
+            src="/profiles/linh.svg"
+          />
+          <div>
+            <strong>
+              Linh
+            </strong>
+            <span>
+              Đã thích
+            </span>
+          </div>
+          <b
+            class="positive"
+          >
+            +
+            10
+          </b>
+        </li>
+      </ol>
+      <div
+        class="history-note"
+      >
+        <span
+          aria-hidden="true"
+        >
+          ↶
+        </span>
+         Đổi ý cũng không sao. Bạn luôn có thể hoàn tác.
+      </div>
+    </section>
+    <div
+      class="little-note"
+    >
+      <svg
+        aria-hidden="true"
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.7"
+        viewBox="0 0 24 26"
+        width="24"
+      >
+        <path
+          d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"
+        />
+      </svg>
+      <p>
+        Không cần tìm người hoàn hảo.
+        <br />
+        Chỉ cần một chút đồng điệu.
+      </p>
+    </div>
+  </aside>
+</section>
+Received element with focus:
+  <body>
+  <div>
+    <div
+      class="app-shell"
+    >
+      <header
+        class="site-header"
+      >
+        <a
+          class="brand"
+          href="#main"
+        >
+          <span … />
+           hẹn hò
+          <span … />
+        </a>
+        <span
+          class="header-note"
+        >
+          Một chút rung động. Một chút vui.
+        </span>
+        <span
+          class="demo-badge"
+        >
+          <span … />
+           Bản demo
+        </span>
+      </header>
+      <main
+        id="main"
+      >
+        <div
+          class="page-intro"
+        >
+          <p … />
+          <h1 … />
+          <p … />
+        </div>
+        <section
+          aria-describedby="deck-help"
+          aria-label="Bộ thẻ khám phá"
+          class="deck-layout"
+          tabindex="0"
+        >
+          <aside … />
+          <div … />
+          <aside … />
+        </section>
+      </main>
+      <footer
+        class="site-footer"
+      >
+        <span>
+          Tất cả hồ sơ đều hư cấu · Dữ liệu demo cục bộ
+        </span>
+        <span>
+          Chỉ để khám phá, không để hứa hẹn ♡
+        </span>
+      </footer>
+    </div>
+  </div>
+</body>
+ ❯ src/components/release-accessibility.test.jsx:13:69
+     11|     screen.getByRole('button', { name: 'Thích', exact: true }).focus()
+     12|     await user.keyboard('{Enter}')
+     13|     expect(screen.getByRole('region', { name: 'Bộ thẻ khám phá' })).to…
+       |                                                                     ^
+     14|     await user.keyboard('{Backspace}')
+     15|     expect(screen.getByRole('heading', { name: 'Linh, 26' })).toBeVisi…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  src/components/release-accessibility.test.jsx > P2-15 release accessibility regressions > keeps focus in the 
+deck when the last undo disables its button
+Error: expect(element).toHaveFocus()
+
+Expected element with focus:
+  <section
+  aria-describedby="deck-help"
+  aria-label="Bộ thẻ khám phá"
+  class="deck-layout"
+  tabindex="0"
+>
+  <aside
+    class="left-column"
+  >
+    <div
+      class="discovery-note"
+    >
+      <span
+        aria-hidden="true"
+        class="note-symbol"
+      >
+        ✳
+      </span>
+      <h2>
+        Không áp lực.
+        <br />
+        Cứ là chính bạn.
+      </h2>
+      <p>
+        Một bộ thẻ, những cá tính khác nhau. Lắng nghe cảm xúc và chọn điều bạn muốn.
+      </p>
+      <span
+        class="small-rule"
+      />
+    </div>
+    <section
+      aria-labelledby="score-heading"
+      class="score-board"
+    >
+      <div
+        class="panel-heading"
+      >
+        <span
+          class="mini-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.7"
+            viewBox="0 0 24 26"
+            width="24"
+          >
+            <path
+              d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5Z"
+            />
+          </svg>
+        </span>
+        <h2
+          id="score-heading"
+        >
+          Điểm cảm xúc
+        </h2>
+      </div>
+      <output
+        aria-label="Điểm của bạn"
+        class="score-value"
+      >
+        0
+      </output>
+      <p>
+        Mỗi quyết định, một dấu ấn.
+      </p>
+      <div
+        class="score-legend"
+      >
+        <span>
+          <b>
+            +10
+          </b>
+           khi thích
+        </span>
+        <span>
+          <b>
+            −5
+          </b>
+           khi bỏ qua / không thích
+        </span>
+      </div>
+    </section>
+  </aside>
+  <div
+    class="deck-column"
+  >
+    <div
+      class="deck-progress"
+    >
+      <span>
+        <span
+          class="live-dot"
+        />
+         Khám phá hôm nay
+      </span>
+      <span>
+        Còn·
+        6
+         hồ sơ
+      </span>
+    </div>
+    <div
+      aria-label="Hồ sơ hiện tại"
+      class="card-stack "
+      data-dragging="false"
+      role="region"
+      tabindex="0"
+    >
+      <div
+        class="card-entry"
+      >
+        <article
+          class="profile-card"
+        >
+          <div
+            class="profile-art"
+            style="background: rgb(230, 189, 186);"
+          >
+            <img
+              alt="Minh họa hư cấu của Linh"
+              draggable="false"
+              src="/profiles/linh.svg"
+            />
+            <span
+              class="profile-label"
+            >
+              HỒ SƠ HƯ CẤU
+            </span>
+            <span
+              class="portrait-note"
+            >
+              Illustrated people, real good vibes.
+            </span>
+          </div>
+          <div
+            class="profile-details"
+          >
+            <div
+              class="profile-heading"
+            >
+              <h2>
+                Linh
+                ,·
+                26
+              </h2>
+              <span
+                aria-hidden="true"
+                class="profile-star"
+              >
+                ✦
+              </span>
+            </div>
+            <p
+              class="profile-meta"
+            >
+              <svg
+                aria-hidden="true"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.7"
+                viewBox="0 0 24 26"
+                width="24"
+              >
+                <path
+                  d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0ZM15 10a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                />
+              </svg>················
+              Đà Lạt················
+              <span
+                aria-hidden="true"
+              >
+                ·
+              </span>················
+              Kiến trúc sư
+            </p>
+            <p
+              class="profile-bio"
+            >
+              Thích những quán cà phê yên tĩnh và những cuộc trò chuyện không cần nhìn đồng hồ. Cuối tuần, mình thường 
+đi tìm một con đường mới.
+            </p>
+            <ul
+              aria-label="Sở thích"
+              class="interest-tags"
+            >
+              <li>
+                Cà phê
+              </li>
+              <li>
+                Kiến trúc
+              </li>
+              <li>
+                Đi bộ
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div
+      aria-label="Quyết định của bạn"
+      class="swipe-controls"
+      role="group"
+    >
+      <button
+        aria-keyshortcuts="Backspace"
+        aria-label="Hoàn tác"
+        class="action-button undo-button"
+        disabled=""
+      >
+        <svg
+          aria-hidden="true"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.7"
+          viewBox="0 0 24 26"
+          width="24"
+        >
+          <path
+            d="M3 10h10a7 7 0 0 1 0 14M3 10l5-5M3 10l5 5"
+          />
+        </svg>
+        <span>
+          Hoàn tác
+        </span>
+      </button>
+      <button
+        aria-keyshortcuts="ArrowLeft"
+        aria-label="Không thích"
+        class="action-button dislike-button"
+      >
+        <svg
+          aria-hidden="true"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.7"
+          viewBox="0 0 24 26"
+          width="24"
+        >
+          <path
+            d="M6 6l12 12M18 6 6 18"
+          />
+        </svg>
+        <span>
+          Không thích
+        </span>
+      </button>
+      <button
+        aria-keyshortcuts="ArrowRight"
+        aria-label="Thích"
+        class="action-button like-button"
+      >
+        <svg
+          aria-hidden="true"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.7"
+          viewBox="0 0 24 26"
+          width="24"
+        >
+          <path
+            d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"
+          />
+        </svg>
+        <span>
+          Thích
+        </span>
+      </button>
+      <button
+        aria-keyshortcuts="ArrowUp"
+        aria-label="Bỏ qua"
+        class="action-button skip-button"
+      >
+        <svg
+          aria-hidden="true"
+
+ Test Files  1 failed | 5 passed (6)
+      Tests  3 failed | 100 passed (103)
+   Start at  13:28:57
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+   Duration  7.58s (environment 62%, setup 16%, tests 12%, import 7%, transform 3%)
+          stroke-width="1.7"
+          viewBox="0 0 24 26"
+          width="24"
+        >
+          <path
+            d="M12 20V4M5 11l7-7 7 7"
+          />
+        </svg>
+        <span>
+          Bỏ qua
+        </span>
+      </button>
+    </div>
+    <p
+      class="deck-caption"
+    >
+      Chọn theo cảm xúc, không cần nghĩ quá nhiều.
+    </p>
+    <p
+      class="gesture-help"
+    >
+      Kéo thẻ sang trái, phải hoặc lên trên để chọn.
+    </p>
+    <p
+      class="keyboard-help"
+      id="deck-help"
+    >
+      Chọn bộ thẻ để dùng phím·
+      <kbd>
+        ←
+      </kbd>
+       không thích·
+      <kbd>
+        →
+      </kbd>
+       thích·
+      <kbd>
+        ↑
+      </kbd>
+       bỏ qua·
+      <kbd>
+        ⌫
+      </kbd>
+       hoàn tác
+    </p>
+    <p
+      aria-atomic="true"
+      aria-live="polite"
+
+      class="deck-announcement"
+      role="status"
+    >
+      Đang xem Linh. Còn 6 hồ sơ.
+    </p>
+  </div>
+  <aside
+    class="right-column"
+  >
+    <section
+      aria-labelledby="history-heading"
+      class="history-panel"
+    >
+      <div
+        class="panel-heading"
+      >
+        <h2
+          id="history-heading"
+        >
+          Lịch sử tương tác
+        </h2>
+        <span
+          class="count-badge"
+        >
+          0
+        </span>
+      </div>
+      <p
+        class="panel-description"
+      >
+        Những cảm xúc vừa đi qua.
+      </p>
+      <div
+        class="empty-history"
+      >
+        <span
+          aria-hidden="true"
+        >
+          ♡
+        </span>
+        <h3>
+          Chưa có tương tác nào
+        </h3>
+        <p>
+          Một cái thích nhỏ có thể là
+          <br />
+          khởi đầu của điều thú vị.
+        </p>
+      </div>
+      <div
+        class="history-note"
+      >
+        <span
+          aria-hidden="true"
+        >
+          ↶
+        </span>
+         Đổi ý cũng không sao. Bạn luôn có thể hoàn tác.
+      </div>
+    </section>
+    <div
+      class="little-note"
+    >
+      <svg
+        aria-hidden="true"
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.7"
+        viewBox="0 0 24 26"
+        width="24"
+      >
+        <path
+          d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"
+        />
+      </svg>
+      <p>
+        Không cần tìm người hoàn hảo.
+        <br />
+        Chỉ cần một chút đồng điệu.
+      </p>
+    </div>
+  </aside>
+</section>
+Received element with focus:
+  <body>
+  <div>
+    <div
+      class="app-shell"
+    >
+      <header
+        class="site-header"
+      >
+        <a
+          class="brand"
+          href="#main"
+        >
+          <span … />
+           hẹn hò
+          <span … />
+        </a>
+        <span
+          class="header-note"
+        >
+          Một chút rung động. Một chút vui.
+        </span>
+        <span
+          class="demo-badge"
+        >
+          <span … />
+           Bản demo
+        </span>
+      </header>
+      <main
+        id="main"
+      >
+        <div
+          class="page-intro"
+        >
+          <p … />
+          <h1 … />
+          <p … />
+        </div>
+        <section
+          aria-describedby="deck-help"
+          aria-label="Bộ thẻ khám phá"
+          class="deck-layout"
+          tabindex="0"
+        >
+          <aside … />
+          <div … />
+          <aside … />
+        </section>
+      </main>
+      <footer
+        class="site-footer"
+      >
+        <span>
+          Tất cả hồ sơ đều hư cấu · Dữ liệu demo cục bộ
+        </span>
+        <span>
+          Chỉ để khám phá, không để hứa hẹn ♡
+        </span>
+      </footer>
+    </div>
+  </div>
+</body>
+ ❯ src/components/release-accessibility.test.jsx:23:69
+     21|     await user.click(screen.getByRole('button', { name: 'Thích', exact…
+     22|     await user.click(screen.getByRole('button', { name: 'Hoàn tác' }))
+     23|     expect(screen.getByRole('region', { name: 'Bộ thẻ khám phá' })).to…
+       |                                                                     ^
+     24|     await user.keyboard('{ArrowRight}')
+     25|     expect(screen.getByLabelText('Điểm của bạn')).toHaveTextContent('+…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  src/components/release-accessibility.test.jsx > P2-15 release accessibility regressions > does not submit a 
+containing form when a swipe button is activated
+AssertionError: expected "vi.fn()" to not be called at all, but actually been called 1 times
+
+Received:
+
+  1st vi.fn() call:
+
+    Array [
+      SyntheticBaseEvent {
+        "_reactName": "onSubmit",
+        "_targetInst": null,
+        "bubbles": true,
+        "cancelable": true,
+        "currentTarget": null,
+        "defaultPrevented": true,
+        "eventPhase": 3,
+        "isDefaultPrevented": [Function functionThatReturnsTrue],
+        "isPropagationStopped": [Function functionThatReturnsFalse],
+        "isTrusted": true,
+        "nativeEvent": SubmitEvent {
+          "isTrusted": true,
+        },
+        "submitter": <button
+          aria-keyshortcuts="ArrowRight"
+          aria-label="Thích"
+          class="action-button like-button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.7"
+            viewBox="0 0 24 26"
+            width="24"
+          >
+            <path
+              d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 
+0-7.8Z"
+            />
+          </svg>
+          <span>
+            Thích
+          </span>
+        </button>,
+        "target": <form>
+          <div
+            class="app-shell"
+          >
+            <header
+              class="site-header"
+            >
+              <a … />
+              <span … />
+              <span … />
+            </header>
+            <main
+              id="main"
+            >
+              <div … />
+              <section … />
+            </main>
+            <footer
+              class="site-footer"
+            >
+              <span … />
+              <span … />
+            </footer>
+          </div>
+        </form>,
+        "timeStamp": 1795588144822,
+        "type": "submit",
+      },
+    ]
+
+
+Number of calls: 1
+
+ ❯ src/components/release-accessibility.test.jsx:33:24
+     31|     render(<form onSubmit={submit}><App /></form>)
+     32|     await user.click(screen.getByRole('button', { name: 'Thích', exact…
+     33|     expect(submit).not.toHaveBeenCalled()
+       |                        ^
+     34|   })
+     35|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+

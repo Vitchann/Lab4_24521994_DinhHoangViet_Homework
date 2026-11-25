@@ -29,7 +29,9 @@ export function useSwipeGesture({ revision, disabled, onSwipe }) {
     window.addEventListener('blur', cancel)
     return () => {
       window.removeEventListener('blur', cancel)
-      releaseCapture(active.current)
+      const previous = active.current
+      active.current = null
+      releaseCapture(previous)
     }
   }, [])
 

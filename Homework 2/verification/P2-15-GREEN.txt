@@ -1,0 +1,116 @@
+
+> frontend@0.0.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v5.1.1 C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework 2/frontend
+
+ ✓ src/domain/swipeEngine.test.js > swipe contract > left records DISLIKE with -5 points and advances once 8ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > right records LIKE with 10 points and advances once 1ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > up records SKIP with -5 points and advances once 1ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > appends immutably to frozen history without changing earlier snapshots 2ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > rejects invalid direction down even for an empty deck 1ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > rejects invalid direction RIGHT even for an empty deck 0ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > rejects invalid direction  even for an empty deck 0ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > rejects invalid direction toString even for an empty deck 0ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > rejects invalid direction __proto__ even for an empty deck 0ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > rejects invalid direction null even for an empty deck 0ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > rejects invalid direction undefined even for an empty deck 0ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > rejects invalid direction 1 even for an empty deck 0ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > returns unchanged history at completion 1ms
+ ✓ src/domain/swipeEngine.test.js > swipe contract > handles an empty deck 1ms
+ ✓ src/domain/swipeEngine.test.js > LIFO undo and derived state > starts with zero score and the first card 0ms
+ ✓ src/domain/swipeEngine.test.js > LIFO undo and derived state > uses asymmetric scoring and permits negative totals 0ms
+ ✓ src/domain/swipeEngine.test.js > LIFO undo and derived state > undo removes latest LIKE and restores its score/card 0ms
+ ✓ src/domain/swipeEngine.test.js > LIFO undo and derived state > undo removes latest DISLIKE and restores its score/card 0ms
+ ✓ src/domain/swipeEngine.test.js > LIFO undo and derived state > undo removes latest SKIP and restores its score/card 0ms
+ ✓ src/domain/swipeEngine.test.js > LIFO undo and derived state > undo on empty history is a stable no-op 0ms
+ ✓ src/domain/swipeEngine.test.js > LIFO undo and derived state > undo at completion reopens the last card and allows a replacement decision 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed deck null 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed deck {} 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed deck [null] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed deck [{"id":"","name":"Fictional","age":25}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed deck [{"id":" a ","name":"Fictional","age":25}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed deck [{"id":"a","age":25}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed deck [{"id":"a","name":" ","age":25}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed deck [{"id":"a","name":"Fictional","age":17}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed deck [{"id":"a","name":"Fictional","age":24.5}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed deck [{"id":"a","name":"Fictional","age":25,"bio":1}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed deck [{"id":"a","name":"Fictional","age":25,"imageUrl":null}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed deck [{"id":"a","name":"Fictional An","age":24},{"id":"a","name":"Fictional An","age":24}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed history null 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed history {} 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed history [null] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed history [{"action":"LIKE"}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed history [{"profileId":"","action":"LIKE"}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed history [{"profileId":" a ","action":"LIKE"}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed history [{"profileId":"a","action":"LOVE"}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed history [{"profileId":"a","action":"toString"}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed history [{"profileId":"a","action":"__proto__"}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects malformed history [{"profileId":"a","action":"LIKE"},{"profileId":"a","action":"LIKE"}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects non-prefix history [{"profileId":"b","action":"LIKE"}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects non-prefix history [{"profileId":"a","action":"LIKE"},{"profileId":"c","action":"LIKE"}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects non-prefix history [{"profileId":"a","action":"LIKE"},{"profileId":"b","action":"LIKE"},{"profileId":"c","action":"LIKE"},{"profileId":"d","action":"LIKE"}] 0ms
+ ✓ src/domain/swipeEngine.test.js > invalid models and history > rejects nonempty history on an empty deck 0ms
+ ✓ src/App.test.jsx > P2-05 application shell and demo data > renders the Vietnamese application identity and a main landmark 172ms
+ ✓ src/App.test.jsx > P2-05 application shell and demo data > clearly labels the local fictional demonstration 30ms
+ ✓ src/App.test.jsx > P2-05 application shell and demo data > ships frozen fictional adult profiles with unique IDs and local documented artwork 3ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > mouse displacement (-50,0) commits DISLIKE once 228ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > mouse displacement (50,0) commits LIKE once 54ms
+ ✓ src/components/SwipeDeck.test.jsx > P2-06 card deck and controls > shows current profile, remaining count, zero score and empty history 196ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > ArrowLeft creates exactly one DISLIKE 214ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > ArrowRight creates exactly one LIKE 47ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > mouse displacement (0,-50) commits SKIP once 52ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > touch displacement (-65,10) commits DISLIKE once 61ms
+ ✓ src/components/release-accessibility.test.jsx > P2-15 release accessibility regressions > keeps keyboard focus in the deck when completing the final card 260ms
+ ✓ src/components/SwipeDeck.test.jsx > P2-06 card deck and controls > Không thích records DISLIKE once with -5 points 102ms
+ ✓ src/components/SwipeDeck.test.jsx > P2-06 card deck and controls > Thích records LIKE once with +10 points 80ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > ArrowUp creates exactly one SKIP 64ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > Backspace undoes the last action and restores derived score/card 89ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > touch displacement (65,10) commits LIKE once 45ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > touch displacement (10,-65) commits SKIP once 33ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > ignores short/downward/ambiguous displacement (49,0) 24ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > ignores short/downward/ambiguous displacement (-49,0) 27ms
+ ✓ src/components/SwipeDeck.test.jsx > P2-06 card deck and controls > Bỏ qua records SKIP once with -5 points 44ms
+ ✓ src/components/release-accessibility.test.jsx > P2-15 release accessibility regressions > keeps focus in the deck when the last undo disables its button 196ms
+ ✓ src/components/release-accessibility.test.jsx > P2-15 release accessibility regressions > does not submit a containing form when a swipe button is activated 73ms
+ ✓ src/components/release-accessibility.test.jsx > P2-15 release accessibility regressions > leaves composing and already-handled keyboard events alone 19ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > is focusable, prevents handled defaults and suppresses held/repeat actions 47ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > does not intercept keys outside the deck 21ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > leaves input editing alone even inside the deck 19ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > leaves textarea editing alone even inside the deck 17ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > leaves select editing alone even inside the deck 16ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > leaves contenteditable editing alone even inside the deck 17ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > ignores short/downward/ambiguous displacement (0,-49) 27ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > ignores short/downward/ambiguous displacement (0,80) 25ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > ignores short/downward/ambiguous displacement (65,90) 23ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > ignores short/downward/ambiguous displacement (50,-50) 23ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > ignores short/downward/ambiguous displacement (0,0) 26ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > leaves textbox editing alone even inside the deck 19ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > preserves shortcuts with ctrlKey 15ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > preserves shortcuts with metaKey 14ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > preserves shortcuts with altKey 12ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > preserves shortcuts with shiftKey 13ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > resets held keys when focus leaves the deck 37ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > tracks movement visually but only commits on release and ignores duplicate releases 34ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > uses final displacement when a threshold-crossing drag returns to origin 29ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > pointerCancel resets and prevents a later release from committing 46ms
+ ✓ src/components/SwipeDeck.test.jsx > P2-06 card deck and controls > undoes LIFO and derives restored score and card after mixed actions 309ms
+ ✓ src/components/SwipeDeck.test.jsx > P2-06 card deck and controls > disables swipes at completion and undo reopens the last card 36ms
+ ✓ src/components/SwipeDeck.test.jsx > P2-06 card deck and controls > handles a genuinely empty deck and history without broken controls 15ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > supports shortcuts from a focused control and native Enter without duplication 58ms
+ ✓ src/components/keyboard.test.jsx > P2-07 scoped keyboard controls > Backspace on empty history and arrows on empty deck are safe 94ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > lostPointerCapture resets and prevents a later release from committing 39ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > captures/releases the pointer and ignores unrelated pointer IDs 25ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > ignores nonprimary input {"button":2} 14ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > ignores nonprimary input {"isPrimary":false} 11ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > cancels when a second touch arrives 14ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > never swipes the new card when a button changes history during a drag 37ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > ignores orphan releases and safely handles an empty deck 12ms
+ ✓ src/components/pointer.test.jsx > P2-08 pointer gestures > resets an interrupted gesture when the browser loses focus 34ms
+
+ Test Files  6 passed (6)
+      Tests  103 passed (103)
+   Start at  13:30:02
+   Duration  4.55s (environment 61%, setup 17%, tests 16%, import 4%, transform 2%)
+

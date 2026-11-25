@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { getCurrentProfile, getProgress, swipe, undo } from '../domain/swipeEngine.js'
 import ProfileCard from './ProfileCard.jsx'
 import SwipeControls from './SwipeControls.jsx'
@@ -10,15 +10,25 @@ import { useSwipeGesture } from '../hooks/useSwipeGesture.js'
 
 export default function SwipeDeck({ profiles }) {
   const [history, setHistory] = useState([])
+  const deckRef = useRef(null)
   const current = getCurrentProfile(profiles, history)
   const progress = getProgress(profiles, history)
-  const onSwipe = (direction) => setHistory((previous) => swipe(profiles, previous, direction))
-  const onUndo = () => setHistory((previous) => undo(previous))
+  const preserveFocus = () => {
+    if (deckRef.current?.contains(document.activeElement)) deckRef.current.focus({ preventScroll: true })
+  }
+  const onSwipe = (direction) => {
+    if (progress.remaining === 1) preserveFocus()
+    setHistory((previous) => swipe(profiles, previous, direction))
+  }
+  const onUndo = () => {
+    if (history.length === 1) preserveFocus()
+    setHistory((previous) => undo(previous))
+  }
   const keyboard = useDeckKeyboard({ onSwipe, onUndo })
   const gesture = useSwipeGesture({ revision: history, disabled: !current, onSwipe })
 
   return (
-    <section className="deck-layout" aria-label="Bộ thẻ khám phá" tabIndex={0} aria-describedby="deck-help" {...keyboard}>
+    <section ref={deckRef} className="deck-layout" aria-label="Bộ thẻ khám phá" tabIndex={0} aria-describedby="deck-help" {...keyboard}>
       <aside className="left-column">
         <div className="discovery-note"><span className="note-symbol" aria-hidden="true">✳</span><h2>Không áp lực.<br />Cứ là chính bạn.</h2><p>Một bộ thẻ, những cá tính khác nhau. Lắng nghe cảm xúc và chọn điều bạn muốn.</p><span className="small-rule" /></div>
         <ScoreBoard history={history} />
