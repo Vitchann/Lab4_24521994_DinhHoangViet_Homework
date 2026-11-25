@@ -57,3 +57,5 @@ U008 Git review: staging previously untracked raw verification outputs exposed t
 | Task / category | Observed issue | Root cause | Corrective action | Actual retest |
 | --- | --- | --- | --- | --- |
 | P2-15 / responsive implementation | New 320px browser assertion failed: scrollWidth=320, clientWidth=305, exit 1 (U010-P2-15-RED.txt) | Fixed body min-width:320px exceeded the width available after a classic scrollbar | Remove the fixed minimum; keep layout responsive and assertion unchanged, without overflow hiding | Browser checks pass at 320/375/768/1440; screenshots visually inspected, 103 frontend tests and lint pass; U010-P2-15-BROWSER.json |
+
+U010 P2-16: no new backend/runtime failure was observed. Fresh backend tests (10), lint/syntax/smoke, production build and browser/environment checks passed; final frontend source has 103 passing tests. Both production dependency audits report zero vulnerabilities. The known absence of P2-09–P2-14 remains a full-stack release blocker, not a fabricated test failure or completion. Lighthouse is still not installed; no score is claimed.

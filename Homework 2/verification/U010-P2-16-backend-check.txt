@@ -1,0 +1,4 @@
+
+> backend@1.0.0 check
+> node --check src/app.js && node --check src/server.js && node --check src/middleware/errors.js
+

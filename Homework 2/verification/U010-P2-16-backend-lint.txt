@@ -1,0 +1,4 @@
+
+> backend@1.0.0 lint
+> node ../frontend/node_modules/eslint/bin/eslint.js .
+
