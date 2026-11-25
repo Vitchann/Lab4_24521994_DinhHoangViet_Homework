@@ -2,7 +2,7 @@
 
 The earlier `project_rule.md` is no longer present. This file now contains the project rules, preserving the requirements read during U001.
 
-U007 completed review/preparation P2-15–P2-17. U008 authorizes atomic Git commits after each logically independent development task. U009 additionally authorizes this commit/push to https://github.com/Vietomato/Lab4_24521994_DinhHoangViet_Homework on main. Do not add Codex/AI author or co-author metadata or invite collaborators. Future pushes still require separate authorization. P2-09–P2-14 remain pending; do not claim a complete full-stack release. Keep changes inside Homework 2. No deployment, backdating, force push or existing-history rewrite is authorized.
+Current request U010 repeats the P2-15–P2-17 engineering review with fresh evidence. U008 still authorizes atomic commits after each independent task. U009's previous GitHub publication is complete; U010 does not authorize any new push. Do not add Codex/AI author or co-author metadata or invite collaborators. P2-09–P2-14 remain pending; do not claim a complete full-stack release. Keep changes inside Homework 2. No deployment, push, backdating, force push or existing-history rewrite is authorized for this review.
 
 Append each new actual user prompt verbatim once to PROMPT_LOG.md and maintain its prompt/results table.
 
@@ -22,6 +22,7 @@ Append each new actual user prompt verbatim once to PROMPT_LOG.md and maintain i
 - After each logically independent development task, run relevant verification, update actual development records and create a nonempty Conventional Commit containing only related Homework 2 changes. U008 provides standing authorization for these scoped commits; do not ask again. Inspect the staged diff before every commit. Never include other projects, private .env files, generated builds/dependencies or temporary files. Never push without separate explicit permission.
 - Use Vitest, React Testing Library and Supertest; separate unit/integration/database checks. Mocked tests do not verify real persistence. Run lint/build before release.
 - Semantic HTML, accessible names, visible focus, keyboard controls, sufficient contrast, reduced motion; target WCAG 2.2 AA. Check 375px, 768px and desktop; fix overflow. Do not claim browser/manual verification that did not run.
+- Include the 320px narrow reflow regression as well; a fixed body minimum must not force horizontal scrolling when classic scrollbars reduce available width. Do not hide overflow to pass checks.
 - MongoDB URI belongs in environment variables. Provide placeholder .env.example; ignore .env, credentials, node_modules, dist and coverage. Never print or commit secrets.
 - Maintain README.md, project-rules.md, TASK_DECOMPOSITION.md, AI_FAILURE_AUDIT.md and PROMPT_LOG.md. Update task status after verification, append real changes/commands/results/blockers, distinguish user prompts from generated subtasks.
 - Record observed AI implementation failures with evidence, cause, correction and retest. Distinguish expected TDD RED and environment failures. Never invent test output, errors or checks; mark unexecuted checks Not Verified.

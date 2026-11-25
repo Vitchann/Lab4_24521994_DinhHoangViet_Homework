@@ -184,7 +184,7 @@ node scripts/verify-setup.js
 
 The backend uses native Node ES modules and has **no bundling/transpilation build step**. Syntax, startup validation and real HTTP skeleton checks replace a nonexistent build. `test:watch` is available in both packages. Frontend domain tests use Node; component/input tests use jsdom. Backend tests are unit and HTTP-skeleton integration tests; there are no database suites.
 
-### Actual review results — 2026-11-25
+### Initial review results — U007, 2026-11-25
 
 | Check | Observed result and evidence |
 | --- | --- |
@@ -200,6 +200,24 @@ The backend uses native Node ES modules and has **no bundling/transpilation buil
 | Lighthouse | **Not run**: no local CLI/package; manual steps below |
 | Real MongoDB/full-stack persistence | **Not Verified**: implementation absent |
 
+### Latest review results — U010, 2026-11-25
+
+The repeated review used fresh checks and preserved the earlier evidence. It found and fixed a narrow reflow defect: body min-width:320px exceeded the 305px available after a scrollbar at a 320px viewport. The unchanged browser assertion failed before the fix and passes afterward, without hiding overflow.
+
+| Check | Current actual result |
+| --- | --- |
+| Frontend tests/lint | **103 tests passed, 6 files**; lint passed during P2-15; [current source test output](verification/U010-P2-15-tests.txt) reused in P2-16 because source did not change |
+| Backend tests/lint/syntax | **10 tests passed, 2 files**, lint/syntax/HTTP smoke passed; [tests](verification/U010-P2-16-backend-tests.txt), [lint](verification/U010-P2-16-backend-lint.txt), [syntax](verification/U010-P2-16-backend-check.txt) |
+| Production frontend build | Passed, 28 modules; HTML 0.69kB, CSS **11.07kB**, JS 234.88kB (gzip JS 74.16kB); [build output](verification/U010-P2-16-build.txt) |
+| Responsive and browser checks | Passed at **320/375/768/1440px**; no horizontal overflow, loaded images, skip navigation/visible focus, reduced motion none/0s, input/undo passed; [production report](verification/U010-P2-16-BROWSER.json) |
+| Console/network checks | Zero observed console errors, JS exceptions, failed network requests or HTTP errors in the tested production flows |
+| Visual inspection | [320px](verification/U010-P2-15-320.png), [375px](verification/U010-P2-15-375.png), [768px](verification/U010-P2-15-768.png), [1440px](verification/U010-P2-15-1440.png) screenshots inspected; ten sampled text contrasts >=4.5:1 |
+| Environment/Git exclusions | Passed; private .env files/generated directories excluded, examples trackable, invalid PORT rejected; [fresh report](verification/U010-P2-16-environment.json) |
+| Production dependency audits | Both fresh runs exited 0 with **0 reported vulnerabilities**; [frontend](verification/U010-P2-16-frontend-audit.json), [backend](verification/U010-P2-16-backend-audit.json) |
+| Lighthouse and real persistence | Lighthouse CLI/package still unavailable, no score claimed; API/MongoDB/full-stack persistence still absent and Not Verified |
+
+Task commits for this review: `62475be` — `fix(frontend): prevent overflow at narrow viewport widths`; `aeb3748` — `test(release): refresh production verification evidence`; final documentation commit — `docs(release): refresh final review and startup guidance`. Its actual self-hash is stored in its local development Git note after creation. No push is authorized or performed under U010.
+
 P2-15 regressions were run before fixes: 3 failed/100 passed, then 103 passed. Backend initially had no tests; new skeleton tests ran RED 6 failed/2 passed, then passed after error hardening. All actual outputs are preserved under `verification/`; earlier historical outputs remain at the project root. See the [failure audit](AI_FAILURE_AUDIT.md) and [prompt/development log](PROMPT_LOG.md).
 
 ### Optional browser QA and manual accessibility checks
@@ -208,7 +226,7 @@ With the production preview running, from `frontend`:
 
 ```powershell
 $env:PREVIEW_URL = 'http://127.0.0.1:4173'
-$env:REPORT_PREFIX = 'P2-16'
+$env:REPORT_PREFIX = 'U010-P2-16'
 node scripts/verify-browser.mjs
 ```
 
@@ -238,7 +256,7 @@ git commit -m 'docs(homework-2): record release scope and atomic commit workflow
 
 The commands above describe the scoped grouping; do not rerun completed groups to manufacture duplicate or empty commits. Verification records were staged with their related groups. Going forward, U008 authorizes an atomic commit after each independent verified development task. The final documentation checkpoint's self-hash is recorded in its local Git note: `git log --show-notes=homework-2-development -1 -- "Homework 2/PROMPT_LOG.md"`.
 
-Only publish with separate explicit permission. For GitHub, after checking the intended remote/branch, the command is `git push origin HEAD`; it has **not** been run here. Local Git notes are not pushed by that ordinary branch command.
+Only publish with separate explicit permission. U009 previously authorized publication through commit a434272; U010 authorizes review and local task commits only, so **no new push is performed in this review**. For a future authorized publication, after checking the intended remote/branch, use `git push origin HEAD`. Local Git notes are not pushed by that ordinary branch command.
 
 For a **static frontend demo**, build and upload only `frontend/dist/` to a static host serving the site at `/`. Example commands from `frontend` (replace the SSH destination with your own host):
 

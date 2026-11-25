@@ -25,8 +25,9 @@ assert.equal(new Set(promptRows).size, promptRows.length)
 assert.deepEqual(promptBlocks, promptRows, 'Each actual prompt table row needs one ordered verbatim block')
 const currentPrompt = promptRows.at(-1)
 assert.equal(promptBlocks.filter((id) => id === currentPrompt).length, 1)
-const jsonFiles = readdirSync(path.join(root, 'verification')).filter((name) => /^P2-(15|16)-.*\.json$/.test(name))
+const jsonFiles = readdirSync(path.join(root, 'verification')).filter((name) => /^(?:U\d+-)?P2-(15|16)-.*\.json$/.test(name))
 for (const name of jsonFiles) JSON.parse(read(`verification/${name}`))
 const report = { documentsChecked: docs, brokenLinks, requiredReadmeSections: requiredSections.length, verbatimPromptBlocks: promptBlocks.length, currentPrompt, currentPromptOccurrences: 1, jsonEvidenceParsed: jsonFiles, scope: 'Documentation structure and local link/JSON checks; narrative reviewed manually in English. Original user language preserved verbatim.' }
-writeFileSync(path.join(root, 'verification/P2-17-doc-check.json'), JSON.stringify(report, null, 2))
+const reportPrefix = process.env.REPORT_PREFIX || 'P2-17'
+writeFileSync(path.join(root, `verification/${reportPrefix}-doc-check.json`), JSON.stringify(report, null, 2))
 console.log(JSON.stringify(report, null, 2))

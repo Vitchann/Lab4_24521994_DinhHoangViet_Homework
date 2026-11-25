@@ -2,7 +2,7 @@ Task Decomposition
 Project
 Hẹn hò nhưng không yêu — Interactive Card-Swipe Deck
 
-U001/U002 completed P2-01–P2-08; U007 completed review/preparation P2-15–P2-17. U008 authorizes committing the actual pending changes and automatic atomic commits after each future independent task. Existing baseline e177567 is preserved. P2-09–P2-14 remain pending; full-stack release must not be represented as complete.
+U001/U002 completed P2-01–P2-08; U007 completed review/preparation P2-15–P2-17. U010 repeats P2-15–P2-17 with fresh review evidence and a verified 320px reflow fix. U008 authorizes atomic commits after independent tasks; U010 authorizes no push. Existing history is preserved. P2-09–P2-14 remain pending; full-stack release must not be represented as complete.
 P2-01 — Inspect and finish setup
 - [x] Complete and verify task.
 Scope: Inspect existing frontend/backend, verify dependencies and scripts, create safe ignore rules and documentation skeletons.
@@ -128,3 +128,5 @@ Git follow-up U008 (2026-11-25): baseline e177567 preserved. Actual frontend fix
 U010 repeat review — P2-15 (2026-11-25): Complete. Added a 320px browser reflow check before fixing source. Actual RED: scrollWidth 320 versus clientWidth 305; removed body min-width:320px. Unchanged browser assertions now pass at 320/375/768/1440; all screenshots visually reviewed. Reduced motion, focus, input/undo and ten sampled text contrast checks pass; no observed console/network errors. Frontend 103 tests and lint passed. Evidence verification/U010-P2-15-*. P2-16/P2-17 fresh review follows sequentially; P2-09–P2-14 remain pending.
 
 U010 repeat review — P2-16 (2026-11-25): Verification complete. P2-15 commit 62475be created; current frontend 103-test/lint results reused without source changes. Fresh backend 10 tests/lint/syntax/HTTP smoke, frontend production build (28 modules, CSS 11.07kB), environment exclusions and production dependency audits passed. Production browser checks at 320/375/768/1440 passed with no observed console/network errors; fresh evidence verification/U010-P2-16-*. Lighthouse unavailable; real business API/MongoDB/persistence absent and not verified. P2-17 documentation refresh next. No push.
+
+U010 repeat review — P2-17 (2026-11-25): Complete. P2-16 committed as aeb3748. Updated English release docs with current results/evidence and explicit previous-push/current-no-push distinction. Documentation checker verifies eight documents, required README sections, ten ordered prompts and ten release JSON files, with no broken local links; frontend lint passed after tooling change. Evidence verification/U010-P2-17-doc-check.json. Final documentation self-hash is logged in its local Git note. No tasks beyond P2-17 implemented; P2-09–P2-14 still pending.
