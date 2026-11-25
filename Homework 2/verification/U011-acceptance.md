@@ -20,7 +20,7 @@
 | P2-14 | Recorded integration and real persistence results | NOT MET: UI/HTTP-skeleton tests exist, but no full-stack/database persistence suite or implementation. |
 | P2-15 | 375/768/desktop, no overflow, manual/automated evidence | PASS within recorded scope: fresh browser checks at 320/375/768/1440; prior U010 screenshots were visually inspected against unchanged source. Focus/reduced motion/contrast samples pass. Physical touch/screen-reader/full WCAG audit not verified. |
 | P2-16 | Actual tests/lint/build/Lighthouse results and blockers | PASS for verification/reporting only: 103 frontend/10 backend tests; both lint, Vite build, backend syntax/smoke and environment checks pass. Lighthouse unavailable/not run; this does not approve the full-stack release. |
-| P2-17 | Reproducible instructions/evidence/commit messages without invention | Documentation reviewed; final acceptance update follows. Seed unavailability must be explicit, not replaced with an invented command. |
+| P2-17 | Reproducible instructions/evidence/commit messages without invention | PASS for documentation: README/audit/log reviewed and updated with actual acceptance verdict and exact startup commands. Seed unavailability is explicit; no working seeder command invented. Final documentation check validates eleven actual prompt records. |
 
 ## Fresh execution evidence
 

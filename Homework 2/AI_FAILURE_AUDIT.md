@@ -61,3 +61,14 @@ U008 Git review: staging previously untracked raw verification outputs exposed t
 U010 P2-16: no new backend/runtime failure was observed. Fresh backend tests (10), lint/syntax/smoke, production build and browser/environment checks passed; final frontend source has 103 passing tests. Both production dependency audits report zero vulnerabilities. The known absence of P2-09–P2-14 remains a full-stack release blocker, not a fabricated test failure or completion. Lighthouse is still not installed; no score is claimed.
 
 U010 P2-17 documentation correction: the README's original publication wording predated U009 and incorrectly still said the push command had never run. Updated it to distinguish the actual prior authorized publication from U010's no-push scope. Fresh documentation validation passes for all required sections, ten actual prompts and current evidence; no historical interaction, commit or Lighthouse score was invented. Prior review failures and their original evidence remain preserved.
+
+## U011 — acceptance gaps, not new feature implementation
+
+| Observed gap/evidence | Root cause | Acceptance action | Verification/status |
+| --- | --- | --- | --- |
+| npm.cmd run seed exits 1: Missing script: seed (U011-seed-attempt.txt) | P2-10 has no seeder, schemas or connection module | Report the missing command honestly; do not add an unrequested feature or invent seed results | Seeding NOT MET; P2-10 remains unchecked |
+| MongoDB probe succeeds while application persistence cannot be demonstrated (U011-mongodb.json) | A reachable database endpoint is independent of the absent application persistence/API path | Run read-only connection/admin ping only; no arbitrary document writes presented as app persistence | Connectivity PASS; application persistence NOT VERIFIED/NOT MET |
+| Six task criteria P2-09–P2-14 remain unmet | Business API/session contract, models/seed, API tests/routes and full-stack integration were never implemented | Preserve unchecked status and document criterion-by-criterion rejection | U011-acceptance.md; full-stack acceptance NOT PASSED |
+| Four development entries contain three distinct texts (U011-prompt-audit.json) | U010 is a real repetition of U007, not a missing backend phase | Compare all four entries to committed originals and preserve original requests; invent no interaction | Four entries intact; no P2-09–P2-14 prompt fabricated |
+
+Fresh U011 tests/lint/build/syntax/environment/browser checks passed (103 frontend/10 skeleton backend tests). No new source regression was observed; acceptance blockers are existing implementation gaps. No source feature, database write, history rewrite or push was performed.

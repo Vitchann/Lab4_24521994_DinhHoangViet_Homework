@@ -4,6 +4,8 @@ A Vietnamese card-swipe demonstration with six fictional adult profiles, origina
 
 **Release scope, 2026-11-25:** P2-01–P2-08 and review/preparation P2-15–P2-17 are complete. The local frontend demonstration is verified. **P2-09–P2-14 remain pending**, so the full-stack application is not ready for release: business API routes, MongoDB persistence and frontend/backend integration do not exist. The backend is a tested Express skeleton with safe error handling.
 
+**Final acceptance U011, 2026-11-25: NOT PASSED for the full-stack project.** Fresh checks passed 103 frontend tests, 10 backend skeleton tests, both lint checks, Vite build and backend syntax/smoke. A read-only connection/admin ping to the local example MongoDB URI also passed, but the application has no persistence or seeder. `npm.cmd run seed` actually failed with `Missing script: "seed"`. See the [complete 17-task acceptance matrix](verification/U011-acceptance.md), [MongoDB probe](verification/U011-mongodb.json) and [prompt audit](verification/U011-prompt-audit.json). No feature was added to hide these gaps.
+
 ## Technology stack
 
 | Layer | Current implementation |
@@ -118,7 +120,35 @@ The listener defaults to port 3001. `SIGINT`/`SIGTERM` close the listener. Vite 
 
 Copy `.env.example` to `.env` only when needed. VITE-prefixed values are public build inputs, never secrets. Do not place MongoDB credentials in frontend configuration.
 
-MongoDB is **not connected**: there are no Mongoose models, migrations, seed commands or database tests. Installing MongoDB or setting MONGODB_URI does not add persistence. P2-10 must introduce connection/error handling, schemas and seed; P2-14 must verify a real database. Do not present Supertest skeleton checks as database verification.
+The **application is not connected to MongoDB**: there are no Mongoose models, migrations, seed commands or database tests. U011 independently confirmed that the local example MongoDB endpoint accepts a read-only Mongoose connection/admin ping; no data was written. That infrastructure check does not implement application persistence. Installing MongoDB or setting MONGODB_URI does not add persistence. P2-10 must introduce connection/error handling, schemas and seed; P2-14 must verify a real database. Do not present Supertest skeleton checks as database verification.
+
+### Exact startup commands and seed availability
+
+From `Lab4`, in frontend terminal A:
+
+```powershell
+cd 'Homework 2/frontend'
+npm.cmd run dev
+```
+
+From `Lab4`, in a separate backend terminal B:
+
+```powershell
+cd 'Homework 2/backend'
+npm.cmd start
+```
+
+Frontend is normally http://localhost:5173; backend defaults to http://localhost:3001 and currently serves only skeleton/fallback behavior. The frontend remains a local in-memory demo.
+
+**Database seeding: no working project command exists.** The exact diagnostic below was executed from `Lab4` and failed; do not treat it as a functioning seeder:
+
+```powershell
+cd 'Homework 2/backend'
+npm.cmd run seed
+# Current result: Missing script: "seed" (exit 1)
+```
+
+There is no seed file/script/schema to invoke by another command. This acceptance-only request prohibits adding one. Complete P2-10 and persistence integration before claiming seed/database acceptance.
 
 `.gitignore` excludes private `.env` variants, credentials, `node_modules`, `dist` and coverage; `.env.example` stays trackable. [Environment verification](verification/P2-16-environment.json) confirms current examples, invalid-port rejection, ignore probes and tracked-file exclusions without printing private values.
 
@@ -280,6 +310,8 @@ npm.cmd start
 It needs no frontend lint tooling at runtime. Hosting that skeleton does not deliver the missing API/database features; do not advertise it as a complete full-stack release.
 
 ## Known limitations and release blockers
+
+- Final acceptance is not passed; every task criterion and the actual U011 results are recorded in verification/U011-acceptance.md. Four development-request entries U001/U002/U007/U010 are preserved; U010 repeats U007, so they are not four distinct implemented phases. No missing backend request was invented.
 
 - P2-09–P2-14: no finalized business API contract, MongoDB connection/models/indexes/seed, application endpoints, durable sessions, idempotency, history/undo persistence or frontend API integration.
 - Reload resets the demo; there is no cross-tab/device synchronization, authentication or durable state.

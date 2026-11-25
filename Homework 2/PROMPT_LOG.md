@@ -16,7 +16,7 @@ Each actual user message received while working on this project is appended verb
 | U008 | 2026-11-25 | Atomic Git commits | Full verbatim text below | Preserved baseline; verified and committed actual frontend, backend and release-tooling groups. Final documentation checkpoint records this workflow and its own resulting hash through an attached local Git note. Automatic task commits authorized; no push/history rewrite. |
 | U009 | 2026-11-25 | GitHub commit and push | Full verbatim text below | Explicit authorization to commit/push to the existing GitHub origin. Verified previous Homework 2 commits use Dinh Hoang Viet as author/committer with no AI co-author trailers; publication verification follows in final output/local Git note. |
 | U010 | 2026-11-25 | Repeat P2-15–P2-17 review | Full verbatim text below | Completed sequentially: fixed reproduced 320px overflow, frontend 103/backend 10 tests pass, lint/build/environment/audits/browser/docs checks pass. Task commits created locally; no push. Full-stack release still blocked by pending P2-09–P2-14. |
-| U011 | 2026-11-25 | Final acceptance check | Full verbatim text below | In progress: verify all criteria and record actual acceptance gaps without adding features; no push. |
+| U011 | 2026-11-25 | Final acceptance check | Full verbatim text below | Full-stack acceptance NOT PASSED: P2-09–P2-14 unmet. Fresh frontend 103/backend 10 tests and lint/build/browser/environment checks pass; read-only MongoDB ping passes, but seed command is missing and app persistence absent. Four development entries verified (three distinct texts). Evidence/docs committed locally; no new feature or push. |
 
 | User request | Task | Codex result | Actual verification |
 | --- | --- | --- | --- |
@@ -740,3 +740,10 @@ Do not push to GitHub yet.
 - Executed npm.cmd run seed: exit 1, Missing script: seed. No valid seed command exists; no feature/seeder added. Evidence U011-seed-attempt.txt and U011-mongodb.json.
 - Audited four development-request entries U001/U002/U007/U010 against their committed original records. All four bodies unchanged (line endings normalized only); U010 equals U007, leaving three distinct texts. No missing backend development interaction was invented. Evidence U011-prompt-audit.json.
 - Reviewed README/audit and every criterion in TASK_DECOMPOSITION.md. Full criterion matrix and evidence map: verification/U011-acceptance.md. Overall full-stack acceptance NOT PASSED: P2-09–P2-14 remain unimplemented, regardless of passing demo/skeleton tests and database ping. No new feature or source change was made.
+
+### U011 — final documentation and actual commit record
+
+- Acceptance evidence committed as `9cfdc399ff916092908fe052ebc676d472007fe6` — `test(acceptance): record verified checks and release blockers`. This is a real local commit, not an invented historic development phase.
+- Updated English README with explicit NOT PASSED verdict, the complete matrix/evidence, successful read-only MongoDB ping versus absent app persistence, four prompt-entry audit and exact separate-terminal startup commands. Documented that npm.cmd run seed exits 1 and no working seeder exists; did not add features.
+- Updated rules/checklist/audit to the current check-only/no-push scope. Final documentation commit message: `docs(acceptance): record final verdict and startup limitations`. Its actual resulting hash/full ledger is saved after creation in its attached local Git development note to avoid self-referential hashes.
+- Final documentation verification passed: eight documents, nine required README sections, eleven unique ordered prompt records/current U011 once, no broken local links; all five U011 JSON reports parsed successfully. Stopped the owned production preview; QA browsers closed through helper cleanup. Runtime source and lockfiles unchanged; unrelated projects preserved; no push.

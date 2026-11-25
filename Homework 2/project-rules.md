@@ -2,7 +2,7 @@
 
 The earlier `project_rule.md` is no longer present. This file now contains the project rules, preserving the requirements read during U001.
 
-Current request U010 repeats the P2-15–P2-17 engineering review with fresh evidence. U008 still authorizes atomic commits after each independent task. U009's previous GitHub publication is complete; U010 does not authorize any new push. Do not add Codex/AI author or co-author metadata or invite collaborators. P2-09–P2-14 remain pending; do not claim a complete full-stack release. Keep changes inside Homework 2. No deployment, push, backdating, force push or existing-history rewrite is authorized for this review.
+Current request U011 authorizes final acceptance checks and atomic evidence/documentation commits only. Do not add new features or fabricate missing seed/API/database behavior. U008's task-commit authorization remains active; U009's prior publication does not authorize a new push. Do not add Codex/AI author or co-author metadata or invite collaborators. P2-09–P2-14 remain pending; full-stack acceptance is not passed. Keep changes inside Homework 2. No deployment, push, backdating, force push or history rewrite is authorized.
 
 Append each new actual user prompt verbatim once to PROMPT_LOG.md and maintain its prompt/results table.
 
