@@ -2,7 +2,7 @@ Task Decomposition
 Project
 Hẹn hò nhưng không yêu — Interactive Card-Swipe Deck
 
-Inspect existing work before marking any task complete. U001 completed P2-01–P2-04. U002 authorizes sequential P2-05–P2-08 with individual verification; stop after P2-08.
+U001/U002 completed P2-01–P2-08; U007 completed review/preparation P2-15–P2-17. U008 authorizes committing the actual pending changes and automatic atomic commits after each future independent task. Existing baseline e177567 is preserved. P2-09–P2-14 remain pending; full-stack release must not be represented as complete.
 P2-01 — Inspect and finish setup
 - [x] Complete and verify task.
 Scope: Inspect existing frontend/backend, verify dependencies and scripts, create safe ignore rules and documentation skeletons.
@@ -102,23 +102,25 @@ Acceptance criteria: Record actual test results and database verification status
 
 Evidence / status: Pending.
 P2-15 — UI, responsiveness and accessibility
-- [ ] Complete and verify task.
+- [x] Complete and verify task.
 Scope: Refine styling, keyboard focus, reduced motion and mobile layout.
 
 Acceptance criteria: Check 375/768/desktop, no overflow; record manual and automated checks.
 
-Evidence / status: Pending.
+Evidence / status: Complete 2026-11-25 for the existing local demo. Review found focus loss at final swipe/undo and implicit form submission: RED 3 failed / 100 passed, GREEN 103 passed. Added skip link, preserved focus, increased utility typography/contrast, removed unused starter assets/styles and cleared gesture refs before unmount capture release. Browser and visual checks at 375/768/1440 passed, no overflow; reduced motion, visible focus, ten contrast samples >=4.5 and no console/network errors. verification/P2-15-* contains actual evidence. Physical touch/screen-reader/full WCAG audit Not Verified. Suggested commit: fix: preserve deck focus and improve accessible presentation.
 P2-16 — Release verification
-- [ ] Complete and verify task.
+- [x] Complete and verify task.
 Scope: Run tests, lint, build and Lighthouse where available; repair observed issues.
 
 Acceptance criteria: Report actual results and any unresolved blockers.
 
-Evidence / status: Pending.
+Evidence / status: Verification complete 2026-11-25; full-stack release remains blocked by pending P2-09–P2-14. Frontend 103/103 and backend skeleton 10/10 passed; both lint checks, backend syntax/smoke and frontend build passed (28 modules). Initial backend runner had no tests; added real skeleton tests, captured RED 6 failed/2 passed, then sanitized JSON parser/error responses and verified GREEN. Production preview browser checks passed at 375/768/1440 with no console/network errors. Environment/ignore probes passed; production dependency audits both report 0 vulnerabilities. No backend bundling step is needed for native Node ES modules. MongoDB/business API/full-stack persistence Not Verified (absent); Lighthouse CLI unavailable, manual instructions supplied in README. Evidence verification/P2-16-*. Suggested commit: test: harden Express errors and add release verification.
 P2-17 — Documentation and handoff
-- [ ] Complete and verify task.
+- [x] Complete and verify task.
 Scope: Complete README, audit, task checklist and actual prompt log.
 
 Acceptance criteria: Reproducible run instructions, evidence and suggested Git commit; no invented results.
 
-Evidence / status: Pending.
+Evidence / status: Complete 2026-11-25 for the reviewed demo. English README covers overview, stack, architecture, functional/business rules, directory tree, current REST errors/unimplemented routes, database/environment status, installation/startup, actual tests/build/audits, manual Lighthouse/accessibility steps, atomic commit and publishing commands, known limitations. Rules/checklist/audit/log updated; original user messages preserved verbatim. Documentation checker verifies eight documents, nine required README sections, no broken local links, seven ordered prompt blocks and valid JSON evidence (verification/P2-17-doc-check.json). No new commit/push/deployment performed. Full-stack release remains blocked by pending P2-09–P2-14. Suggested commit: docs: record verified demo scope and release limitations.
+
+Git follow-up U008 (2026-11-25): baseline e177567 preserved. Actual frontend fixes committed as 2fc5194; backend error hardening/tests as f36f5b7; release tooling/evidence as 143a495. Final documentation checkpoint adds the prompt log, current workflow and docs checker; its resulting hash is recorded in its attached local Git note. Fresh verification: frontend 103 tests, backend 10 tests, both lint checks, frontend build, backend syntax/smoke and environment/docs checks passed. Current documentation report contains eight user prompt blocks. No P2-09–P2-14 implementation was found, so their status remains pending. No push or history rewrite; automatic atomic commits authorized for future independent tasks.

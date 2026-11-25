@@ -12,6 +12,8 @@ Each actual user message received while working on this project is appended verb
 | U004 | 2026-11-24 | Next-step advice | oke giờ làm j tiếp | Reviewed remaining checklist. Next task is P2-09 API/persistence contract; following backend range is P2-09–P2-12. Observed files staged, without a completed commit visible in status. No implementation/staging/commit performed. |
 | U005 | 2026-11-25 | Progress recap | mình đã làm j r nhỉ | Confirmed P2-01–P2-08 complete; latest recorded suite 99 passed, lint/build and browser checks passed. P2-09 onward pending. Git shows staged project additions; no commit for Homework 2 returned by git log. |
 | U006 | 2026-11-25 | Commit scope advice | giờ nên commit những j | Confirmed 73 staged Homework 2 files and unstaged prompt-log additions. Recommended the completed P2-01–P2-08 milestone, including source/tests/assets, configuration/lockfiles and documentation/verification evidence. No staging, commit or push performed. |
+| U007 | 2026-11-25 | P2-15–P2-17 | Full verbatim text below | Completed sequential review/preparation for the local demo. Frontend 103 and backend skeleton 10 tests passed; lint/build, production audits, browser/environment/docs checks passed. Lighthouse not run. Full-stack release blocked by pending P2-09–P2-14. No commit/deploy/push. |
+| U008 | 2026-11-25 | Atomic Git commits | Full verbatim text below | Preserved baseline; verified and committed actual frontend, backend and release-tooling groups. Final documentation checkpoint records this workflow and its own resulting hash through an attached local Git note. Automatic task commits authorized; no push/history rewrite. |
 
 | User request | Task | Codex result | Actual verification |
 | --- | --- | --- | --- |
@@ -23,6 +25,9 @@ Each actual user message received while working on this project is appended verb
 | U002 | P2-06 | Reusable components and button interactions, derived score/card | RED 7 failed / 50 passed; GREEN 57 passed |
 | U002 | P2-07 | Scoped accessible keyboard interaction | RED 7 failed / 68 passed; GREEN 75 passed |
 | U002 | P2-08 | Mouse/touch gestures and interruption/duplicate guards | RED 12 failed / 86 passed; extra blur RED 1 failed / 98 passed; final GREEN 99 passed; lint/build and Chrome QA passed |
+| U007 | P2-15 | Focus/form fixes, typography/contrast, dead asset cleanup and responsive accessibility review | RED 3 failed / 100 passed; GREEN 103 passed; browser/visual checks passed |
+| U007 | P2-16 | Safe Express errors, real skeleton tests, lint/environment/production verification | Backend RED 6 failed / 2 passed; final frontend 103 and backend 10 passed; both lint/audits and frontend build passed |
+| U007 | P2-17 | Complete English release documentation and honest scope/limitations | Eight docs checked, no broken local links, nine required README sections, seven unique ordered prompt blocks, valid JSON evidence |
 
 ## U001 — verbatim user prompt
 
@@ -318,3 +323,229 @@ giờ nên commit những j
 
 - Inspected project status and staged diff statistics: 73 Homework 2 files staged; PROMPT_LOG.md has newer unstaged entries. Recommend committing completed P2-01–P2-08 as the initial project milestone, with code/tests/assets, setup/lockfiles/environment examples, documentation/audit and actual verification outputs.
 - Advise refreshing the staged prompt log before commit. No changes to implementation, no test rerun, and no staging/commit/push performed by Codex.
+
+## U007 — verbatim user prompt
+
+```text
+Perform the final engineering review and release preparation of the "Hẹn hò nhưng không yêu — Interactive Card-Swipe Deck" application.
+
+
+
+Read all project documentation and inspect the complete frontend and backend implementation.
+
+
+
+Record this user prompt verbatim in PROMPT_LOG.md.
+
+
+
+Execute tasks P2-15 through P2-17 sequentially.
+
+
+
+**Code Review and Refactoring**
+
+- Review the architecture and separation of concerns.
+- Detect duplicated logic, redundant state and unnecessary useEffect usage.
+- Detect race conditions, memory leaks and stale closures.
+- Review keyboard and pointer event handling.
+- Verify LIFO undo correctness and asymmetric score calculations.
+- Review API validation, database consistency and security.
+- Remove unused imports, dead code and deprecated APIs.
+
+**UI/UX and Accessibility**
+
+- Improve visual consistency, typography, spacing and card presentation.
+- Verify responsiveness at 375px, 768px and desktop widths.
+- Detect and resolve horizontal overflow.
+- Verify keyboard navigation and focus visibility.
+- Ensure icon-only buttons have accessible labels.
+- Support reduced-motion preferences.
+- Target WCAG 2.2 AA accessibility without claiming compliance based only on automated scores.
+
+**Release Verification**
+
+- Run all frontend and backend tests.
+- Run lint checks.
+- Run production builds.
+- Verify environment variable configuration.
+- Verify that node_modules, dist and secret .env files are excluded from Git.
+- Check browser console and network errors if browser access is available.
+- Run Lighthouse if supported by the environment; otherwise provide instructions for manual verification.
+- Fix observed failures and rerun relevant tests.
+
+**Documentation**\
+Complete the following files in English:
+
+- README.md
+- project-rules.md
+- TASK_DECOMPOSITION.md
+- AI_FAILURE_AUDIT.md
+- PROMPT_LOG.md
+
+The README must include:
+
+- Product overview.
+- System architecture.
+- Technology stack.
+- Functional requirements.
+- Directory structure.
+- Business rules.
+- REST API documentation.
+- Database configuration.
+- Installation instructions.
+- Testing instructions.
+- Actual test results.
+- Known limitations.
+
+The prompt log must contain actual user prompts and development records, clearly distinguishing user requests from agent-generated implementation tasks.
+
+
+
+The AI failure audit must contain observed issues, root causes, verification evidence and corrective actions.
+
+
+
+Do not fabricate test results, Lighthouse scores, Git commits or historical interactions.
+
+
+
+Prepare appropriate atomic Git commit messages and provide commands for running and publishing the project.
+
+
+
+Do not push to GitHub without my permission. Do not modify other projects.
+
+
+
+Provide a final completion report covering implemented features, actual test results, build status, unresolved issues and startup commands.
+```
+
+### U007 — review intake (2026-11-25)
+
+- Read project documentation and inspected source inventory. P2-01–P2-08 are implemented; backend still has only an Express factory/listener. P2-09–P2-14 have not been implemented. This request authorizes review/preparation P2-15–P2-17, not fabrication of missing API/database features.
+- Working tree for Homework 2 was clean at intake; unrelated Homework 1 changes and Homework 3 files are preserved. No commit/push will be executed.
+- Agent-generated implementation tasks: review and refine existing UI/input behavior (P2-15), run release/security/environment checks and repair observed defects (P2-16), then complete truthful English release documentation (P2-17).
+
+### P2-15 — completed (2026-11-25, U007)
+
+- Reviewed complete frontend source, domain contracts, test suites and styles. Domain state is immutable history only; card/progress/score derive from it. Input hooks have only focus-lifecycle effects, no state synchronization; history functional updates and gesture revision guard avoid stale decisions. Cleared active gesture ref before capture release on unmount to avoid reentrant lost-capture handling.
+- Added four release accessibility regressions before behavior changes. RED: 3 failed / 100 passed (verification/P2-15-RED.txt). Observed failures: focused control becomes disabled at final swipe/undo; swipe button submits a containing form. Composition/default-prevented exclusion already passed. Added stable deck-ref focus restoration and explicit button type, preserving assertions. GREEN: 103 passed (verification/P2-15-GREEN.txt).
+- Added skip navigation, increased utility text from 8–11px to 12px and profile body to 14px, darkened faint history/count/note text, increased Undo target to 46px, enabled long profile text wrapping. Removed unused Vite/React art, hero.png, icons.svg/favicon.svg and shell-placeholder CSS.
+- Expanded local Sites-workflow QA helper with report prefixes, runtime/network diagnostics, first-Tab skip-link check, reduced-motion emulation and ten sampled text contrasts. Used existing local Chrome, QA_NO_SANDBOX=1 as previously required, no dependencies installed.
+- Actual browser run: REPORT_PREFIX=P2-15 node scripts/verify-browser.mjs, exit 0; HTTP 200, native keyboard/mouse, emulated touch/undo, visible solid focus and loaded portraits passed. No console errors, exceptions, failed network loads or HTTP errors. 375/768/1440 screenshots visually inspected; scrollWidth=clientWidth at all sizes. Reduced motion: animation none, transition 0s; sampled text ratios 4.62–5.75. Evidence verification/P2-15-BROWSER.json and screenshots. No full accessibility compliance claim.
+- Updated checklist before P2-16. Suggested atomic commit, not executed: fix: preserve deck focus and improve accessible presentation.
+
+### P2-16 — verification completed with release limitations (2026-11-25, U007)
+
+- Reviewed all existing backend source/configuration. Initial npm.cmd test failed with exit 1 because no tests existed (P2-16-backend-initial.txt). Added eight real Express-skeleton integration cases before hardening: RED 6 failed/2 passed, exit 1 (P2-16-backend-RED.txt). Existing parser failures exposed development HTML/stack diagnostics.
+- Added centralized safe JSON error handling for 400/413/415/500 and explicit JSON 404 fallback, preserving the 16kb body limit and configured CORS origin. Future routes must be registered before the fallback; no business route/model/database implementation was added. Two unit cases additionally verify unexpected-error redaction and headers-sent delegation. Final backend: 10 tests/2 files passed, exit 0 (P2-16-backend-GREEN.txt).
+- Added backend ESLint configuration reusing the existing frontend ESLint toolchain without new dependencies. npm.cmd run lint, npm.cmd run check and node scripts/verify-setup.js passed. Backend is unbundled native Node JavaScript; production build is not applicable, syntax/startup/HTTP checks were performed instead.
+- Frontend release suite: 103 tests/6 files passed; lint passed including .mjs QA helpers; production build passed (28 modules, 302ms; HTML 0.69kB, CSS 11.08kB, JS 234.88kB, gzip JS 74.16kB). Outputs are in verification/P2-16-frontend-tests.txt, *-lint.txt and P2-16-build.txt.
+- Added verify-environment.mjs: example configuration parses, invalid PORT=0 rejected, eight private/generated path probes ignored, .env.example stays trackable, no tracked .env/generated directories. No private environment values printed. MONGODB_URI and VITE_API_BASE_URL remain reserved/unconsumed; MongoDB connection Not Verified because no persistence code exists.
+- Actual npm.cmd audit --omit=dev --json --fetch-retries=0 --fetch-timeout=15000 ran successfully for both packages, exit 0, each reports zero production vulnerabilities (verification/*-audit.json). This does not cover dev dependencies or establish complete security.
+- Production preview served HTTP 200 at 127.0.0.1:4173. REPORT_PREFIX=P2-16 PREVIEW_URL=http://127.0.0.1:4173 QA_NO_SANDBOX=1 node scripts/verify-browser.mjs passed native keyboard/mouse, emulated touch/undo, focus/skip navigation, reduced motion, sampled contrast and three responsive widths. Diagnostics contain zero console errors, JS exceptions, failed network requests or HTTP errors. Evidence P2-16-BROWSER.json and screenshots.
+- Lighthouse: no local package or command found. Global npm discovery also failed with ENOENT for the absent global npm directory; no install attempted. Lighthouse was not run and no score is claimed. Manual Chrome DevTools instructions will be provided in P2-17. Physical touch, screen readers, full WCAG audit, real MongoDB and end-to-end persistence remain Not Verified.
+- git diff --check reported no whitespace errors (only local CRLF conversion notices). Updated task checklist before P2-17. No commit, deployment or push performed.
+- Suggested atomic commit, not executed: test: harden Express errors and add release verification.
+
+### P2-17 — completed (2026-11-25, U007)
+
+- Rewrote the English README with product overview, actual system architecture/stack, functional requirements, directory tree, business rules, actual REST fallback/error documentation, reserved database/environment variables, fresh-checkout/local/production startup, testing commands and actual evidence. Clearly labeled missing P2-09–P2-14 work and full-stack release blockers.
+- Updated project-rules.md to U007 scope and honest release policy; checklist keeps missing backend/integration tasks unchecked. Updated audit with real review findings/root causes/fixes/retests, prompt table with task outcomes, and frontend README to current results. Original user messages remain in their original language, verbatim; agent-generated task records are explicitly labeled.
+- Prepared three atomic commit groups/messages plus GitHub/static-host/backend startup commands, without executing commit, push or deployment. Publishing uses only the verified static demo scope; backend deployment is labeled optional skeleton behavior.
+- Added verify-docs.mjs for eight documentation files, local Markdown link existence, nine required README sections, one ordered verbatim block per dated prompt-table row and parseable JSON evidence. Actual run passed: no broken links; seven prompt blocks with current U007 once (verification/P2-17-doc-check.json).
+- Tooling failure during documentation verification: first inline Node script piped through PowerShell matched zero Unicode-delimited prompt headings, failing 0 != 7. The same seven-block assertions passed when saved in a UTF-8 .mjs file. Then strengthened the persistent checker to compare unique ordered table IDs to verbatim blocks, so future actual prompts do not require hardcoded counts. Audit records this checker issue; no historical prompt was removed or invented.
+- Normalized new P2-15/P2-16 text/JSON outputs from PowerShell's UTF-16 redirection to UTF-8 without changing their observed contents. JSON reports parse successfully; historical P2-03–P2-08 evidence remains unchanged.
+- Suggested atomic commit, not executed: docs: record verified demo scope and release limitations.
+
+### U007 — changed-file inventory and remaining limitations
+
+- Frontend: App/controls/deck focus handling, pointer cleanup, native CSS/skip link, release accessibility tests, ESLint scope, browser/environment/docs helpers and frontend README. Removed five unused starter assets and unused placeholder CSS.
+- Backend: app JSON fallbacks, middleware/errors.js, package scripts, ESLint configuration, eight HTTP-skeleton integration tests and two error-boundary unit tests. No business API/model/connection/seed code added.
+- Documentation: README.md, project-rules.md, TASK_DECOMPOSITION.md, AI_FAILURE_AUDIT.md and PROMPT_LOG.md. Actual new outputs/screenshots/reports are under verification/P2-15-*, P2-16-* and P2-17-doc-check.json.
+- Verified current demo: 103 frontend tests, 10 backend skeleton tests, both lint checks, native backend syntax/setup, Vite production build, environment/Git-ignore checks and zero reported production dependency vulnerabilities. Production-browser sampled flows passed without console/network errors. No full security/WCAG claim.
+- Remaining blockers: P2-09–P2-14 absent; real API/database/reload persistence unverified. Lighthouse, physical touch, screen reader and complete accessibility/zoom audit not executed. No deployment/commit/push made. Other projects preserved.
+- Final housekeeping: stopped both owned Vite dev/production-preview sessions; QA browsers were closed by the helper. Lockfiles are unchanged. A diagnostic whitespace check that forced core.autocrlf=false treated existing CRLF terminators as whitespace; the normal repository-configured git diff --check rerun exited 0. No source defect was inferred from the override-only result.
+
+## U008 — verbatim user prompt
+
+```text
+Review the current Git repository and all uncommitted changes in the "Homework 2" project.
+
+
+
+We have already progressed through the first three development phases, but the changes have not been properly committed.
+
+
+
+**Git Workflow Requirements:**
+
+1. Inspect git status, git diff, staged changes, untracked files, and existing commit history.
+2. Read project-rules.md and TASK_DECOMPOSITION.md.
+3. Group actual changes into logically related atomic commits.
+4. Stage only the files or changes relevant to each commit.
+5. Use Conventional Commit messages.
+6. Execute the Git commits directly, rather than only suggesting commands.
+7. Run relevant verification checks where possible.
+8. Preserve all existing source code and functionality.
+
+**Suggested commit categories:**
+
+- Project initialization and configuration.
+- Domain contracts and business rules.
+- Unit tests.
+- Swipe engine and LIFO undo.
+- Frontend components and styling.
+- Keyboard and pointer interactions.
+- REST API contracts.
+- MongoDB models and configuration.
+- Express API implementation.
+- Full-stack integration.
+- Integration tests.
+- Project documentation.
+
+Adapt the commit breakdown to the actual changes in the repository.
+
+
+
+**Restrictions:**
+
+- Only commit changes related to Homework 2.
+- Do not include node_modules, dist, secret .env files, or temporary files.
+- Do not rewrite existing Git history.
+- Do not backdate commits or fabricate development history.
+- Do not create empty commits.
+- Do not push to GitHub.
+
+Save this actual request verbatim in PROMPT_LOG.md.
+
+
+
+Record the actual commit hashes and messages in the development log. Update TASK_DECOMPOSITION.md based on verified implementation status.
+
+
+
+After completion, show git log --oneline and git status.
+
+
+
+From now on, create an atomic Git commit after completing each logically independent development task.
+```
+
+### U008 — inspection and commit plan (2026-11-25)
+
+- Inspected complete status, staged diff (empty), unstaged diff, untracked inventory and existing history. Existing baseline e177567 (feat(homework-2): complete swipe deck through P2-08) already contains setup/domain/engine/initial UI/input work. Preserve it; no retrospective reconstruction/backdating.
+- Read rules/checklist and reviewed actual changes. Planned commits: frontend accessibility/focus regression fixes; backend safe errors/skeleton tests; release browser/environment tooling and evidence; English documentation/workflow and documentation verification.
+- P2-09–P2-14 remain unimplemented. No fake API/MongoDB/full-stack commits or checklist completions will be created. Other projects remain untouched.
+- User explicitly authorizes executing scoped atomic commits now and after each future independent development task. No push or existing-history rewrite is authorized.
+
+### U008 — verification and actual commit ledger
+
+- Fresh verification before committing: frontend 103/103 tests, lint and production build passed (28 modules, 367ms); backend 10/10 tests, lint, syntax and Express/CORS smoke passed. Existing release screenshots/audits are preserved as prior actual evidence, not presented as newly executed browser/audit runs.
+- `2fc519414d4582bcc8701c9bfc55371bfc1a0b23` — `fix(frontend): preserve deck focus and improve accessibility`. Committed 19 related frontend/test/P2-15-evidence paths; staged scope/source whitespace verified. Raw captured test outputs retain original terminal whitespace; they are permanent verification records, not temporary files.
+- `f36f5b7ba3c6e61fe1340b39a1516132434dec27` — `fix(backend): sanitize request errors and test Express skeleton`. Committed 12 backend/test/P2-16-backend-evidence paths; no application success endpoints or persistence are claimed.
+- `143a495ef5f72a30a512a94d2afdec9e3b5a4217` — `test(release): add browser and environment verification`. Committed 13 related lint/browser/environment/P2-16-evidence paths. Environment and documentation checks reran successfully; no private/generated paths tracked.
+- Final documentation checkpoint message: `docs(homework-2): record release scope and atomic commit workflow`. A commit cannot embed its own resulting hash in its contents. Its actual full hash/message and the complete four-commit ledger are recorded after creation in the local Git note attached to that checkpoint, under `refs/notes/homework-2-development`. Read it with `git log --show-notes=homework-2-development -1 -- "Homework 2/PROMPT_LOG.md"`. Notes add metadata; they do not rewrite the existing branch commits. No note or branch was pushed.
+- Checklist reviewed against source and tests: P2-01–P2-08 and P2-15–P2-17 complete for the local demo; P2-09–P2-14 remain unchecked. Updated standing rules to automatically create a scoped nonempty Conventional Commit after each future independent task.
+- Documentation checker now finds eight ordered actual prompt blocks, current U008 once, nine required README sections and no broken local links. Backend persistence, Lighthouse and physical-device limitations remain as previously documented; no new claim of those checks.
