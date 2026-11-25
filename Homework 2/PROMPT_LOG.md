@@ -18,6 +18,7 @@ Each actual user message received while working on this project is appended verb
 | U010 | 2026-11-25 | Repeat P2-15–P2-17 review | Full verbatim text below | Completed sequentially: fixed reproduced 320px overflow, frontend 103/backend 10 tests pass, lint/build/environment/audits/browser/docs checks pass. Task commits created locally; no push. Full-stack release still blocked by pending P2-09–P2-14. |
 | U011 | 2026-11-25 | Final acceptance check | Full verbatim text below | Full-stack acceptance NOT PASSED: P2-09–P2-14 unmet. Fresh frontend 103/backend 10 tests and lint/build/browser/environment checks pass; read-only MongoDB ping passes, but seed command is missing and app persistence absent. Four development entries verified (three distinct texts). Evidence/docs committed locally; no new feature or push. |
 | U012 | 2026-11-25 | Start frontend/backend | chạy be fe | Started Vite on 127.0.0.1:5173 and nodemon/Express on port 3001; HTTP checks passed. Both dev processes left running. |
+| U013 | 2026-11-25 | Explain application | app này là s v | Explained the fictional profile-swipe demo, action scoring/undo and current in-memory/backend limitations. No application feature changed. |
 
 | User request | Task | Codex result | Actual verification |
 | --- | --- | --- | --- |
@@ -761,3 +762,15 @@ chạy be fe
 - Started backend with npm.cmd run dev (retained session 49743); nodemon launched src/server.js and Express reported listening on port 3001.
 - Actual HTTP checks: frontend GET / returned 200; backend GET /api/profiles returned the expected current skeleton 404 JSON NOT_FOUND. This confirms listeners are running, not that the missing business API is implemented.
 - Left both development processes running for the user. No feature/source change or push. Broader tests/build not repeated for this process-start operation.
+
+## U013 — verbatim user prompt
+
+```text
+app này là s v
+```
+
+### U013 — explanation record
+
+- Explained current application behavior from the verified implementation: six fictional adult profiles; right/Like +10, left/Dislike -5, up/Skip -5; LIFO Undo restores the latest card and derived score.
+- Clarified that history is in memory and resets on reload; Express remains a skeleton without business API/database integration. No real matching or messaging is implemented.
+- Documentation-only interaction; no source change, server restart or push. Existing test results were not presented as a new test run.

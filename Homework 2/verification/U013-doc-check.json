@@ -1,0 +1,30 @@
+{
+  "documentsChecked": [
+    "README.md",
+    "project-rules.md",
+    "TASK_DECOMPOSITION.md",
+    "AI_FAILURE_AUDIT.md",
+    "PROMPT_LOG.md",
+    "DOMAIN_CONTRACT.md",
+    "frontend/README.md",
+    "frontend/public/profiles/ASSETS.md"
+  ],
+  "brokenLinks": [],
+  "requiredReadmeSections": 9,
+  "verbatimPromptBlocks": 13,
+  "currentPrompt": "U013",
+  "currentPromptOccurrences": 1,
+  "jsonEvidenceParsed": [
+    "P2-15-BROWSER.json",
+    "P2-16-backend-audit.json",
+    "P2-16-BROWSER.json",
+    "P2-16-environment.json",
+    "P2-16-frontend-audit.json",
+    "U010-P2-15-BROWSER.json",
+    "U010-P2-16-backend-audit.json",
+    "U010-P2-16-BROWSER.json",
+    "U010-P2-16-environment.json",
+    "U010-P2-16-frontend-audit.json"
+  ],
+  "scope": "Documentation structure and local link/JSON checks; narrative reviewed manually in English. Original user language preserved verbatim."
+}
