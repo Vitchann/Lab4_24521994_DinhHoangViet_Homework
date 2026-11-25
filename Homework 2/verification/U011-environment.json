@@ -1,0 +1,18 @@
+{
+  "examplesValid": true,
+  "ignoredPaths": [
+    "frontend/.env",
+    "backend/.env",
+    "backend/.env.production",
+    "frontend/.env.local",
+    "frontend/node_modules/probe",
+    "backend/node_modules/probe",
+    "frontend/dist/probe",
+    "frontend/coverage/probe"
+  ],
+  "forbiddenTracked": [],
+  "examplesTrackable": true,
+  "invalidPortRejected": true,
+  "mongoConnection": "Not Verified: MONGODB_URI is a reserved placeholder; no database code exists",
+  "secretNote": "Filename/ignore checks only; no private environment values read or printed. This is not a comprehensive secret scan."
+}

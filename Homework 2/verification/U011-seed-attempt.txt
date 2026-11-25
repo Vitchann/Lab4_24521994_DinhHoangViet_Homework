@@ -1,0 +1,13 @@
+npm.cmd : npm error Missing script: "seed"
+At line:2 char:1
++ npm.cmd run seed *> ../verification/U011-seed-attempt.txt; $seedExit  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (npm error Missing script: "seed":String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+npm error
+npm error To see a list of scripts, run:
+npm error   npm run
+npm error Log files were not written due to an error writing to the directory: 
+C:\Users\LENOVO\AppData\Local\npm-cache\_logs
+npm error You can rerun the command with `--loglevel=verbose` to see the logs in your terminal

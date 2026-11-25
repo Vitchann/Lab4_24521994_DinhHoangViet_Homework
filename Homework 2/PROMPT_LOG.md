@@ -16,6 +16,7 @@ Each actual user message received while working on this project is appended verb
 | U008 | 2026-11-25 | Atomic Git commits | Full verbatim text below | Preserved baseline; verified and committed actual frontend, backend and release-tooling groups. Final documentation checkpoint records this workflow and its own resulting hash through an attached local Git note. Automatic task commits authorized; no push/history rewrite. |
 | U009 | 2026-11-25 | GitHub commit and push | Full verbatim text below | Explicit authorization to commit/push to the existing GitHub origin. Verified previous Homework 2 commits use Dinh Hoang Viet as author/committer with no AI co-author trailers; publication verification follows in final output/local Git note. |
 | U010 | 2026-11-25 | Repeat P2-15–P2-17 review | Full verbatim text below | Completed sequentially: fixed reproduced 320px overflow, frontend 103/backend 10 tests pass, lint/build/environment/audits/browser/docs checks pass. Task commits created locally; no push. Full-stack release still blocked by pending P2-09–P2-14. |
+| U011 | 2026-11-25 | Final acceptance check | Full verbatim text below | In progress: verify all criteria and record actual acceptance gaps without adding features; no push. |
 
 | User request | Task | Codex result | Actual verification |
 | --- | --- | --- | --- |
@@ -696,3 +697,46 @@ Provide a final completion report covering implemented features, actual test res
 - Extended documentation verification to parse request-prefixed evidence JSON and accept an output prefix, preserving earlier reports. Fresh check passed: eight documents, nine required README sections, ten unique ordered actual prompt blocks/current U010 once, ten parseable release JSON artifacts and no broken local links. Output verification/U010-P2-17-doc-check.json. Frontend lint passed again after the helper change.
 - Final task commit message: `docs(release): refresh final review and startup guidance`. As with prior tasks, its actual self-hash and complete current task ledger are recorded after creation in the attached local Git note under refs/notes/homework-2-development; this avoids fabricating a self-referential hash. Read with git log --show-notes=homework-2-development -1 -- "Homework 2/PROMPT_LOG.md".
 - Stopped both owned dev/production-preview sessions; headless QA browsers closed through helper cleanup. No other project modifications, dependency reinstalls, lockfile changes, history rewrites, deployments or pushes. P2-09–P2-14 remain pending; Lighthouse/physical-device/screen-reader/full WCAG/real persistence checks remain Not Verified.
+
+## U011 — verbatim user prompt
+
+```text
+Perform a final acceptance check of the "Hẹn hò nhưng không yêu" project.
+
+- Verify all acceptance criteria in TASK_DECOMPOSITION.md.
+- Run all frontend and backend tests.
+- Run lint checks and production builds.
+- Check MongoDB connectivity and persistence.
+- Verify that all four development prompts are recorded verbatim in PROMPT_LOG.md.
+- Review AI_FAILURE_AUDIT.md and README.md.
+- Inspect Git status and commit history.
+- Commit remaining project changes using meaningful atomic commits.
+- Record this request and actual verification results in PROMPT_LOG.md.
+- Commit the final documentation changes.
+
+Do not add new features, fabricate results, rewrite Git history, or modify other projects.
+
+
+
+Provide the exact terminal commands required to seed the database and start the frontend and backend.
+
+
+
+Do not push to GitHub yet.
+```
+
+### U011 — acceptance intake (2026-11-25)
+
+- Inspected Git status/history and all task acceptance criteria. Homework 2 was clean at intake; unrelated Homework 1 changes and Homework 3 files remain excluded. Current baseline a4bf00c already includes prior review fixes.
+- Current code has no MongoDB connection/models/seed or business API success routes. Check connectivity read-only using installed Mongoose, and distinguish endpoint reachability from application persistence. Do not create application/database features to hide failed acceptance.
+- Audit the four actual development-request entries U001/U002/U007/U010 separately from advice/Git requests. U010 repeats U007; no unreceived backend-phase prompt will be invented.
+- Agent-generated work: execute acceptance checks and record their evidence; then update English acceptance/startup documentation. Commit each independent verification/documentation group under existing authorization. Do not push.
+
+### U011 — acceptance execution completed (2026-11-25)
+
+- Fresh frontend suite: 103 tests/6 files passed; backend: 10 tests/2 files passed. Both lint checks, backend syntax/HTTP-CORS smoke and Vite production build passed (28 modules, 261ms, CSS 11.07kB, JS 234.88kB/gzip 74.16kB). Native Node backend has no bundle build; did not invent one.
+- Existing dependency trees resolve via npm ls; no reinstall/clean-install claim. Environment/ignore checks passed. Fresh production-browser checks passed at 320/375/768/1440 with focus/skip link, reduced motion, sampled contrast, input/undo and no observed console/network errors; prior U010 visual evidence remains applicable to unchanged source.
+- Actual read-only Mongoose connection/admin ping using the example local URI succeeded. No database writes occurred. Application persistence is still absent, so ping success is not persistence acceptance.
+- Executed npm.cmd run seed: exit 1, Missing script: seed. No valid seed command exists; no feature/seeder added. Evidence U011-seed-attempt.txt and U011-mongodb.json.
+- Audited four development-request entries U001/U002/U007/U010 against their committed original records. All four bodies unchanged (line endings normalized only); U010 equals U007, leaving three distinct texts. No missing backend development interaction was invented. Evidence U011-prompt-audit.json.
+- Reviewed README/audit and every criterion in TASK_DECOMPOSITION.md. Full criterion matrix and evidence map: verification/U011-acceptance.md. Overall full-stack acceptance NOT PASSED: P2-09–P2-14 remain unimplemented, regardless of passing demo/skeleton tests and database ping. No new feature or source change was made.

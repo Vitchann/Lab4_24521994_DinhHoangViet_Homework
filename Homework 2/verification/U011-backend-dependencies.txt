@@ -1,0 +1,9 @@
+backend@1.0.0 C:\Users\LENOVO\OneDrive\Desktop\Lab4\Homework 2\backend
+├── cors@2.8.6
+├── dotenv@18.0.10
+├── express@5.3.0
+├── mongoose@8.24.11
+├── nodemon@3.1.14
+├── supertest@7.3.2
+└── vitest@5.1.1
+

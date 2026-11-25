@@ -1,0 +1,8 @@
+{
+  "configurationSource": "example placeholder only",
+  "readOnlyProbe": "Mongoose connection and admin ping only; no data writes",
+  "timeoutMS": 3000,
+  "connectivity": "passed",
+  "applicationPersistence": "Not Verified: no connection module, models, seed script, business routes or reload integration",
+  "seedScriptExists": false
+}

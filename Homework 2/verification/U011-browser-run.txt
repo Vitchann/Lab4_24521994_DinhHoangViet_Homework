@@ -1,0 +1,104 @@
+Connected to Chrome browser; creating an isolated page target.
+{
+  protocolVersion: '1.3',
+  product: 'Chrome/157.0.8103.79',
+  revision: '@6dc9bc3bdaea5c35ed6d41fceab2f7a3a2227c4f',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36',
+  jsVersion: '15.7.112.43'
+}
+{
+  "url": "http://127.0.0.1:4173",
+  "viewports": [
+    {
+      "width": 320,
+      "scrollWidth": 305,
+      "clientWidth": 305,
+      "imagesLoaded": true,
+      "card": "Linh, 26",
+      "columns": "minmax(0px, 1fr) minmax(300px, 390px)"
+    },
+    {
+      "width": 375,
+      "scrollWidth": 360,
+      "clientWidth": 360,
+      "imagesLoaded": true,
+      "card": "Linh, 26",
+      "columns": "minmax(0px, 1fr) minmax(300px, 390px)"
+    },
+    {
+      "width": 768,
+      "scrollWidth": 753,
+      "clientWidth": 753,
+      "imagesLoaded": true,
+      "card": "Linh, 26",
+      "columns": "292px 390px"
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1425,
+      "clientWidth": 1425,
+      "imagesLoaded": true,
+      "card": "Linh, 26",
+      "columns": "314.609px 390px 314.609px"
+    }
+  ],
+  "focus": "solid",
+  "reducedMotion": {
+    "animation": "none",
+    "transition": "0s"
+  },
+  "contrast": [
+    {
+      "selector": ".header-note",
+      "ratio": 4.62
+    },
+    {
+      "selector": ".site-footer",
+      "ratio": 4.62
+    },
+    {
+      "selector": ".history-note",
+      "ratio": 5.75
+    },
+    {
+      "selector": ".little-note p",
+      "ratio": 5.46
+    },
+    {
+      "selector": ".count-badge",
+      "ratio": 5.34
+    },
+    {
+      "selector": ".profile-bio",
+      "ratio": 5.04
+    },
+    {
+      "selector": ".interest-tags li",
+      "ratio": 5.35
+    },
+    {
+      "selector": ".action-button > span",
+      "ratio": 5
+    },
+    {
+      "selector": ".keyboard-help",
+      "ratio": 4.62
+    },
+    {
+      "selector": ".profile-meta",
+      "ratio": 4.87
+    }
+  ],
+  "diagnostics": {
+    "consoleErrors": [],
+    "exceptions": [],
+    "networkFailures": [],
+    "httpErrors": []
+  },
+  "nativeKeyboard": "passed",
+  "nativeMouse": "passed",
+  "emulatedTouch": "passed",
+  "undo": "passed",
+  "qaNoSandbox": true,
+  "note": "Headless Chrome/CDP; sampled text contrast only, not a WCAG audit. Physical touchscreen and screen-reader checks not performed."
+}

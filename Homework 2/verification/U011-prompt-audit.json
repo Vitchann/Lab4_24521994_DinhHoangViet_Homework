@@ -1,0 +1,33 @@
+{
+  "records": [
+    {
+      "id": "U001",
+      "originalCommittedRecord": "e177567",
+      "unchanged": true,
+      "sha256": "5b3487b796e43e40ee5a6a9464590c38be9fa3d461435ea751e81dd9aa82d270"
+    },
+    {
+      "id": "U002",
+      "originalCommittedRecord": "e177567",
+      "unchanged": true,
+      "sha256": "09755f77f6ef21639d5ced98e5d6f791fbfe2d9fc8d4ae149f90ec664f904314"
+    },
+    {
+      "id": "U007",
+      "originalCommittedRecord": "52ac3a2",
+      "unchanged": true,
+      "sha256": "48a110eaec22d386b1cdc2dc8b7b5acb880bd2088e9618922a0aaabcedd141af"
+    },
+    {
+      "id": "U010",
+      "originalCommittedRecord": "a4bf00c",
+      "unchanged": true,
+      "sha256": "48a110eaec22d386b1cdc2dc8b7b5acb880bd2088e9618922a0aaabcedd141af"
+    }
+  ],
+  "fourDevelopmentEntriesPresent": true,
+  "distinctTexts": 3,
+  "repeat": "U010 repeats U007; these are separate received requests, not distinct backend development phases",
+  "missingPhaseRequest": "No P2-09-P2-14 implementation prompt exists in the actual conversation/log; do not invent one",
+  "method": "Compared stored prompt text against its earlier committed record, normalizing CRLF/LF only; original user requests reviewed from conversation"
+}
