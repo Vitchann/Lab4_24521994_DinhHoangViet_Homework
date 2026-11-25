@@ -1,0 +1,35 @@
+{
+  "viewports": [
+    {
+      "width": 375,
+      "scrollWidth": 360,
+      "clientWidth": 360,
+      "imagesLoaded": true,
+      "card": "Linh, 26",
+      "columns": "minmax(0px, 1fr) minmax(300px, 390px)"
+    },
+    {
+      "width": 768,
+      "scrollWidth": 753,
+      "clientWidth": 753,
+      "imagesLoaded": true,
+      "card": "Linh, 26",
+      "columns": "292px 390px"
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1425,
+      "clientWidth": 1425,
+      "imagesLoaded": true,
+      "card": "Linh, 26",
+      "columns": "314.609px 390px 314.609px"
+    }
+  ],
+  "focus": "solid",
+  "nativeKeyboard": "passed",
+  "nativeMouse": "passed",
+  "emulatedTouch": "passed",
+  "undo": "passed",
+  "qaNoSandbox": true,
+  "note": "Headless Chrome/CDP; real physical touchscreen and screen-reader checks not performed."
+}
