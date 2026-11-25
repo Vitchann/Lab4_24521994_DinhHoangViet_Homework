@@ -14,6 +14,7 @@ Each actual user message received while working on this project is appended verb
 | U006 | 2026-11-25 | Commit scope advice | giờ nên commit những j | Confirmed 73 staged Homework 2 files and unstaged prompt-log additions. Recommended the completed P2-01–P2-08 milestone, including source/tests/assets, configuration/lockfiles and documentation/verification evidence. No staging, commit or push performed. |
 | U007 | 2026-11-25 | P2-15–P2-17 | Full verbatim text below | Completed sequential review/preparation for the local demo. Frontend 103 and backend skeleton 10 tests passed; lint/build, production audits, browser/environment/docs checks passed. Lighthouse not run. Full-stack release blocked by pending P2-09–P2-14. No commit/deploy/push. |
 | U008 | 2026-11-25 | Atomic Git commits | Full verbatim text below | Preserved baseline; verified and committed actual frontend, backend and release-tooling groups. Final documentation checkpoint records this workflow and its own resulting hash through an attached local Git note. Automatic task commits authorized; no push/history rewrite. |
+| U009 | 2026-11-25 | GitHub commit and push | Full verbatim text below | Explicit authorization to commit/push to the existing GitHub origin. Verified previous Homework 2 commits use Dinh Hoang Viet as author/committer with no AI co-author trailers; publication verification follows in final output/local Git note. |
 
 | User request | Task | Codex result | Actual verification |
 | --- | --- | --- | --- |
@@ -549,3 +550,17 @@ From now on, create an atomic Git commit after completing each logically indepen
 - Final documentation checkpoint message: `docs(homework-2): record release scope and atomic commit workflow`. A commit cannot embed its own resulting hash in its contents. Its actual full hash/message and the complete four-commit ledger are recorded after creation in the local Git note attached to that checkpoint, under `refs/notes/homework-2-development`. Read it with `git log --show-notes=homework-2-development -1 -- "Homework 2/PROMPT_LOG.md"`. Notes add metadata; they do not rewrite the existing branch commits. No note or branch was pushed.
 - Checklist reviewed against source and tests: P2-01–P2-08 and P2-15–P2-17 complete for the local demo; P2-09–P2-14 remain unchecked. Updated standing rules to automatically create a scoped nonempty Conventional Commit after each future independent task.
 - Documentation checker now finds eight ordered actual prompt blocks, current U008 once, nine required README sections and no broken local links. Backend persistence, Lighthouse and physical-device limitations remain as previously documented; no new claim of those checks.
+
+## U009 — verbatim user prompt
+
+```text
+[https://github.com/Vietomato/Lab4_24521994_DinhHoangViet_Homework](https://github.com/Vietomato/Lab4_24521994_DinhHoangViet_Homework)
+
+commit và push lên đây nhé, collaborator k có codex hay AI nào hết
+```
+
+### U009 — commit/push authorization and identity review (2026-11-25)
+
+- Confirmed origin fetch/push URL is exactly the repository provided by the user. Current branch is main; existing pending changes in Homework 1 and untracked Homework 3 remain excluded.
+- Inspected the five Homework 2 commits: author and committer are Dinh Hoang Viet <24521994@gm.uit.edu.vn>; commit bodies contain no Co-authored-by trailers or AI identity. Do not add Codex/AI co-author metadata or invite any collaborator. Preserve authentic development/audit records.
+- User authorizes this commit and push. Refresh origin first, inspect outgoing commits and stage only the new Homework 2 prompt/workflow/doc-check updates. No force push or history rewrite. The resulting commit hash and actual push verification are recorded after execution in its local development Git note/final output, avoiding self-referential hashes in this file.

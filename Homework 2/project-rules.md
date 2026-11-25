@@ -2,7 +2,7 @@
 
 The earlier `project_rule.md` is no longer present. This file now contains the project rules, preserving the requirements read during U001.
 
-U007 completed review/preparation P2-15–P2-17. Current request U008 authorizes executing atomic Git commits for actual pending Homework 2 changes and, going forward, after each logically independent development task. P2-09–P2-14 remain pending; do not claim a complete full-stack release. Keep changes inside Homework 2. No deployment, push, backdating or existing-history rewrite is authorized.
+U007 completed review/preparation P2-15–P2-17. U008 authorizes atomic Git commits after each logically independent development task. U009 additionally authorizes this commit/push to https://github.com/Vietomato/Lab4_24521994_DinhHoangViet_Homework on main. Do not add Codex/AI author or co-author metadata or invite collaborators. Future pushes still require separate authorization. P2-09–P2-14 remain pending; do not claim a complete full-stack release. Keep changes inside Homework 2. No deployment, backdating, force push or existing-history rewrite is authorized.
 
 Append each new actual user prompt verbatim once to PROMPT_LOG.md and maintain its prompt/results table.
 
