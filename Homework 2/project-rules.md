@@ -36,3 +36,16 @@ Append each new actual user prompt verbatim once to PROMPT_LOG.md and maintain i
 - Record console/network observations from the tested browser flows. Sampled contrast and automated checks support a WCAG 2.2 AA target, not a compliance declaration. Physical assistive-technology checks and Lighthouse must be marked Not Verified unless executed.
 - Record audit scope and execution date; a zero-vulnerability production dependency audit is not a complete security assessment.
 - Preserve authentic earlier user prompts verbatim, including their original language, while keeping agent-authored documentation and development records in English.
+
+## Mandatory Git Workflow
+
+- Create an atomic Git commit after completing each
+  logically independent development task.
+- Run relevant tests before committing.
+- Use Conventional Commit messages.
+- Stage only relevant files.
+- Record actual commit hashes in PROMPT_LOG.md.
+- Do not fabricate or backdate commit history.
+- Do not create empty commits.
+- Never commit credentials or generated dependencies.
+- Never push without explicit user permission.
