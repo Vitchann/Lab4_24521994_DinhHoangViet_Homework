@@ -1,0 +1,5 @@
+:root { font-family: 'Segoe UI', system-ui, sans-serif; color: #24382f; background: #f5f6f2; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { padding: 32px; }
+:focus-visible { outline: 3px solid #236c50; outline-offset: 4px; }

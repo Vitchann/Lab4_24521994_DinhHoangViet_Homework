@@ -1,0 +1,13 @@
+# Project rules — Esports Fair-Play Appeal Tribunal
+
+- Work only in Homework 3; preserve Homework 1 and Homework 2. Current request authorizes P3-01 through P3-05 sequentially. Stop before P3-06; do not implement the appeal form, scoring matrix, SLA engine, business API or database persistence yet.
+- JavaScript ES modules, React 19, Vite, React Router v7, native CSS, Express and Mongoose 8. Use Vitest/RTL and Supertest. Reuse the Homework 3 workspace toolchain; do not modify another project's dependencies.
+- Contract → applicable failing test → implementation → test/refactor/verify. Capture actual RED before routing behavior and distinguish module/import failures from assertion failures. Never invent tests, errors, user prompts, commits or historical implementation order.
+- Update TASK_DECOMPOSITION.md and append actual commands/results after every task. Append every actual user prompt verbatim once in PROMPT_LOG.md; distinguish user requests from agent-generated subtasks.
+- Create a real nonempty Conventional Commit with the hw3 scope after each independent task. Inspect staged scope; include only Homework 3 changes. Record real hashes after creation; use a local Git development note for a final commit's self-hash if needed. Do not push, backdate or rewrite history. Use configured user identity; no AI co-author trailers.
+- Record observed implementation failures, cause, evidence, correction and retest in AI_FAILURE_AUDIT.md. Mark unexecuted checks Not Verified; do not describe mocks as real persistence.
+- All player/case/evidence/sanction content is a prominently labeled fictional simulation. Himass/TanVuu are case-study reference labels only; no claim about real conduct or official outcomes. Do not invent sources, accusations or real-world sanctions. Use neutral local avatars and invented IDs; no actual photographs or unsupported evidence URLs.
+- Separate domain contracts, fixtures, routing, reusable dossier components and backend transport. Use stable IDs, immutable fixtures and derived render state; avoid redundant state/effect synchronization.
+- Implement Routes/Route/NavLink/Outlet/useParams, nested shared layout and /dossier/:playerID. Handle unknown IDs/routes and verify direct URL reload. Hosting must support SPA fallback.
+- Semantic HTML, accessible labels/landmarks, visible keyboard focus, readable contrast, responsive layouts and reduced-motion support. Target accessible behavior without claiming WCAG compliance from limited checks.
+- Keep environment values in .env files and provide safe .env.example placeholders. Ignore private credentials, node_modules, cache, dist and coverage. Never print secrets. Backend independently validates requests when API tasks are implemented later.

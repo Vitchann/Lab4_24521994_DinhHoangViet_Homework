@@ -1,0 +1,17 @@
+{
+  "name": "hw3-backend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^18.0.0",
+    "express": "^5.0.0",
+    "mongoose": "^8.0.0"
+  }
+}
