@@ -8,6 +8,7 @@ import path from 'node:path'
 const url = process.env.PREVIEW_URL || 'http://127.0.0.1:5173'
 const binary = process.env.CHROME_PATH || 'C:/Program Files/Google/Chrome/Application/chrome.exe'
 const output = path.resolve('../verification')
+const prefix = process.env.REPORT_PREFIX || 'P2-16'
 await mkdir(output, { recursive: true })
 assert.equal((await fetch(url)).status, 200, 'Preview must serve HTTP 200')
 const profile = await mkdtemp(path.join(tmpdir(), 'henho-browser-'))
@@ -27,9 +28,14 @@ try {
   socket = new WebSocket(`ws://127.0.0.1:${port}${browserTarget}`)
   await new Promise((resolve, reject) => { socket.addEventListener('open', resolve, { once: true }); socket.addEventListener('error', reject, { once: true }) })
   let id = 0
+  const diagnostics = { consoleErrors: [], exceptions: [], networkFailures: [], httpErrors: [] }
   const pending = new Map()
   socket.addEventListener('message', ({ data }) => {
     const message = JSON.parse(data)
+    if (message.method === 'Runtime.consoleAPICalled' && message.params.type === 'error') diagnostics.consoleErrors.push(message.params.args.map((arg) => arg.value ?? arg.description))
+    if (message.method === 'Runtime.exceptionThrown') diagnostics.exceptions.push(message.params.exceptionDetails.text)
+    if (message.method === 'Network.loadingFailed') diagnostics.networkFailures.push(message.params.errorText)
+    if (message.method === 'Network.responseReceived' && message.params.response.status >= 400) diagnostics.httpErrors.push({ url: message.params.response.url, status: message.params.response.status })
     const request = pending.get(message.id)
     if (request) {
       pending.delete(message.id)
@@ -56,6 +62,8 @@ try {
   const { targetId } = await send('Target.createTarget', { url: 'about:blank' })
   ;({ sessionId } = await send('Target.attachToTarget', { targetId, flatten: true }))
   await send('Page.enable')
+  await send('Runtime.enable')
+  await send('Network.enable')
   await send('Page.navigate', { url })
   for (let attempt = 0; attempt < 100; attempt++) {
     if (await evaluate('Boolean(document.querySelector(".profile-card"))')) break
@@ -69,13 +77,32 @@ try {
     assert.equal(result.scrollWidth, result.clientWidth, `No horizontal overflow at ${width}px`)
     assert.equal(result.imagesLoaded, true, 'Local profile images must load')
     const screenshot = await send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true })
-    await writeFile(path.join(output, `P2-08-${width}.png`), Buffer.from(screenshot.data, 'base64'))
+    await writeFile(path.join(output, `${prefix}-${width}.png`), Buffer.from(screenshot.data, 'base64'))
     viewports.push(result)
   }
   const key = async (key, code, windowsVirtualKeyCode) => {
     await send('Input.dispatchKeyEvent', { type: 'keyDown', key, code, windowsVirtualKeyCode })
     await send('Input.dispatchKeyEvent', { type: 'keyUp', key, code, windowsVirtualKeyCode })
   }
+  await key('Tab', 'Tab', 9)
+  assert.equal(await evaluate('document.activeElement.classList.contains("skip-link")'), true, 'First Tab reaches skip link')
+  await send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] })
+  const reducedMotion = await evaluate(`({ animation: getComputedStyle(document.querySelector('.card-entry')).animationName, transition: getComputedStyle(document.querySelector('.card-stack')).transitionDuration })`)
+  assert.equal(reducedMotion.animation, 'none')
+  assert.equal(reducedMotion.transition, '0s')
+  await send('Emulation.setEmulatedMedia', { features: [] })
+  const contrast = await evaluate(`(() => {
+    const rgb = text => text.match(/[\\d.]+/g).map(Number);
+    const mix = (fg,bg) => fg.slice(0,3).map((c,i) => c * (fg[3] ?? 1) + bg[i] * (1 - (fg[3] ?? 1)));
+    const luminance = c => c.map(v => { const s=v/255; return s<=.04045?s/12.92:((s+.055)/1.055)**2.4 }).reduce((a,v,i)=>a+v*[.2126,.7152,.0722][i],0);
+    return ['.header-note','.site-footer','.history-note','.little-note p','.count-badge','.profile-bio','.interest-tags li','.action-button > span','.keyboard-help','.profile-meta'].map(selector => {
+      const element=document.querySelector(selector); const chain=[]; for(let e=element;e;e=e.parentElement) chain.unshift(e);
+      const bg=chain.reduce((color,e)=>mix(rgb(getComputedStyle(e).backgroundColor),color),[255,255,255]);
+      const fg=mix(rgb(getComputedStyle(element).color),bg); const a=luminance(fg),b=luminance(bg);
+      return {selector,ratio:Number(((Math.max(a,b)+.05)/(Math.min(a,b)+.05)).toFixed(2))};
+    });
+  })()`)
+  for (const sample of contrast) assert.ok(sample.ratio >= 4.5, `Text contrast ${sample.selector}: ${sample.ratio}`)
   await evaluate('document.querySelector(".deck-layout").focus()')
   const focus = await evaluate('getComputedStyle(document.activeElement).outlineStyle')
   assert.equal(focus, 'solid', 'Keyboard focus must be visible')
@@ -99,8 +126,9 @@ try {
   assert.equal(await evaluate('document.querySelectorAll(".history-list li").length'), 3)
   await key('Backspace', 'Backspace', 8)
   assert.equal(await evaluate('document.querySelector(".score-value").textContent'), '+5')
-  const report = { viewports, focus, nativeKeyboard: 'passed', nativeMouse: 'passed', emulatedTouch: 'passed', undo: 'passed', qaNoSandbox: process.env.QA_NO_SANDBOX === '1', note: 'Headless Chrome/CDP; real physical touchscreen and screen-reader checks not performed.' }
-  await writeFile(path.join(output, 'P2-08-BROWSER.json'), JSON.stringify(report, null, 2))
+  for (const [category, errors] of Object.entries(diagnostics)) assert.equal(errors.length, 0, `${category}: ${JSON.stringify(errors)}`)
+  const report = { url, viewports, focus, reducedMotion, contrast, diagnostics, nativeKeyboard: 'passed', nativeMouse: 'passed', emulatedTouch: 'passed', undo: 'passed', qaNoSandbox: process.env.QA_NO_SANDBOX === '1', note: 'Headless Chrome/CDP; sampled text contrast only, not a WCAG audit. Physical touchscreen and screen-reader checks not performed.' }
+  await writeFile(path.join(output, `${prefix}-BROWSER.json`), JSON.stringify(report, null, 2))
   console.log(JSON.stringify(report, null, 2))
 } finally {
   if (socket?.readyState === WebSocket.OPEN) await closeBrowser?.().catch(() => {})
