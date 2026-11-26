@@ -5,3 +5,10 @@ Record actual implementation failures with evidence, root cause, correction and 
 No implementation failure observed at initialization. No claims of API or MongoDB verification.
 
 P3-03 expected RED context: the empty fixture/stub contract produced 16 failures, including attempts to mutate nonexistent fixture entries. The resumed tests strengthened invalid-input assertions to TypeError and reran before implementation; final data/validator passed all 17 frontend tests. These are recorded scaffolding/feature RED failures, not fabricated runtime regressions. No accidental implementation failure was observed in this task.
+
+| Task | Actual failure / evidence | Root cause | Correction | Retest |
+| --- | --- | --- | --- | --- |
+| P3-05 | First UI run: 1 failed / 32 passed; registry navigation could not find link named Dossier registry (P3-05-first-failure.txt) | Decorative count became part of the accessible link name, yielding Dossier registry02 | Hide decorative badge from accessible naming with aria-hidden=true; derive its visual count from fixtures | Same assertions unchanged: 33 frontend/1 backend tests pass; native browser navigation also passes |
+| P3-05 / QA tooling | First browser helper failed with SyntaxError: missing ) after argument list (P3-05-browser-first-failure.txt) | Nested quoting in a CDP-evaluated CSS selector produced invalid JavaScript | Use template literals with single-quoted selector expressions; no application/test assertion changed | Nine direct routes, keyboard/internal navigation, deep reload, four widths and error diagnostics pass; P3-05-BROWSER.json |
+
+Final scope: no real disciplinary finding is asserted. API/persistence, appeal form, SLA/matrix, physical devices, screen readers and full accessibility/Lighthouse checks were not implemented/verified; no fabricated result or history.

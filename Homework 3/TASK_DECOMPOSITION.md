@@ -32,12 +32,12 @@ Acceptance criteria: Capture RED evidence before implementation.
 
 Evidence / status: Complete 2026-11-26. Resolvable route stub plus 16 routing cases and strengthened semantic app smoke test executed before implementation: 17 failures/16 existing fixture passes, exit 1. Tests cover MemoryRouter/default BrowserRouter deep links, nested layout retention, NavLink active state, both dossier IDs, case isolation, evidence/sanction/timeline, invalid IDs, missing/unknown routes and recovery. Failures are DOM assertions, not missing imports. Output verification/P3-04-RED.txt.
 P3-05 — Routing and dossier UI
-- [ ] Complete and verify task.
+- [x] Complete and verify task.
 Scope: Implement React Router v7, shared layout and semantic dossier view.
 
 Acceptance criteria: Routing tests pass; deep links and 404 behavior verified.
 
-Evidence / status: Pending.
+Evidence / status: Complete 2026-11-26. React Router v7 Routes/Route/NavLink/Outlet/useParams, shared nested layout, dynamic dossier, registry/guide and both 404 states implemented. PlayerDossier/EvidenceList/SanctionSummary/CaseTimeline reusable semantic views. Final frontend 33/33 and backend scaffold 1/1 tests pass; lint/build/backend syntax pass. Production Chrome verifies nine direct routes, keyboard SPA navigation, dossier reload, no overflow at 320/375/768/1440 and reduced motion; screenshots visually inspected. Real API/appeal/SLA/persistence not implemented. Actual first failures/corrections in audit; evidence verification/P3-05-*. Stopped before P3-06.
 P3-06 — Appeal form contract and RED tests
 - [ ] Complete and verify task.
 Scope: Define fields, validation rules and cross-field dependencies; test invalid and valid values.

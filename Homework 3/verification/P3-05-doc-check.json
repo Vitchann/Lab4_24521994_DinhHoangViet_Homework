@@ -1,0 +1,99 @@
+{
+  "documentsChecked": [
+    "README.md",
+    "DOMAIN_CONTRACT.md",
+    "SIMULATION_DATA.md",
+    "TASK_DECOMPOSITION.md",
+    "PROMPT_LOG.md",
+    "AI_FAILURE_AUDIT.md",
+    "project_rule.md"
+  ],
+  "brokenLinks": [],
+  "prompts": [
+    "U001",
+    "U002",
+    "U003"
+  ],
+  "tasks": [
+    {
+      "task": "P3-01",
+      "done": true
+    },
+    {
+      "task": "P3-02",
+      "done": true
+    },
+    {
+      "task": "P3-03",
+      "done": true
+    },
+    {
+      "task": "P3-04",
+      "done": true
+    },
+    {
+      "task": "P3-05",
+      "done": true
+    },
+    {
+      "task": "P3-06",
+      "done": false
+    },
+    {
+      "task": "P3-07",
+      "done": false
+    },
+    {
+      "task": "P3-08",
+      "done": false
+    },
+    {
+      "task": "P3-09",
+      "done": false
+    },
+    {
+      "task": "P3-10",
+      "done": false
+    },
+    {
+      "task": "P3-11",
+      "done": false
+    },
+    {
+      "task": "P3-12",
+      "done": false
+    },
+    {
+      "task": "P3-13",
+      "done": false
+    },
+    {
+      "task": "P3-14",
+      "done": false
+    },
+    {
+      "task": "P3-15",
+      "done": false
+    },
+    {
+      "task": "P3-16",
+      "done": false
+    },
+    {
+      "task": "P3-17",
+      "done": false
+    },
+    {
+      "task": "P3-18",
+      "done": false
+    },
+    {
+      "task": "P3-19",
+      "done": false
+    }
+  ],
+  "frontendTests": 33,
+  "backendScaffoldTests": 1,
+  "evidenceJsonValid": true,
+  "scope": "Documentation/record consistency; no API, appeal or persistence completion inferred."
+}

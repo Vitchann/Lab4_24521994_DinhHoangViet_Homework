@@ -1,0 +1,18 @@
+node : file:///C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework%203/scripts/verify-browser.mjs:50
+At line:2 char:27
++ ... DBOX = '1'; node scripts/verify-browser.mjs *> verification/P3-05-bro ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (file:///C:/User...-browser.mjs:50:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+    if (result.exceptionDetails) throw new Error(JSON.stringify(result.exceptionDetails))
+                                       ^
+
+Error: {"exceptionId":1,"text":"Uncaught","lineNumber":0,"columnNumber":31,"scriptId":"5","exception":{"type":"object",
+"subtype":"error","className":"SyntaxError","description":"SyntaxError: missing ) after argument 
+list","objectId":"-6509485411363508832.2.2"}}
+    at evaluate (file:///C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework%203/scripts/verify-browser.mjs:50:40)
+    at async navigate (file:///C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework%203/scripts/verify-browser.mjs:70:18)
+    at async file:///C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework%203/scripts/verify-browser.mjs:78:42
+
+Node.js v24.18.0

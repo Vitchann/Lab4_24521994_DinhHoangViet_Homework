@@ -4,9 +4,9 @@ Actual user messages are stored verbatim once. Generated task plans and executed
 
 | ID | Date | Tasks | Actual prompt | Result |
 | --- | --- | --- | --- | --- |
-| U001 | 2026-11-25 | P3-01–P3-05 | Verbatim below | In progress; sequential task records follow. |
+| U001 | 2026-11-25 | P3-01–P3-05 | Verbatim below | Completed sequentially across pause/resume: setup/contracts/fixtures/routing RED/UI GREEN, actual hw3 commits. Stopped after P3-05; no push. |
 | U002 | 2026-11-25 | Pause | tôi ngắt bạn một chút, tí nx tôi prompt lại thì làm nhé | Paused immediately during P3-03 after the actual RED run; no task marked complete. |
-| U003 | 2026-11-26 | Resume | continue to do | Resuming P3-03–P3-05 from existing commits/stubs/RED evidence; no repeated setup/install. |
+| U003 | 2026-11-26 | Resume | continue to do | Completed P3-03–P3-05 from existing state: frontend 33/backend scaffold 1 tests pass; lint/build/syntax and production-browser/deep-link checks pass. No other project changed or pushed. |
 
 ## U001 — verbatim user prompt
 
@@ -127,3 +127,21 @@ continue to do
 - Added resolvable AppRoutes contract stub and 16 routing acceptance cases. Upgraded the initial generic text smoke assertion to a semantic named Simulation notice, preserving/strengthening its original intent for the final application.
 - Tests require nested shared-layout retention, primary NavLink active state, registry navigation, both dynamic dossiers, correct case-specific evidence, demonstration sanction/timestamps, six invalid IDs, three unknown/missing paths, recovery, simulation guide and default BrowserRouter initial deep linking.
 - Before any routing implementation: npm.cmd run test --workspace frontend -- --reporter=verbose, exit 1; **17 failed / 16 passed, 33 total**. All failures are missing expected UI/DOM assertions with resolved modules; existing fixtures still pass. Full output verification/P3-04-RED.txt. Intentional RED commit is requested by this task; no fabricated GREEN.
+
+### P3-05 — completed (2026-11-26)
+
+- P3-04 actual commit: f6129d7d5c59918d3bc72a0d29d8a223d9f27bfb — test(hw3): capture failing dossier routing contracts.
+- Implemented BrowserRouter wrapper and independent AppRoutes using Routes/Route/NavLink/Outlet/useParams, shared dashboard layout, overview/registry/guide, dynamic dossier and explicit player/route 404 recovery. Reusable PlayerDossier, EvidenceList, SanctionSummary and CaseTimeline use frozen fixtures and derived route selection; no redundant state/effect synchronization.
+- Added native CSS esports dashboard foundation with neutral synthetic avatars, visible focus/skip link, responsive side navigation/cards and reduced-motion override. Simulation notice is shared across all pages; per-case evidence/outcomes reiterate fictional provenance. No real allegation or disciplinary outcome asserted.
+- First feature run: 1 failed / 32 passed (P3-05-first-failure.txt). The decorative registry count polluted its accessible name. Fixed aria-hidden on the badge and derived count from fixture size; tests unchanged.
+- Final npm.cmd test: **33 frontend tests / 3 files passed, 1 backend scaffold test passed**, exit 0 (P3-05-GREEN.txt). npm.cmd run lint passed, npm.cmd run build passed (37 modules, 312ms; HTML 0.63kB, CSS 14.75kB, JS 280.10kB/gzip 88.16kB), npm.cmd run check:backend passed. No backend business behavior or real DB check claimed.
+- Started npm.cmd run preview --workspace frontend at 127.0.0.1:4174. Added independent local Chrome/CDP QA helper. Its first run failed a nested-selector quoting expression (P3-05-browser-first-failure.txt), corrected the helper rather than weakening checks.
+- QA_NO_SANDBOX=1 node scripts/verify-browser.mjs then passed nine direct routes, both dynamic IDs, invalid/missing paths and simulation guide; native Enter navigated internally without document reload; reloading the Beta deep link restored Beta. All eight overview/dossier width cases at 320/375/768/1440 had one main landmark and no horizontal overflow. Reduced motion none/0s; no observed console, JS, network or HTTP errors. Report P3-05-BROWSER.json and screenshots stored. Desktop overview/dossier, mobile overview and tablet dossier visually inspected.
+- Browser helper lint passed after repair. Physical touch/screen-reader/Lighthouse/full WCAG and real persistence remain Not Verified. Static deployment requires documented index.html fallback; unknown UI routes show a client 404 with HTTP 200 SPA fallback.
+- Updated checklist/README/audit before final task commit. Final message: feat(hw3): implement nested dossier dashboard and routing. The resulting self-hash and full actual five-task ledger are recorded after creation in its attached local Git development note, avoiding invented self-referential hashes. No push or history rewrite.
+
+### Changed files / handoff
+
+- Project docs/config/lockfile plus isolated frontend/backend npm workspaces. Domain models/validator, frozen data/provenance, route tests/tree, reusable components/pages/CSS and browser QA helper. Real outputs/screenshots under verification/.
+- P3-06 onward remains unchecked; no appeal form, matrix, live SLA, business API or MongoDB persistence added. Homework 1/2 source and runtime processes were not modified by this work; pre-existing Homework 1 task-list modification preserved.
+- Final document/evidence consistency check passed: seven documentation files, no broken local Markdown links, three actual prompt blocks, exactly P3-01–P3-05 checked and P3-06–P3-19 pending; parsed browser report and verified captured 33/1 test counts. Evidence verification/P3-05-doc-check.json. Owned preview stopped; QA browser closed. New P3-05 text captures normalized to UTF-8 without changing observed content.
