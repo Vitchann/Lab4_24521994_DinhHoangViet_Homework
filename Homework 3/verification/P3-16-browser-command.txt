@@ -1,0 +1,146 @@
+{
+  "browser": "Chrome/157.0.8103.79",
+  "base": "http://127.0.0.1:4174",
+  "routes": [
+    {
+      "route": "/",
+      "heading": "Fair play starts with a fair review.",
+      "directAccess": "passed"
+    },
+    {
+      "route": "/dossiers",
+      "heading": "Case dossiers",
+      "directAccess": "passed"
+    },
+    {
+      "route": "/dossier/sim-himass",
+      "heading": "Player Alpha",
+      "directAccess": "passed"
+    },
+    {
+      "route": "/dossier/sim-tanvuu",
+      "heading": "Player Beta",
+      "directAccess": "passed"
+    },
+    {
+      "route": "/dossier/unknown",
+      "heading": "Dossier not found",
+      "directAccess": "passed"
+    },
+    {
+      "route": "/dossier/toString",
+      "heading": "Dossier not found",
+      "directAccess": "passed"
+    },
+    {
+      "route": "/dossier",
+      "heading": "Page not found",
+      "directAccess": "passed"
+    },
+    {
+      "route": "/missing",
+      "heading": "Page not found",
+      "directAccess": "passed"
+    },
+    {
+      "route": "/about",
+      "heading": "About this simulation",
+      "directAccess": "passed"
+    }
+  ],
+  "viewports": [
+    {
+      "route": "/",
+      "width": 320,
+      "client": 305,
+      "scroll": 305,
+      "main": 1
+    },
+    {
+      "route": "/dossier/sim-himass",
+      "width": 320,
+      "client": 305,
+      "scroll": 305,
+      "main": 1
+    },
+    {
+      "route": "/",
+      "width": 375,
+      "client": 360,
+      "scroll": 360,
+      "main": 1
+    },
+    {
+      "route": "/dossier/sim-himass",
+      "width": 375,
+      "client": 360,
+      "scroll": 360,
+      "main": 1
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "client": 753,
+      "scroll": 753,
+      "main": 1
+    },
+    {
+      "route": "/dossier/sim-himass",
+      "width": 768,
+      "client": 753,
+      "scroll": 753,
+      "main": 1
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "client": 1425,
+      "scroll": 1425,
+      "main": 1
+    },
+    {
+      "route": "/dossier/sim-himass",
+      "width": 1440,
+      "client": 1425,
+      "scroll": 1425,
+      "main": 1
+    }
+  ],
+  "keyboardNavigation": "passed without document reload",
+  "deepLinkReload": "passed for Player Beta",
+  "persistedSubmission": "passed native typing, validation, focus, persisted SUBMITTED receipt and same ID after reload",
+  "persistedID": "e14221fa-577f-4126-b2e9-c238679d9725",
+  "expiryGuard": "passed stale-clock rejection for a separate unsubmitted dossier",
+  "reducedMotion": {
+    "animation": "none",
+    "transition": "0s"
+  },
+  "expectedHttp": [
+    {
+      "url": "http://127.0.0.1:3002/api/dossiers/unknown",
+      "status": 400
+    },
+    {
+      "url": "http://127.0.0.1:3002/api/dossiers/toString",
+      "status": 400
+    }
+  ],
+  "errors": {
+    "console": [],
+    "exceptions": [],
+    "network": [],
+    "http": []
+  },
+  "qaNoSandbox": true,
+  "limitations": "Headless Chrome only; no physical-device/screen-reader/Lighthouse/full WCAG verification. API 400/404 for the two explicitly requested invalid IDs are expected and listed separately. SPA unknown routes intentionally receive HTTP 200 index fallback and show a client 404 view. Database evidence is recorded by the full-stack runner separately."
+}
+{
+  "database": "real MongoDB, isolated hw3_test_ database",
+  "browserAppealID": "e14221fa-577f-4126-b2e9-c238679d9725",
+  "actualAppeals": 1,
+  "status": "SUBMITTED",
+  "persistedAfterAllOriginalConnectionsClosed": true,
+  "originalFixedDeadlinePreserved": true,
+  "cleanup": "runner closes its listener/connections and drops only its generated guarded test database",
+  "limitations": "No public deployment, real disciplinary data or authentication. Existing main simulation database is untouched by browser QA."
+}

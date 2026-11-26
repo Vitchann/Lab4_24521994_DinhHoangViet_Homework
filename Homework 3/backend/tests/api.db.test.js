@@ -94,4 +94,12 @@ describe.skipIf(process.env.RUN_MONGODB_TESTS !== '1')('REST API with real Mongo
     expect((await request(app).get('/api/appeals/not-a-uuid').expect(400)).body.error.code).toBe('INVALID_ID')
     expect((await request(app).get('/api/appeals/00000000-0000-4000-8000-000000000000').expect(404)).body.error.code).toBe('NOT_FOUND')
   })
+  it('rejects prototype-named unexpected fields as validation errors', async () => {
+    const payload = Object.fromEntries([...Object.entries(validAppeal()), ['__proto__', 'unexpected']])
+    expect((await request(app).post(`${base}/appeals`).send(payload).expect(422)).body.error.code).toBe('VALIDATION_FAILED')
+    expect(await database.models.Appeal.countDocuments()).toBe(0)
+  })
+  it('returns a safe 400 for malformed URL percent encoding', async () => {
+    expect((await request(app).get('/api/dossiers/%ZZ').expect(400)).body.error.code).toBe('INVALID_ID')
+  })
 })

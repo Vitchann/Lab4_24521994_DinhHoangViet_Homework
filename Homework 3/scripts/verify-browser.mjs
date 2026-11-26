@@ -6,7 +6,7 @@ import path from 'node:path'
 
 const base = process.env.PREVIEW_URL || 'http://127.0.0.1:4174'
 const output = path.resolve('verification')
-const prefix = process.env.QA_REPORT_PREFIX || 'P3-10'
+const prefix = process.env.QA_REPORT_PREFIX || 'P3-16'
 assert.match(prefix, /^P3-\d{2}$/)
 await mkdir(output, { recursive: true })
 const profile = await mkdtemp(path.join(tmpdir(), 'hw3-browser-'))
@@ -25,13 +25,18 @@ try {
   await new Promise((resolve, reject) => { socket.addEventListener('open', resolve, { once: true }); socket.addEventListener('error', reject, { once: true }) })
   const pending = new Map()
   const errors = { console: [], exceptions: [], network: [], http: [] }
+  const expectedHttp = []
   let id = 0, sessionId
   socket.addEventListener('message', ({ data }) => {
     const message = JSON.parse(data)
     if (message.method === 'Runtime.consoleAPICalled' && message.params.type === 'error') errors.console.push(message.params.args.map((arg) => arg.value ?? arg.description))
     if (message.method === 'Runtime.exceptionThrown') errors.exceptions.push(message.params.exceptionDetails.text)
     if (message.method === 'Network.loadingFailed') errors.network.push(message.params.errorText)
-    if (message.method === 'Network.responseReceived' && message.params.response.status >= 400) errors.http.push(message.params.response.url)
+    if (message.method === 'Network.responseReceived' && message.params.response.status >= 400) {
+      const { url, status } = message.params.response
+      if ([400, 404].includes(status) && ['/api/dossiers/unknown', '/api/dossiers/toString'].includes(new URL(url).pathname)) expectedHttp.push({ url, status })
+      else errors.http.push({ url, status })
+    }
     const request = pending.get(message.id)
     if (request) {
       pending.delete(message.id)
@@ -51,6 +56,13 @@ try {
     const result = await send('Runtime.evaluate', { expression, returnByValue: true, awaitPromise: true })
     if (result.exceptionDetails) throw new Error(JSON.stringify(result.exceptionDetails))
     return result.result.value
+  }
+  const waitFor = async (expression) => {
+    for (let attempt = 0; attempt < 100; attempt++) {
+      if (await evaluate(expression)) return
+      await delay(50)
+    }
+    throw new Error(`Browser condition timed out: ${expression}`)
   }
   const version = await send('Browser.getVersion')
   const { targetId } = await send('Target.createTarget', { url: 'about:blank' })
@@ -102,6 +114,7 @@ try {
   await send('Page.reload', { ignoreCache: true })
   await waitHeading('Player Beta')
   assert.equal(await evaluate('location.pathname'), '/dossier/sim-tanvuu')
+  await waitFor(`document.querySelector('button[type="submit"]')?.disabled === false`)
   // Exercise native typing against the production React form, not synthetic state setters.
   await evaluate(`document.querySelector('button[type="submit"]').click()`)
   assert.equal(await evaluate(`Boolean(document.querySelector('[role="alert"]'))`), true)
@@ -111,21 +124,30 @@ try {
     await send('Input.insertText', { text })
   }
   await evaluate(`document.querySelector('[name="acknowledged"]').click(); document.querySelector('button[type="submit"]').click()`)
-  assert.match(await evaluate(`document.querySelector('[role="status"]')?.textContent`), /Local review generated/)
+  await waitFor(`document.querySelector('.review-success [role="status"]')?.textContent.includes('Persisted appeal status: SUBMITTED')`)
+  const persistedID = await evaluate(`document.querySelector('.review-success dd').textContent`)
+  assert.match(persistedID, /^[a-f0-9-]{36}$/)
+  await send('Page.reload', { ignoreCache: true })
+  await waitHeading('Player Beta')
+  await waitFor(`document.querySelector('.review-success [role="status"]')?.textContent.includes('Persisted appeal status: SUBMITTED')`)
+  assert.equal(await evaluate(`document.querySelector('.review-success dd').textContent`), persistedID)
+  assert.equal(await evaluate(`document.querySelector('button[type="submit"]').disabled`), true)
   assert.equal(await evaluate(`document.querySelector('[role="timer"]').getAttribute('aria-live')`), 'off')
-  const localReview = 'passed native typing, validation, focus and local-only receipt'
+  const persistedSubmission = 'passed native typing, validation, focus, persisted SUBMITTED receipt and same ID after reload'
   // A stale displayed countdown must never authorize a late review.
+  await navigate('/dossier/sim-himass', 'Player Alpha')
+  await waitFor(`document.querySelector('button[type="submit"]')?.disabled === false`)
   await evaluate(`Date.now = () => Date.parse('2026-12-07T00:00:00.000Z'); document.querySelector('form').requestSubmit()`)
   assert.equal(await evaluate(`document.querySelector('button[type="submit"]').disabled`), true)
   assert.equal(await evaluate(`Boolean(document.querySelector('[role="status"]'))`), false)
   assert.match(await evaluate(`document.querySelector('.sla-panel').textContent`), /Deadline expired/)
-  const expiryGuard = 'passed stale-clock submission rejection'
+  const expiryGuard = 'passed stale-clock rejection for a separate unsubmitted dossier'
   await send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] })
   const reducedMotion = await evaluate('({animation:getComputedStyle(document.querySelector("main")).animationName,transition:getComputedStyle(document.querySelector("main")).transitionDuration})')
   assert.equal(reducedMotion.animation, 'none')
   assert.equal(reducedMotion.transition, '0s')
   for (const [kind, list] of Object.entries(errors)) assert.equal(list.length, 0, `${kind}: ${JSON.stringify(list)}`)
-  const report = { browser: version.product, base, routes: routes.map(([route, heading]) => ({ route, heading, directAccess: 'passed' })), viewports, keyboardNavigation: 'passed without document reload', deepLinkReload: 'passed for Player Beta', localReview, expiryGuard, reducedMotion, errors, qaNoSandbox: process.env.QA_NO_SANDBOX === '1', limitations: 'Headless Chrome only; no physical-device/screen-reader/Lighthouse/full WCAG or database verification. SPA unknown routes intentionally receive HTTP 200 index fallback and show a client 404 view.' }
+  const report = { browser: version.product, base, routes: routes.map(([route, heading]) => ({ route, heading, directAccess: 'passed' })), viewports, keyboardNavigation: 'passed without document reload', deepLinkReload: 'passed for Player Beta', persistedSubmission, persistedID, expiryGuard, reducedMotion, expectedHttp, errors, qaNoSandbox: process.env.QA_NO_SANDBOX === '1', limitations: 'Headless Chrome only; no physical-device/screen-reader/Lighthouse/full WCAG verification. API 400/404 for the two explicitly requested invalid IDs are expected and listed separately. SPA unknown routes intentionally receive HTTP 200 index fallback and show a client 404 view. Database evidence is recorded by the full-stack runner separately.' }
   await writeFile(path.join(output, `${prefix}-BROWSER.json`), JSON.stringify(report, null, 2))
   console.log(JSON.stringify(report, null, 2))
 } finally {

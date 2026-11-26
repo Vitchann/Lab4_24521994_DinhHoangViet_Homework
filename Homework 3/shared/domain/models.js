@@ -4,7 +4,7 @@
  * @typedef {Readonly<{dossierID:string, playerID:string, title:string, summary:string, status:'DEMO_REVIEW', openedAt:string, appealDeadline:string, evidenceIDs:ReadonlyArray<string>, sanctionID:string, timeline:ReadonlyArray<TimelineEvent>, simulation:true}>} Dossier
  * @typedef {Readonly<{id:string, dossierID:string, title:string, kind:'REPLAY'|'DOCUMENT'|'STATEMENT', summary:string, reference:string, availability:'SIMULATED', simulation:true}>} Evidence
  * @typedef {Readonly<{id:string, dossierID:string, type:'CAUTION'|'TEMPORARY_RESTRICTION', description:string, durationDays:number, issuedAt:string, effectiveUntil:string|null, status:'DEMONSTRATION', simulation:true}>} Sanction
- * @typedef {Readonly<{id:string, dossierID:string, playerID:string, grounds:string, evidenceIDs:ReadonlyArray<string>, submittedAt:string|null, status:'DRAFT'|'SUBMITTED'|'UNDER_REVIEW'|'RESOLVED', simulation:true}>} Appeal
+ * @typedef {Readonly<AppealDraft & {id:string, dossierID:string, playerID:string, submittedAt:string, status:'SUBMITTED'|'UNDER_REVIEW'|'RESOLVED', simulation:true}>} Appeal
  * @typedef {{applicantName:string, applicantEmail:string, relationship:'PLAYER'|'REPRESENTATIVE', authorized:boolean, reason:'PROCESS'|'NEW_EVIDENCE'|'PROPORTIONALITY', grounds:string, evidenceIDs:string[], requestedOutcome:'REVIEW'|'REDUCE'|'REMOVE', acknowledged:boolean}} AppealDraft
  * AppealDraft is local form input, not a persisted Appeal or an adjudication.
  */

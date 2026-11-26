@@ -2,6 +2,8 @@
 
 Written before fixture/routing implementation. JSDoc domain models live in frontend/src/domain/models.js; these are not Mongoose schemas.
 
+U005 current implementation: common contracts now live in shared/domain with frontend re-exports. Actual Mongoose schemas live in backend/src/models. API_CONTRACT.md supersedes the original future-only API/persistence boundary below; APPEAL_CONTRACT.md records the transition from local review to persisted submission. P3-11 through P3-16 implement and verify REST retrieval, independent server validation/deadlines, one appeal per dossier, database storage and API-driven Context UI. Historical P3-02 scope below is retained for context, not a claim that these later features are still missing.
+
 ## Requirements and boundaries
 
 The current product is a read-only educational esports case-review dashboard. Users can browse a registry, navigate to a player dossier, inspect evidence metadata, demonstration sanctions and a timeline, and recover from unknown IDs/routes. Shared navigation must work without full page reload; direct dossier URLs must also work on a fresh load. Responsive semantic layouts, visible focus, readable contrast and clear simulation labeling are non-functional requirements.

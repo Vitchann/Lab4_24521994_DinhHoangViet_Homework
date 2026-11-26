@@ -109,12 +109,12 @@ Acceptance criteria: Verify valid/invalid submissions and reload persistence whe
 
 Evidence / status: Complete 2026-11-26. API-driven normalized overview/matrix and individual cases, abortable loaders and error/empty/retry states. Context form sends one POST, validates server responses, reads back ambiguous errors and restores persisted status on remount. Frontend RED 10 failed / 88 passed after test setup correction; final 98 frontend + 6 backend pass (39 DB cases explicitly skipped in standard command). Lint/build pass. Existing routing/form/timing assertions migrated to async persisted behavior. Evidence P3-15-*.
 P3-16 — Integration and timer verification
-- [ ] Complete and verify task.
+- [x] Complete and verify task.
 Scope: Test routing, context form, matrix, SLA and API interactions together.
 
 Acceptance criteria: Actual test results recorded; no claims based only on mock persistence.
 
-Evidence / status: Pending.
+Evidence / status: Complete 2026-11-26. Final 106 frontend tests / 12 files and 48 real MongoDB-backed backend tests / 6 files pass. Standard command reports 106 frontend + 6 backend passes and 42 opt-in skips separately. Added network/invalid-response/server rejection/race/abort/matrix API cases; reproduced and fixed three HTTP classification/prototype-field defects and one mismatched dossier-status defect. Actual Chrome/Express/MongoDB submission and reload retain same ID; closing all connections then reconnecting preserves record. CLI startup/CORS/no-store, lint/build/syntax pass. No unexpected browser errors; explicit invalid-ID 400s separately recorded. Evidence P3-16-*. Stop here; P3-17 onward remains pending.
 P3-17 — UI, responsiveness and accessibility
 - [ ] Complete and verify task.
 Scope: Refine dashboard layout, labels, focus, validation feedback and reduced motion.

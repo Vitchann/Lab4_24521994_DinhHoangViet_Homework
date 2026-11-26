@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { FormContext } from '../context/FormContext.js'
 import { createAppealValues, validateAppeal } from '../domain/appealValidation.js'
 import InputField from './InputField.jsx'
@@ -7,14 +7,19 @@ import AppealSlaTimer from './AppealSlaTimer.jsx'
 import { useAppealSlaTimer } from '../hooks/useAppealSlaTimer.js'
 import { calculateSla } from '../domain/appealSla.js'
 import { useApiResource } from '../hooks/useApiResource.js'
-import { requestApi, parseAppeal } from '../api/client.js'
+import { requestApi, parseAppeal, ApiError } from '../api/client.js'
 import RemoteState from './RemoteState.jsx'
 
 export default function SimpleForm({ dossier, evidence }) {
   const [values, setValues] = useState(createAppealValues)
   const [attempted, setAttempted] = useState(false)
   const [submission, setSubmission] = useState({ status: 'idle' })
-  const statusResource = useApiResource(`/dossiers/${dossier.playerID}/appeal`, parseAppeal)
+  const parseStatus = useCallback((data, path) => {
+    const appeal = parseAppeal(data, path)
+    if (appeal && appeal.dossierID !== dossier.dossierID) throw new ApiError('The API returned an invalid dossier status.', 502, 'INVALID_RESPONSE')
+    return appeal
+  }, [dossier.dossierID])
+  const statusResource = useApiResource(`/dossiers/${dossier.playerID}/appeal`, parseStatus)
   const pending = useRef(false)
   const requestController = useRef(null)
   useEffect(() => () => requestController.current?.abort(), [])
@@ -42,7 +47,7 @@ export default function SimpleForm({ dossier, evidence }) {
     requestController.current = controller
     setSubmission({ status: 'pending' })
     try {
-      const appeal = await requestApi(`/dossiers/${dossier.playerID}/appeals`, { method: 'POST', body: JSON.stringify(values), signal: controller.signal }, parseAppeal)
+      const appeal = await requestApi(`/dossiers/${dossier.playerID}/appeals`, { method: 'POST', body: JSON.stringify(values), signal: controller.signal }, parseStatus)
       if (!controller.signal.aborted) setSubmission({ status: 'success', appeal })
     } catch (error) {
       if (!controller.signal.aborted) {

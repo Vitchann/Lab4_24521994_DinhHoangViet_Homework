@@ -1,0 +1,85 @@
+
+> hw3-esports-fair-play-tribunal@0.1.0 test:db
+> node scripts/test-db.mjs
+
+
+ RUN  v5.1.2 C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework 3/backend
+
+ ❯ tests/persistence.db.test.js (1 test | 1 failed) 761ms
+   ❯ real persistence across connections and app recreation (1)
+     × returns 503 after disconnection then restores the same stored status after reconnect 161ms
+ ❯ tests/api.db.test.js (38 tests | 2 failed) 1785ms
+   ❯ REST API with real MongoDB (38)
+     × rejects prototype-named unexpected fields as validation errors 29ms
+     × returns a safe 400 for malformed URL percent encoding 12ms
+npm.cmd : 
+At line:2 char:1
++ npm.cmd run test:db *> verification/P3-16-backend-first-failure.txt;  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > rejects prototype-named unexpected fields as validation 
+errors
+Error: expected 422 "Unprocessable Entity", got 500 "Internal Server Error"
+ ❯ tests/api.db.test.js:99:70
+     97|   it('rejects prototype-named unexpected fields as validation errors',…
+     98|     const payload = Object.fromEntries([...Object.entries(validAppeal(…
+     99|     expect((await request(app).post(`${base}/appeals`).send(payload).e…
+       |                                                                      ^
+    100|     expect(await database.models.Appeal.countDocuments()).toBe(0)
+    101|   })
+ ❯ Test._assertStatus ../node_modules/supertest/lib/test.js:535:14
+ ❯ ../node_modules/supertest/lib/test.js:591:13
+ ❯ Test._assertFunction ../node_modules/supertest/lib/test.js:568:13
+ ❯ Test.assert ../node_modules/supertest/lib/test.js:432:23
+ ❯ localAssert ../node_modules/supertest/lib/test.js:382:38
+ ❯ Server.<anonymous> ../node_modules/supertest/lib/test.js:126:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > returns a safe 400 for malformed URL percent encoding
+Error: expected 400 "Bad Request", got 500 "Internal Server Error"
+ ❯ tests/api.db.test.js:103:57
+    101|   })
+    102|   it('returns a safe 400 for malformed URL percent encoding', async ()…
+    103|     expect((await request(app).get('/api/dossiers/%ZZ').expect(400)).b…
+       |                                                         ^
+    104|   })
+    105| })
+ ❯ Test._assertStatus ../node_modules/supertest/lib/test.js:535:14
+ ❯ ../node_modules/supertest/lib/test.js:591:13
+ ❯ Test._assertFunction ../node_modules/supertest/lib/test.js:568:13
+ ❯ Test.assert ../node_modules/supertest/lib/test.js:432:23
+ ❯ localAssert ../node_modules/supertest/lib/test.js:382:38
+ ❯ Server.<anonymous> ../node_modules/supertest/lib/test.js:126:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/persistence.db.test.js > real persistence across connections and app recreation > returns 503 after 
+disconnection then restores the same stored status after reconnect
+Error: expected 503 "Service Unavailable", got 500 "Internal Server Error"
+ ❯ tests/persistence.db.test.js:17:53
+     15|     const before = await request(app).post('/api/dossiers/sim-himass/a…
+     16|     await database.connection.close()
+     17|     expect((await request(app).get('/api/dossiers').expect(503)).body.…
+       |                                                     ^
+     18|     reopened = await connectDatabase(database.uri)
+     19|     const restarted = createApp({ models: reopened.models })
+ ❯ Test._assertStatus ../node_modules/supertest/lib/test.js:535:14
+ ❯ ../node_modules/supertest/lib/test.js:591:13
+ ❯ Test._assertFunction ../node_modules/supertest/lib/test.js:568:13
+ ❯ Test.assert ../node_modules/supertest/lib/test.js:432:23
+ ❯ localAssert ../node_modules/supertest/lib/test.js:382:38
+ ❯ Server.<anonymous> ../node_modules/supertest/lib/test.js:126:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  2 failed | 4 passed (6)
+      Tests  3 failed | 45 passed (48)
+   Start at  22:51:01
+   Duration  5.75s (import 76%, tests 20%, transform 2%, worker 1%)
+

@@ -8,7 +8,8 @@ Actual user messages are stored verbatim once. Generated task plans and executed
 | U002 | 2026-11-25 | Pause | tôi ngắt bạn một chút, tí nx tôi prompt lại thì làm nhé | Paused immediately during P3-03 after the actual RED run; no task marked complete. |
 | U003 | 2026-11-26 | Resume | continue to do | Completed P3-03–P3-05 from existing state: frontend 33/backend scaffold 1 tests pass; lint/build/syntax and production-browser/deep-link checks pass. No other project changed or pushed. |
 | U004 | 2026-11-26 | P3-06 through P3-10 | Verbatim below | Completed sequentially: contracts/RED, Context form, pure matrix, SLA RED and absolute-clock timer. Final 88 frontend + 1 backend tests, lint/build/syntax and production Chrome checks pass. Actual hw3 task commits; stopped after P3-10, no push. |
-| U005 | 2026-11-26 | P3-11 through P3-16 | Verbatim below | In progress; sequential full-stack tasks with real verification and commits. |
+| U005 | 2026-11-26 | P3-11 through P3-16 | Verbatim below | Completed sequentially with six hw3 task commits. Final 106 frontend tests and 48 real MongoDB-backed backend tests pass; lint/build/syntax, actual CLI startup and production Chrome submission/reload/reconnect pass. Stopped after P3-16; no push. |
+| U006 | 2026-11-26 | Status during P3-16 | Verbatim below | Reported P3-11 through P3-15 committed and P3-16 final documentation/commit in progress; continued original scope. |
 
 ## U001 — verbatim user prompt
 
@@ -432,3 +433,38 @@ Read canonical project_rule.md, task decomposition, prompt/audit/contracts and e
 - First integrated run: 17 failed / 81 passed (P3-15-first-run.txt): previous tests assumed synchronous fixture reads/local receipts. Migrated tests to await API readiness and assert actual persisted status/locked submitted form, preserving routing ownership, field errors and deadline assertions. One remaining test did not await appeal-status hydration: 1 failed / 97 passed (P3-15-timing-failure.txt). Added async act readiness; did not remove its stale-clock enabled-before-submit assertion.
 - Final `npm.cmd test`: 98 frontend + 6 backend passed; 39 real database cases explicitly skipped by the standard command (P3-15-GREEN.txt). Prior explicit test:db result remains 45 real MongoDB passes; frontend transport tests use a documented mock, not database persistence evidence. `npm.cmd run lint` and `npm.cmd run build`: exit 0.
 - Updated README with actual API, database/seed/startup commands and limitations. API calls persist simulated appeals only; no authentication or official decisions are implied.
+
+## U006 - verbatim user prompt
+
+```text
+bạn làm tới đâu r
+```
+
+### U006 response record (agent-generated)
+
+Answered status during ongoing P3-16: P3-11 through P3-15 committed; 106 frontend and 48 real MongoDB tests passed; Chrome verified persisted ID after reload/reconnection. Continued final documentation and commit without replacing the original task.
+
+### P3-16 development record (agent-generated task)
+
+- P3-15 actual commit: a0278a70ba4c003184da3835b9f578ce122d79fd feat(hw3): connect dossier context and appeal form to REST API.
+- Added eight frontend integration cases before corrections: invalid API response, matrix from changed API data, server 410 despite active client clock, server field feedback cleared on edit, 409 recovery, POST abort cleanup, obsolete route-response suppression and wrong dossier status. First run: 1 failed / 105 passed (P3-16-frontend-first-run.txt), revealing status validation checked player but not dossier. Added stable case-bound response parser; same assertions now 106/106 pass.
+- Added prototype-named payload, malformed URL and disconnected/reconnected persistence cases against real MongoDB. First run: 3 failed / 45 passed (P3-16-backend-first-failure.txt). Corrected validation error map prototype, URIError classification and database-ready guard. `npm.cmd run test:db`: 48/48 passed across 6 files, zero skips (P3-16-MONGO.txt). Actual persistence test closes the original connection, reads through a fresh connection/app and confirms reseeding preserves the appeal.
+- Final `npm.cmd test`: 106 frontend tests across 12 files + 6 independent backend tests passed, 42 DB tests explicitly skipped by that command (P3-16-GREEN.txt). This is separate from the explicit 48 real database passes. `npm.cmd run lint`, `npm.cmd run build`, `npm.cmd run check:backend`: exit 0 (P3-16-lint.txt, P3-16-build.txt, P3-16-backend-syntax.txt). Build: 54 modules, JS 291.37 kB / gzip 91.83 kB; CSS 17.00 kB / gzip 4.35 kB.
+- Started owned production preview using `npm.cmd run preview --workspace frontend`. Ran `$env:QA_NO_SANDBOX='1'` then `node scripts/verify-full-stack.mjs`: exit 0 (P3-16-browser-command.txt). Runner started actual Express at 3002 with its own generated guarded MongoDB database, served production UI through preview 4174 and drove installed headless Chrome.
+- Nine direct routes, keyboard SPA navigation/reload, accessible/native form feedback/focus/typing, actual persisted SUBMITTED receipt and same UUID after page reload pass. Separate unsubmitted Alpha rejects stale-clock late submit. Four viewports (320/375/768/1440) on overview/dossier have no document overflow; reduced motion passes. No unexpected console/JS/network/HTTP errors. Two explicit invalid IDs return expected 400, separately listed in P3-16-BROWSER.json.
+- Runner verifies exactly one real Beta appeal, closes all original connections/listener, reconnects and confirms status/timestamp and unchanged fixed Alpha deadline. P3-16-FULL-STACK.json records actual evidence. Only its generated hw3_test_ database is dropped; main HW3 database remains untouched by browser QA. Visually inspected P3-16-dossier-375.png and P3-16-overview-1440.png.
+- Actual CLI check: set dedicated HW3 MONGODB_URI and PORT=3002, ran `npm.cmd run start --workspace backend`, observed connected listener. Read-only HTTP probe returned 200, 2 dossiers/4 evidence, correct dev CORS/no-store and null Alpha appeal (P3-16-STARTUP.json). Closed owned CLI server, preview and browser. No other service stopped.
+- `git check-ignore` confirms backend/frontend private .env, node_modules and frontend/dist are ignored. No dependency reinstall, credential output, public deployment or push. No committed changes outside Homework 3; existing Homework 1 checklist modification preserved. Task checklist verified through P3-16 with P3-17 pending.
+
+### U005 actual commit ledger
+
+| Task | Actual commit | Conventional Commit |
+| --- | --- | --- |
+| P3-11 | 5059ed030c6b9f142105741c4c9b423ea7be9aad | docs(hw3): define REST persistence and integration contracts |
+| P3-12 | 2f756ea5b180f48ad4f7720b5fdfe10c73efc89a | feat(hw3): add MongoDB schemas indexes and safe simulation seed |
+| P3-13 | 670720e3bd80428af1c3863c1b97bdf37f164681 | test(hw3): capture REST API validation and persistence red |
+| P3-14 | c23dcd4861501e8320ff58ecd295b706388e6d43 | feat(hw3): implement validated persistent tribunal REST API |
+| P3-15 | a0278a70ba4c003184da3835b9f578ce122d79fd | feat(hw3): connect dossier context and appeal form to REST API |
+| P3-16 | Actual self-hash attached after commit in refs/notes/homework-3-development | test(hw3): verify full-stack MongoDB persistence and failure recovery |
+
+Each task used scoped `git add -- "Homework 3"`, inspected staged scope and executed `git commit -m` with its message. No empty commit, co-author trailer, backdating or history rewrite. Final self-hash/full ledger is written only after the commit exists as a local development note; read with `git log --show-notes=homework-3-development -1 -- "Homework 3/PROMPT_LOG.md"` from Lab4.

@@ -1,6 +1,6 @@
 # Esports Fair-Play Appeal Tribunal
 
-Homework 3 is a full-stack educational simulation. P3-01 through P3-15 are implemented; P3-16 verification follows. All people, evidence and sanctions are fictional training records. Himass and TanVuu are inspiration labels only, not allegations or findings.
+Homework 3 is a full-stack educational simulation. **P3-01 through P3-16 are complete; work stops before P3-17.** All people, evidence and sanctions are fictional training records. Himass and TanVuu are inspiration labels only, not allegations or findings.
 
 ## Architecture and stack
 
@@ -51,8 +51,8 @@ From the Lab4 directory, backend terminal:
 
 ~~~powershell
 cd "Homework 3"
-Copy-Item backend/.env.example backend/.env
-Copy-Item frontend/.env.example frontend/.env
+if (-not (Test-Path backend/.env)) { Copy-Item backend/.env.example backend/.env }
+if (-not (Test-Path frontend/.env)) { Copy-Item frontend/.env.example frontend/.env }
 # Edit backend/.env if your dedicated MongoDB URI differs.
 # MongoDB must be running.
 npm.cmd run seed --workspace backend
@@ -80,9 +80,11 @@ npm.cmd run build
 npm.cmd run check:backend
 ~~~
 
+For production-preview full-stack browser verification with installed Chrome, first run `npm.cmd run build` and `npm.cmd run preview --workspace frontend` in one terminal. In another terminal from Homework 3 run `node scripts/verify-full-stack.mjs`. This starts its own API listener on 3002 and a guarded temporary MongoDB database; stop any existing listener on that port yourself before running it. The runner never stops other processes. It closes its listener/browser/connections and removes only its generated test database. The preview process remains owned by your terminal. This restricted Windows renderer required `$env:QA_NO_SANDBOX='1'` for headless QA; normal sandboxing remains the default. Optional CHROME_PATH/PREVIEW_URL override the installed executable/preview address. No dependency installation or deployment is involved.
+
 npm test runs frontend and independent backend tests and explicitly skips opt-in MongoDB cases. test:db sets RUN_MONGODB_TESTS=1 and executes the full backend suite against actual MongoDB. It creates random hw3_test_<hex> databases and checks names before dropping its own test database. MONGODB_TEST_URI optionally selects a server URI; no test may target another project's database. An unavailable database makes this explicit run fail; it is never counted as passed.
 
-| Check | Actual result through P3-15 |
+| Check | Actual result |
 | --- | --- |
 | P3-12 schema RED | 3 failed / 1 passed before implementation |
 | P3-12 real MongoDB | 7 passed after fixing a nested seed comparison defect |
@@ -91,8 +93,15 @@ npm test runs frontend and independent backend tests and explicitly skips opt-in
 | P3-15 frontend RED | 10 new failed / 88 existing passed after correcting a test import path |
 | P3-15 standard final | 98 frontend + 6 independent backend passed; 39 opt-in database cases skipped |
 | P3-15 checks | Lint and Vite production build passed |
+| P3-16 final standard suite | **106 frontend / 12 files + 6 independent backend passed**; 42 real database cases explicitly skipped in this command; [output](verification/P3-16-GREEN.txt) |
+| P3-16 explicit real MongoDB suite | **48/48 backend tests / 6 files passed**, zero skips; includes durable restore after closing/reopening connections, duplicate races and server deadlines; [output](verification/P3-16-MONGO.txt) |
+| P3-16 lint / build / syntax | All passed; [lint](verification/P3-16-lint.txt), [54-module production build](verification/P3-16-build.txt), [backend syntax](verification/P3-16-backend-syntax.txt) |
+| P3-16 actual CLI startup | Backend connects to main HW3 DB, GET returns 2 dossiers/4 evidence with expected CORS/no-store; no appeal written to main DB; [report](verification/P3-16-STARTUP.json) |
+| P3-16 production Chrome + actual API/MongoDB | Nine direct routes, keyboard navigation, native form validation/submission, same appeal ID after reload, stale-clock rejection on a different case, reduced motion and no document overflow at 320/375/768/1440; [browser](verification/P3-16-BROWSER.json) and [actual database reconnect](verification/P3-16-FULL-STACK.json) |
 
-Actual evidence is in verification/P3-12-* through P3-15-*. Historical P3-05/P3-10 browser reports apply to those earlier local-only versions. AI_FAILURE_AUDIT.md records the seed comparator bug, test setup import error and asynchronous test migration, with unmodified validation/timing assertions and actual retests.
+Chrome reported no unexpected console/runtime/network/HTTP errors. The two intentional invalid-ID requests returned expected 400s and are listed separately, not hidden as successes. The runner confirmed exactly one persisted Beta appeal in its temporary real database after the browser submission and after closing all original connections. Main simulation data was untouched by browser QA. Mobile dossier and desktop overview screenshots were visually inspected. This limited headless check is not a WCAG/Lighthouse compliance claim.
+
+Actual evidence is in verification/P3-12-* through P3-16-*. Historical P3-05/P3-10 browser reports apply to those earlier local-only versions. AI_FAILURE_AUDIT.md records the seed comparator bug, test setup import error, asynchronous test migration and four reproduced integration defects with root causes/corrections/retests. PROMPT_LOG.md contains verbatim user requests and actual task commit hashes. The final commit self-hash is attached after creation as a local Git note, readable with `git log --show-notes=homework-3-development -1 -- 'Homework 3/PROMPT_LOG.md'` from the Lab4 root.
 
 ## Limitations
 

@@ -58,3 +58,18 @@ First implemented API run passed all 45 tests against real MongoDB (P3-14-first-
 Initial new-test run executed no tests because apiMock.js traversed four parent directories instead of three to shared/data. Corrected test-only import and reran before implementation: 10 failed / 88 passed (P3-15-RED.txt). Raw setup failure is P3-15-test-setup-failure.txt.
 
 After API integration, 17 legacy tests failed because they expected synchronous fixtures and a local receipt; those contracts intentionally changed to asynchronous persisted submission. Updated readiness waits and asserted SUBMITTED/locked form instead, retaining case isolation, accessible validation, invalid-draft rejection and exact stale-clock behavior. A missed hydration wait in one deadline case reproduced 1 failure / 97 passes (P3-15-timing-failure.txt); corrected the wait, not the enabled-before-submit assertion. Final 98 frontend tests pass. Lint/build pass. Mocked frontend status restoration is explicitly not claimed as real MongoDB verification.
+
+### P3-16 reproduced integration defects
+
+| Observed failure | Root cause | Corrective action | Actual verification |
+| --- | --- | --- | --- |
+| Unexpected __proto__ input returned 500 instead of 422 | Plain error-map assignment treated the key as a prototype setter, so strict model validation was reached | Use a null-prototype field-error map before whitelisting payload keys | Same Supertest request now 422; no inserted appeal |
+| Malformed percent-encoded ID returned 500 instead of 400 | Central error middleware did not classify Express URIError | Return sanitized INVALID_ID 400 | Same /api/dossiers/%ZZ assertion passes |
+| Closed MongoDB connection returned 500 instead of 503 | Service checked only model existence, not connection readiness | Guard readyState and classify disconnected driver errors | Actual close returns 503; fresh connection/app restores exact prior status; reseed preserves appeal |
+| Frontend displayed status for a wrong dossierID | Parser checked matching playerID but did not bind status to selected dossier | Stable case-bound callback validates dossierID for GET and POST responses | Same invalid-response test now displays error and keeps submit disabled |
+
+Before fixes: real backend 3 failed / 45 passed (P3-16-backend-first-failure.txt); frontend 1 failed / 105 passed (P3-16-frontend-first-run.txt). Assertions retained. After fixes: 48/48 real MongoDB backend and 106/106 frontend passed. Standard test command separately reports 42 explicit DB skips and 6 independent backend passes; skipped tests are not described as verification.
+
+### P3-16 actual browser/database evidence and limits
+
+Production Chrome with actual Express and isolated real MongoDB passed native submission, same receipt ID after reload, stale-clock rejection, routing, focus, reduced motion and four-width overflow checks. Closed all original connections and reconnected: exact persisted appeal status/timestamp remain. P3-16-BROWSER.json and P3-16-FULL-STACK.json record results. The two invalid-ID HTTP 400s are intentional and explicitly listed; no unexpected console/runtime/network/HTTP errors observed. Main HW3 startup/CORS/read-only probe also passed. No physical-device, screen-reader, Lighthouse or full WCAG compliance claim; no authentication or real adjudication is implemented. All outcomes remain simulation-only.

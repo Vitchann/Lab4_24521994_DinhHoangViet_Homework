@@ -1,0 +1,10 @@
+{
+  "database": "real MongoDB, isolated hw3_test_ database",
+  "browserAppealID": "e14221fa-577f-4126-b2e9-c238679d9725",
+  "actualAppeals": 1,
+  "status": "SUBMITTED",
+  "persistedAfterAllOriginalConnectionsClosed": true,
+  "originalFixedDeadlinePreserved": true,
+  "cleanup": "runner closes its listener/connections and drops only its generated guarded test database",
+  "limitations": "No public deployment, real disciplinary data or authentication. Existing main simulation database is untouched by browser QA."
+}

@@ -1,0 +1,10 @@
+{
+  "command": "MONGODB_URI=<dedicated HW3 URI> PORT=3002 npm.cmd run start --workspace backend",
+  "httpStatus": 200,
+  "dossiers": 2,
+  "evidence": 4,
+  "cors": "http://127.0.0.1:5174",
+  "cacheControl": "no-store",
+  "existingAlphaAppeal": null,
+  "description": "Actual CLI process connected to the main HW3 simulation DB; read-only HTTP probe. No appeal submitted to the main DB."
+}

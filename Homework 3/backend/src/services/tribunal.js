@@ -12,7 +12,7 @@ export function publicAppeal(record) {
 }
 
 export function createTribunalService(models, now = Date.now) {
-  function requireDatabase() { if (!models) throw new HttpError(503, 'DATABASE_UNAVAILABLE', 'Database unavailable. Retry later.') }
+  function requireDatabase() { if (!models || models.Player.db.readyState !== 1) throw new HttpError(503, 'DATABASE_UNAVAILABLE', 'Database unavailable. Retry later.') }
   async function getDataset() {
     requireDatabase()
     const [players, dossiers, evidence, sanctions] = await Promise.all(['Player', 'Dossier', 'Evidence', 'Sanction'].map((name) => models[name].find().sort({ _id: 1 }).then(plain)))
@@ -34,7 +34,7 @@ export function createTribunalService(models, now = Date.now) {
   }
   async function submitAppeal(playerID, payload) {
     const context = await getCase(playerID)
-    const fields = validateAppeal(payload, context)
+    const fields = Object.assign(Object.create(null), validateAppeal(payload, context))
     const required = Object.keys(createAppealValues())
     if (!payload || Array.isArray(payload) || typeof payload !== 'object') throw new HttpError(422, 'VALIDATION_FAILED', 'Invalid appeal fields.', { fields })
     for (const key of required) if (!Object.hasOwn(payload, key)) fields[key] = 'This field is required.'
