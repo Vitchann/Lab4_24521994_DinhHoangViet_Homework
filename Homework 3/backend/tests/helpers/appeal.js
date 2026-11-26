@@ -1,0 +1,1 @@
+export const validAppeal = () => ({ applicantName: 'Demo Applicant', applicantEmail: 'demo@example.test', relationship: 'PLAYER', authorized: false, reason: 'PROCESS', grounds: 'Please review the fictional briefing context and demonstration record.', evidenceIDs: [], requestedOutcome: 'REVIEW', acknowledged: true })

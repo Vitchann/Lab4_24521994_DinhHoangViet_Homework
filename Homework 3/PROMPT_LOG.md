@@ -409,3 +409,9 @@ Read canonical project_rule.md, task decomposition, prompt/audit/contracts and e
 - Initial `npm.cmd test`: 88 frontend + 4 backend passed, 2 database tests skipped; those skips are not database verification. `npm.cmd run test:db` then passed 6 tests on real local MongoDB.
 - Inspection found flat JSON replacer seed comparison ignored nested timeline properties. Added a regression test before correction: 1 failed / 6 passed. Replaced comparison with recursive canonicalization; `npm.cmd run test:db` now 7/7 passed (P3-12-MONGO.txt); failure retained in P3-12-first-failure.txt.
 - `$env:MONGODB_URI='mongodb://127.0.0.1:27017/hw3_fair_play_simulation'; npm.cmd run seed --workspace backend`: exit 0, inserted 10 simulation records. `npm.cmd run lint`: exit 0. No appeal records removed or fixed deadlines extended.
+
+### P3-13 development record (agent-generated task)
+
+- P3-12 commit: 2f756ea feat(hw3): add MongoDB schemas indexes and safe simulation seed.
+- Wrote actual Supertest contracts against existing 404 scaffold before routes/services. `npm.cmd run test:db`: 37 failed / 8 passed across 5 files, exit 1 (P3-13-RED.txt). Real generated MongoDB test databases seeded and cleaned; all failures are HTTP/status assertions, not import failures. Existing schemas/seed tests remain green.
+- Cases cover normalized datasets, both players/evidence, invalid and missing IDs, all ten required fields, invalid types and enums, cross-field dependencies, server deadlines, real duplicate index races, status projection, malformed/media/oversized bodies and safe async errors. No API implementation in this task.

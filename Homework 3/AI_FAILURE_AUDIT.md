@@ -44,3 +44,7 @@ No implementation defect observed during contract review. Actual MongoDB connect
 ### P3-12 seed comparison defect
 
 A review-added nested-timeline test reproduced 1 failure / 6 passes on real MongoDB (P3-12-first-failure.txt). Root cause: JSON.stringify with a top-level key whitelist also filtered nested keys, hiding changed event descriptions. Replaced it with recursive key ordering and Date normalization; same assertion now passes. Explicit real MongoDB retest 7/7 passed (P3-12-MONGO.txt). Expected schema RED (3 failed/1 passed) remains separate evidence.
+
+### P3-13 expected API RED
+
+Actual pre-implementation run: 37 failed / 8 passed, exit 1 (P3-13-RED.txt). Existing scaffold returns 404 instead of newly contracted REST responses. Planned TDD evidence; no implemented API is claimed. Database setup/seed succeeds, so these are HTTP contract failures.

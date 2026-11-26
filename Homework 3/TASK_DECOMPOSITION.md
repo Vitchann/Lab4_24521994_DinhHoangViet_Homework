@@ -88,12 +88,12 @@ Acceptance criteria: Schema/seed checks recorded; real DB verification separate.
 
 Evidence / status: Complete 2026-11-26. Five strict Mongoose schemas, unique indexes, shared pure domain/fixture modules, dedicated URI connection and non-destructive seed. Schema RED 3 failed / 1 passed. Initial standard run 88 frontend + 4 backend passed (2 DB skipped); explicit real MongoDB run finally 7/7 passed, including repeat seed, unique index and nested-conflict checks. Actual main HW3 seed inserted 10 records. Lint passes. Evidence P3-12-*.
 P3-13 — RED API tests
-- [ ] Complete and verify task.
+- [x] Complete and verify task.
 Scope: Write tests for dossier retrieval, valid/invalid appeals, expired deadlines and duplicates.
 
 Acceptance criteria: Capture actual failing tests.
 
-Evidence / status: Pending.
+Evidence / status: Complete 2026-11-26. Executed real MongoDB-backed Supertest cases plus no-database error contracts before API behavior: 37 failed / 8 passed, exit 1. Covers IDs, retrieval, all missing fields, invalid/cross-field payloads, exact server expiry, sequential/concurrent duplicates, status/privacy, malformed/large JSON and async error sanitization. Evidence verification/P3-13-RED.txt.
 P3-14 — GREEN Express API
 - [ ] Complete and verify task.
 Scope: Implement API handlers and server-side deadline/validation checks.

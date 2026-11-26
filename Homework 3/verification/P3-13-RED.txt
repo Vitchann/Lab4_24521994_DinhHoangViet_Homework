@@ -1,0 +1,361 @@
+
+> hw3-esports-fair-play-tribunal@0.1.0 test:db
+> node scripts/test-db.mjs
+
+
+ RUN  v5.1.2 C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework 3/backend
+
+ ❯ tests/api-errors.test.js (2 tests | 2 failed) 74ms
+   × fails closed if database services are not configured 57ms
+   × centralizes async failures without leaking internals 15ms
+ ❯ tests/api.db.test.js (36 tests | 35 failed) 465ms
+   ❯ REST API with real MongoDB (36)
+     × returns a normalized simulation snapshot without database internals 27ms
+     × resolves both individual dossiers and their owned evidence 7ms
+     × rejects malformed player ID toString 5ms
+     × rejects malformed player ID SIM-HIMASS 4ms
+     × rejects malformed player ID bad$id 5ms
+     × returns null for an unsubmitted appeal and persists a valid server-owned submission 5ms
+     × rejects missing required field applicantName 54ms
+     × rejects missing required field applicantEmail 5ms
+     × rejects missing required field relationship 4ms
+     × rejects missing required field authorized 5ms
+     × rejects missing required field reason 4ms
+     × rejects missing required field grounds 4ms
+     × rejects missing required field evidenceIDs 4ms
+     × rejects missing required field requestedOutcome 4ms
+     × rejects missing required field acknowledged 4ms
+     × rejects invalid applicantName "" 4ms
+     × rejects invalid applicantEmail "bad" 4ms
+     × rejects invalid grounds "short" 4ms
+     × rejects invalid acknowledged false 4ms
+     × rejects invalid authorized "true" 4ms
+     × rejects invalid relationship "OTHER" 4ms
+     × rejects invalid reason "OTHER" 4ms
+     × rejects invalid requestedOutcome "PUNISH" 7ms
+     × rejects invalid evidenceIDs ["ev-tv-notice"] 4ms
+     × rejects invalid evidenceIDs ["ev-hm-replay","ev-hm-replay"] 3ms
+     × enforces cross-field rules {"relationship":"REPRESENTATIVE"} 4ms
+     × enforces cross-field rules {"reason":"NEW_EVIDENCE"} 4ms
+     × enforces cross-field rules {"reason":"PROPORTIONALITY"} 3ms
+     × accepts authorized proportionality appeals with same-dossier evidence 4ms
+     × enforces server deadline at/past expiry by 0 ms 4ms
+     × enforces server deadline at/past expiry by 1 ms 4ms
+     × returns a duplicate status even if a repeat arrives after the deadline 4ms
+     × atomically allows only one of two concurrent valid submissions 9ms
+     × rejects payload injection, null/array bodies, wrong media type, malformed and oversized JSON 4ms
+     × distinguishes malformed appeal IDs from valid missing UUIDs 4ms
+npm.cmd : 
+At line:2 char:40
++ ... pp.test.js; npm.cmd run test:db *> verification/P3-13-RED.txt; $resul ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+⎯⎯⎯⎯⎯⎯ Failed Tests 37 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/api-errors.test.js > fails closed if database services are not configured
+Error: expected 503 "Service Unavailable", got 404 "Not Found"
+ ❯ tests/api-errors.test.js:6:59
+      4|
+      5| it('fails closed if database services are not configured', async () =>…
+      6|   expect((await request(createApp()).get('/api/dossiers').expect(503))…
+       |                                                           ^
+      7| })
+      8| it('centralizes async failures without leaking internals', async () =>…
+ ❯ Test._assertStatus ../node_modules/supertest/lib/test.js:535:14
+ ❯ ../node_modules/supertest/lib/test.js:591:13
+ ❯ Test._assertFunction ../node_modules/supertest/lib/test.js:568:13
+ ❯ Test.assert ../node_modules/supertest/lib/test.js:432:23
+ ❯ localAssert ../node_modules/supertest/lib/test.js:382:38
+ ❯ Server.<anonymous> ../node_modules/supertest/lib/test.js:126:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/15]⎯
+
+ FAIL  tests/api-errors.test.js > centralizes async failures without leaking internals
+Error: expected 500 "Internal Server Error", got 404 "Not Found"
+ ❯ tests/api-errors.test.js:10:60
+      8| it('centralizes async failures without leaking internals', async () =>…
+      9|   const app = createApp({ service: { getDataset: async () => { throw n…
+     10|   const response = await request(app).get('/api/dossiers').expect(500)
+       |                                                            ^
+     11|   expect(response.body.error.code).toBe('INTERNAL_ERROR')
+     12|   expect(JSON.stringify(response.body)).not.toMatch(/secret|stack/)
+ ❯ Test._assertStatus ../node_modules/supertest/lib/test.js:535:14
+ ❯ ../node_modules/supertest/lib/test.js:591:13
+ ❯ Test._assertFunction ../node_modules/supertest/lib/test.js:568:13
+ ❯ Test.assert ../node_modules/supertest/lib/test.js:432:23
+ ❯ localAssert ../node_modules/supertest/lib/test.js:382:38
+ ❯ Server.<anonymous> ../node_modules/supertest/lib/test.js:126:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/15]⎯
+
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > returns a normalized simulation snapshot without database 
+internals
+Error: expected 200 "OK", got 404 "Not Found"
+ ❯ tests/api.db.test.js:19:62
+     17|   afterAll(async () => { await database?.cleanup() })
+     18|   it('returns a normalized simulation snapshot without database intern…
+     19|     const response = await request(app).get('/api/dossiers').expect(20…
+       |                                                              ^
+     20|     expect(response.body.data).toEqual(simulation)
+     21|     expect(response.headers['cache-control']).toBe('no-store')
+ ❯ Test._assertStatus ../node_modules/supertest/lib/test.js:535:14
+ ❯ ../node_modules/supertest/lib/test.js:591:13
+ ❯ Test._assertFunction ../node_modules/supertest/lib/test.js:568:13
+ ❯ Test.assert ../node_modules/supertest/lib/test.js:432:23
+ ❯ localAssert ../node_modules/supertest/lib/test.js:382:38
+ ❯ Server.<anonymous> ../node_modules/supertest/lib/test.js:126:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/15]⎯
+
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > resolves both individual dossiers and their owned evidence
+Error: expected 200 "OK", got 404 "Not Found"
+ ❯ tests/api.db.test.js:26:76
+     24|   it('resolves both individual dossiers and their owned evidence', asy…
+     25|     for (const [index, playerID] of ['sim-himass', 'sim-tanvuu'].entri…
+     26|       const response = await request(app).get(`/api/dossiers/${playerI…
+       |                                                                            ^
+     27|       expect(response.body.data.player.playerID).toBe(playerID)
+     28|       expect(response.body.data.dossier).toEqual(simulation.dossiers[i…
+ ❯ Test._assertStatus ../node_modules/supertest/lib/test.js:535:14
+ ❯ ../node_modules/supertest/lib/test.js:591:13
+ ❯ Test._assertFunction ../node_modules/supertest/lib/test.js:568:13
+ ❯ Test.assert ../node_modules/supertest/lib/test.js:432:23
+ ❯ localAssert ../node_modules/supertest/lib/test.js:382:38
+ ❯ Server.<anonymous> ../node_modules/supertest/lib/test.js:126:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/15]⎯
+
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > rejects malformed player ID toString
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > rejects malformed player ID SIM-HIMASS
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > rejects malformed player ID bad$id
+Error: expected 400 "Bad Request", got 404 "Not Found"
+ ❯ tests/api.db.test.js:36:59
+     34|   })
+     35|   it.each(['toString', 'SIM-HIMASS', 'bad$id'])('rejects malformed pla…
+     36|     expect((await request(app).get(`/api/dossiers/${id}`).expect(400))…
+       |                                                           ^
+     37|   })
+     38|   it('returns stable JSON not-found errors for unknown valid IDs and r…
+ ❯ Test._assertStatus ../node_modules/supertest/lib/test.js:535:14
+ ❯ ../node_modules/supertest/lib/test.js:591:13
+ ❯ Test._assertFunction ../node_modules/supertest/lib/test.js:568:13
+ ❯ Test.assert ../node_modules/supertest/lib/test.js:432:23
+ ❯ localAssert ../node_modules/supertest/lib/test.js:382:38
+ ❯ Server.<anonymous> ../node_modules/supertest/lib/test.js:126:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/15]⎯
+
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > returns null for an unsubmitted appeal and persists a valid 
+server-owned submission
+Error: expected 200 "OK", got 404 "Not Found"
+ ❯ tests/api.db.test.js:42:54
+     40|   })
+     41|   it('returns null for an unsubmitted appeal and persists a valid serv…
+     42|     expect((await request(app).get(`${base}/appeal`).expect(200)).body…
+       |                                                      ^
+     43|     const response = await request(app).post(`${base}/appeals`).send(v…
+     44|     expect(response.body.data).toMatchObject({ dossierID: 'demo-001', …
+ ❯ Test._assertStatus ../node_modules/supertest/lib/test.js:535:14
+ ❯ ../node_modules/supertest/lib/test.js:591:13
+ ❯ Test._assertFunction ../node_modules/supertest/lib/test.js:568:13
+ ❯ Test.assert ../node_modules/supertest/lib/test.js:432:23
+ ❯ localAssert ../node_modules/supertest/lib/test.js:382:38
+ ❯ Server.<anonymous> ../node_modules/supertest/lib/test.js:126:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/15]⎯
+
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > rejects missing required field applicantName
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > rejects missing required field applicantEmail
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > rejects missing required field relationship
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > rejects missing required field authorized
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > rejects missing required field reason
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > rejects missing required field grounds
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > rejects missing required field evidenceIDs
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > rejects missing required field requestedOutcome
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > rejects missing required field acknowledged
+Error: expected 422 "Unprocessable Entity", got 404 "Not Found"
+ ❯ tests/api.db.test.js:53:70
+     51|   it.each(Object.keys(validAppeal()))('rejects missing required field …
+     52|     const payload = validAppeal(); delete payload[field]
+     53|     expect((await request(app).post(`${base}/appeals`).send(payload).e…
+       |                                                                      ^
+     54|     expect(await database.models.Appeal.countDocuments()).toBe(0)
+     55|   })
+ ❯ Test._assertStatus ../node_modules/supertest/lib/test.js:535:14
+ ❯ ../node_modules/supertest/lib/test.js:591:13
+ ❯ Test._assertFunction ../node_modules/supertest/lib/test.js:568:13
+ ❯ Test.assert ../node_modules/supertest/lib/test.js:432:23
+ ❯ localAssert ../node_modules/supertest/lib/test.js:382:38
+ ❯ Server.<anonymous> ../node_modules/supertest/lib/test.js:126:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/15]⎯
+
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > rejects invalid applicantName ""
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > rejects invalid applicantEmail "bad"
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > rejects invalid grounds "short"
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > rejects invalid acknowledged false
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > rejects invalid authorized "true"
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > rejects invalid relationship "OTHER"
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > rejects invalid reason "OTHER"
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > rejects invalid requestedOutcome "PUNISH"
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > rejects invalid evidenceIDs ["ev-tv-notice"]
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > rejects invalid evidenceIDs ["ev-hm-replay","ev-hm-replay"]
+Error: expected 422 "Unprocessable Entity", got 404 "Not Found"
+ ❯ tests/api.db.test.js:60:108
+     58|     ['relationship', 'OTHER'], ['reason', 'OTHER'], ['requestedOutcome…
+     59|   ])('rejects invalid %s %j', async (field, value) => {
+     60|     const response = await request(app).post(`${base}/appeals`).send({…
+       |                                                                                                            ^
+     61|     expect(response.body.error).toMatchObject({ code: 'VALIDATION_FAIL…
+     62|   })
+ ❯ Test._assertStatus ../node_modules/supertest/lib/test.js:535:14
+ ❯ ../node_modules/supertest/lib/test.js:591:13
+ ❯ Test._assertFunction ../node_modules/supertest/lib/test.js:568:13
+ ❯ Test.assert ../node_modules/supertest/lib/test.js:432:23
+ ❯ localAssert ../node_modules/supertest/lib/test.js:382:38
+ ❯ Server.<anonymous> ../node_modules/supertest/lib/test.js:126:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/15]⎯
+
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > enforces cross-field rules {"relationship":"REPRESENTATIVE"}
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > enforces cross-field rules {"reason":"NEW_EVIDENCE"}
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > enforces cross-field rules {"reason":"PROPORTIONALITY"}
+Error: expected 422 "Unprocessable Entity", got 404 "Not Found"
+ ❯ tests/api.db.test.js:66:93
+     64|     [{ relationship: 'REPRESENTATIVE' }, 'authorized'], [{ reason: 'NE…
+     65|   ])('enforces cross-field rules %j', async (patch, field) => {
+     66|     expect((await request(app).post(`${base}/appeals`).send({ ...valid…
+       |                                                                                             ^
+     67|   })
+     68|   it('accepts authorized proportionality appeals with same-dossier evi…
+ ❯ Test._assertStatus ../node_modules/supertest/lib/test.js:535:14
+ ❯ ../node_modules/supertest/lib/test.js:591:13
+ ❯ Test._assertFunction ../node_modules/supertest/lib/test.js:568:13
+ ❯ Test.assert ../node_modules/supertest/lib/test.js:432:23
+ ❯ localAssert ../node_modules/supertest/lib/test.js:382:38
+ ❯ Server.<anonymous> ../node_modules/supertest/lib/test.js:126:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/15]⎯
+
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > accepts authorized proportionality appeals with 
+same-dossier evidence
+Error: expected 201 "Created", got 404 "Not Found"
+ ❯ tests/api.db.test.js:69:211
+
+ ❯ Test._assertStatus ../node_modules/supertest/lib/test.js:535:14
+ ❯ ../node_modules/supertest/lib/test.js:591:13
+ ❯ Test._assertFunction ../node_modules/supertest/lib/test.js:568:13
+ ❯ Test.assert ../node_modules/supertest/lib/test.js:432:23
+ ❯ localAssert ../node_modules/supertest/lib/test.js:382:38
+ ❯ Server.<anonymous> ../node_modules/supertest/lib/test.js:126:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/15]⎯
+
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > enforces server deadline at/past expiry by 0 ms
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > enforces server deadline at/past expiry by 1 ms
+Error: expected 410 "Gone", got 404 "Not Found"
+ ❯ tests/api.db.test.js:73:76
+     71|   it.each([0, 1])('enforces server deadline at/past expiry by %s ms', …
+     72|     app = createApp({ models: database.models, now: () => Date.parse(s…
+
+ Test Files  2 failed | 3 passed (5)
+      Tests  37 failed | 8 passed (45)
+   Start at  22:38:01
+   Duration  2.49s (import 82%, tests 14%, transform 3%, worker 1%)
+     73|     expect((await request(app).post(`${base}/appeals`).send(validAppea…
+       |                                                                            ^
+     74|     expect(await database.models.Appeal.countDocuments()).toBe(0)
+     75|   })
+ ❯ Test._assertStatus ../node_modules/supertest/lib/test.js:535:14
+ ❯ ../node_modules/supertest/lib/test.js:591:13
+ ❯ Test._assertFunction ../node_modules/supertest/lib/test.js:568:13
+ ❯ Test.assert ../node_modules/supertest/lib/test.js:432:23
+ ❯ localAssert ../node_modules/supertest/lib/test.js:382:38
+ ❯ Server.<anonymous> ../node_modules/supertest/lib/test.js:126:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/15]⎯
+
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > returns a duplicate status even if a repeat arrives after 
+the deadline
+Error: expected 201 "Created", got 404 "Not Found"
+ ❯ tests/api.db.test.js:77:82
+     75|   })
+     76|   it('returns a duplicate status even if a repeat arrives after the de…
+     77|     const first = await request(app).post(`${base}/appeals`).send(vali…
+       |                                                                                  ^
+     78|     app = createApp({ models: database.models, now: () => Date.parse('…
+     79|     const duplicate = await request(app).post(`${base}/appeals`).send(…
+ ❯ Test._assertStatus ../node_modules/supertest/lib/test.js:535:14
+ ❯ ../node_modules/supertest/lib/test.js:591:13
+ ❯ Test._assertFunction ../node_modules/supertest/lib/test.js:568:13
+ ❯ Test.assert ../node_modules/supertest/lib/test.js:432:23
+ ❯ localAssert ../node_modules/supertest/lib/test.js:382:38
+ ❯ Server.<anonymous> ../node_modules/supertest/lib/test.js:126:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/15]⎯
+
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > atomically allows only one of two concurrent valid 
+submissions
+AssertionError: expected [ 404, 404 ] to deeply equal [ 201, 409 ]
+
+- Expected
++ Received
+
+  [
+-   201,
+-   409,
++   404,
++   404,
+  ]
+
+ ❯ tests/api.db.test.js:84:57
+     82|   it('atomically allows only one of two concurrent valid submissions',…
+     83|     const responses = await Promise.all([1, 2].map(() => request(app).…
+     84|     expect(responses.map((item) => item.status).sort()).toEqual([201, …
+       |                                                         ^
+     85|     expect(await database.models.Appeal.countDocuments({ dossierID: 'd…
+     86|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/15]⎯
+
+
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > rejects payload injection, null/array bodies, wrong media 
+type, malformed and oversized JSON
+Error: expected 422 "Unprocessable Entity", got 404 "Not Found"
+ ❯ tests/api.db.test.js:88:136
+     86|   })
+     87|   it('rejects payload injection, null/array bodies, wrong media type, …
+     88|     for (const payload of [{ ...validAppeal(), status: 'RESOLVED' }, […
+       |                                                                                                               
+                         ^
+     89|     await request(app).post(`${base}/appeals`).type('text').send('hell…
+     90|     expect((await request(app).post(`${base}/appeals`).type('json').se…
+ ❯ Test._assertStatus ../node_modules/supertest/lib/test.js:535:14
+ ❯ ../node_modules/supertest/lib/test.js:591:13
+ ❯ Test._assertFunction ../node_modules/supertest/lib/test.js:568:13
+ ❯ Test.assert ../node_modules/supertest/lib/test.js:432:23
+ ❯ localAssert ../node_modules/supertest/lib/test.js:382:38
+ ❯ Server.<anonymous> ../node_modules/supertest/lib/test.js:126:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/15]⎯
+
+ FAIL  tests/api.db.test.js > REST API with real MongoDB > distinguishes malformed appeal IDs from valid missing UUIDs
+Error: expected 400 "Bad Request", got 404 "Not Found"
+ ❯ tests/api.db.test.js:94:63
+     92|   })
+     93|   it('distinguishes malformed appeal IDs from valid missing UUIDs', as…
+     94|     expect((await request(app).get('/api/appeals/not-a-uuid').expect(4…
+       |                                                               ^
+     95|     expect((await request(app).get('/api/appeals/00000000-0000-4000-80…
+     96|   })
+ ❯ Test._assertStatus ../node_modules/supertest/lib/test.js:535:14
+ ❯ ../node_modules/supertest/lib/test.js:591:13
+ ❯ Test._assertFunction ../node_modules/supertest/lib/test.js:568:13
+ ❯ Test.assert ../node_modules/supertest/lib/test.js:432:23
+ ❯ localAssert ../node_modules/supertest/lib/test.js:382:38
+ ❯ Server.<anonymous> ../node_modules/supertest/lib/test.js:126:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/15]⎯
+
