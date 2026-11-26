@@ -60,12 +60,12 @@ Acceptance criteria: Expected calculations pass; assumptions shown in UI/docs.
 
 Evidence / status: Complete 2026-11-26. Five matrix/table tests captured RED (5 failed / 57 passed). Pure dossier-linked calculations with explicit weights and accessible overview table; no redundant memoization/state. Final 62 frontend + 1 backend tests and lint pass. Initial test fixture date-field error fixed without changing expected results; audit/evidence P3-08-*.
 P3-09 — SLA timer RED tests
-- [ ] Complete and verify task.
+- [x] Complete and verify task.
 Scope: Test absolute time delta, expiry, invalid input, visibility changes and cleanup with controlled time.
 
 Acceptance criteria: Capture actual failing tests.
 
-Evidence / status: Pending.
+Evidence / status: Complete 2026-11-26. 22 calculation/hook/form expiry tests executed before behavior: 22 failed / 62 existing passed, exit 1. Explicit stubs resolve; form failures assert missing timer, enabled invalid/late action and unwanted late receipt. Includes exact-boundary, invalid clock/deadline, delayed callback, visibility, replacement, explicit refresh and StrictMode cleanup. Evidence verification/P3-09-RED.txt.
 P3-10 — Zero-drift timer
 - [ ] Complete and verify task.
 Scope: Implement useAppealSlaTimer and countdown interface.

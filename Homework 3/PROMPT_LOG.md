@@ -264,3 +264,10 @@ Report implemented features, actual test results, commit hashes and unresolved l
 - Implemented dataset-validated pure matrix, linked by IDs, reference-credit cap, same-case statement credit and nonnegative result. Overview table shows every component and assumptions; two rows require no useMemo.
 - Initial GREEN attempt: 1 failed / 61 passed frontend, backend 1 passed. Test fixture mistakenly changed endsAt rather than effectiveUntil and validator correctly rejected inconsistent dates. Corrected fixture property, preserved assertions; evidence P3-08-first-failure.txt.
 - `npm.cmd test`: 62 frontend + 1 backend pass, exit 0 (P3-08-GREEN.txt). `npm.cmd run lint`: exit 0. No official judgment or backend behavior claimed.
+
+### P3-09 development record (agent-generated task)
+
+- P3-08 commit: 24f2f0f feat(hw3): add transparent demonstration sanction matrix.
+- Added 13 pure absolute-time cases, 6 hook lifecycle/drift cases and 3 form deadline cases before timer implementation. Resolvable calculation/hook stubs and the existing form generated actual RED.
+- `npm.cmd run test --workspace frontend -- --reporter=verbose`: exit 1, 22 failed / 62 passed (verification/P3-09-RED.txt). Late submit test confirms current form incorrectly accepts a valid draft after expiry; implementation belongs to P3-10.
+- Captured all timing requirements, including hidden-to-visible resampling and identical callback removal in StrictMode. No production hook behavior implemented in this task.

@@ -22,3 +22,7 @@ Expected TDD RED: 20 validation cases fail on explicit unimplemented functions; 
 ### P3-08 observed test-fixture failure
 
 Initial post-implementation run: 1 frontend failed / 61 passed; backend 1 passed. The duration-change test set an unused endsAt property instead of the model effectiveUntil property, leaving duration and end date inconsistent. Dataset validation correctly threw Invalid sanction end date. Corrected the fixture field only; expected load 140/excess 90 and all other assertions preserved. Retest: 62 frontend + 1 backend passed. Evidence: verification/P3-08-first-failure.txt and P3-08-GREEN.txt.
+
+### P3-09 expected RED
+
+22 new tests fail before SLA implementation while 62 existing tests pass. Three form tests expose the intentionally missing deadline gate/timer, including a late local receipt after the deadline. This planned coverage defines the P3-10 correction; no completed timer is claimed. Raw evidence verification/P3-09-RED.txt.

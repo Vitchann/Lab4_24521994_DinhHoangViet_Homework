@@ -1,0 +1,1368 @@
+
+> hw3-frontend@0.1.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v5.1.2 C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework 3/frontend
+
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > creates fresh empty drafts and independent reference arrays 9ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > accepts valid simulated applicant data without mutating inputs 1ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantName " " 1ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantName "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" 1ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantEmail "bad-address" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantEmail "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid grounds "short" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid grounds "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid relationship "OTHER" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid reason "UNKNOWN" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid requestedOutcome "PUNISH" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid acknowledged false 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid acknowledged "true" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid evidenceIDs "ev-hm-replay" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid evidenceIDs ["ev-tv-notice"] 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid evidenceIDs ["ev-hm-replay","ev-hm-replay"] 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > requires representative authorization 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > requires same-dossier references for new-evidence reasons 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > requires a specified reduction/removal for proportionality 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > counts trimmed grounds and handles malformed payload/context without crashing 0ms
+ × src/domain/appealSla.test.js > calculates an exact absolute delta for active deadlines 11ms
+   → Not implemented: absolute SLA calculation
+ × src/domain/appealSla.test.js > clamps expired deadline at clock 1796461200000 2ms
+   → Not implemented: absolute SLA calculation
+ × src/domain/appealSla.test.js > clamps expired deadline at clock 1796461200001 1ms
+   → Not implemented: absolute SLA calculation
+ × src/domain/appealSla.test.js > clamps expired deadline at clock 1796464800000 1ms
+   → Not implemented: absolute SLA calculation
+ × src/domain/appealSla.test.js > fails closed for invalid/noncanonical deadline invalid 1ms
+   → Not implemented: absolute SLA calculation
+ × src/domain/appealSla.test.js > fails closed for invalid/noncanonical deadline  1ms
+   → Not implemented: absolute SLA calculation
+ × src/domain/appealSla.test.js > fails closed for invalid/noncanonical deadline null 1ms
+   → Not implemented: absolute SLA calculation
+ × src/domain/appealSla.test.js > fails closed for invalid/noncanonical deadline 2026-02-30T09:00:00.000Z 1ms
+   → Not implemented: absolute SLA calculation
+ × src/domain/appealSla.test.js > fails closed for invalid/noncanonical deadline 2026-12-05 1ms
+   → Not implemented: absolute SLA calculation
+ × src/domain/appealSla.test.js > fails closed for invalid/noncanonical deadline 123 1ms
+   → Not implemented: absolute SLA calculation
+ × src/domain/appealSla.test.js > fails closed for invalid clock NaN 1ms
+   → Not implemented: absolute SLA calculation
+ × src/domain/appealSla.test.js > fails closed for invalid clock Infinity 1ms
+   → Not implemented: absolute SLA calculation
+ × src/domain/appealSla.test.js > fails closed for invalid clock undefined 1ms
+   → Not implemented: absolute SLA calculation
+ ✓ src/domain/disproportionality.test.js > transparent demonstration matrix > derives load, allowances and clamped excess from each frozen dossier 12ms
+ ✓ src/domain/disproportionality.test.js > transparent demonstration matrix > recalculates when dossier-linked duration changes, independent of array order 4ms
+ ✓ src/domain/disproportionality.test.js > transparent demonstration matrix > caps reference credit at three and does not borrow another case statement 2ms
+ ✓ src/domain/disproportionality.test.js > transparent demonstration matrix > rejects broken dataset ownership rather than displaying misleading numbers 2ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > has two explicitly simulated case-study references with valid relationships 14ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > deeply freezes the fixtures and keeps real reference labels out of synthetic handles 3ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > finds a dossier by stable player ID without mutating it 2ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID undefined 2ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID toString 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID __proto__ 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID SIM-HIMASS 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID unknown 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects false simulation flag 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects duplicate player ID 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects broken evidence link 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects cross-case evidence 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects external evidence source 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects invalid chronology 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects unsorted timeline 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects invalid sanction duration 1ms
+ × src/hooks/useAppealSlaTimer.test.jsx > absolute-clock SLA hook > renders initial time then recomputes from Date.now on each callback 43ms
+   → Not implemented: SLA timer hook
+ × src/hooks/useAppealSlaTimer.test.jsx > absolute-clock SLA hook > does not accumulate drift when interval execution is delayed 10ms
+   → Not implemented: SLA timer hook
+ × src/hooks/useAppealSlaTimer.test.jsx > absolute-clock SLA hook > resynchronizes immediately when returning from a background tab 11ms
+   → Not implemented: SLA timer hook
+ × src/hooks/useAppealSlaTimer.test.jsx > absolute-clock SLA hook > derives replacement and invalid deadlines without retaining prior remaining time 8ms
+   → Not implemented: SLA timer hook
+ × src/hooks/useAppealSlaTimer.test.jsx > absolute-clock SLA hook > supports explicit resampling without an interval tick 10ms
+   → Not implemented: SLA timer hook
+ × src/hooks/useAppealSlaTimer.test.jsx > absolute-clock SLA hook > cleans interval and identical visibility listeners even under StrictMode 8ms
+   → Not implemented: SLA timer hook
+ ✓ src/components/DisproportionalityMatrix.test.jsx > shows an accessible comparison table with explicit assumptions and simulation limits 183ms
+ ✓ src/App.test.jsx > renders a clearly labeled simulation application 198ms
+ × src/components/AppealDeadline.test.jsx > uses a nonannouncing accessible timer and disables the action on expiry 234ms
+   → Unable to find an accessible element with the role "timer"
+
+Here are the accessible roles:
+
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"eyebrow"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"field-hint"[39m
+    [33mid[39m=[32m"_r_4_-hint"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"field-hint"[39m
+    [33mid[39m=[32m"_r_5_-hint"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Prepare a demonstration appeal":
+  [36m<h2 />[39m
+
+  Name "Appeal data review":
+  [36m<h3 />[39m
+
+  --------------------------------------------------
+  form:
+
+  Name "Demo appeal form":
+  [36m<form[39m
+    [33maria-label[39m=[32m"Demo appeal form"[39m
+    [33mnovalidate[39m=[32m""[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  textbox:
+
+  Name "Applicant name":
+  [36m<input[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33mid[39m=[32m"_r_0_"[39m
+    [33mname[39m=[32m"applicantName"[39m
+    [33mtype[39m=[32m"text"[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "Email":
+  [36m<input[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33mid[39m=[32m"_r_1_"[39m
+    [33mname[39m=[32m"applicantEmail"[39m
+    [33mtype[39m=[32m"email"[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "Appeal reasons":
+  [36m<textarea[39m
+    [33maria-describedby[39m=[32m"_r_4_-hint"[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33mid[39m=[32m"_r_4_"[39m
+    [33mname[39m=[32m"grounds"[39m
+    [33mrows[39m=[32m"5"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  combobox:
+
+  Name "Relationship":
+  [36m<select[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33mid[39m=[32m"_r_2_"[39m
+    [33mname[39m=[32m"relationship"[39m
+  [36m/>[39m
+
+  Name "Reason category":
+  [36m<select[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33mid[39m=[32m"_r_3_"[39m
+    [33mname[39m=[32m"reason"[39m
+  [36m/>[39m
+
+  Name "Requested outcome":
+  [36m<select[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33mid[39m=[32m"_r_6_"[39m
+    [33mname[39m=[32m"requestedOutcome"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  option:
+
+  Name "Player":
+  [36m<option[39m
+    [33mvalue[39m=[32m"PLAYER"[39m
+  [36m/>[39m
+
+  Name "Representative":
+  [36m<option[39m
+    [33mvalue[39m=[32m"REPRESENTATIVE"[39m
+  [36m/>[39m
+
+  Name "Process review":
+  [36m<option[39m
+    [33mvalue[39m=[32m"PROCESS"[39m
+  [36m/>[39m
+
+  Name "New evidence":
+  [36m<option[39m
+    [33mvalue[39m=[32m"NEW_EVIDENCE"[39m
+  [36m/>[39m
+
+  Name "Proportionality":
+  [36m<option[39m
+    [33mvalue[39m=[32m"PROPORTIONALITY"[39m
+  [36m/>[39m
+
+  Name "Review":
+  [36m<option[39m
+    [33mvalue[39m=[32m"REVIEW"[39m
+  [36m/>[39m
+
+  Name "Reduce":
+  [36m<option[39m
+    [33mvalue[39m=[32m"REDUCE"[39m
+  [36m/>[39m
+
+  Name "Remove":
+  [36m<option[39m
+    [33mvalue[39m=[32m"REMOVE"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  group:
+
+  Name "Supporting evidence references":
+  [36m<fieldset[39m
+    [33maria-describedby[39m=[32m"_r_5_-hint"[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33mclass[39m=[32m"form-field"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  checkbox:
+
+  Name "Scrim replay index":
+  [36m<input[39m
+    [33mtype[39m=[32m"checkbox"[39m
+  [36m/>[39m
+
+  Name "Training rules briefing":
+  [36m<input[39m
+    [33mtype[39m=[32m"checkbox"[39m
+  [36m/>[39m
+
+  Name "I understand this is a local simulation.":
+  [36m<input[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33mid[39m=[32m"_r_7_"[39m
+    [33mname[39m=[32m"acknowledged"[39m
+    [33mtype[39m=[32m"checkbox"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Review demo appeal":
+  [36m<button[39m
+    [33mclass[39m=[32m"primary-link"[39m
+    [33mtype[39m=[32m"submit"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  region:
+
+  Name "Appeal data review":
+  [36m<section[39m
+    [33maria-label[39m=[32m"Appeal data review"[39m
+    [33mclass[39m=[32m"draft-review"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  term:
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  --------------------------------------------------
+  definition:
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd[39m
+    [33mclass[39m=[32m"draft-grounds"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33mclass[39m=[32m"panel appeal-panel"[39m
+    [36m>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"eyebrow"[39m
+      [36m>[39m
+        [0mLOCAL REVIEW EXERCISE[0m
+      [36m</p>[39m
+      [36m<h2>[39m
+        [0mPrepare a demonstration appeal[0m
+      [36m</h2>[39m
+      [36m<p>[39m
+        [0mUse fictional details only. This draft stays in memory and is cleared on navigation or reload.[0m
+      [36m</p>[39m
+      [36m<form[39m
+        [33maria-label[39m=[32m"Demo appeal form"[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-grid"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"form-field"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mfor[39m=[32m"_r_0_"[39m
+            [36m>[39m
+              [0mApplicant name[0m
+            [36m</label>[39m
+            [36m<input[39m
+              [33maria-invalid[39m=[32m"false"[39m
+              [33mid[39m=[32m"_r_0_"[39m
+              [33mname[39m=[32m"applicantName"[39m
+              [33mtype[39m=[32m"text"[39m
+              [33mvalue[39m=[32m""[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"form-field"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mfor[39m=[32m"_r_1_"[39m
+            [36m>[39m
+              [0mEmail[0m
+            [36m</label>[39m
+            [36m<input[39m
+              [33maria-invalid[39m=[32m"false"[39m
+              [33mid[39m=[32m"_r_1_"[39m
+              [33mname[39m=[32m"applicantEmail"[39m
+              [33mtype[39m=[32m"email"[39m
+              [33mvalue[39m=[32m""[39m
+            [36m/>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mfor[39m=[32m"_r_2_"[39m
+          [36m>[39m
+            [0mRelationship[0m
+          [36m</label>[39m
+          [36m<select[39m
+            [33maria-invalid[39m=[32m"false"[39m
+            [33mid[39m=[32m"_r_2_"[39m
+            [33mname[39m=[32m"relationship"[39m
+          [36m>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"PLAYER"[39m
+            [36m>[39m
+              [0mPlayer[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"REPRESENTATIVE"[39m
+            [36m>[39m
+              [0mRepresentative[0m
+            [36m</option>[39m
+          [36m</select>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mfor[39m=[32m"_r_3_"[39m
+          [36m>[39m
+            [0mReason category[0m
+          [36m</label>[39m
+          [36m<select[39m
+            [33maria-invalid[39m=[32m"false"[39m
+            [33mid[39m=[32m"_r_3_"[39m
+            [33mname[39m=[32m"reason"[39m
+          [36m>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"PROCESS"[39m
+            [36m>[39m
+              [0mProcess review[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"NEW_EVIDENCE"[39m
+            [36m>[39m
+              [0mNew evidence[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"PROPORTIONALITY"[39m
+            [36m>[39m
+              [0mProportionality[0m
+            [36m</option>[39m
+          [36m</select>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mfor[39m=[32m"_r_4_"[39m
+          [36m>[39m
+            [0mAppeal reasons[0m
+          [36m</label>[39m
+          [36m<textarea[39m
+            [33maria-describedby[39m=[32m"_r_4_-hint"[39m
+            [33maria-invalid[39m=[32m"false"[39m
+            [33mid[39m=[32m"_r_4_"[39m
+            [33mname[39m=[32m"grounds"[39m
+            [33mrows[39m=[32m"5"[39m
+          [36m/>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"field-hint"[39m
+            [33mid[39m=[32m"_r_4_-hint"[39m
+          [36m>[39m
+            [0mRequired: 30 to 4000 characters. Explain the fictional context.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<fieldset[39m
+          [33maria-describedby[39m=[32m"_r_5_-hint"[39m
+          [33maria-invalid[39m=[32m"false"[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<legend>[39m
+            [0mSupporting evidence references[0m
+          [36m</legend>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"check-label"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mtype[39m=[32m"checkbox"[39m
+            [36m/>[39m
+            [0mScrim replay index[0m
+          [36m</label>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"check-label"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mtype[39m=[32m"checkbox"[39m
+            [36m/>[39m
+            [0mTraining rules briefing[0m
+          [36m</label>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"field-hint"[39m
+            [33mid[39m=[32m"_r_5_-hint"[39m
+          [36m>[39m
+            [0mSelect existing simulation references; no files are uploaded.[0m
+          [36m</p>[39m
+        [36m</fieldset>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mfor[39m=[32m"_r_6_"[39m
+          [36m>[39m
+            [0mRequested outcome[0m
+          [36m</label>[39m
+          [36m<select[39m
+            [33maria-invalid[39m=[32m"false"[39m
+            [33mid[39m=[32m"_r_6_"[39m
+            [33mname[39m=[32m"requestedOutcome"[39m
+          [36m>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"REVIEW"[39m
+            [36m>[39m
+              [0mReview[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"REDUCE"[39m
+            [36m>[39m
+              [0mReduce[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"REMOVE"[39m
+            [36m>[39m
+              [0mRemove[0m
+            [36m</option>[39m
+          [36m</select>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"check-label"[39m
+            [33mfor[39m=[32m"_r_7_"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33maria-invalid[39m=[32m"false"[39m
+              [33mid[39m=[32m"_r_7_"[39m
+              [33mname[39m=[32m"acknowledged"[39m
+              [33mtype[39m=[32m"checkbox"[39m
+            [36m/>[39m
+            [0mI understand this is a local simulation.[0m
+          [36m</label>[39m
+        [36m</div>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"primary-link"[39m
+          [33mtype[39m=[32m"submit"[39m
+        [36m>[39m
+          [0mReview demo appeal[0m
+        [36m</button>[39m
+      [36m</form>[39m
+      [36m<section[39m
+        [33maria-label[39m=[32m"Appeal data review"[39m
+        [33mclass[39m=[32m"draft-review"[39m
+      [36m>[39m
+        [36m<h3>[39m
+          [0mAppeal data review[0m
+        [36m</h3>[39m
+        [36m<p>[39m
+          [0mLive draft for [0m
+          [0mdemo-001[0m
+          [0m. No data is sent or saved.[0m
+        [36m</p>[39m
+        [36m<dl>[39m
+          [36m<dt>[39m
+            [0mApplicant[0m
+          [36m</dt>[39m
+          [36m<dd>[39m
+            [0mNot entered[0m
+          [36m</dd>[39m
+          [36m<dt>[39m
+            [0mEmail[0m
+          [36m</dt>[39m
+          [36m<dd>[39m
+            [0mNot entered[0m
+          [36m</dd>[39m
+          [36m<dt>[39m
+            [0mReason / outcome[0m
+          [36m</dt>[39m
+          [36m<dd>[39m
+            [0mPROCESS[0m
+            [0m / [0m
+            [0mREVIEW[0m
+          [36m</dd>[39m
+          [36m<dt>[39m
+            [0mSupporting references[0m
+          [36m</dt>[39m
+          [36m<dd>[39m
+            [0mNone selected[0m
+          [36m</dd>[39m
+          [36m<dt>[39m
+            [0mAppeal reasons[0m
+          [36m</dt>[39m
+          [36m<dd[39m
+            [33mclass[39m=[32m"draft-grounds"[39m
+          [36m>[39m
+            [0mNot entered[0m
+          [36m</dd>[39m
+        [36m</dl>[39m
+      [36m</section>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ × src/components/AppealDeadline.test.jsx > fails closed for an invalid deadline 39ms
+   → expect(element).toBeDisabled()
+
+Received element is not disabled:
+  <button
+  class="primary-link"
+  type="submit"
+/>
+ × src/components/AppealDeadline.test.jsx > rejects a late submission even when the displayed clock has not ticked 114ms
+   → expect(element).not.toBeInTheDocument()
+
+expected document not to contain element, found <p
+  class="review-success"
+  role="status"
+>
+  Local review generated. Nothing was sent to a server. Edit any field to revise the draft.
+</p> instead
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > renders the overview within a shared semantic layout and explicit simulation notice 267ms
+ ✓ src/components/SimpleForm.test.jsx > Context appeal form > shares live values with ShowData and generates only a local review 450ms
+ ✓ src/components/SimpleForm.test.jsx > Context appeal form > prevents invalid review and connects field errors to accessible controls 27ms
+ ✓ src/components/SimpleForm.test.jsx > Context appeal form > validates representative authorization, evidence ownership and proportionality during render 82ms
+ ✓ src/components/SimpleForm.test.jsx > Context appeal form > starts a fresh draft when a different keyed dossier is selected 35ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > navigates through registry and dossier while preserving the shared layout 199ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > resolves dynamic dossier sim-himass without another case leaking into it 53ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > resolves dynamic dossier sim-tanvuu without another case leaking into it 53ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > shows demonstration sanction and an ordered timestamped case timeline 39ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID unknown and recovers to registry 53ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID toString and recovers to registry 64ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID __proto__ and recovers to registry 46ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID SIM-HIMASS and recovers to registry 64ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID %00 and recovers to registry 45ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID sim-missing and recovers to registry 67ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown route /missing in the shared layout 18ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown route /dossier in the shared layout 18ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown route /dossier/sim-himass/extra in the shared layout 13ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > explains reference labels and does not introduce an appeal form 12ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > renders the default BrowserRouter application on an initially deep-linked URL 33ms
+npm.cmd : 
+At line:2 char:1
++ npm.cmd run test --workspace frontend -- --reporter=verbose *> verifi ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+⎯⎯⎯⎯⎯⎯ Failed Tests 22 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/components/AppealDeadline.test.jsx > uses a nonannouncing accessible timer and disables the action on expiry
+TestingLibraryElementError: Unable to find an accessible element with the role "timer"
+
+Here are the accessible roles:
+
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"eyebrow"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"field-hint"[39m
+    [33mid[39m=[32m"_r_4_-hint"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"field-hint"[39m
+    [33mid[39m=[32m"_r_5_-hint"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Prepare a demonstration appeal":
+  [36m<h2 />[39m
+
+  Name "Appeal data review":
+  [36m<h3 />[39m
+
+  --------------------------------------------------
+  form:
+
+  Name "Demo appeal form":
+  [36m<form[39m
+    [33maria-label[39m=[32m"Demo appeal form"[39m
+    [33mnovalidate[39m=[32m""[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  textbox:
+
+  Name "Applicant name":
+  [36m<input[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33mid[39m=[32m"_r_0_"[39m
+    [33mname[39m=[32m"applicantName"[39m
+    [33mtype[39m=[32m"text"[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "Email":
+  [36m<input[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33mid[39m=[32m"_r_1_"[39m
+    [33mname[39m=[32m"applicantEmail"[39m
+    [33mtype[39m=[32m"email"[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "Appeal reasons":
+  [36m<textarea[39m
+    [33maria-describedby[39m=[32m"_r_4_-hint"[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33mid[39m=[32m"_r_4_"[39m
+    [33mname[39m=[32m"grounds"[39m
+    [33mrows[39m=[32m"5"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  combobox:
+
+  Name "Relationship":
+  [36m<select[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33mid[39m=[32m"_r_2_"[39m
+    [33mname[39m=[32m"relationship"[39m
+  [36m/>[39m
+
+  Name "Reason category":
+  [36m<select[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33mid[39m=[32m"_r_3_"[39m
+    [33mname[39m=[32m"reason"[39m
+  [36m/>[39m
+
+  Name "Requested outcome":
+  [36m<select[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33mid[39m=[32m"_r_6_"[39m
+    [33mname[39m=[32m"requestedOutcome"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  option:
+
+  Name "Player":
+  [36m<option[39m
+    [33mvalue[39m=[32m"PLAYER"[39m
+  [36m/>[39m
+
+  Name "Representative":
+  [36m<option[39m
+    [33mvalue[39m=[32m"REPRESENTATIVE"[39m
+  [36m/>[39m
+
+  Name "Process review":
+  [36m<option[39m
+    [33mvalue[39m=[32m"PROCESS"[39m
+  [36m/>[39m
+
+  Name "New evidence":
+  [36m<option[39m
+    [33mvalue[39m=[32m"NEW_EVIDENCE"[39m
+  [36m/>[39m
+
+  Name "Proportionality":
+  [36m<option[39m
+    [33mvalue[39m=[32m"PROPORTIONALITY"[39m
+  [36m/>[39m
+
+  Name "Review":
+  [36m<option[39m
+    [33mvalue[39m=[32m"REVIEW"[39m
+  [36m/>[39m
+
+  Name "Reduce":
+  [36m<option[39m
+    [33mvalue[39m=[32m"REDUCE"[39m
+  [36m/>[39m
+
+  Name "Remove":
+  [36m<option[39m
+    [33mvalue[39m=[32m"REMOVE"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  group:
+
+  Name "Supporting evidence references":
+  [36m<fieldset[39m
+    [33maria-describedby[39m=[32m"_r_5_-hint"[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33mclass[39m=[32m"form-field"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  checkbox:
+
+  Name "Scrim replay index":
+  [36m<input[39m
+    [33mtype[39m=[32m"checkbox"[39m
+  [36m/>[39m
+
+  Name "Training rules briefing":
+  [36m<input[39m
+    [33mtype[39m=[32m"checkbox"[39m
+  [36m/>[39m
+
+  Name "I understand this is a local simulation.":
+  [36m<input[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33mid[39m=[32m"_r_7_"[39m
+    [33mname[39m=[32m"acknowledged"[39m
+    [33mtype[39m=[32m"checkbox"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Review demo appeal":
+  [36m<button[39m
+    [33mclass[39m=[32m"primary-link"[39m
+    [33mtype[39m=[32m"submit"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  region:
+
+  Name "Appeal data review":
+  [36m<section[39m
+    [33maria-label[39m=[32m"Appeal data review"[39m
+    [33mclass[39m=[32m"draft-review"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  term:
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  --------------------------------------------------
+  definition:
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd[39m
+    [33mclass[39m=[32m"draft-grounds"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33mclass[39m=[32m"panel appeal-panel"[39m
+    [36m>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"eyebrow"[39m
+      [36m>[39m
+        [0mLOCAL REVIEW EXERCISE[0m
+      [36m</p>[39m
+      [36m<h2>[39m
+        [0mPrepare a demonstration appeal[0m
+      [36m</h2>[39m
+      [36m<p>[39m
+        [0mUse fictional details only. This draft stays in memory and is cleared on navigation or reload.[0m
+      [36m</p>[39m
+      [36m<form[39m
+        [33maria-label[39m=[32m"Demo appeal form"[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-grid"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"form-field"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mfor[39m=[32m"_r_0_"[39m
+            [36m>[39m
+              [0mApplicant name[0m
+            [36m</label>[39m
+            [36m<input[39m
+              [33maria-invalid[39m=[32m"false"[39m
+              [33mid[39m=[32m"_r_0_"[39m
+              [33mname[39m=[32m"applicantName"[39m
+              [33mtype[39m=[32m"text"[39m
+              [33mvalue[39m=[32m""[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"form-field"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mfor[39m=[32m"_r_1_"[39m
+            [36m>[39m
+              [0mEmail[0m
+            [36m</label>[39m
+            [36m<input[39m
+              [33maria-invalid[39m=[32m"false"[39m
+              [33mid[39m=[32m"_r_1_"[39m
+              [33mname[39m=[32m"applicantEmail"[39m
+              [33mtype[39m=[32m"email"[39m
+              [33mvalue[39m=[32m""[39m
+            [36m/>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mfor[39m=[32m"_r_2_"[39m
+          [36m>[39m
+            [0mRelationship[0m
+          [36m</label>[39m
+          [36m<select[39m
+            [33maria-invalid[39m=[32m"false"[39m
+            [33mid[39m=[32m"_r_2_"[39m
+            [33mname[39m=[32m"relationship"[39m
+          [36m>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"PLAYER"[39m
+            [36m>[39m
+              [0mPlayer[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"REPRESENTATIVE"[39m
+            [36m>[39m
+              [0mRepresentative[0m
+            [36m</option>[39m
+          [36m</select>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mfor[39m=[32m"_r_3_"[39m
+          [36m>[39m
+            [0mReason category[0m
+          [36m</label>[39m
+          [36m<select[39m
+            [33maria-invalid[39m=[32m"false"[39m
+            [33mid[39m=[32m"_r_3_"[39m
+            [33mname[39m=[32m"reason"[39m
+          [36m>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"PROCESS"[39m
+            [36m>[39m
+              [0mProcess review[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"NEW_EVIDENCE"[39m
+            [36m>[39m
+              [0mNew evidence[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"PROPORTIONALITY"[39m
+            [36m>[39m
+              [0mProportionality[0m
+            [36m</option>[39m
+          [36m</select>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mfor[39m=[32m"_r_4_"[39m
+          [36m>[39m
+            [0mAppeal reasons[0m
+          [36m</label>[39m
+          [36m<textarea[39m
+            [33maria-describedby[39m=[32m"_r_4_-hint"[39m
+            [33maria-invalid[39m=[32m"false"[39m
+            [33mid[39m=[32m"_r_4_"[39m
+            [33mname[39m=[32m"grounds"[39m
+            [33mrows[39m=[32m"5"[39m
+          [36m/>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"field-hint"[39m
+            [33mid[39m=[32m"_r_4_-hint"[39m
+          [36m>[39m
+            [0mRequired: 30 to 4000 characters. Explain the fictional context.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<fieldset[39m
+          [33maria-describedby[39m=[32m"_r_5_-hint"[39m
+          [33maria-invalid[39m=[32m"false"[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<legend>[39m
+            [0mSupporting evidence references[0m
+          [36m</legend>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"check-label"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mtype[39m=[32m"checkbox"[39m
+            [36m/>[39m
+            [0mScrim replay index[0m
+          [36m</label>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"check-label"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mtype[39m=[32m"checkbox"[39m
+            [36m/>[39m
+            [0mTraining rules briefing[0m
+          [36m</label>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"field-hint"[39m
+            [33mid[39m=[32m"_r_5_-hint"[39m
+          [36m>[39m
+            [0mSelect existing simulation references; no files are uploaded.[0m
+          [36m</p>[39m
+        [36m</fieldset>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mfor[39m=[32m"_r_6_"[39m
+          [36m>[39m
+            [0mRequested outcome[0m
+          [36m</label>[39m
+          [36m<select[39m
+            [33maria-invalid[39m=[32m"false"[39m
+            [33mid[39m=[32m"_r_6_"[39m
+            [33mname[39m=[32m"requestedOutcome"[39m
+          [36m>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"REVIEW"[39m
+            [36m>[39m
+              [0mReview[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"REDUCE"[39m
+            [36m>[39m
+              [0mReduce[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"REMOVE"[39m
+            [36m>[39m
+              [0mRemove[0m
+            [36m</option>[39m
+          [36m</select>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"check-label"[39m
+            [33mfor[39m=[32m"_r_7_"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33maria-invalid[39m=[32m"false"[39m
+              [33mid[39m=[32m"_r_7_"[39m
+              [33mname[39m=[32m"acknowledged"[39m
+              [33mtype[39m=[32m"checkbox"[39m
+            [36m/>[39m
+            [0mI understand this is a local simulation.[0m
+          [36m</label>[39m
+        [36m</div>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"primary-link"[39m
+          [33mtype[39m=[32m"submit"[39m
+        [36m>[39m
+          [0mReview demo appeal[0m
+        [36m</button>[39m
+      [36m</form>[39m
+      [36m<section[39m
+        [33maria-label[39m=[32m"Appeal data review"[39m
+        [33mclass[39m=[32m"draft-review"[39m
+      [36m>[39m
+        [36m<h3>[39m
+          [0mAppeal data review[0m
+        [36m</h3>[39m
+        [36m<p>[39m
+          [0mLive draft for [0m
+          [0mdemo-001[0m
+          [0m. No data is sent or saved.[0m
+        [36m</p>[39m
+        [36m<dl>[39m
+          [36m<dt>[39m
+            [0mApplicant[0m
+          [36m</dt>[39m
+          [36m<dd>[39m
+            [0mNot entered[0m
+          [36m</dd>[39m
+          [36m<dt>[39m
+            [0mEmail[0m
+          [36m</dt>[39m
+          [36m<dd>[39m
+            [0mNot entered[0m
+          [36m</dd>[39m
+          [36m<dt>[39m
+            [0mReason / outcome[0m
+          [36m</dt>[39m
+          [36m<dd>[39m
+            [0mPROCESS[0m
+            [0m / [0m
+            [0mREVIEW[0m
+          [36m</dd>[39m
+          [36m<dt>[39m
+            [0mSupporting references[0m
+          [36m</dt>[39m
+          [36m<dd>[39m
+            [0mNone selected[0m
+          [36m</dd>[39m
+          [36m<dt>[39m
+            [0mAppeal reasons[0m
+          [36m</dt>[39m
+          [36m<dd[39m
+            [33mclass[39m=[32m"draft-grounds"[39m
+          [36m>[39m
+            [0mNot entered[0m
+          [36m</dd>[39m
+        [36m</dl>[39m
+      [36m</section>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/AppealDeadline.test.jsx:14:17
+     12| it('uses a nonannouncing accessible timer and disables the action on e…
+     13|   render(<SimpleForm dossier={dossier} evidence={evidence} />)
+     14|   expect(screen.getByRole('timer')).toHaveAttribute('aria-live', 'off')
+       |                 ^
+     15|   expect(screen.getByRole('timer')).toHaveTextContent('00d 00:00:10')
+     16|   expect(screen.getByRole('button', { name: 'Review demo appeal' })).t…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/13]⎯
+
+ FAIL  src/components/AppealDeadline.test.jsx > fails closed for an invalid deadline
+Error: expect(element).toBeDisabled()
+
+Received element is not disabled:
+  <button
+  class="primary-link"
+  type="submit"
+/>
+ ❯ src/components/AppealDeadline.test.jsx:24:70
+     22| it('fails closed for an invalid deadline', () => {
+     23|   render(<SimpleForm dossier={{ ...dossier, appealDeadline: 'broken' }…
+     24|   expect(screen.getByRole('button', { name: 'Review demo appeal' })).t…
+       |                                                                      ^
+     25|   expect(screen.getByText(/Deadline unavailable/)).toBeVisible()
+     26| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/13]⎯
+
+ FAIL  src/components/AppealDeadline.test.jsx > rejects a late submission even when the displayed clock has not ticked
+Error: expect(element).not.toBeInTheDocument()
+
+expected document not to contain element, found <p
+  class="review-success"
+  role="status"
+>
+  Local review generated. Nothing was sent to a server. Edit any field to revise the draft.
+</p> instead
+ ❯ src/components/AppealDeadline.test.jsx:36:60
+     34|   expect(screen.getByRole('button', { name: 'Review demo appeal' })).t…
+     35|   fireEvent.submit(screen.getByRole('form', { name: 'Demo appeal form'…
+     36|   expect(screen.queryByText(/Local review generated/)).not.toBeInTheDo…
+       |                                                            ^
+     37|   expect(screen.getByRole('button', { name: 'Review demo appeal' })).t…
+     38|   expect(screen.getByText(/Deadline expired/)).toBeVisible()
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/13]⎯
+
+ FAIL  src/domain/appealSla.test.js > calculates an exact absolute delta for active deadlines
+Error: Not implemented: absolute SLA calculation
+ ❯ calculateSla src/domain/appealSla.js:1:40
+      1| export function calculateSla() { throw new Error('Not implemented: abs…
+       |                                        ^
+      2|
+ ❯ src/domain/appealSla.test.js:8:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/13]⎯
+
+ FAIL  src/domain/appealSla.test.js > clamps expired deadline at clock 1796461200000
+ FAIL  src/domain/appealSla.test.js > clamps expired deadline at clock 1796461200001
+ FAIL  src/domain/appealSla.test.js > clamps expired deadline at clock 1796464800000
+Error: Not implemented: absolute SLA calculation
+ ❯ calculateSla src/domain/appealSla.js:1:40
+      1| export function calculateSla() { throw new Error('Not implemented: abs…
+       |                                        ^
+      2|
+ ❯ src/domain/appealSla.test.js:11:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/13]⎯
+
+ FAIL  src/domain/appealSla.test.js > fails closed for invalid/noncanonical deadline invalid
+ FAIL  src/domain/appealSla.test.js > fails closed for invalid/noncanonical deadline 
+ FAIL  src/domain/appealSla.test.js > fails closed for invalid/noncanonical deadline null
+ FAIL  src/domain/appealSla.test.js > fails closed for invalid/noncanonical deadline 2026-02-30T09:00:00.000Z
+ FAIL  src/domain/appealSla.test.js > fails closed for invalid/noncanonical deadline 2026-12-05
+ FAIL  src/domain/appealSla.test.js > fails closed for invalid/noncanonical deadline 123
+Error: Not implemented: absolute SLA calculation
+ ❯ calculateSla src/domain/appealSla.js:1:40
+      1| export function calculateSla() { throw new Error('Not implemented: abs…
+       |                                        ^
+      2|
+ ❯ src/domain/appealSla.test.js:14:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/13]⎯
+
+ FAIL  src/domain/appealSla.test.js > fails closed for invalid clock NaN
+ FAIL  src/domain/appealSla.test.js > fails closed for invalid clock Infinity
+ FAIL  src/domain/appealSla.test.js > fails closed for invalid clock undefined
+Error: Not implemented: absolute SLA calculation
+ ❯ calculateSla src/domain/appealSla.js:1:40
+      1| export function calculateSla() { throw new Error('Not implemented: abs…
+       |                                        ^
+      2|
+ ❯ src/domain/appealSla.test.js:17:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/13]⎯
+
+ FAIL  src/hooks/useAppealSlaTimer.test.jsx > absolute-clock SLA hook > renders initial time then recomputes from 
+Date.now on each callback
+Error: Not implemented: SLA timer hook
+ ❯ useAppealSlaTimer src/hooks/useAppealSlaTimer.js:1:45
+      1| export function useAppealSlaTimer() { throw new Error('Not implemented…
+       |                                             ^
+      2|
+ ❯ src/hooks/useAppealSlaTimer.test.jsx:13:41
+ ❯ TestComponent ../node_modules/@testing-library/react/dist/pure.js:339:27
+ ❯ Object.react_stack_bottom_frame ../node_modules/react-dom/cjs/react-dom-client.development.js:28571:20
+ ❯ renderWithHooks ../node_modules/react-dom/cjs/react-dom-client.development.js:8030:22
+ ❯ updateFunctionComponent ../node_modules/react-dom/cjs/react-dom-client.development.js:10569:19
+ ❯ beginWork ../node_modules/react-dom/cjs/react-dom-client.development.js:12205:18
+ ❯ runWithFiberInDEV ../node_modules/react-dom/cjs/react-dom-client.development.js:1048:13
+ ❯ performUnitOfWork ../node_modules/react-dom/cjs/react-dom-client.development.js:19176:22
+ ❯ workLoopSync ../node_modules/react-dom/cjs/react-dom-client.development.js:19004:41
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/13]⎯
+
+ FAIL  src/hooks/useAppealSlaTimer.test.jsx > absolute-clock SLA hook > does not accumulate drift when interval 
+execution is delayed
+Error: Not implemented: SLA timer hook
+ ❯ useAppealSlaTimer src/hooks/useAppealSlaTimer.js:1:45
+      1| export function useAppealSlaTimer() { throw new Error('Not implemented…
+       |                                             ^
+      2|
+ ❯ src/hooks/useAppealSlaTimer.test.jsx:19:41
+ ❯ TestComponent ../node_modules/@testing-library/react/dist/pure.js:339:27
+ ❯ Object.react_stack_bottom_frame ../node_modules/react-dom/cjs/react-dom-client.development.js:28571:20
+ ❯ renderWithHooks ../node_modules/react-dom/cjs/react-dom-client.development.js:8030:22
+ ❯ updateFunctionComponent ../node_modules/react-dom/cjs/react-dom-client.development.js:10569:19
+ ❯ beginWork ../node_modules/react-dom/cjs/react-dom-client.development.js:12205:18
+ ❯ runWithFiberInDEV ../node_modules/react-dom/cjs/react-dom-client.development.js:1048:13
+ ❯ performUnitOfWork ../node_modules/react-dom/cjs/react-dom-client.development.js:19176:22
+ ❯ workLoopSync ../node_modules/react-dom/cjs/react-dom-client.development.js:19004:41
+
+
+ Test Files  3 failed | 7 passed (10)
+      Tests  22 failed | 62 passed (84)
+   Start at  22:19:39
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/13]⎯
+
+ FAIL  src/hooks/useAppealSlaTimer.test.jsx > absolute-clock SLA hook > resynchronizes immediately when returning from 
+a background tab
+Error: Not implemented: SLA timer hook
+ ❯ useAppealSlaTimer src/hooks/useAppealSlaTimer.js:1:45
+      1| export function useAppealSlaTimer() { throw new Error('Not implemented…
+       |                                             ^
+      2|
+ ❯ src/hooks/useAppealSlaTimer.test.jsx:28:41
+ ❯ TestComponent ../node_modules/@testing-library/react/dist/pure.js:339:27
+ ❯ Object.react_stack_bottom_frame ../node_modules/react-dom/cjs/react-dom-client.development.js:28571:20
+ ❯ renderWithHooks ../node_modules/react-dom/cjs/react-dom-client.development.js:8030:22
+ ❯ updateFunctionComponent ../node_modules/react-dom/cjs/react-dom-client.development.js:10569:19
+ ❯ beginWork ../node_modules/react-dom/cjs/react-dom-client.development.js:12205:18
+ ❯ runWithFiberInDEV ../node_modules/react-dom/cjs/react-dom-client.development.js:1048:13
+ ❯ performUnitOfWork ../node_modules/react-dom/cjs/react-dom-client.development.js:19176:22
+ ❯ workLoopSync ../node_modules/react-dom/cjs/react-dom-client.development.js:19004:41
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/13]⎯
+
+ FAIL  src/hooks/useAppealSlaTimer.test.jsx > absolute-clock SLA hook > derives replacement and invalid deadlines 
+without retaining prior remaining time
+Error: Not implemented: SLA timer hook
+ ❯ useAppealSlaTimer src/hooks/useAppealSlaTimer.js:1:45
+      1| export function useAppealSlaTimer() { throw new Error('Not implemented…
+       |                                             ^
+      2|
+ ❯ initialProps.value src/hooks/useAppealSlaTimer.test.jsx:37:60
+ ❯ TestComponent ../node_modules/@testing-library/react/dist/pure.js:339:27
+ ❯ Object.react_stack_bottom_frame ../node_modules/react-dom/cjs/react-dom-client.development.js:28571:20
+ ❯ renderWithHooks ../node_modules/react-dom/cjs/react-dom-client.development.js:8030:22
+ ❯ updateFunctionComponent ../node_modules/react-dom/cjs/react-dom-client.development.js:10569:19
+ ❯ beginWork ../node_modules/react-dom/cjs/react-dom-client.development.js:12205:18
+ ❯ runWithFiberInDEV ../node_modules/react-dom/cjs/react-dom-client.development.js:1048:13
+ ❯ performUnitOfWork ../node_modules/react-dom/cjs/react-dom-client.development.js:19176:22
+ ❯ workLoopSync ../node_modules/react-dom/cjs/react-dom-client.development.js:19004:41
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/13]⎯
+
+ FAIL  src/hooks/useAppealSlaTimer.test.jsx > absolute-clock SLA hook > supports explicit resampling without an 
+interval tick
+Error: Not implemented: SLA timer hook
+ ❯ useAppealSlaTimer src/hooks/useAppealSlaTimer.js:1:45
+      1| export function useAppealSlaTimer() { throw new Error('Not implemented…
+       |                                             ^
+      2|
+ ❯ src/hooks/useAppealSlaTimer.test.jsx:44:41
+ ❯ TestComponent ../node_modules/@testing-library/react/dist/pure.js:339:27
+ ❯ Object.react_stack_bottom_frame ../node_modules/react-dom/cjs/react-dom-client.development.js:28571:20
+ ❯ renderWithHooks ../node_modules/react-dom/cjs/react-dom-client.development.js:8030:22
+ ❯ updateFunctionComponent ../node_modules/react-dom/cjs/react-dom-client.development.js:10569:19
+ ❯ beginWork ../node_modules/react-dom/cjs/react-dom-client.development.js:12205:18
+ ❯ runWithFiberInDEV ../node_modules/react-dom/cjs/react-dom-client.development.js:1048:13
+ ❯ performUnitOfWork ../node_modules/react-dom/cjs/react-dom-client.development.js:19176:22
+ ❯ workLoopSync ../node_modules/react-dom/cjs/react-dom-client.development.js:19004:41
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/13]⎯
+
+   Duration  6.01s (environment 58%, setup 27%, tests 8%, import 4%, transform 2%)
+
+ FAIL  src/hooks/useAppealSlaTimer.test.jsx > absolute-clock SLA hook > cleans interval and identical visibility 
+listeners even under StrictMode
+Error: Not implemented: SLA timer hook
+ ❯ useAppealSlaTimer src/hooks/useAppealSlaTimer.js:1:45
+      1| export function useAppealSlaTimer() { throw new Error('Not implemented…
+       |                                             ^
+      2|
+ ❯ wrapper src/hooks/useAppealSlaTimer.test.jsx:52:42
+ ❯ TestComponent ../node_modules/@testing-library/react/dist/pure.js:339:27
+ ❯ Object.react_stack_bottom_frame ../node_modules/react-dom/cjs/react-dom-client.development.js:28571:20
+ ❯ renderWithHooks ../node_modules/react-dom/cjs/react-dom-client.development.js:8030:22
+ ❯ updateFunctionComponent ../node_modules/react-dom/cjs/react-dom-client.development.js:10569:19
+ ❯ beginWork ../node_modules/react-dom/cjs/react-dom-client.development.js:12205:18
+ ❯ runWithFiberInDEV ../node_modules/react-dom/cjs/react-dom-client.development.js:1048:13
+ ❯ performUnitOfWork ../node_modules/react-dom/cjs/react-dom-client.development.js:19176:22
+ ❯ workLoopSync ../node_modules/react-dom/cjs/react-dom-client.development.js:19004:41
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/13]⎯
+
+npm error Lifecycle script `test` failed with error:
+npm error code 1
+npm error path C:\Users\LENOVO\OneDrive\Desktop\Lab4\Homework 3\frontend
+npm error workspace hw3-frontend@0.1.0
+npm error location C:\Users\LENOVO\OneDrive\Desktop\Lab4\Homework 3\frontend
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --reporter=verbose
