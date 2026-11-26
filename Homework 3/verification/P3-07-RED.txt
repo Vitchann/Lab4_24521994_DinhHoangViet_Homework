@@ -1,0 +1,368 @@
+
+> hw3-frontend@0.1.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v5.1.2 C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework 3/frontend
+
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > creates fresh empty drafts and independent reference arrays 6ms
+   → Not implemented: appeal draft
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > accepts valid simulated applicant data without mutating inputs 1ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantName " " 1ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantName "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" 1ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantEmail "bad-address" 1ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantEmail "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid grounds "short" 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid grounds "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid relationship "OTHER" 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid reason "UNKNOWN" 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid requestedOutcome "PUNISH" 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid acknowledged false 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid acknowledged "true" 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid evidenceIDs "ev-hm-replay" 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid evidenceIDs ["ev-tv-notice"] 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid evidenceIDs ["ev-hm-replay","ev-hm-replay"] 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > requires representative authorization 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > requires same-dossier references for new-evidence reasons 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > requires a specified reduction/removal for proportionality 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > counts trimmed grounds and handles malformed payload/context without crashing 0ms
+   → Not implemented: appeal validation
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > has two explicitly simulated case-study references with valid relationships 5ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > deeply freezes the fixtures and keeps real reference labels out of synthetic handles 2ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > finds a dossier by stable player ID without mutating it 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID undefined 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID toString 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID __proto__ 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID SIM-HIMASS 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID unknown 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects false simulation flag 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects duplicate player ID 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects broken evidence link 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects cross-case evidence 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects external evidence source 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects invalid chronology 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects unsorted timeline 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects invalid sanction duration 0ms
+ ✓ src/App.test.jsx > renders a clearly labeled simulation application 197ms
+ × src/components/SimpleForm.test.jsx > Context appeal form > shares live values with ShowData and generates only a local review 51ms
+   → Unable to find a label with the text of: Applicant name
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ × src/components/SimpleForm.test.jsx > Context appeal form > prevents invalid review and connects field errors to accessible controls 78ms
+   → Unable to find an accessible element with the role "form" and name "Demo appeal form"
+
+There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ × src/components/SimpleForm.test.jsx > Context appeal form > validates representative authorization, evidence ownership and proportionality during render 3ms
+   → Unable to find a label with the text of: Applicant name
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ × src/components/SimpleForm.test.jsx > Context appeal form > starts a fresh draft when a different keyed dossier is selected 3ms
+   → Unable to find a label with the text of: Applicant name
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > renders the overview within a shared semantic layout and explicit simulation notice 162ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > navigates through registry and dossier while preserving the shared layout 203ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > resolves dynamic dossier sim-himass without another case leaking into it 38ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > resolves dynamic dossier sim-tanvuu without another case leaking into it 34ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > shows demonstration sanction and an ordered timestamped case timeline 26ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID unknown and recovers to registry 60ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID toString and recovers to registry 58ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID __proto__ and recovers to registry 93ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID SIM-HIMASS and recovers to registry 63ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID %00 and recovers to registry 49ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID sim-missing and recovers to registry 94ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown route /missing in the shared layout 18ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown route /dossier in the shared layout 11ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown route /dossier/sim-himass/extra in the shared layout 11ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > explains reference labels and does not introduce an appeal form 12ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > renders the default BrowserRouter application on an initially deep-linked URL 18ms
+npm.cmd : 
+At line:2 char:1
++ npm.cmd run test --workspace frontend -- --reporter=verbose *> verifi ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+⎯⎯⎯⎯⎯⎯ Failed Tests 24 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/components/SimpleForm.test.jsx > Context appeal form > shares live values with ShowData and generates only 
+a local review
+TestingLibraryElementError: Unable to find a label with the text of: Applicant name
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getAllByLabelText ../node_modules/@testing-library/dom/dist/queries/label-text.js:111:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ fillValid src/components/SimpleForm.test.jsx:10:27
+      8| const evidence = simulation.evidence.filter((item) => item.dossierID =…
+      9| export function fillValid() {
+     10|   fireEvent.change(screen.getByLabelText('Applicant name'), { target: …
+       |                           ^
+     11|   fireEvent.change(screen.getByLabelText('Email'), { target: { value: …
+     12|   fireEvent.change(screen.getByLabelText('Appeal reasons'), { target: …
+ ❯ src/components/SimpleForm.test.jsx:18:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/11]⎯
+
+ FAIL  src/components/SimpleForm.test.jsx > Context appeal form > prevents invalid review and connects field errors to 
+accessible controls
+TestingLibraryElementError: Unable to find an accessible element with the role "form" and name "Demo appeal form"
+
+There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the 
+`hidden` option to `true`. Learn more about this here: 
+https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/SimpleForm.test.jsx:27:29
+     25|   it('prevents invalid review and connects field errors to accessible …
+     26|     render(<SimpleForm dossier={dossier} evidence={evidence} />)
+     27|     fireEvent.submit(screen.getByRole('form', { name: 'Demo appeal for…
+       |                             ^
+     28|     expect(screen.getByRole('alert')).toHaveTextContent('Please correc…
+     29|     expect(screen.getByLabelText('Applicant name')).toHaveAttribute('a…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/11]⎯
+
+ FAIL  src/components/SimpleForm.test.jsx > Context appeal form > validates representative authorization, evidence 
+ownership and proportionality during render
+TestingLibraryElementError: Unable to find a label with the text of: Applicant name
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getAllByLabelText ../node_modules/@testing-library/dom/dist/queries/label-text.js:111:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ fillValid src/components/SimpleForm.test.jsx:10:27
+      8| const evidence = simulation.evidence.filter((item) => item.dossierID =…
+      9| export function fillValid() {
+     10|   fireEvent.change(screen.getByLabelText('Applicant name'), { target: …
+       |                           ^
+     11|   fireEvent.change(screen.getByLabelText('Email'), { target: { value: …
+     12|   fireEvent.change(screen.getByLabelText('Appeal reasons'), { target: …
+ ❯ src/components/SimpleForm.test.jsx:35:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/11]⎯
+
+ FAIL  src/components/SimpleForm.test.jsx > Context appeal form > starts a fresh draft when a different keyed dossier 
+is selected
+TestingLibraryElementError: Unable to find a label with the text of: Applicant name
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getAllByLabelText ../node_modules/@testing-library/dom/dist/queries/label-text.js:111:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ fillValid src/components/SimpleForm.test.jsx:10:27
+      8| const evidence = simulation.evidence.filter((item) => item.dossierID =…
+      9| export function fillValid() {
+     10|   fireEvent.change(screen.getByLabelText('Applicant name'), { target: …
+       |                           ^
+     11|   fireEvent.change(screen.getByLabelText('Email'), { target: { value: …
+     12|   fireEvent.change(screen.getByLabelText('Appeal reasons'), { target: …
+ ❯ src/components/SimpleForm.test.jsx:53:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/11]⎯
+
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > creates fresh empty drafts and independent 
+reference arrays
+Error: Not implemented: appeal draft
+ ❯ createAppealValues src/domain/appealValidation.js:2:46
+      1| // P3-06 resolvable contracts only; behavior follows after RED.
+      2| export function createAppealValues() { throw new Error('Not implemente…
+       |                                              ^
+      3| export function validateAppeal() { throw new Error('Not implemented: a…
+      4|
+ ❯ src/domain/appealValidation.test.js:11:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/11]⎯
+
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > accepts valid simulated applicant data without 
+mutating inputs
+Error: Not implemented: appeal validation
+ ❯ validateAppeal src/domain/appealValidation.js:3:42
+      1| // P3-06 resolvable contracts only; behavior follows after RED.
+      2| export function createAppealValues() { throw new Error('Not implemente…
+      3| export function validateAppeal() { throw new Error('Not implemented: a…
+       |                                          ^
+      4|
+ ❯ src/domain/appealValidation.test.js:20:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/11]⎯
+
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantName " "
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantName 
+"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantEmail "bad-address"
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantEmail "xxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+x"
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid grounds "short"
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid grounds "xxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid relationship "OTHER"
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid reason "UNKNOWN"
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid requestedOutcome "PUNISH"
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid acknowledged false
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid acknowledged "true"
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid evidenceIDs "ev-hm-replay"
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid evidenceIDs ["ev-tv-notice"]
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid evidenceIDs 
+["ev-hm-replay","ev-hm-replay"]
+
+ Test Files  2 failed | 3 passed (5)
+      Tests  24 failed | 33 passed (57)
+   Start at  22:14:33
+   Duration  4.26s (environment 49%, setup 26%, tests 12%, import 7%, transform 6%, worker 1%)
+
+Error: Not implemented: appeal validation
+ ❯ validateAppeal src/domain/appealValidation.js:3:42
+      1| // P3-06 resolvable contracts only; behavior follows after RED.
+      2| export function createAppealValues() { throw new Error('Not implemente…
+      3| export function validateAppeal() { throw new Error('Not implemented: a…
+       |                                          ^
+      4|
+ ❯ src/domain/appealValidation.test.js:28:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/11]⎯
+
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > requires representative authorization
+Error: Not implemented: appeal validation
+ ❯ validateAppeal src/domain/appealValidation.js:3:42
+      1| // P3-06 resolvable contracts only; behavior follows after RED.
+      2| export function createAppealValues() { throw new Error('Not implemente…
+      3| export function validateAppeal() { throw new Error('Not implemented: a…
+       |                                          ^
+      4|
+ ❯ src/domain/appealValidation.test.js:31:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/11]⎯
+
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > requires same-dossier references for 
+new-evidence reasons
+Error: Not implemented: appeal validation
+ ❯ validateAppeal src/domain/appealValidation.js:3:42
+      1| // P3-06 resolvable contracts only; behavior follows after RED.
+      2| export function createAppealValues() { throw new Error('Not implemente…
+      3| export function validateAppeal() { throw new Error('Not implemented: a…
+       |                                          ^
+      4|
+ ❯ src/domain/appealValidation.test.js:35:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/11]⎯
+
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > requires a specified reduction/removal for 
+proportionality
+Error: Not implemented: appeal validation
+ ❯ validateAppeal src/domain/appealValidation.js:3:42
+      1| // P3-06 resolvable contracts only; behavior follows after RED.
+      2| export function createAppealValues() { throw new Error('Not implemente…
+      3| export function validateAppeal() { throw new Error('Not implemented: a…
+       |                                          ^
+      4|
+ ❯ src/domain/appealValidation.test.js:39:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/11]⎯
+
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > counts trimmed grounds and handles malformed 
+payload/context without crashing
+Error: Not implemented: appeal validation
+ ❯ validateAppeal src/domain/appealValidation.js:3:42
+      1| // P3-06 resolvable contracts only; behavior follows after RED.
+      2| export function createAppealValues() { throw new Error('Not implemente…
+      3| export function validateAppeal() { throw new Error('Not implemented: a…
+       |                                          ^
+      4|
+ ❯ src/domain/appealValidation.test.js:43:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/11]⎯
+
+npm error Lifecycle script `test` failed with error:
+npm error code 1
+npm error path C:\Users\LENOVO\OneDrive\Desktop\Lab4\Homework 3\frontend
+npm error workspace hw3-frontend@0.1.0
+npm error location C:\Users\LENOVO\OneDrive\Desktop\Lab4\Homework 3\frontend
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --reporter=verbose

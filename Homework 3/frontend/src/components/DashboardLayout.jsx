@@ -21,7 +21,7 @@ export default function DashboardLayout() {
         <div className="environment"><span className="status-dot" /><div><strong>Training environment</strong><small>Local demonstration · v0.1</small></div></div>
       </aside>
       <div className="workspace-body">
-        <header className="topbar"><div><span>Workspace</span><span aria-hidden="true"> / </span><strong>{section}</strong></div><div className="workspace-identity"><span className="outline-badge">READ-ONLY DEMO</span><span className="operator-avatar" aria-hidden="true">FP</span></div></header>
+        <header className="topbar"><div><span>Workspace</span><span aria-hidden="true"> / </span><strong>{section}</strong></div><div className="workspace-identity"><span className="outline-badge">LOCAL DEMO</span><span className="operator-avatar" aria-hidden="true">FP</span></div></header>
         <main id="main" tabIndex={-1}>
           <div className="simulation-notice" role="note" aria-label="Simulation notice"><Icon name="info" /><div><strong>SIMULATION WORKSPACE</strong><p>{SIMULATION_NOTICE}</p></div></div>
           <Outlet />

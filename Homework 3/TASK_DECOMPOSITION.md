@@ -2,7 +2,7 @@ Task Decomposition
 Project
 Esports Fair-Play Appeal Tribunal
 
-U001 authorizes P3-01–P3-05 sequentially with individual verification and actual atomic commits. Stop after P3-05; later tasks remain pending.
+U001 completed P3-01 through P3-05. U004 authorizes P3-06 through P3-10 sequentially, with individual verification and atomic commits. Stop after P3-10.
 P3-01 — Inspect and initialize setup
 - [x] Complete and verify task.
 Scope: Create isolated React/Vite and Express/Mongoose applications as needed; configure scripts, ignore rules, env template and docs.
@@ -39,19 +39,19 @@ Acceptance criteria: Routing tests pass; deep links and 404 behavior verified.
 
 Evidence / status: Complete 2026-11-26. React Router v7 Routes/Route/NavLink/Outlet/useParams, shared nested layout, dynamic dossier, registry/guide and both 404 states implemented. PlayerDossier/EvidenceList/SanctionSummary/CaseTimeline reusable semantic views. Final frontend 33/33 and backend scaffold 1/1 tests pass; lint/build/backend syntax pass. Production Chrome verifies nine direct routes, keyboard SPA navigation, dossier reload, no overflow at 320/375/768/1440 and reduced motion; screenshots visually inspected. Real API/appeal/SLA/persistence not implemented. Actual first failures/corrections in audit; evidence verification/P3-05-*. Stopped before P3-06.
 P3-06 — Appeal form contract and RED tests
-- [ ] Complete and verify task.
+- [x] Complete and verify task.
 Scope: Define fields, validation rules and cross-field dependencies; test invalid and valid values.
 
 Acceptance criteria: Document contract and capture failing tests.
 
 Evidence / status: Complete 2026-11-26. APPEAL_CONTRACT.md defines fields, cross-field validation, local review boundary, matrix assumptions and absolute-deadline contract. Actual pre-implementation frontend run: 20 new tests failed / 33 existing passed, exit 1. Resolvable functions throw explicit not-implemented errors. Evidence verification/P3-06-RED.txt.
 P3-07 — Context form engine
-- [ ] Complete and verify task.
+- [x] Complete and verify task.
 Scope: Implement FormContext, SimpleForm, InputField and ShowData with synchronous validation.
 
 Acceptance criteria: Validation tests pass; no useEffect validation waterfall.
 
-Evidence / status: Pending.
+Evidence / status: Complete 2026-11-26. Context provider, reusable accessible fields, live ShowData and pure cross-field validation. Validation errors derived synchronously, no validation effect/state. Component RED: 24 failed / 33 passed including previous validation RED. GREEN: 57 frontend + 1 backend tests pass; lint passes. Local memory only; keyed dossier changes reset drafts. Evidence verification/P3-07-*.txt.
 P3-08 — Disproportionality matrix
 - [ ] Complete and verify task.
 Scope: Define illustrative weights/criteria, write tests and implement pure calculation and table.

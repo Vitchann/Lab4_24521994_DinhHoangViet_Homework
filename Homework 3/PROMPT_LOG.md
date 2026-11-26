@@ -248,3 +248,11 @@ Report implemented features, actual test results, commit hashes and unresolved l
 - Defined APPEAL_CONTRACT.md and 20 validation tests before behavior.
 - Executed `npm.cmd run test --workspace frontend -- --reporter=verbose`: exit 1, 20 failed / 33 passed. Expected RED from explicit unimplemented draft/validator; existing tests remain green. Evidence: verification/P3-06-RED.txt.
 - This task intentionally ends at RED; implementation follows in P3-07. No implementation defect observed in this task.
+
+### P3-07 development record (agent-generated task)
+
+- Previous task commit: b60c4a9 (test(hw3): define appeal validation contracts and capture red).
+- Before UI implementation, `npm.cmd run test --workspace frontend -- --reporter=verbose` returned exit 1: 24 failed / 33 passed (P3-07-RED.txt).
+- Implemented pure validation, Context values/handlers, accessible fields, synchronous derived errors, live review, local receipt reset on edit and keyed dossier draft reset. No API request or persistence.
+- `npm.cmd test`: 57 frontend + 1 backend tests passed, exit 0 (P3-07-GREEN.txt). `npm.cmd run lint`: exit 0.
+- Corrected P3-06 checklist: earlier scripted exact match did not handle CRLF. Verified replacement against actual task text.
