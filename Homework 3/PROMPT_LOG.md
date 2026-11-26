@@ -8,6 +8,7 @@ Actual user messages are stored verbatim once. Generated task plans and executed
 | U002 | 2026-11-25 | Pause | tôi ngắt bạn một chút, tí nx tôi prompt lại thì làm nhé | Paused immediately during P3-03 after the actual RED run; no task marked complete. |
 | U003 | 2026-11-26 | Resume | continue to do | Completed P3-03–P3-05 from existing state: frontend 33/backend scaffold 1 tests pass; lint/build/syntax and production-browser/deep-link checks pass. No other project changed or pushed. |
 | U004 | 2026-11-26 | P3-06 through P3-10 | Verbatim below | Completed sequentially: contracts/RED, Context form, pure matrix, SLA RED and absolute-clock timer. Final 88 frontend + 1 backend tests, lint/build/syntax and production Chrome checks pass. Actual hw3 task commits; stopped after P3-10, no push. |
+| U005 | 2026-11-26 | P3-11 through P3-16 | Verbatim below | In progress; sequential full-stack tasks with real verification and commits. |
 
 ## U001 — verbatim user prompt
 
@@ -296,3 +297,106 @@ Report implemented features, actual test results, commit hashes and unresolved l
 Each task used scoped `git add -- "Homework 3"` then an actual `git commit -m` with the message above. No empty commit, rewrite, backdate, co-author trailer or push. Read the final self-hash/ledger using `git log --show-notes=homework-3-development -1 -- "Homework 3/PROMPT_LOG.md"`. The note is actual local Git metadata written only after the commit exists.
 
 Final documentation QA: initial unanchored heading-count check falsely matched both U004 verbatim and its intake subheading. Anchored level-two check passes: one full verbatim block with all six feature sections and correct opening/closing text. Requested task checkboxes verified. Actual user prompt content remains unchanged.
+
+## U005 — verbatim user prompt
+
+```text
+Continue developing the "Esports Fair-Play Appeal Tribunal" full-stack application.
+
+
+
+Read project-rules.md, TASK_DECOMPOSITION.md, PROMPT_LOG.md and the existing source code.
+
+
+
+Record this actual user prompt verbatim in PROMPT_LOG.md.
+
+
+
+Execute tasks P3-11 through P3-16 sequentially.
+
+
+
+**REST API Contract**\
+Design and document REST API endpoints for:
+
+- Retrieving player dossiers.
+- Retrieving individual player cases.
+- Retrieving evidence.
+- Submitting appeals.
+- Retrieving appeal status.
+
+Define request payloads, response schemas, validation rules, business constraints and HTTP status codes before implementation.
+
+
+
+**MongoDB and Mongoose 8**
+
+- Implement appropriate schemas for Player, Dossier, Evidence, Sanction and Appeal.
+- Define relationships, constraints and indexes.
+- Create a seed script with clearly labeled simulation data.
+- Use process.env.MONGODB_URI.
+- Provide .env.example.
+- Exclude database credentials from Git.
+- Avoid deprecated Mongoose callbacks and connection options.
+
+**Backend Test-Driven Development**
+
+- Write failing API tests using Supertest.
+- Test valid and invalid player IDs.
+- Test missing and invalid appeal fields.
+- Test cross-field validation.
+- Test expired appeal deadlines.
+- Test duplicate appeal submissions.
+- Test appropriate error responses.
+
+**Express API Implementation**
+
+- Implement routes, controllers, services and middleware.
+- Use async/await and centralized error handling.
+- Enforce validation independently on the server.
+- Enforce appeal deadlines using server-side time.
+- Prevent duplicate appeal submissions.
+- Persist valid appeals and return appropriate submission status.
+
+**Full-stack Integration**
+
+- Replace local demonstration data with API-driven data.
+- Integrate dynamic dossier routing with the backend.
+- Connect the Context-driven appeal form to the submission API.
+- Implement loading, error, empty and retry states.
+- Use AbortController where appropriate.
+- Prevent concurrent duplicate submissions.
+- Display confirmation messages and persisted appeal status.
+- Restore relevant persisted information after page reload.
+
+**Integration Verification**
+
+- Execute frontend and backend tests.
+- Verify dynamic routing, form validation, matrix calculations and SLA countdown behavior.
+- Verify successful and rejected appeal submissions.
+- Verify MongoDB persistence using real database integration tests when available.
+- Test network failures and invalid API responses.
+
+If MongoDB is unavailable, document the blocker and complete all independent implementation tasks. Do not claim database verification has passed without executing it.
+
+
+
+Create actual atomic Git commits after each logically independent task using Conventional Commit messages.
+
+
+
+Update TASK_DECOMPOSITION.md, PROMPT_LOG.md and AI_FAILURE_AUDIT.md after each task. Record actual test results and commit hashes.
+
+
+
+Stop after P3-16. Do not modify other projects or push to GitHub.
+
+
+
+Report API endpoints, database architecture, actual test results, commit history and unresolved limitations.
+```
+
+### P3-11 development record (agent-generated task)
+
+Read canonical project_rule.md, task decomposition, prompt/audit/contracts and existing sources at baseline 71dd0dc. Added project-rules.md entry point. Preserved pre-existing Homework 1 checklist modification. Defined seven REST endpoints, public status projection, strict draft validation, server-time acceptance, unique dossier duplicate policy and database/frontend verification contracts before implementation. Actual local MongoDB service is Running; a Mongoose createConnection/admin ping against the dedicated hw3_fair_play_simulation database passed (readyState=1), connection closed. Reviewed official Mongoose 8 unique-index/validation and Express 5 async-error documentation; links in API_CONTRACT.md. Contract review only in this task, no fabricated API tests.

@@ -2,7 +2,7 @@ Task Decomposition
 Project
 Esports Fair-Play Appeal Tribunal
 
-U001 completed P3-01 through P3-05. U004 authorizes P3-06 through P3-10 sequentially, with individual verification and atomic commits. Stop after P3-10.
+U001 completed P3-01 through P3-05; U004 completed P3-06 through P3-10. U005 authorizes P3-11 through P3-16 sequentially with individual verification and atomic commits. Stop after P3-16.
 P3-01 — Inspect and initialize setup
 - [x] Complete and verify task.
 Scope: Create isolated React/Vite and Express/Mongoose applications as needed; configure scripts, ignore rules, env template and docs.
@@ -74,12 +74,12 @@ Acceptance criteria: Timer tests pass; no counter drift or leaked listeners.
 
 Evidence / status: Complete 2026-11-26. Absolute-deadline calculation, hook, visible-tab resampling, cleanup and event-time submission gate implemented. First run 84 frontend + 1 backend passed. Four additional malformed-Context cases reproduced validation gaps, corrected without assertion changes. Final 88 frontend + 1 backend pass; lint, production build and backend syntax pass. Production Chrome verifies nine routes, native form review/expiry, focus, reduced motion and no document overflow at 320/375/768/1440; no console/network/JS/HTTP errors. Evidence verification/P3-10-*. Stopped here; P3-11 onward pending.
 P3-11 — API contract
-- [ ] Complete and verify task.
+- [x] Complete and verify task.
 Scope: Design dossier retrieval, appeal submission/status endpoints, deadline authority, validation and duplicate handling.
 
 Acceptance criteria: Document HTTP examples and failure cases.
 
-Evidence / status: Pending.
+Evidence / status: Complete 2026-11-26. API_CONTRACT.md defines seven endpoints, schemas, strict payload/cross-field rules, server-time deadline, unique one-appeal-per-dossier guard, sanitized HTTP errors, DB startup/seed and frontend recovery boundaries before implementation. MongoDB service running and actual dedicated HW3 database ping passed.
 P3-12 — MongoDB models and seed
 - [ ] Complete and verify task.
 Scope: Implement Mongoose models, indexes, safe configuration and simulation seed.

@@ -1,6 +1,6 @@
 # Project rules — Esports Fair-Play Appeal Tribunal
 
-- Work only in Homework 3; preserve Homework 1 and Homework 2. Current request U004 authorizes P3-06 through P3-10 sequentially: local Context appeal review, illustrative matrix and zero-drift SLA. Stop after P3-10. Do not implement business API, database persistence or later tasks; do not push.
+- Work only in Homework 3; preserve Homework 1 and Homework 2. U005 authorizes P3-11 through P3-16 sequentially: API contracts, MongoDB schemas/seed, API RED/GREEN, full-stack integration and verification. Stop after P3-16; no push.
 - JavaScript ES modules, React 19, Vite, React Router v7, native CSS, Express and Mongoose 8. Use Vitest/RTL and Supertest. Reuse the Homework 3 workspace toolchain; do not modify another project's dependencies.
 - Contract → applicable failing test → implementation → test/refactor/verify. Capture actual RED before routing behavior and distinguish module/import failures from assertion failures. Never invent tests, errors, user prompts, commits or historical implementation order.
 - Update TASK_DECOMPOSITION.md and append actual commands/results after every task. Append every actual user prompt verbatim once in PROMPT_LOG.md; distinguish user requests from agent-generated subtasks.
