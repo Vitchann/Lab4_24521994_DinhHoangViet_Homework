@@ -24,7 +24,7 @@ export function validateDataset(data) {
   const dossiers = index(data.dossiers, 'dossierID', ['playerID', 'title', 'summary'])
   const evidence = index(data.evidence, 'id', ['dossierID', 'title', 'kind', 'summary', 'reference'])
   const sanctions = index(data.sanctions, 'id', ['dossierID', 'type', 'description', 'status'])
-  requireValid(players.size > 0 && players.size === dossiers.size, 'Expected one dossier per demo player')
+  requireValid(players.size === dossiers.size, 'Expected one dossier per demo player')
   for (const player of players.values()) requireValid(PLAYER_ID_PATTERN.test(player.playerID), 'Invalid player ID')
   const dossierPlayers = new Set()
   for (const dossier of dossiers.values()) {

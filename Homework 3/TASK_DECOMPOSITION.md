@@ -95,12 +95,12 @@ Acceptance criteria: Capture actual failing tests.
 
 Evidence / status: Complete 2026-11-26. Executed real MongoDB-backed Supertest cases plus no-database error contracts before API behavior: 37 failed / 8 passed, exit 1. Covers IDs, retrieval, all missing fields, invalid/cross-field payloads, exact server expiry, sequential/concurrent duplicates, status/privacy, malformed/large JSON and async error sanitization. Evidence verification/P3-13-RED.txt.
 P3-14 — GREEN Express API
-- [ ] Complete and verify task.
+- [x] Complete and verify task.
 Scope: Implement API handlers and server-side deadline/validation checks.
 
 Acceptance criteria: API tests pass; errors handled safely.
 
-Evidence / status: Pending.
+Evidence / status: Complete 2026-11-26. Routes/controllers/services and centralized async errors implemented; strict server validation, server acceptance timestamps, durable one-appeal-per-dossier unique index, public status projection, startup connection/index readiness and graceful shutdown. First explicit real MongoDB suite 45/45 passed. Standard frontend/backend, lint and backend syntax checks recorded. Evidence P3-14-*.
 P3-15 — Full-stack integration
 - [ ] Complete and verify task.
 Scope: Connect dossier loading, form submission and status display to API; handle cancellation and failures.

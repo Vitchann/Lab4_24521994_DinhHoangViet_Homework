@@ -48,3 +48,7 @@ A review-added nested-timeline test reproduced 1 failure / 6 passes on real Mong
 ### P3-13 expected API RED
 
 Actual pre-implementation run: 37 failed / 8 passed, exit 1 (P3-13-RED.txt). Existing scaffold returns 404 instead of newly contracted REST responses. Planned TDD evidence; no implemented API is claimed. Database setup/seed succeeds, so these are HTTP contract failures.
+
+### P3-14
+
+First implemented API run passed all 45 tests against real MongoDB (P3-14-first-run.txt), including atomic duplicate race and server expiry. No accidental API failure observed. The former skeleton test now requests an unknown endpoint because its original endpoint became implemented; its 404/security assertions are retained. Standard runs skip opt-in database cases explicitly; only test:db execution is real persistence evidence.

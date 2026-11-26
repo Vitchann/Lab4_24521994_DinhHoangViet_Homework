@@ -415,3 +415,11 @@ Read canonical project_rule.md, task decomposition, prompt/audit/contracts and e
 - P3-12 commit: 2f756ea feat(hw3): add MongoDB schemas indexes and safe simulation seed.
 - Wrote actual Supertest contracts against existing 404 scaffold before routes/services. `npm.cmd run test:db`: 37 failed / 8 passed across 5 files, exit 1 (P3-13-RED.txt). Real generated MongoDB test databases seeded and cleaned; all failures are HTTP/status assertions, not import failures. Existing schemas/seed tests remain green.
 - Cases cover normalized datasets, both players/evidence, invalid and missing IDs, all ten required fields, invalid types and enums, cross-field dependencies, server deadlines, real duplicate index races, status projection, malformed/media/oversized bodies and safe async errors. No API implementation in this task.
+
+### P3-14 development record (agent-generated task)
+
+- P3-13 commit: 670720e test(hw3): capture REST API validation and persistence red.
+- Implemented API layers and centralized sanitized errors, server-side complete/type/cross-field validation and acceptance time, same-case ownership, duplicate readback after E11000, public status privacy, JSON/media/body limits and no-store responses. Database connects/indexes initialize before listening on loopback. Environment examples align FE/dev/preview origins.
+- `npm.cmd run test:db`: first run 45/45 passed against real MongoDB, exit 0 (P3-14-first-run.txt). Concurrent HTTP requests verify one 201/one 409 and one document.
+- Updated former scaffold 404 test to an actually unknown route because /api/dossiers is now implemented; retained safe 404/code/header assertions. Dataset validator now permits the explicitly contracted fully empty snapshot while retaining ownership checks.
+- `npm.cmd test`, `npm.cmd run lint`, `npm.cmd run check:backend` executed; standard test output P3-14-GREEN.txt. No accidental API implementation failure observed in this task.
