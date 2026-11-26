@@ -2,8 +2,8 @@ import { render, screen } from '@testing-library/react'
 import { expect, it } from 'vitest'
 import App from './App.jsx'
 
-it('renders the labeled initial simulation scaffold', () => {
+it('renders a clearly labeled simulation application', () => {
   render(<App />)
   expect(screen.getByRole('main')).toBeInTheDocument()
-  expect(screen.getByText(/simulation/i)).toBeVisible()
+  expect(screen.getByRole('note', { name: 'Simulation notice' })).toBeVisible()
 })

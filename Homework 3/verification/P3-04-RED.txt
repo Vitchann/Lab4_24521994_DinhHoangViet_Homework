@@ -1,0 +1,1211 @@
+
+> hw3-frontend@0.1.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v5.1.2 C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework 3/frontend
+
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > has two explicitly simulated case-study references with valid relationships 6ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > deeply freezes the fixtures and keeps real reference labels out of synthetic handles 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > finds a dossier by stable player ID without mutating it 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID undefined 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID toString 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID __proto__ 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID SIM-HIMASS 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID unknown 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects false simulation flag 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects duplicate player ID 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects broken evidence link 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects cross-case evidence 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects external evidence source 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects invalid chronology 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects unsorted timeline 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects invalid sanction duration 0ms
+ × src/App.test.jsx > renders a clearly labeled simulation application 76ms
+   → Unable to find an accessible element with the role "note" and name "Simulation notice"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ × src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > renders the overview within a shared semantic layout and explicit simulation notice 109ms
+   → Unable to find an accessible element with the role "heading" and name "Fair play starts with a fair review."
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ × src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > navigates through registry and dossier while preserving the shared layout 15ms
+   → Unable to find an accessible element with the role "navigation" and name "Primary navigation"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ × src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > resolves dynamic dossier sim-himass without another case leaking into it 11ms
+   → Unable to find an accessible element with the role "heading" and name "Player Alpha"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ × src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > resolves dynamic dossier sim-tanvuu without another case leaking into it 9ms
+   → Unable to find an accessible element with the role "heading" and name "Player Beta"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ × src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > shows demonstration sanction and an ordered timestamped case timeline 9ms
+   → Unable to find an accessible element with the role "region" and name "Demonstration sanction"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ × src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID unknown and recovers to registry 6ms
+   → Unable to find an accessible element with the role "heading" and name "Dossier not found"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ × src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID toString and recovers to registry 7ms
+   → Unable to find an accessible element with the role "heading" and name "Dossier not found"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ × src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID __proto__ and recovers to registry 5ms
+   → Unable to find an accessible element with the role "heading" and name "Dossier not found"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ × src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID SIM-HIMASS and recovers to registry 7ms
+   → Unable to find an accessible element with the role "heading" and name "Dossier not found"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ × src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID %00 and recovers to registry 7ms
+   → Unable to find an accessible element with the role "heading" and name "Dossier not found"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ × src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID sim-missing and recovers to registry 4ms
+   → Unable to find an accessible element with the role "heading" and name "Dossier not found"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ × src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown route /missing in the shared layout 7ms
+   → Unable to find an accessible element with the role "heading" and name "Page not found"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ × src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown route /dossier in the shared layout 6ms
+   → Unable to find an accessible element with the role "heading" and name "Page not found"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ × src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown route /dossier/sim-himass/extra in the shared layout 4ms
+   → Unable to find an accessible element with the role "heading" and name "Page not found"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ × src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > explains reference labels and does not introduce an appeal form 7ms
+   → Unable to find an accessible element with the role "heading" and name "About this simulation"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ × src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > renders the default BrowserRouter application on an initially deep-linked URL 8ms
+   → Unable to find an accessible element with the role "heading" and name "Player Beta"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+npm.cmd : 
+At line:2 char:1
++ npm.cmd run test --workspace frontend -- --reporter=verbose *> verifi ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+⎯⎯⎯⎯⎯⎯ Failed Tests 17 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/App.test.jsx > renders a clearly labeled simulation application
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+TestingLibraryElementError: Unable to find an accessible element with the role "note" and name "Simulation notice"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/App.test.jsx:8:17
+      6|   render(<App />)
+      7|   expect(screen.getByRole('main')).toBeInTheDocument()
+      8|   expect(screen.getByRole('note', { name: 'Simulation notice' })).toBe…
+       |                 ^
+      9| })
+     10|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/10]⎯
+
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > renders the overview within a shared 
+semantic layout and explicit simulation notice
+TestingLibraryElementError: Unable to find an accessible element with the role "heading" and name "Fair play starts 
+with a fair review."
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/routing/AppRoutes.test.jsx:13:19
+     11|   it('renders the overview within a shared semantic layout and explici…
+     12|     visit('/')
+     13|     expect(screen.getByRole('heading', { level: 1, name: 'Fair play st…
+       |                   ^
+     14|     expect(screen.getAllByRole('main')).toHaveLength(1)
+     15|     expect(screen.getByRole('note', { name: 'Simulation notice' })).to…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/10]⎯
+
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > navigates through registry and dossier 
+while preserving the shared layout
+TestingLibraryElementError: Unable to find an accessible element with the role "navigation" and name "Primary 
+navigation"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/routing/AppRoutes.test.jsx:22:31
+     20|     const user = userEvent.setup()
+     21|     visit('/')
+     22|     const navigation = screen.getByRole('navigation', { name: 'Primary…
+       |                               ^
+     23|     const notice = screen.getByRole('note', { name: 'Simulation notice…
+     24|     await user.click(within(navigation).getByRole('link', { name: 'Dos…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/10]⎯
+
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > resolves dynamic dossier sim-himass 
+without another case leaking into it
+TestingLibraryElementError: Unable to find an accessible element with the role "heading" and name "Player Alpha"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/routing/AppRoutes.test.jsx:38:19
+     36|   ])('resolves dynamic dossier %s without another case leaking into it…
+     37|     visit(`/dossier/${id}`)
+     38|     expect(screen.getByRole('heading', { level: 1, name: player })).to…
+       |                   ^
+     39|     expect(screen.getByRole('heading', { name: title })).toBeVisible()
+     40|     expect(screen.queryByText(excluded)).not.toBeInTheDocument()
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/10]⎯
+
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > resolves dynamic dossier sim-tanvuu 
+without another case leaking into it
+TestingLibraryElementError: Unable to find an accessible element with the role "heading" and name "Player Beta"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/routing/AppRoutes.test.jsx:38:19
+     36|   ])('resolves dynamic dossier %s without another case leaking into it…
+     37|     visit(`/dossier/${id}`)
+     38|     expect(screen.getByRole('heading', { level: 1, name: player })).to…
+       |                   ^
+     39|     expect(screen.getByRole('heading', { name: title })).toBeVisible()
+     40|     expect(screen.queryByText(excluded)).not.toBeInTheDocument()
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/10]⎯
+
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > shows demonstration sanction and an 
+ordered timestamped case timeline
+TestingLibraryElementError: Unable to find an accessible element with the role "region" and name "Demonstration 
+sanction"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/routing/AppRoutes.test.jsx:49:29
+     47|   it('shows demonstration sanction and an ordered timestamped case tim…
+     48|     visit('/dossier/sim-himass')
+     49|     const sanction = screen.getByRole('region', { name: 'Demonstration…
+       |                             ^
+     50|     expect(within(sanction).getByRole('heading', { name: '7-day traini…
+     51|     expect(sanction).toHaveTextContent(/not an official decision/i)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/10]⎯
+
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID unknown 
+and recovers to registry
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID toString 
+and recovers to registry
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID 
+__proto__ and recovers to registry
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID 
+SIM-HIMASS and recovers to registry
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID %00 and 
+recovers to registry
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID 
+sim-missing and recovers to registry
+TestingLibraryElementError: Unable to find an accessible element with the role "heading" and name "Dossier not found"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/routing/AppRoutes.test.jsx:62:19
+     60|     const user = userEvent.setup()
+     61|     visit(`/dossier/${id}`)
+     62|     expect(screen.getByRole('heading', { level: 1, name: 'Dossier not …
+       |                   ^
+     63|     expect(screen.queryByRole('heading', { name: 'Player Alpha' })).no…
+     64|     expect(screen.getByRole('note', { name: 'Simulation notice' })).to…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/10]⎯
+
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown route /missing in the 
+shared layout
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown route /dossier in the 
+shared layout
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown route 
+/dossier/sim-himass/extra in the shared layout
+TestingLibraryElementError: Unable to find an accessible element with the role "heading" and name "Page not found"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+
+ Test Files  2 failed | 1 passed (3)
+      Tests  17 failed | 16 passed (33)
+   Start at  21:52:18
+   Duration  3.78s (environment 60%, setup 22%, import 9%, tests 5%, transform 3%, worker 1%)
+
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/routing/AppRoutes.test.jsx:71:19
+     69|   it.each(['/missing', '/dossier', '/dossier/sim-himass/extra'])('hand…
+     70|     visit(path)
+     71|     expect(screen.getByRole('heading', { level: 1, name: 'Page not fou…
+       |                   ^
+     72|     expect(screen.getByRole('navigation', { name: 'Primary navigation'…
+     73|     expect(screen.getByRole('link', { name: 'Back to registry' })).toH…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/10]⎯
+
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > explains reference labels and does not 
+introduce an appeal form
+TestingLibraryElementError: Unable to find an accessible element with the role "heading" and name "About this 
+simulation"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/routing/AppRoutes.test.jsx:78:19
+     76|   it('explains reference labels and does not introduce an appeal form'…
+     77|     visit('/about')
+     78|     expect(screen.getByRole('heading', { level: 1, name: 'About this s…
+       |                   ^
+     79|     expect(screen.getByText('Reference names are labels, not findings.…
+     80|     expect(screen.queryByRole('form')).not.toBeInTheDocument()
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/10]⎯
+
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > renders the default BrowserRouter 
+application on an initially deep-linked URL
+TestingLibraryElementError: Unable to find an accessible element with the role "heading" and name "Player Beta"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Esports Fair-Play Appeal Tribunal":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mEsports Fair-Play Appeal Tribunal[0m
+      [36m</h1>[39m
+      [36m<p>[39m
+        [0mSimulation workspace. Dossier routing is pending P3-05.[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/routing/AppRoutes.test.jsx:88:21
+     86|     try {
+     87|       render(<App />)
+     88|       expect(screen.getByRole('heading', { level: 1, name: 'Player Bet…
+       |                     ^
+     89|     } finally { window.history.replaceState({}, '', '/') }
+     90|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/10]⎯
+
+npm error Lifecycle script `test` failed with error:
+npm error code 1
+npm error path C:\Users\LENOVO\OneDrive\Desktop\Lab4\Homework 3\frontend
+npm error workspace hw3-frontend@0.1.0
+npm error location C:\Users\LENOVO\OneDrive\Desktop\Lab4\Homework 3\frontend
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --reporter=verbose

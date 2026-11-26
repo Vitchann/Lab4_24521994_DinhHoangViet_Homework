@@ -120,3 +120,10 @@ continue to do
 - Fresh pre-implementation RED: npm.cmd run test --workspace frontend -- --reporter=verbose; 16 failed / 1 passed, exit 1 (P3-03-resume-RED.txt), including missing fixture/stub behavior. No missing-module failure was substituted for assertions; the original pre-pause output is retained too.
 - Implemented deeply frozen simulation snapshot and safe ID lookup, plus pure dataset validation for identities, labels, relationships, UTC chronology, evidence provenance and demonstration sanction duration. SIMULATION_DATA.md documents synthetic provenance. No real-world evidence, allegations or disciplinary findings are asserted.
 - Actual GREEN: same command, 17 tests passed / 2 files, exit 0 (P3-03-GREEN.txt). npm.cmd run lint passed. No accidental implementation failure observed. Checklist updated before routing test task.
+
+### P3-04 — actual routing RED captured (2026-11-26)
+
+- P3-03 actual commit: f9a55f8f6b6d3021e1d8f99d8bc022947098dc9e — feat(hw3): add validated simulation dossier fixtures.
+- Added resolvable AppRoutes contract stub and 16 routing acceptance cases. Upgraded the initial generic text smoke assertion to a semantic named Simulation notice, preserving/strengthening its original intent for the final application.
+- Tests require nested shared-layout retention, primary NavLink active state, registry navigation, both dynamic dossiers, correct case-specific evidence, demonstration sanction/timestamps, six invalid IDs, three unknown/missing paths, recovery, simulation guide and default BrowserRouter initial deep linking.
+- Before any routing implementation: npm.cmd run test --workspace frontend -- --reporter=verbose, exit 1; **17 failed / 16 passed, 33 total**. All failures are missing expected UI/DOM assertions with resolved modules; existing fixtures still pass. Full output verification/P3-04-RED.txt. Intentional RED commit is requested by this task; no fabricated GREEN.

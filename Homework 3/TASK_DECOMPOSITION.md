@@ -25,12 +25,12 @@ Acceptance criteria: Validate fixture structure and simulation labeling.
 
 Evidence / status: Complete 2026-11-26. Two deeply frozen synthetic players/dossiers, four simulation evidence references and two demonstration sanctions; no real accusations or sourced findings. Validator checks labels, IDs/ownership, UTC chronology and sanction duration. Before implementation RED 16 failed/1 passed; after GREEN 17 frontend tests passed and lint passed. Provenance in SIMULATION_DATA.md; outputs verification/P3-03-*.txt.
 P3-04 — Routing tests
-- [ ] Complete and verify task.
+- [x] Complete and verify task.
 Scope: Write failing tests for dynamic dossier routes, navigation and unknown IDs.
 
 Acceptance criteria: Capture RED evidence before implementation.
 
-Evidence / status: Pending.
+Evidence / status: Complete 2026-11-26. Resolvable route stub plus 16 routing cases and strengthened semantic app smoke test executed before implementation: 17 failures/16 existing fixture passes, exit 1. Tests cover MemoryRouter/default BrowserRouter deep links, nested layout retention, NavLink active state, both dossier IDs, case isolation, evidence/sanction/timeline, invalid IDs, missing/unknown routes and recovery. Failures are DOM assertions, not missing imports. Output verification/P3-04-RED.txt.
 P3-05 — Routing and dossier UI
 - [ ] Complete and verify task.
 Scope: Implement React Router v7, shared layout and semantic dossier view.
