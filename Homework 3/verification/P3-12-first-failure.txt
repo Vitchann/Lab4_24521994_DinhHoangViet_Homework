@@ -1,0 +1,49 @@
+
+> hw3-esports-fair-play-tribunal@0.1.0 test:db
+> node scripts/test-db.mjs
+
+
+ RUN  v5.1.2 C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework 3/backend
+
+ ❯ tests/seed.db.test.js (3 tests | 1 failed) 283ms
+   ❯ real MongoDB seed and indexes (3)
+     × detects nested timeline conflicts instead of silently accepting changed source data 17ms
+npm.cmd : 
+At line:2 char:1
++ npm.cmd run test:db *> verification/P3-12-first-failure.txt; $result= ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/seed.db.test.js > real MongoDB seed and indexes > detects nested timeline conflicts instead of silently 
+accepting changed source data
+AssertionError: promise resolved "{ inserted: +0, simulation: true }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "inserted": 0,
++   "simulation": true,
+  }
+
+ ❯ tests/seed.db.test.js:27:57
+     25|     const changed = structuredClone(simulation)
+     26|     changed.dossiers[0].timeline[0].description = 'Changed nested cont…
+     27|     await expect(seedDatabase(database.models, changed)).rejects.toThr…
+       |                                                         ^
+     28|   })
+     29| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 6 passed (7)
+   Start at  22:35:57
+   Duration  1.40s (import 82%, tests 14%, transform 3%, worker 1%)
+

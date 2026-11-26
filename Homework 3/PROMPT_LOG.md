@@ -400,3 +400,12 @@ Report API endpoints, database architecture, actual test results, commit history
 ### P3-11 development record (agent-generated task)
 
 Read canonical project_rule.md, task decomposition, prompt/audit/contracts and existing sources at baseline 71dd0dc. Added project-rules.md entry point. Preserved pre-existing Homework 1 checklist modification. Defined seven REST endpoints, public status projection, strict draft validation, server-time acceptance, unique dossier duplicate policy and database/frontend verification contracts before implementation. Actual local MongoDB service is Running; a Mongoose createConnection/admin ping against the dedicated hw3_fair_play_simulation database passed (readyState=1), connection closed. Reviewed official Mongoose 8 unique-index/validation and Express 5 async-error documentation; links in API_CONTRACT.md. Contract review only in this task, no fabricated API tests.
+
+### P3-12 development record (agent-generated task)
+
+- P3-11 commit: 5059ed0 docs(hw3): define REST persistence and integration contracts.
+- Added schema tests before behavior: `npm.cmd run test --workspace backend` RED 3 failed / 1 existing passed, exit 1 (P3-12-RED.txt).
+- Implemented five strict schemas and index initialization, canonical shared fixture/domain modules (frontend re-exports preserve prior contracts), process.env.MONGODB_URI connection, safe seed CLI and explicit opt-in real database test runner. Test databases have generated hw3_test_ names verified before cleanup; no other databases are dropped.
+- Initial `npm.cmd test`: 88 frontend + 4 backend passed, 2 database tests skipped; those skips are not database verification. `npm.cmd run test:db` then passed 6 tests on real local MongoDB.
+- Inspection found flat JSON replacer seed comparison ignored nested timeline properties. Added a regression test before correction: 1 failed / 6 passed. Replaced comparison with recursive canonicalization; `npm.cmd run test:db` now 7/7 passed (P3-12-MONGO.txt); failure retained in P3-12-first-failure.txt.
+- `$env:MONGODB_URI='mongodb://127.0.0.1:27017/hw3_fair_play_simulation'; npm.cmd run seed --workspace backend`: exit 0, inserted 10 simulation records. `npm.cmd run lint`: exit 0. No appeal records removed or fixed deadlines extended.

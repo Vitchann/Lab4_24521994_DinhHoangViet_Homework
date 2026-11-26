@@ -81,12 +81,12 @@ Acceptance criteria: Document HTTP examples and failure cases.
 
 Evidence / status: Complete 2026-11-26. API_CONTRACT.md defines seven endpoints, schemas, strict payload/cross-field rules, server-time deadline, unique one-appeal-per-dossier guard, sanitized HTTP errors, DB startup/seed and frontend recovery boundaries before implementation. MongoDB service running and actual dedicated HW3 database ping passed.
 P3-12 — MongoDB models and seed
-- [ ] Complete and verify task.
+- [x] Complete and verify task.
 Scope: Implement Mongoose models, indexes, safe configuration and simulation seed.
 
 Acceptance criteria: Schema/seed checks recorded; real DB verification separate.
 
-Evidence / status: Pending.
+Evidence / status: Complete 2026-11-26. Five strict Mongoose schemas, unique indexes, shared pure domain/fixture modules, dedicated URI connection and non-destructive seed. Schema RED 3 failed / 1 passed. Initial standard run 88 frontend + 4 backend passed (2 DB skipped); explicit real MongoDB run finally 7/7 passed, including repeat seed, unique index and nested-conflict checks. Actual main HW3 seed inserted 10 records. Lint passes. Evidence P3-12-*.
 P3-13 — RED API tests
 - [ ] Complete and verify task.
 Scope: Write tests for dossier retrieval, valid/invalid appeals, expired deadlines and duplicates.

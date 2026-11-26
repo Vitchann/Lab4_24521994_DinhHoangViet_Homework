@@ -1,0 +1,63 @@
+
+> hw3-backend@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.2 C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework 3/backend
+
+ ❯ tests/models.test.js (3 tests | 3 failed) 6ms
+   × defines five strict schemas with unique business and duplicate-appeal indexes 4ms
+   × accepts the validated synthetic seed records 0ms
+   × rejects false simulation flags and invalid relationships/dates/lengths at schema level 0ms
+npm.cmd : 
+At line:2 char:1
++ npm.cmd run test --workspace backend *> verification/P3-12-RED.txt; $ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/models.test.js > defines five strict schemas with unique business and duplicate-appeal indexes
+Error: Not implemented: tribunal models
+ ❯ createModels src/models/index.js:1:40
+      1| export function createModels() { throw new Error('Not implemented: tri…
+       |                                        ^
+      2|
+ ❯ tests/models.test.js:9:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/models.test.js > accepts the validated synthetic seed records
+Error: Not implemented: tribunal models
+ ❯ createModels src/models/index.js:1:40
+      1| export function createModels() { throw new Error('Not implemented: tri…
+       |                                        ^
+      2|
+ ❯ tests/models.test.js:16:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/models.test.js > rejects false simulation flags and invalid relationships/dates/lengths at schema level
+Error: Not implemented: tribunal models
+ ❯ createModels src/models/index.js:1:40
+      1| export function createModels() { throw new Error('Not implemented: tri…
+       |                                        ^
+      2|
+ ❯ tests/models.test.js:22:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  3 failed | 1 passed (4)
+   Start at  22:34:04
+   Duration  866ms (import 89%, transform 7%, tests 3%, worker 1%)
+
+npm error Lifecycle script `test` failed with error:
+npm error code 1
+npm error path C:\Users\LENOVO\OneDrive\Desktop\Lab4\Homework 3\backend
+npm error workspace hw3-backend@0.1.0
+npm error location C:\Users\LENOVO\OneDrive\Desktop\Lab4\Homework 3\backend
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run
