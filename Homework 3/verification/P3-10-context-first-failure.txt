@@ -1,0 +1,176 @@
+
+> hw3-frontend@0.1.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v5.1.2 C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework 3/frontend
+
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > has two explicitly simulated case-study references with valid relationships 12ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > deeply freezes the fixtures and keeps real reference labels out of synthetic handles 3ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > finds a dossier by stable player ID without mutating it 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID undefined 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID toString 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID __proto__ 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID SIM-HIMASS 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID unknown 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects false simulation flag 2ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects duplicate player ID 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects broken evidence link 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects cross-case evidence 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects external evidence source 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects invalid chronology 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects unsorted timeline 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects invalid sanction duration 1ms
+ ✓ src/domain/disproportionality.test.js > transparent demonstration matrix > derives load, allowances and clamped excess from each frozen dossier 12ms
+ ✓ src/domain/disproportionality.test.js > transparent demonstration matrix > recalculates when dossier-linked duration changes, independent of array order 3ms
+ ✓ src/domain/disproportionality.test.js > transparent demonstration matrix > caps reference credit at three and does not borrow another case statement 2ms
+ ✓ src/domain/disproportionality.test.js > transparent demonstration matrix > rejects broken dataset ownership rather than displaying misleading numbers 3ms
+ ✓ src/domain/appealSla.test.js > calculates an exact absolute delta for active deadlines 11ms
+ ✓ src/domain/appealSla.test.js > clamps expired deadline at clock 1796461200000 2ms
+ ✓ src/domain/appealSla.test.js > clamps expired deadline at clock 1796461200001 1ms
+ ✓ src/domain/appealSla.test.js > clamps expired deadline at clock 1796464800000 1ms
+ ✓ src/domain/appealSla.test.js > fails closed for invalid/noncanonical deadline invalid 1ms
+ ✓ src/domain/appealSla.test.js > fails closed for invalid/noncanonical deadline  0ms
+ ✓ src/domain/appealSla.test.js > fails closed for invalid/noncanonical deadline null 0ms
+ ✓ src/domain/appealSla.test.js > fails closed for invalid/noncanonical deadline 2026-02-30T09:00:00.000Z 0ms
+ ✓ src/domain/appealSla.test.js > fails closed for invalid/noncanonical deadline 2026-12-05 1ms
+ ✓ src/domain/appealSla.test.js > fails closed for invalid/noncanonical deadline 123 1ms
+ ✓ src/domain/appealSla.test.js > fails closed for invalid clock NaN 0ms
+ ✓ src/domain/appealSla.test.js > fails closed for invalid clock Infinity 0ms
+ ✓ src/domain/appealSla.test.js > fails closed for invalid clock undefined 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > creates fresh empty drafts and independent reference arrays 8ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > accepts valid simulated applicant data without mutating inputs 4ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantName " " 2ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantName "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantEmail "bad-address" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantEmail "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid grounds "short" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid grounds "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid relationship "OTHER" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid reason "UNKNOWN" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid requestedOutcome "PUNISH" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid acknowledged false 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid acknowledged "true" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid evidenceIDs "ev-hm-replay" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid evidenceIDs ["ev-tv-notice"] 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid evidenceIDs ["ev-hm-replay","ev-hm-replay"] 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > requires representative authorization 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > requires same-dossier references for new-evidence reasons 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > requires a specified reduction/removal for proportionality 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > counts trimmed grounds and handles malformed payload/context without crashing 0ms
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects structurally incomplete context without throwing: {"dossier":{"dossierID":"demo-001"},"evidence":[]} 9ms
+   → expected {} to have property "form"
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects structurally incomplete context without throwing: {"dossier":{"dossierID":"demo-001","playerID":"sim-himass","title":"Training protocol review","summary":"An invented scrim scenario explores an unacknowledged rules briefing, incomplete context and a proportionate review. No conduct by a real person is alleged.","status":"DEMO_REVIEW","openedAt":"2026-11-20T09:00:00.000Z","appealDeadline":"2026-12-05T09:00:00.000Z","evidenceIDs":["ev-hm-replay","ev-hm-brief"],"sanctionID":"sanction-hm","simulation":true,"timeline":[{"id":"hm-open","at":"2026-11-20T09:00:00.000Z","title":"Simulation dossier opened","description":"A fictional training scenario is created for interface exploration."},{"id":"hm-evidence","at":"2026-11-21T10:30:00.000Z","title":"Demo references attached","description":"Two synthetic evidence descriptions are attached; no actual footage is supplied."},{"id":"hm-review","at":"2026-11-22T12:00:00.000Z","title":"Illustrative outcome recorded","description":"A demonstration restriction is recorded for educational comparison only."}]},"evidence":[null]} 4ms
+   → Cannot read properties of null (reading 'dossierID')
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects structurally incomplete context without throwing: {"dossier":{"dossierID":"demo-001","playerID":"sim-himass","title":"Training protocol review","summary":"An invented scrim scenario explores an unacknowledged rules briefing, incomplete context and a proportionate review. No conduct by a real person is alleged.","status":"DEMO_REVIEW","openedAt":"2026-11-20T09:00:00.000Z","appealDeadline":"2026-12-05T09:00:00.000Z","evidenceIDs":["ev-hm-replay","ev-hm-brief"],"sanctionID":"sanction-hm","simulation":true,"timeline":[{"id":"hm-open","at":"2026-11-20T09:00:00.000Z","title":"Simulation dossier opened","description":"A fictional training scenario is created for interface exploration."},{"id":"hm-evidence","at":"2026-11-21T10:30:00.000Z","title":"Demo references attached","description":"Two synthetic evidence descriptions are attached; no actual footage is supplied."},{"id":"hm-review","at":"2026-11-22T12:00:00.000Z","title":"Illustrative outcome recorded","description":"A demonstration restriction is recorded for educational comparison only."}]},"evidence":[{"dossierID":"demo-001","id":"foreign"}]} 1ms
+   → expected {} to have property "form"
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects structurally incomplete context without throwing: {"dossier":{"dossierID":"demo-001","playerID":"sim-himass","title":"Training protocol review","summary":"An invented scrim scenario explores an unacknowledged rules briefing, incomplete context and a proportionate review. No conduct by a real person is alleged.","status":"DEMO_REVIEW","openedAt":"2026-11-20T09:00:00.000Z","appealDeadline":"2026-12-05T09:00:00.000Z","evidenceIDs":["ev-hm-replay","ev-hm-brief"],"sanctionID":"sanction-hm","simulation":true,"timeline":[{"id":"hm-open","at":"2026-11-20T09:00:00.000Z","title":"Simulation dossier opened","description":"A fictional training scenario is created for interface exploration."},{"id":"hm-evidence","at":"2026-11-21T10:30:00.000Z","title":"Demo references attached","description":"Two synthetic evidence descriptions are attached; no actual footage is supplied."},{"id":"hm-review","at":"2026-11-22T12:00:00.000Z","title":"Illustrative outcome recorded","description":"A demonstration restriction is recorded for educational comparison only."}]},"evidence":[]} 1ms
+   → expected {} to have property "form"
+ ✓ src/components/DisproportionalityMatrix.test.jsx > shows an accessible comparison table with explicit assumptions and simulation limits 219ms
+ ✓ src/hooks/useAppealSlaTimer.test.jsx > absolute-clock SLA hook > renders initial time then recomputes from Date.now on each callback 51ms
+ ✓ src/hooks/useAppealSlaTimer.test.jsx > absolute-clock SLA hook > does not accumulate drift when interval execution is delayed 8ms
+ ✓ src/hooks/useAppealSlaTimer.test.jsx > absolute-clock SLA hook > resynchronizes immediately when returning from a background tab 12ms
+ ✓ src/hooks/useAppealSlaTimer.test.jsx > absolute-clock SLA hook > derives replacement and invalid deadlines without retaining prior remaining time 8ms
+ ✓ src/hooks/useAppealSlaTimer.test.jsx > absolute-clock SLA hook > supports explicit resampling without an interval tick 6ms
+ ✓ src/hooks/useAppealSlaTimer.test.jsx > absolute-clock SLA hook > cleans interval and identical visibility listeners even under StrictMode 9ms
+ ✓ src/App.test.jsx > renders a clearly labeled simulation application 174ms
+ ✓ src/components/AppealDeadline.test.jsx > uses a nonannouncing accessible timer and disables the action on expiry 201ms
+ ✓ src/components/AppealDeadline.test.jsx > fails closed for an invalid deadline 27ms
+ ✓ src/components/AppealDeadline.test.jsx > rejects a late submission even when the displayed clock has not ticked 94ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > renders the overview within a shared semantic layout and explicit simulation notice 212ms
+ ✓ src/components/SimpleForm.test.jsx > Context appeal form > shares live values with ShowData and generates only a local review 414ms
+ ✓ src/components/SimpleForm.test.jsx > Context appeal form > prevents invalid review and connects field errors to accessible controls 40ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > navigates through registry and dossier while preserving the shared layout 227ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > resolves dynamic dossier sim-himass without another case leaking into it 79ms
+ ✓ src/components/SimpleForm.test.jsx > Context appeal form > validates representative authorization, evidence ownership and proportionality during render 171ms
+ ✓ src/components/SimpleForm.test.jsx > Context appeal form > starts a fresh draft when a different keyed dossier is selected 51ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > resolves dynamic dossier sim-tanvuu without another case leaking into it 66ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > shows demonstration sanction and an ordered timestamped case timeline 55ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID unknown and recovers to registry 63ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID toString and recovers to registry 78ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID __proto__ and recovers to registry 58ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID SIM-HIMASS and recovers to registry 79ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID %00 and recovers to registry 65ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID sim-missing and recovers to registry 78ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown route /missing in the shared layout 20ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown route /dossier in the shared layout 13ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown route /dossier/sim-himass/extra in the shared layout 18ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > explains reference labels and does not introduce an appeal form 20ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > renders the default BrowserRouter application on an initially deep-linked URL 43ms
+npm.cmd : 
+At line:2 char:1
++ npm.cmd run test --workspace frontend -- --reporter=verbose *> verifi ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects structurally incomplete context without 
+throwing: {"dossier":{"dossierID":"demo-001"},"evidence":[]}
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects structurally incomplete context without 
+throwing: {"dossier":{"dossierID":"demo-001","playerID":"sim-himass","title":"Training protocol review","summary":"An 
+invented scrim scenario explores an unacknowledged rules briefing, incomplete context and a proportionate review. No 
+conduct by a real person is alleged.","status":"DEMO_REVIEW","openedAt":"2026-11-20T09:00:00.000Z","appealDeadline":"20
+26-12-05T09:00:00.000Z","evidenceIDs":["ev-hm-replay","ev-hm-brief"],"sanctionID":"sanction-hm","simulation":true,"time
+line":[{"id":"hm-open","at":"2026-11-20T09:00:00.000Z","title":"Simulation dossier opened","description":"A fictional 
+training scenario is created for interface 
+exploration."},{"id":"hm-evidence","at":"2026-11-21T10:30:00.000Z","title":"Demo references 
+attached","description":"Two synthetic evidence descriptions are attached; no actual footage is 
+supplied."},{"id":"hm-review","at":"2026-11-22T12:00:00.000Z","title":"Illustrative outcome recorded","description":"A 
+demonstration restriction is recorded for educational comparison 
+only."}]},"evidence":[{"dossierID":"demo-001","id":"foreign"}]}
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects structurally incomplete context without 
+throwing: {"dossier":{"dossierID":"demo-001","playerID":"sim-himass","title":"Training protocol review","summary":"An 
+invented scrim scenario explores an unacknowledged rules briefing, incomplete context and a proportionate review. No 
+conduct by a real person is alleged.","status":"DEMO_REVIEW","openedAt":"2026-11-20T09:00:00.000Z","appealDeadline":"20
+26-12-05T09:00:00.000Z","evidenceIDs":["ev-hm-replay","ev-hm-brief"],"sanctionID":"sanction-hm","simulation":true,"time
+line":[{"id":"hm-open","at":"2026-11-20T09:00:00.000Z","title":"Simulation dossier opened","description":"A fictional 
+training scenario is created for interface 
+exploration."},{"id":"hm-evidence","at":"2026-11-21T10:30:00.000Z","title":"Demo references 
+attached","description":"Two synthetic evidence descriptions are attached; no actual footage is 
+supplied."},{"id":"hm-review","at":"2026-11-22T12:00:00.000Z","title":"Illustrative outcome recorded","description":"A 
+demonstration restriction is recorded for educational comparison only."}]},"evidence":[]}
+AssertionError: expected {} to have property "form"
+ ❯ src/domain/appealValidation.test.js:53:45
+     51|     { ...context, evidence: [] },
+     52|   ])('rejects structurally incomplete context without throwing: %j', (…
+     53|     expect(validateAppeal(valid(), broken)).toHaveProperty('form')
+       |                                             ^
+     54|   })
+     55| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects structurally incomplete context without 
+throwing: {"dossier":{"dossierID":"demo-001","playerID":"sim-himass","title":"Training protocol review","summary":"An 
+invented scrim scenario explores an unacknowledged rules briefing, incomplete context and a proportionate review. No 
+conduct by a real person is alleged.","status":"DEMO_REVIEW","openedAt":"2026-11-20T09:00:00.000Z","appealDeadline":"20
+26-12-05T09:00:00.000Z","evidenceIDs":["ev-hm-replay","ev-hm-brief"],"sanctionID":"sanction-hm","simulation":true,"time
+line":[{"id":"hm-open","at":"2026-11-20T09:00:00.000Z","title":"Simulation dossier opened","description":"A fictional 
+training scenario is created for interface 
+exploration."},{"id":"hm-evidence","at":"2026-11-21T10:30:00.000Z","title":"Demo references 
+attached","description":"Two synthetic evidence descriptions are attached; no actual footage is 
+supplied."},{"id":"hm-review","at":"2026-11-22T12:00:00.000Z","title":"Illustrative outcome recorded","description":"A 
+demonstration restriction is recorded for educational comparison only."}]},"evidence":[null]}
+TypeError: Cannot read properties of null (reading 'dossierID')
+ ❯ src/domain/appealValidation.js:8:153
+
+ ❯ validateAppeal src/domain/appealValidation.js:8:133
+ ❯ src/domain/appealValidation.test.js:53:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed | 9 passed (10)
+      Tests  4 failed | 84 passed (88)
+   Start at  22:21:51
+   Duration  7.13s (environment 62%, setup 26%, tests 7%, import 3%, transform 1%)
+
+npm error Lifecycle script `test` failed with error:
+npm error code 1
+npm error path C:\Users\LENOVO\OneDrive\Desktop\Lab4\Homework 3\frontend
+npm error workspace hw3-frontend@0.1.0
+npm error location C:\Users\LENOVO\OneDrive\Desktop\Lab4\Homework 3\frontend
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --reporter=verbose

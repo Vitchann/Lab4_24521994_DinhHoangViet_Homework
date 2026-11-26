@@ -1,0 +1,4 @@
+
+> hw3-esports-fair-play-tribunal@0.1.0 check:backend
+> node --check backend/src/app.js && node --check backend/src/server.js
+

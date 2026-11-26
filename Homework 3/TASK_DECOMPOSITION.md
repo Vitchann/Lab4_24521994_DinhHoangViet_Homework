@@ -67,12 +67,12 @@ Acceptance criteria: Capture actual failing tests.
 
 Evidence / status: Complete 2026-11-26. 22 calculation/hook/form expiry tests executed before behavior: 22 failed / 62 existing passed, exit 1. Explicit stubs resolve; form failures assert missing timer, enabled invalid/late action and unwanted late receipt. Includes exact-boundary, invalid clock/deadline, delayed callback, visibility, replacement, explicit refresh and StrictMode cleanup. Evidence verification/P3-09-RED.txt.
 P3-10 — Zero-drift timer
-- [ ] Complete and verify task.
+- [x] Complete and verify task.
 Scope: Implement useAppealSlaTimer and countdown interface.
 
 Acceptance criteria: Timer tests pass; no counter drift or leaked listeners.
 
-Evidence / status: Pending.
+Evidence / status: Complete 2026-11-26. Absolute-deadline calculation, hook, visible-tab resampling, cleanup and event-time submission gate implemented. First run 84 frontend + 1 backend passed. Four additional malformed-Context cases reproduced validation gaps, corrected without assertion changes. Final 88 frontend + 1 backend pass; lint, production build and backend syntax pass. Production Chrome verifies nine routes, native form review/expiry, focus, reduced motion and no document overflow at 320/375/768/1440; no console/network/JS/HTTP errors. Evidence verification/P3-10-*. Stopped here; P3-11 onward pending.
 P3-11 — API contract
 - [ ] Complete and verify task.
 Scope: Design dossier retrieval, appeal submission/status endpoints, deadline authority, validation and duplicate handling.

@@ -11,7 +11,7 @@ P3-03 expected RED context: the empty fixture/stub contract produced 16 failures
 | P3-05 | First UI run: 1 failed / 32 passed; registry navigation could not find link named Dossier registry (P3-05-first-failure.txt) | Decorative count became part of the accessible link name, yielding Dossier registry02 | Hide decorative badge from accessible naming with aria-hidden=true; derive its visual count from fixtures | Same assertions unchanged: 33 frontend/1 backend tests pass; native browser navigation also passes |
 | P3-05 / QA tooling | First browser helper failed with SyntaxError: missing ) after argument list (P3-05-browser-first-failure.txt) | Nested quoting in a CDP-evaluated CSS selector produced invalid JavaScript | Use template literals with single-quoted selector expressions; no application/test assertion changed | Nine direct routes, keyboard/internal navigation, deep reload, four widths and error diagnostics pass; P3-05-BROWSER.json |
 
-Final scope: no real disciplinary finding is asserted. API/persistence, appeal form, SLA/matrix, physical devices, screen readers and full accessibility/Lighthouse checks were not implemented/verified; no fabricated result or history.
+P3-05 historical scope: appeal form, SLA/matrix and API/persistence were not implemented at that point. Later U004 work is recorded below; no real disciplinary finding is asserted.
 
 ### P3-06 verification boundary
 
@@ -26,3 +26,13 @@ Initial post-implementation run: 1 frontend failed / 61 passed; backend 1 passed
 ### P3-09 expected RED
 
 22 new tests fail before SLA implementation while 62 existing tests pass. Three form tests expose the intentionally missing deadline gate/timer, including a late local receipt after the deadline. This planned coverage defines the P3-10 correction; no completed timer is claimed. Raw evidence verification/P3-09-RED.txt.
+
+### P3-10 observed validation gap and correction
+
+Review found the P3-07 Context guard accepted a dossier without evidenceIDs or incomplete/unknown references, and null evidence could throw. Added four contract cases and executed before correction: 4 failed / 84 passed, exit 1 (verification/P3-10-context-first-failure.txt). Root cause: checking only dossierID and evidence ownership did not establish the required Context shape. Corrective action: verify the reference-ID array, nonnull entries, ownership/membership and complete reference resolution before field validation. No assertions weakened. Final 88 frontend + 1 backend tests pass (P3-10-GREEN.txt); lint/build/backend syntax and production browser pass.
+
+### P3-10 timing verification and remaining boundaries
+
+The first timer implementation passed 84 frontend + 1 backend tests immediately; no accidental drift/cleanup failure observed. Controlled tests demonstrate exact-boundary expiry, delayed callbacks, background-tab synchronization, StrictMode listener/interval cleanup and stale-clock submit rejection. Native production Chrome also rejected a late review with a stale display. This is evidence for the local clock implementation, not server deadline enforcement. Physical devices, assistive technology, full WCAG/Lighthouse, authentication, real adjudication and database/API persistence remain unverified/unimplemented in this range. No scores, findings or history were fabricated.
+
+Documentation QA correction: an initial prompt-uniqueness script counted the substring "## U004", which also matched the legitimate "### U004" intake heading, and falsely reported duplication. Changed the check to an anchored exact level-two verbatim heading and validated the fenced prompt boundaries/sections. Retest passes; original user text was not edited.

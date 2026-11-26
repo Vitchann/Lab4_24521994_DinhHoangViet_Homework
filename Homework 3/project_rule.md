@@ -11,3 +11,5 @@
 - Implement Routes/Route/NavLink/Outlet/useParams, nested shared layout and /dossier/:playerID. Handle unknown IDs/routes and verify direct URL reload. Hosting must support SPA fallback.
 - Semantic HTML, accessible labels/landmarks, visible keyboard focus, readable contrast, responsive layouts and reduced-motion support. Target accessible behavior without claiming WCAG compliance from limited checks.
 - Keep environment values in .env files and provide safe .env.example placeholders. Ignore private credentials, node_modules, cache, dist and coverage. Never print secrets. Backend independently validates requests when API tasks are implemented later.
+
+U004 acceptance: derive field errors and matrix output synchronously; no validation effect or redundant errors state. SLA samples absolute deadline minus Date.now, clamps at zero, resynchronizes when visible, cleans interval/listener and rechecks the clock on review. Never treat a local receipt as a persisted appeal. Fixed simulation deadlines must not be silently extended. Tests pin their clock where active review is required. P3-06 through P3-10 completed; stop before P3-11.

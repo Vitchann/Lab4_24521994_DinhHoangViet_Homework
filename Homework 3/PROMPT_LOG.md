@@ -7,7 +7,7 @@ Actual user messages are stored verbatim once. Generated task plans and executed
 | U001 | 2026-11-25 | P3-01–P3-05 | Verbatim below | Completed sequentially across pause/resume: setup/contracts/fixtures/routing RED/UI GREEN, actual hw3 commits. Stopped after P3-05; no push. |
 | U002 | 2026-11-25 | Pause | tôi ngắt bạn một chút, tí nx tôi prompt lại thì làm nhé | Paused immediately during P3-03 after the actual RED run; no task marked complete. |
 | U003 | 2026-11-26 | Resume | continue to do | Completed P3-03–P3-05 from existing state: frontend 33/backend scaffold 1 tests pass; lint/build/syntax and production-browser/deep-link checks pass. No other project changed or pushed. |
-| U004 | 2026-11-26 | P3-06–P3-10 | Verbatim below | In progress; local-only form/matrix/SLA tasks executed sequentially with actual RED/GREEN and task commits. |
+| U004 | 2026-11-26 | P3-06 through P3-10 | Verbatim below | Completed sequentially: contracts/RED, Context form, pure matrix, SLA RED and absolute-clock timer. Final 88 frontend + 1 backend tests, lint/build/syntax and production Chrome checks pass. Actual hw3 task commits; stopped after P3-10, no push. |
 
 ## U001 — verbatim user prompt
 
@@ -271,3 +271,28 @@ Report implemented features, actual test results, commit hashes and unresolved l
 - Added 13 pure absolute-time cases, 6 hook lifecycle/drift cases and 3 form deadline cases before timer implementation. Resolvable calculation/hook stubs and the existing form generated actual RED.
 - `npm.cmd run test --workspace frontend -- --reporter=verbose`: exit 1, 22 failed / 62 passed (verification/P3-09-RED.txt). Late submit test confirms current form incorrectly accepts a valid draft after expiry; implementation belongs to P3-10.
 - Captured all timing requirements, including hidden-to-visible resampling and identical callback removal in StrictMode. No production hook behavior implemented in this task.
+
+### P3-10 development record (agent-generated task)
+
+- P3-09 actual commit: 93ae0c9f3a92c9e1f4ececdd3cfd1b276bc396f6 test(hw3): capture absolute SLA and deadline interaction red.
+- Implemented pure calculateSla and useAppealSlaTimer with a sampled absolute timestamp, a single interval, visible-tab resynchronization and matched cleanup. No decrementing counter or validation effect. SimpleForm checks a fresh timestamp before local review and fails closed at invalid/expired deadlines; timer output is not announced every second. Deadline shown with UTC date and time.
+- Initial `npm.cmd test`: 84 frontend + 1 backend passed (verification/P3-10-first-run.txt), exit 0.
+- Review found validator only partially checked Context shape. Added four malformed-context cases before correction; actual 4 failed / 84 passed, exit 1 (P3-10-context-first-failure.txt). Guard now verifies dossier evidence IDs and complete owned references, including null entries. All assertions retained. Form tests pin Date.now so fixed fixture deadlines do not make them time-dependent.
+- Final `npm.cmd test`: 88 frontend tests across 10 files + 1 backend scaffold test passed, exit 0 (P3-10-GREEN.txt). `npm.cmd run lint`, `npm.cmd run build`, `npm.cmd run check:backend`: exit 0; outputs P3-10-lint.txt, P3-10-build.txt, P3-10-backend-syntax.txt. Final Vite build: 47 modules; JS 290.96 kB/gzip 91.51 kB, CSS 17.00 kB/gzip 4.35 kB.
+- Started owned preview using `npm.cmd run preview --workspace frontend` on 127.0.0.1:4174. Ran `$env:QA_NO_SANDBOX='1'` then `node scripts/verify-browser.mjs`: exit 0. Production Chrome verifies nine direct routes, keyboard SPA navigation/reload, native form typing/error feedback/focus/local review and rejection of stale-clock late submit. No document overflow on overview/dossier at 320/375/768/1440. Reduced motion passes; no console, runtime, network or HTTP errors. Reports/screenshots use P3-10 prefix, preserving P3-05 evidence. Mobile dossier and desktop overview screenshots visually inspected. Browser and owned preview closed after verification.
+- `git check-ignore` confirms node_modules, frontend/dist and backend/frontend private .env ignored. No secret/dependency/build artifact staged. Backend remains a skeleton, not an implemented API or database connection.
+- Updated README, domain/draft contract, rules, task checklist, prompt table and failure audit from actual evidence. P3-11 onward remains pending; no other project modified by this work and no push. Existing Homework 1 checklist modification is preserved.
+
+### U004 actual commit ledger
+
+| Task | Actual hash | Conventional Commit |
+| --- | --- | --- |
+| P3-06 | b60c4a95596d1850a929bf212e6ab145dd681b9f | test(hw3): define appeal validation contracts and capture red |
+| P3-07 | 836a225dba591c5d764f227d4cdc8ed4784b5145 | feat(hw3): implement accessible context appeal form |
+| P3-08 | 24f2f0fe9d9d80aa1280c6ca4a599484145c33fc | feat(hw3): add transparent demonstration sanction matrix |
+| P3-09 | 93ae0c9f3a92c9e1f4ececdd3cfd1b276bc396f6 | test(hw3): capture absolute SLA and deadline interaction red |
+| P3-10 | Self-hash recorded after commit in refs/notes/homework-3-development | feat(hw3): implement zero-drift appeal deadline timer |
+
+Each task used scoped `git add -- "Homework 3"` then an actual `git commit -m` with the message above. No empty commit, rewrite, backdate, co-author trailer or push. Read the final self-hash/ledger using `git log --show-notes=homework-3-development -1 -- "Homework 3/PROMPT_LOG.md"`. The note is actual local Git metadata written only after the commit exists.
+
+Final documentation QA: initial unanchored heading-count check falsely matched both U004 verbatim and its intake subheading. Anchored level-two check passes: one full verbatim block with all six feature sections and correct opening/closing text. Requested task checkboxes verified. Actual user prompt content remains unchanged.

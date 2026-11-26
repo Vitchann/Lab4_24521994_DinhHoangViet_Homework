@@ -44,4 +44,12 @@ describe('P3-06 appeal validation', () => {
     expect(validateAppeal(null, context)).toHaveProperty('form')
     expect(validateAppeal(valid(), {})).toHaveProperty('form')
   })
+  it.each([
+    { dossier: { dossierID: 'demo-001' }, evidence: [] },
+    { ...context, evidence: [null] },
+    { ...context, evidence: [{ dossierID: 'demo-001', id: 'foreign' }] },
+    { ...context, evidence: [] },
+  ])('rejects structurally incomplete context without throwing: %j', (broken) => {
+    expect(validateAppeal(valid(), broken)).toHaveProperty('form')
+  })
 })

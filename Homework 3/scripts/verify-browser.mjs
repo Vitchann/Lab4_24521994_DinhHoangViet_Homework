@@ -6,6 +6,8 @@ import path from 'node:path'
 
 const base = process.env.PREVIEW_URL || 'http://127.0.0.1:4174'
 const output = path.resolve('verification')
+const prefix = process.env.QA_REPORT_PREFIX || 'P3-10'
+assert.match(prefix, /^P3-\d{2}$/)
 await mkdir(output, { recursive: true })
 const profile = await mkdtemp(path.join(tmpdir(), 'hw3-browser-'))
 const browser = spawn(process.env.CHROME_PATH || 'C:/Program Files/Google/Chrome/Application/chrome.exe', ['--headless=new', '--disable-gpu', '--no-first-run', '--no-default-browser-check', ...(process.env.QA_NO_SANDBOX === '1' ? ['--no-sandbox'] : []), '--remote-debugging-port=0', `--user-data-dir=${profile}`, 'about:blank'], { windowsHide: true, stdio: 'ignore' })
@@ -86,7 +88,7 @@ try {
       assert.equal(metrics.scroll, metrics.client, `No overflow ${label} at ${width}`)
       assert.equal(metrics.main, 1)
       const shot = await send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true })
-      await writeFile(path.join(output, `P3-05-${label}-${width}.png`), Buffer.from(shot.data, 'base64'))
+      await writeFile(path.join(output, `${prefix}-${label}-${width}.png`), Buffer.from(shot.data, 'base64'))
       viewports.push({ route, ...metrics })
     }
   }
@@ -100,13 +102,31 @@ try {
   await send('Page.reload', { ignoreCache: true })
   await waitHeading('Player Beta')
   assert.equal(await evaluate('location.pathname'), '/dossier/sim-tanvuu')
+  // Exercise native typing against the production React form, not synthetic state setters.
+  await evaluate(`document.querySelector('button[type="submit"]').click()`)
+  assert.equal(await evaluate(`Boolean(document.querySelector('[role="alert"]'))`), true)
+  for (const [name, text] of [['applicantName', 'Browser Demo'], ['applicantEmail', 'browser@example.test'], ['grounds', 'Please review this fictional dossier and the demonstration briefing context.']]) {
+    await evaluate(`document.querySelector('[name="${name}"]').focus()`)
+    assert.equal(await evaluate('getComputedStyle(document.activeElement).outlineStyle'), 'solid')
+    await send('Input.insertText', { text })
+  }
+  await evaluate(`document.querySelector('[name="acknowledged"]').click(); document.querySelector('button[type="submit"]').click()`)
+  assert.match(await evaluate(`document.querySelector('[role="status"]')?.textContent`), /Local review generated/)
+  assert.equal(await evaluate(`document.querySelector('[role="timer"]').getAttribute('aria-live')`), 'off')
+  const localReview = 'passed native typing, validation, focus and local-only receipt'
+  // A stale displayed countdown must never authorize a late review.
+  await evaluate(`Date.now = () => Date.parse('2026-12-07T00:00:00.000Z'); document.querySelector('form').requestSubmit()`)
+  assert.equal(await evaluate(`document.querySelector('button[type="submit"]').disabled`), true)
+  assert.equal(await evaluate(`Boolean(document.querySelector('[role="status"]'))`), false)
+  assert.match(await evaluate(`document.querySelector('.sla-panel').textContent`), /Deadline expired/)
+  const expiryGuard = 'passed stale-clock submission rejection'
   await send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] })
   const reducedMotion = await evaluate('({animation:getComputedStyle(document.querySelector("main")).animationName,transition:getComputedStyle(document.querySelector("main")).transitionDuration})')
   assert.equal(reducedMotion.animation, 'none')
   assert.equal(reducedMotion.transition, '0s')
   for (const [kind, list] of Object.entries(errors)) assert.equal(list.length, 0, `${kind}: ${JSON.stringify(list)}`)
-  const report = { browser: version.product, base, routes: routes.map(([route, heading]) => ({ route, heading, directAccess: 'passed' })), viewports, keyboardNavigation: 'passed without document reload', deepLinkReload: 'passed for Player Beta', reducedMotion, errors, qaNoSandbox: process.env.QA_NO_SANDBOX === '1', limitations: 'Headless Chrome only; no physical-device/screen-reader/Lighthouse/full WCAG or database verification. SPA unknown routes intentionally receive HTTP 200 index fallback and show a client 404 view.' }
-  await writeFile(path.join(output, 'P3-05-BROWSER.json'), JSON.stringify(report, null, 2))
+  const report = { browser: version.product, base, routes: routes.map(([route, heading]) => ({ route, heading, directAccess: 'passed' })), viewports, keyboardNavigation: 'passed without document reload', deepLinkReload: 'passed for Player Beta', localReview, expiryGuard, reducedMotion, errors, qaNoSandbox: process.env.QA_NO_SANDBOX === '1', limitations: 'Headless Chrome only; no physical-device/screen-reader/Lighthouse/full WCAG or database verification. SPA unknown routes intentionally receive HTTP 200 index fallback and show a client 404 view.' }
+  await writeFile(path.join(output, `${prefix}-BROWSER.json`), JSON.stringify(report, null, 2))
   console.log(JSON.stringify(report, null, 2))
 } finally {
   if (socket?.readyState === WebSocket.OPEN) await closeBrowser?.().catch(() => {})

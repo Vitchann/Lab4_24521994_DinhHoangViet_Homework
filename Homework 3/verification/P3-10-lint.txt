@@ -1,0 +1,4 @@
+
+> hw3-esports-fair-play-tribunal@0.1.0 lint
+> eslint .
+

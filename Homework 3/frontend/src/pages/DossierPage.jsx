@@ -23,7 +23,7 @@ export default function DossierPage() {
       <EvidenceList entries={evidence} /><CaseTimeline events={dossier.timeline} />
       <SimpleForm key={dossier.dossierID} dossier={dossier} evidence={evidence} />
     </div><aside className="case-aside"><SanctionSummary sanction={sanction} />
-      <section className="panel deadline-panel"><p className="eyebrow">EXERCISE DEADLINE</p><h2><time dateTime={dossier.appealDeadline}>{formatUtc(dossier.appealDeadline)}</time></h2><p>Illustrative date only. No live countdown or appeal submission is enabled.</p></section>
+      <section className="panel deadline-panel"><p className="eyebrow">EXERCISE DEADLINE</p><h2><time dateTime={dossier.appealDeadline}>{formatUtc(dossier.appealDeadline)}</time></h2><p>The form shows a client-clock countdown. Reviews remain local simulations; nothing is submitted to a server.</p></section>
       <section className="reference-note"><h2>Reference, not an allegation</h2><p>Case-study label: <strong>{player.referenceLabel}</strong>. This player profile, evidence and outcome are invented and are not findings about that person.</p><Link to="/about">Read the simulation guide →</Link></section>
     </aside></div>
   </>

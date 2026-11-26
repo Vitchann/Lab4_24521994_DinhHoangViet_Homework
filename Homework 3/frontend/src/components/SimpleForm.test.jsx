@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import { render, screen, fireEvent, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import SimpleForm from './SimpleForm.jsx'
@@ -6,7 +6,10 @@ import { simulation } from '../data/simulation.js'
 
 const dossier = simulation.dossiers[0]
 const evidence = simulation.evidence.filter((item) => item.dossierID === dossier.dossierID)
-export function fillValid() {
+beforeEach(() => vi.spyOn(Date, 'now').mockReturnValue(Date.parse('2026-11-26T00:00:00.000Z')))
+afterEach(() => vi.restoreAllMocks())
+
+function fillValid() {
   fireEvent.change(screen.getByLabelText('Applicant name'), { target: { value: 'Demo Applicant' } })
   fireEvent.change(screen.getByLabelText('Email'), { target: { value: 'demo@example.test' } })
   fireEvent.change(screen.getByLabelText('Appeal reasons'), { target: { value: 'Please review the fictional briefing context and demonstration record.' } })

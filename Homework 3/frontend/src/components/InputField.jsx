@@ -6,7 +6,7 @@ export default function InputField({ name, label, type = 'text', options = [], h
   const { values, updateField, errors, attempted } = useForm()
   const error = attempted ? errors[name] : null
   const describedBy = [hint && `${id}-hint`, error && `${id}-error`].filter(Boolean).join(' ') || undefined
-  const common = { id, name, 'aria-invalid': Boolean(error), 'aria-describedby': describedBy }
+  const common = { id, name, 'aria-required': true, 'aria-invalid': Boolean(error), 'aria-describedby': describedBy }
   const feedback = <>{hint && <p className="field-hint" id={`${id}-hint`}>{hint}</p>}{error && <p className="field-error" id={`${id}-error`}>{error}</p>}</>
   if (type === 'checkbox-group') return <fieldset className="form-field" aria-describedby={describedBy} aria-invalid={Boolean(error)}><legend>{label}</legend>{options.map(([value, title]) => <label className="check-label" key={value}><input type="checkbox" checked={values[name].includes(value)} onChange={(event) => { const checked = event.target.checked; updateField(name, (previous) => checked ? [...previous, value] : previous.filter((item) => item !== value)) }} />{title}</label>)}{feedback}</fieldset>
   if (type === 'checkbox') return <div className="form-field"><label className="check-label" htmlFor={id}><input {...common} type="checkbox" checked={values[name]} onChange={(event) => updateField(name, event.target.checked)} />{label}</label>{feedback}</div>

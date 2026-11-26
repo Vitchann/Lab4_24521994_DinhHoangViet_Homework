@@ -5,7 +5,7 @@ export function createAppealValues() {
 export function validateAppeal(values, context) {
   const dossier = context?.dossier
   const evidence = context?.evidence
-  if (!values || typeof values !== 'object' || Array.isArray(values) || !dossier?.dossierID || !Array.isArray(evidence) || evidence.some((item) => item.dossierID !== dossier.dossierID)) return { form: 'A valid demonstration dossier and draft are required.' }
+  if (!values || typeof values !== 'object' || Array.isArray(values) || !dossier?.dossierID || !Array.isArray(dossier.evidenceIDs) || !Array.isArray(evidence) || evidence.some((item) => !item || item.dossierID !== dossier.dossierID || !dossier.evidenceIDs.includes(item.id)) || dossier.evidenceIDs.some((id) => !evidence.some((item) => item.id === id))) return { form: 'A valid demonstration dossier and draft are required.' }
   const errors = {}
   const length = (value) => typeof value === 'string' ? value.trim().length : 0
   if (length(values.applicantName) < 2 || length(values.applicantName) > 80) errors.applicantName = 'Use 2 to 80 characters for the applicant name.'
