@@ -18,12 +18,12 @@ Acceptance criteria: Document relationships and assumptions; distinguish simulat
 
 Evidence / status: Complete 2026-11-25. DOMAIN_CONTRACT.md and JSDoc models define five models, ownership/IDs, chronology/lifecycle/deadline assumptions, pure fixture interfaces, routing/deep-link/404 contracts and explicit non-factual simulation boundaries. Manual requirement review before fixture and route implementation; lint verification recorded in prompt log.
 P3-03 — Simulation dataset
-- [ ] Complete and verify task.
+- [x] Complete and verify task.
 Scope: Prepare clearly labeled Himass/TanVuu demonstration records with stable IDs and no unsupported factual accusations.
 
 Acceptance criteria: Validate fixture structure and simulation labeling.
 
-Evidence / status: Pending.
+Evidence / status: Complete 2026-11-26. Two deeply frozen synthetic players/dossiers, four simulation evidence references and two demonstration sanctions; no real accusations or sourced findings. Validator checks labels, IDs/ownership, UTC chronology and sanction duration. Before implementation RED 16 failed/1 passed; after GREEN 17 frontend tests passed and lint passed. Provenance in SIMULATION_DATA.md; outputs verification/P3-03-*.txt.
 P3-04 — Routing tests
 - [ ] Complete and verify task.
 Scope: Write failing tests for dynamic dossier routes, navigation and unknown IDs.

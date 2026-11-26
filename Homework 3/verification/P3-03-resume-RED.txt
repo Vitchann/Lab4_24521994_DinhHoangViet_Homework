@@ -1,0 +1,236 @@
+
+> hw3-frontend@0.1.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v5.1.2 C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework 3/frontend
+
+ × src/data/simulation.test.js > P3-03 simulation integrity > has two explicitly simulated case-study references with valid relationships 11ms
+   → expected [] to have a length of 2 but got +0
+ × src/data/simulation.test.js > P3-03 simulation integrity > deeply freezes the fixtures and keeps real reference labels out of synthetic handles 2ms
+   → expected false to be true // Object.is equality
+ × src/data/simulation.test.js > P3-03 simulation integrity > finds a dossier by stable player ID without mutating it 1ms
+   → Not implemented: fixture lookup
+ × src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID undefined 0ms
+   → Not implemented: fixture lookup
+ × src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID toString 0ms
+   → Not implemented: fixture lookup
+ × src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID __proto__ 0ms
+   → Not implemented: fixture lookup
+ × src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID SIM-HIMASS 0ms
+   → Not implemented: fixture lookup
+ × src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID unknown 0ms
+   → Not implemented: fixture lookup
+ × src/data/simulation.test.js > P3-03 simulation integrity > rejects false simulation flag 1ms
+   → Cannot set properties of undefined (setting 'simulation')
+ × src/data/simulation.test.js > P3-03 simulation integrity > rejects duplicate player ID 0ms
+   → Cannot read properties of undefined (reading 'playerID')
+ × src/data/simulation.test.js > P3-03 simulation integrity > rejects broken evidence link 0ms
+   → Cannot read properties of undefined (reading 'evidenceIDs')
+ × src/data/simulation.test.js > P3-03 simulation integrity > rejects cross-case evidence 0ms
+   → Cannot read properties of undefined (reading 'dossierID')
+ × src/data/simulation.test.js > P3-03 simulation integrity > rejects external evidence source 0ms
+   → Cannot set properties of undefined (setting 'reference')
+ × src/data/simulation.test.js > P3-03 simulation integrity > rejects invalid chronology 0ms
+   → Cannot read properties of undefined (reading 'openedAt')
+ × src/data/simulation.test.js > P3-03 simulation integrity > rejects unsorted timeline 0ms
+   → Cannot read properties of undefined (reading 'timeline')
+ × src/data/simulation.test.js > P3-03 simulation integrity > rejects invalid sanction duration 0ms
+   → Cannot set properties of undefined (setting 'durationDays')
+ ✓ src/App.test.jsx > renders the labeled initial simulation scaffold 105ms
+npm.cmd : 
+At line:2 char:1
++ npm.cmd run test --workspace frontend -- --reporter=verbose *> verifi ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+⎯⎯⎯⎯⎯⎯ Failed Tests 16 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/data/simulation.test.js > P3-03 simulation integrity > has two explicitly simulated case-study references 
+with valid relationships
+AssertionError: expected [] to have a length of 2 but got +0
+
+- Expected
++ Received
+
+- 2
++ 0
+
+ ❯ src/data/simulation.test.js:8:32
+      6| describe('P3-03 simulation integrity', () => {
+      7|   it('has two explicitly simulated case-study references with valid re…
+      8|     expect(simulation.players).toHaveLength(2)
+       |                                ^
+      9|     expect(simulation.players.map((player) => player.referenceLabel)).…
+     10|     expect(simulation.notice).toMatch(/simulation.*not official/i)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/12]⎯
+
+ FAIL  src/data/simulation.test.js > P3-03 simulation integrity > deeply freezes the fixtures and keeps real reference 
+labels out of synthetic handles
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ check src/data/simulation.test.js:17:40
+     15|     const check = (value) => {
+     16|       if (value && typeof value === 'object') {
+     17|         expect(Object.isFrozen(value)).toBe(true)
+       |                                        ^
+     18|         Object.values(value).forEach(check)
+     19|       }
+ ❯ src/data/simulation.test.js:21:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/12]⎯
+
+ FAIL  src/data/simulation.test.js > P3-03 simulation integrity > finds a dossier by stable player ID without mutating 
+it
+Error: Not implemented: fixture lookup
+ ❯ findDossier src/data/simulation.js:5:39
+      3| // P3-03 contract stub, populated after RED.
+      4| export const simulation = { notice: SIMULATION_NOTICE, players: [], do…
+      5| export function findDossier() { throw new Error('Not implemented: fixt…
+       |                                       ^
+      6|
+ ❯ src/data/simulation.test.js:26:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/12]⎯
+
+ FAIL  src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID undefined
+ FAIL  src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID toString
+ FAIL  src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID __proto__
+ FAIL  src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID SIM-HIMASS
+ FAIL  src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID unknown
+Error: Not implemented: fixture lookup
+ ❯ findDossier src/data/simulation.js:5:39
+      3| // P3-03 contract stub, populated after RED.
+      4| export const simulation = { notice: SIMULATION_NOTICE, players: [], do…
+      5| export function findDossier() { throw new Error('Not implemented: fixt…
+       |                                       ^
+      6|
+ ❯ src/data/simulation.test.js:31:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/12]⎯
+
+ FAIL  src/data/simulation.test.js > P3-03 simulation integrity > rejects false simulation flag
+TypeError: Cannot set properties of undefined (setting 'simulation')
+ ❯ it.each.data.players.<computed>.playerID src/data/simulation.test.js:35:60
+     33|
+     34|   it.each([
+     35|     ['false simulation flag', (data) => { data.dossiers[0].simulation …
+       |                                                            ^
+     36|     ['duplicate player ID', (data) => { data.players[1].playerID = dat…
+     37|     ['broken evidence link', (data) => { data.dossiers[0].evidenceIDs.…
+ ❯ src/data/simulation.test.js:45:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/12]⎯
+
+ FAIL  src/data/simulation.test.js > P3-03 simulation integrity > rejects duplicate player ID
+TypeError: Cannot read properties of undefined (reading 'playerID')
+ ❯ src/data/simulation.test.js:36:84
+     34|   it.each([
+     35|     ['false simulation flag', (data) => { data.dossiers[0].simulation …
+     36|     ['duplicate player ID', (data) => { data.players[1].playerID = dat…
+       |                                                                                    ^
+     37|     ['broken evidence link', (data) => { data.dossiers[0].evidenceIDs.…
+     38|     ['cross-case evidence', (data) => { data.evidence[0].dossierID = d…
+ ❯ src/data/simulation.test.js:45:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/12]⎯
+
+ FAIL  src/data/simulation.test.js > P3-03 simulation integrity > rejects broken evidence link
+TypeError: Cannot read properties of undefined (reading 'evidenceIDs')
+ ❯ it.each.data.evidence.<computed>.dossierID src/data/simulation.test.js:37:59
+     35|     ['false simulation flag', (data) => { data.dossiers[0].simulation …
+     36|     ['duplicate player ID', (data) => { data.players[1].playerID = dat…
+     37|     ['broken evidence link', (data) => { data.dossiers[0].evidenceIDs.…
+       |                                                           ^
+     38|     ['cross-case evidence', (data) => { data.evidence[0].dossierID = d…
+     39|     ['external evidence source', (data) => { data.evidence[0].referenc…
+ ❯ src/data/simulation.test.js:45:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/12]⎯
+
+ FAIL  src/data/simulation.test.js > P3-03 simulation integrity > rejects cross-case evidence
+TypeError: Cannot read properties of undefined (reading 'dossierID')
+ ❯ it.each.data.evidence.<computed>.reference src/data/simulation.test.js:38:87
+     36|     ['duplicate player ID', (data) => { data.players[1].playerID = dat…
+     37|     ['broken evidence link', (data) => { data.dossiers[0].evidenceIDs.…
+     38|     ['cross-case evidence', (data) => { data.evidence[0].dossierID = d…
+       |                                                                                       ^
+     39|     ['external evidence source', (data) => { data.evidence[0].referenc…
+     40|     ['invalid chronology', (data) => { data.dossiers[0].appealDeadline…
+ ❯ src/data/simulation.test.js:45:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/12]⎯
+
+ FAIL  src/data/simulation.test.js > P3-03 simulation integrity > rejects external evidence source
+TypeError: Cannot set properties of undefined (setting 'reference')
+ ❯ it.each.data.dossiers.<computed>.appealDeadline src/data/simulation.test.js:39:63
+     37|     ['broken evidence link', (data) => { data.dossiers[0].evidenceIDs.…
+     38|     ['cross-case evidence', (data) => { data.evidence[0].dossierID = d…
+     39|     ['external evidence source', (data) => { data.evidence[0].referenc…
+       |                                                               ^
+     40|     ['invalid chronology', (data) => { data.dossiers[0].appealDeadline…
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  16 failed | 1 passed (17)
+   Start at  21:48:46
+   Duration  4.77s (environment 61%, setup 33%, transform 3%, tests 2%)
+
+     41|     ['unsorted timeline', (data) => { data.dossiers[0].timeline.revers…
+ ❯ src/data/simulation.test.js:45:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/12]⎯
+
+ FAIL  src/data/simulation.test.js > P3-03 simulation integrity > rejects invalid chronology
+TypeError: Cannot read properties of undefined (reading 'openedAt')
+ ❯ src/data/simulation.test.js:40:91
+     38|     ['cross-case evidence', (data) => { data.evidence[0].dossierID = d…
+     39|     ['external evidence source', (data) => { data.evidence[0].referenc…
+     40|     ['invalid chronology', (data) => { data.dossiers[0].appealDeadline…
+       |                                                                                           ^
+     41|     ['unsorted timeline', (data) => { data.dossiers[0].timeline.revers…
+     42|     ['invalid sanction duration', (data) => { data.sanctions[0].durati…
+ ❯ src/data/simulation.test.js:45:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/12]⎯
+
+ FAIL  src/data/simulation.test.js > P3-03 simulation integrity > rejects unsorted timeline
+TypeError: Cannot read properties of undefined (reading 'timeline')
+ ❯ it.each.data.sanctions.<computed>.durationDays src/data/simulation.test.js:41:56
+     39|     ['external evidence source', (data) => { data.evidence[0].referenc…
+     40|     ['invalid chronology', (data) => { data.dossiers[0].appealDeadline…
+     41|     ['unsorted timeline', (data) => { data.dossiers[0].timeline.revers…
+       |                                                        ^
+     42|     ['invalid sanction duration', (data) => { data.sanctions[0].durati…
+     43|   ])('rejects %s', (_label, change) => {
+ ❯ src/data/simulation.test.js:45:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/12]⎯
+
+ FAIL  src/data/simulation.test.js > P3-03 simulation integrity > rejects invalid sanction duration
+TypeError: Cannot set properties of undefined (setting 'durationDays')
+ ❯ src/data/simulation.test.js:42:65
+     40|     ['invalid chronology', (data) => { data.dossiers[0].appealDeadline…
+     41|     ['unsorted timeline', (data) => { data.dossiers[0].timeline.revers…
+     42|     ['invalid sanction duration', (data) => { data.sanctions[0].durati…
+       |                                                                 ^
+     43|   ])('rejects %s', (_label, change) => {
+     44|     const data = structuredClone(simulation)
+ ❯ src/data/simulation.test.js:45:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/12]⎯
+
+npm error Lifecycle script `test` failed with error:
+npm error code 1
+npm error path C:\Users\LENOVO\OneDrive\Desktop\Lab4\Homework 3\frontend
+npm error workspace hw3-frontend@0.1.0
+npm error location C:\Users\LENOVO\OneDrive\Desktop\Lab4\Homework 3\frontend
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --reporter=verbose

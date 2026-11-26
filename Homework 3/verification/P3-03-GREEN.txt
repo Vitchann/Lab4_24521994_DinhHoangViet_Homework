@@ -1,0 +1,30 @@
+
+> hw3-frontend@0.1.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v5.1.2 C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework 3/frontend
+
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > has two explicitly simulated case-study references with valid relationships 4ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > deeply freezes the fixtures and keeps real reference labels out of synthetic handles 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > finds a dossier by stable player ID without mutating it 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID undefined 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID toString 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID __proto__ 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID SIM-HIMASS 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID unknown 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects false simulation flag 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects duplicate player ID 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects broken evidence link 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects cross-case evidence 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects external evidence source 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects invalid chronology 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects unsorted timeline 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects invalid sanction duration 0ms
+ ✓ src/App.test.jsx > renders the labeled initial simulation scaffold 55ms
+
+ Test Files  2 passed (2)
+      Tests  17 passed (17)
+   Start at  21:50:12
+   Duration  1.81s (environment 62%, setup 29%, transform 4%, tests 3%, import 1%, worker 1%)
+

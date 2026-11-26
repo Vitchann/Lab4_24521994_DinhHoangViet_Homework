@@ -5,6 +5,8 @@ Actual user messages are stored verbatim once. Generated task plans and executed
 | ID | Date | Tasks | Actual prompt | Result |
 | --- | --- | --- | --- | --- |
 | U001 | 2026-11-25 | P3-01–P3-05 | Verbatim below | In progress; sequential task records follow. |
+| U002 | 2026-11-25 | Pause | tôi ngắt bạn một chút, tí nx tôi prompt lại thì làm nhé | Paused immediately during P3-03 after the actual RED run; no task marked complete. |
+| U003 | 2026-11-26 | Resume | continue to do | Resuming P3-03–P3-05 from existing commits/stubs/RED evidence; no repeated setup/install. |
 
 ## U001 — verbatim user prompt
 
@@ -94,3 +96,27 @@ execute p3.01 to p3.05
 - Defined Player, Dossier, Evidence, Sanction and Appeal models plus route/dataset interfaces, stable-ID/relationship rules, UTC chronology/deadline boundaries, future appeal lifecycle/validation and explicit current/future system boundaries in DOMAIN_CONTRACT.md and JSDoc.
 - Manually checked all requested domain/routing/data requirements. Reference names remain inspiration only; no research/factual allegation/sanction is asserted. Fixtures must use synthetic handles/local avatars and simulation:// references. No form/API implementation introduced.
 - Documentation task uses contract review/lint rather than invented RED. Actual npm.cmd run lint passed (exit 0); checklist updated before fixture work.
+
+## U002 — verbatim user prompt
+
+```text
+tôi ngắt bạn một chút, tí nx tôi prompt lại thì làm nhé
+```
+
+## U003 — verbatim user prompt
+
+```text
+continue to do
+```
+
+### Resume inspection (2026-11-26)
+
+- P3-02 actual commit: 2761e43c83fb4870afdc3f53dbdbf7948c5f7840 — docs(hw3): define product and domain contracts.
+- Re-read rules/checklist/log and inspected uncommitted fixture tests/stubs plus existing RED output. P3-01/P3-02 are complete; no dependency reinstall needed. Homework 1's pre-existing modification remains; Homework 2 clean and untouched.
+- Original P3-03 RED ran before pause: 16 failed / 1 scaffold passed, exit 1. Failures include deliberate stubs/empty fixtures; invalid-fixture mutators could not run against empty arrays. Preserve original output; strengthen malformed-data assertions to require TypeError and capture a fresh pre-implementation RED.
+
+### P3-03 — completed (2026-11-26)
+
+- Fresh pre-implementation RED: npm.cmd run test --workspace frontend -- --reporter=verbose; 16 failed / 1 passed, exit 1 (P3-03-resume-RED.txt), including missing fixture/stub behavior. No missing-module failure was substituted for assertions; the original pre-pause output is retained too.
+- Implemented deeply frozen simulation snapshot and safe ID lookup, plus pure dataset validation for identities, labels, relationships, UTC chronology, evidence provenance and demonstration sanction duration. SIMULATION_DATA.md documents synthetic provenance. No real-world evidence, allegations or disciplinary findings are asserted.
+- Actual GREEN: same command, 17 tests passed / 2 files, exit 0 (P3-03-GREEN.txt). npm.cmd run lint passed. No accidental implementation failure observed. Checklist updated before routing test task.
