@@ -1,0 +1,66 @@
+
+> hw3-esports-fair-play-tribunal@0.1.0 test
+> npm run test --workspaces --if-present
+
+
+> hw3-frontend@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.2 C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework 3/frontend
+
+ ❯ src/domain/disproportionality.test.js (4 tests | 1 failed) 19ms
+   ❯ transparent demonstration matrix (4)
+     × recalculates when dossier-linked duration changes, independent of array order 6ms
+npm.cmd : 
+At line:2 char:1
++ npm.cmd test *> verification/P3-08-GREEN.txt; $result=$LASTEXITCODE;  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/domain/disproportionality.test.js > transparent demonstration matrix > recalculates when dossier-linked 
+duration changes, independent of array order
+TypeError: Invalid sanction end date
+ ❯ requireValid src/domain/validateDataset.js:5:67
+      3| const text = (value) => typeof value === 'string' && value.length > 0 …
+      4| const record = (value) => value !== null && typeof value === 'object' …
+      5| function requireValid(condition, message) { if (!condition) throw new …
+       |                                                                   ^
+      6| function iso(value) {
+      7|   requireValid(text(value) && Number.isFinite(Date.parse(value)) && ne…
+ ❯ validateDataset src/domain/validateDataset.js:60:7
+ ❯ calculateMatrix src/domain/disproportionality.js:5:3
+ ❯ src/domain/disproportionality.test.js:20:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 6 passed (7)
+      Tests  1 failed | 61 passed (62)
+   Start at  22:17:47
+   Duration  4.29s (environment 53%, setup 24%, tests 13%, import 6%, transform 3%)
+
+npm error Lifecycle script `test` failed with error:
+npm error code 1
+npm error path C:\Users\LENOVO\OneDrive\Desktop\Lab4\Homework 3\frontend
+npm error workspace hw3-frontend@0.1.0
+npm error location C:\Users\LENOVO\OneDrive\Desktop\Lab4\Homework 3\frontend
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run
+
+
+> hw3-backend@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.2 C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework 3/backend
+
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  22:17:52
+   Duration  481ms (import 83%, tests 9%, transform 6%, worker 2%)
+

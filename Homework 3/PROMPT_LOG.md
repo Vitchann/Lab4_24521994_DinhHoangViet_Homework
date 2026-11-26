@@ -256,3 +256,11 @@ Report implemented features, actual test results, commit hashes and unresolved l
 - Implemented pure validation, Context values/handlers, accessible fields, synchronous derived errors, live review, local receipt reset on edit and keyed dossier draft reset. No API request or persistence.
 - `npm.cmd test`: 57 frontend + 1 backend tests passed, exit 0 (P3-07-GREEN.txt). `npm.cmd run lint`: exit 0.
 - Corrected P3-06 checklist: earlier scripted exact match did not handle CRLF. Verified replacement against actual task text.
+
+### P3-08 development record (agent-generated task)
+
+- P3-07 commit: 836a225 feat(hw3): implement accessible context appeal form.
+- Defined transparent formula in APPEAL_CONTRACT.md before behavior. Wrote four pure tests and an accessible table test; frontend RED 5 failed / 57 passed, exit 1 (P3-08-RED.txt).
+- Implemented dataset-validated pure matrix, linked by IDs, reference-credit cap, same-case statement credit and nonnegative result. Overview table shows every component and assumptions; two rows require no useMemo.
+- Initial GREEN attempt: 1 failed / 61 passed frontend, backend 1 passed. Test fixture mistakenly changed endsAt rather than effectiveUntil and validator correctly rejected inconsistent dates. Corrected fixture property, preserved assertions; evidence P3-08-first-failure.txt.
+- `npm.cmd test`: 62 frontend + 1 backend pass, exit 0 (P3-08-GREEN.txt). `npm.cmd run lint`: exit 0. No official judgment or backend behavior claimed.

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import DossierCards from '../components/DossierCards.jsx'
 import { simulation } from '../data/simulation.js'
 import Icon from '../components/Icon.jsx'
+import DisproportionalityMatrix from '../components/DisproportionalityMatrix.jsx'
 
 export function OverviewPage() {
   return <>
@@ -13,6 +14,7 @@ export function OverviewPage() {
     ].map(([count, title, detail, icon]) => <section className="metric" key={title}><div><h2>{title}</h2><Icon name={icon} /></div><strong>{String(count).padStart(2, '0')}</strong><p>{detail}</p></section>)}</div>
     <div className="overview-heading"><div><p className="eyebrow">THE REVIEW DESK</p><h2>Current dossiers</h2><p>Structured context for thoughtful review.</p></div><Link to="/dossiers">View all dossiers <span aria-hidden="true">↗</span></Link></div>
     <DossierCards />
+    <DisproportionalityMatrix dataset={simulation} />
     <section className="principles"><div><span className="principle-symbol"><Icon name="shield" /></span><h2>Context before conclusions.</h2><p>Good review starts with a complete picture.</p></div><ol><li><span>01</span><strong>Understand the record</strong><p>Keep context and references together.</p></li><li><span>02</span><strong>Separate facts from assumptions</strong><p>This workspace contains simulation only.</p></li><li><span>03</span><strong>Make the process clear</strong><p>Review chronology and explain the limits.</p></li></ol></section>
   </>
 }

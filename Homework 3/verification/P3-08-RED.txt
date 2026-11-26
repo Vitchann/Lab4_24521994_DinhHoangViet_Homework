@@ -1,0 +1,185 @@
+
+> hw3-frontend@0.1.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v5.1.2 C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework 3/frontend
+
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > has two explicitly simulated case-study references with valid relationships 8ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > deeply freezes the fixtures and keeps real reference labels out of synthetic handles 2ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > finds a dossier by stable player ID without mutating it 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID undefined 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID toString 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID __proto__ 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID SIM-HIMASS 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID unknown 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects false simulation flag 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects duplicate player ID 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects broken evidence link 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects cross-case evidence 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects external evidence source 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects invalid chronology 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects unsorted timeline 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects invalid sanction duration 0ms
+ × src/domain/disproportionality.test.js > transparent demonstration matrix > derives load, allowances and clamped excess from each frozen dossier 7ms
+   → Not implemented: demonstration matrix
+ × src/domain/disproportionality.test.js > transparent demonstration matrix > recalculates when dossier-linked duration changes, independent of array order 1ms
+   → Not implemented: demonstration matrix
+ × src/domain/disproportionality.test.js > transparent demonstration matrix > caps reference credit at three and does not borrow another case statement 1ms
+   → Not implemented: demonstration matrix
+ × src/domain/disproportionality.test.js > transparent demonstration matrix > rejects broken dataset ownership rather than displaying misleading numbers 5ms
+   → expected error to be instance of TypeError
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > creates fresh empty drafts and independent reference arrays 5ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > accepts valid simulated applicant data without mutating inputs 1ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantName " " 1ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantName "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantEmail "bad-address" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantEmail "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid grounds "short" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid grounds "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid relationship "OTHER" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid reason "UNKNOWN" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid requestedOutcome "PUNISH" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid acknowledged false 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid acknowledged "true" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid evidenceIDs "ev-hm-replay" 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid evidenceIDs ["ev-tv-notice"] 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid evidenceIDs ["ev-hm-replay","ev-hm-replay"] 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > requires representative authorization 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > requires same-dossier references for new-evidence reasons 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > requires a specified reduction/removal for proportionality 0ms
+ ✓ src/domain/appealValidation.test.js > P3-06 appeal validation > counts trimmed grounds and handles malformed payload/context without crashing 0ms
+ × src/components/DisproportionalityMatrix.test.jsx > shows an accessible comparison table with explicit assumptions and simulation limits 111ms
+   → Unable to find an accessible element with the role "table" and name "Illustrative sanction comparison"
+
+There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ✓ src/App.test.jsx > renders a clearly labeled simulation application 146ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > renders the overview within a shared semantic layout and explicit simulation notice 173ms
+ ✓ src/components/SimpleForm.test.jsx > Context appeal form > shares live values with ShowData and generates only a local review 367ms
+ ✓ src/components/SimpleForm.test.jsx > Context appeal form > prevents invalid review and connects field errors to accessible controls 32ms
+ ✓ src/components/SimpleForm.test.jsx > Context appeal form > validates representative authorization, evidence ownership and proportionality during render 99ms
+ ✓ src/components/SimpleForm.test.jsx > Context appeal form > starts a fresh draft when a different keyed dossier is selected 44ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > navigates through registry and dossier while preserving the shared layout 222ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > resolves dynamic dossier sim-himass without another case leaking into it 59ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > resolves dynamic dossier sim-tanvuu without another case leaking into it 44ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > shows demonstration sanction and an ordered timestamped case timeline 31ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID unknown and recovers to registry 45ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID toString and recovers to registry 45ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID __proto__ and recovers to registry 66ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID SIM-HIMASS and recovers to registry 61ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID %00 and recovers to registry 78ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID sim-missing and recovers to registry 62ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown route /missing in the shared layout 13ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown route /dossier in the shared layout 15ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown route /dossier/sim-himass/extra in the shared layout 11ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > explains reference labels and does not introduce an appeal form 14ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > renders the default BrowserRouter application on an initially deep-linked URL 26ms
+npm.cmd : 
+At line:2 char:1
++ npm.cmd run test --workspace frontend -- --reporter=verbose *> verifi ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/components/DisproportionalityMatrix.test.jsx > shows an accessible comparison table with explicit 
+assumptions and simulation limits
+TestingLibraryElementError: Unable to find an accessible element with the role "table" and name "Illustrative sanction 
+comparison"
+
+There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the 
+`hidden` option to `true`. Learn more about this here: 
+https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/DisproportionalityMatrix.test.jsx:8:24
+      6| it('shows an accessible comparison table with explicit assumptions and…
+      7|   render(<DisproportionalityMatrix dataset={simulation} />)
+      8|   const table = screen.getByRole('table', { name: 'Illustrative sancti…
+       |                        ^
+      9|   expect(within(table).getAllByRole('row')).toHaveLength(3)
+     10|   expect(within(table).getByRole('rowheader', { name: 'Player Alpha' }…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  src/domain/disproportionality.test.js > transparent demonstration matrix > derives load, allowances and clamped 
+excess from each frozen dossier
+Error: Not implemented: demonstration matrix
+ ❯ calculateMatrix src/domain/disproportionality.js:1:43
+      1| export function calculateMatrix() { throw new Error('Not implemented: …
+       |                                           ^
+      2|
+ ❯ src/domain/disproportionality.test.js:9:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  src/domain/disproportionality.test.js > transparent demonstration matrix > recalculates when dossier-linked 
+duration changes, independent of array order
+Error: Not implemented: demonstration matrix
+ ❯ calculateMatrix src/domain/disproportionality.js:1:43
+      1| export function calculateMatrix() { throw new Error('Not implemented: …
+       |                                           ^
+      2|
+ ❯ src/domain/disproportionality.test.js:20:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  src/domain/disproportionality.test.js > transparent demonstration matrix > caps reference credit at three and 
+does not borrow another case statement
+Error: Not implemented: demonstration matrix
+ ❯ calculateMatrix src/domain/disproportionality.js:1:43
+      1| export function calculateMatrix() { throw new Error('Not implemented: …
+       |                                           ^
+      2|
+ ❯ src/domain/disproportionality.test.js:28:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  src/domain/disproportionality.test.js > transparent demonstration matrix > rejects broken dataset ownership 
+rather than displaying misleading numbers
+AssertionError: expected error to be instance of TypeError
+
+- Expected:
+[Function TypeError]
+
++ Received:
+Error {
+  "message": "Not implemented: demonstration matrix",
+}
+
+ ❯ src/domain/disproportionality.test.js:33:41
+     31|     const data = structuredClone(simulation)
+     32|     data.dossiers[0].sanctionID = 'missing'
+     33|     expect(() => calculateMatrix(data)).toThrow(TypeError)
+       |                                         ^
+     34|   })
+     35| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  2 failed | 5 passed (7)
+      Tests  5 failed | 57 passed (62)
+   Start at  22:17:12
+   Duration  4.12s (environment 53%, setup 26%, tests 12%, import 5%, transform 3%)
+
+npm error Lifecycle script `test` failed with error:
+npm error code 1
+npm error path C:\Users\LENOVO\OneDrive\Desktop\Lab4\Homework 3\frontend
+npm error workspace hw3-frontend@0.1.0
+npm error location C:\Users\LENOVO\OneDrive\Desktop\Lab4\Homework 3\frontend
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --reporter=verbose

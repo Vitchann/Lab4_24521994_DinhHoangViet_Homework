@@ -1,0 +1,7 @@
+import { calculateMatrix } from '../domain/disproportionality.js'
+
+export default function DisproportionalityMatrix({ dataset }) {
+  // Two tiny fixture rows: memoization would add complexity without useful savings.
+  const rows = calculateMatrix(dataset)
+  return <section className="panel matrix-panel"><p className="eyebrow">TRANSPARENT TRAINING MODEL</p><h2>Disproportionality matrix</h2><p>Simulation only; not an authoritative disciplinary judgment. These arbitrary units do not establish misconduct, fairness or a recommended sanction.</p><p id="matrix-assumptions">Restriction: 10 units per day; caution: 5 units. Baseline allowance: 40. Each reference: 5 credit units, capped at three references. A case with a simulated statement receives 10 context credit units. Excess = max(0, load − baseline − reference credit − context credit). Reference counts do not measure evidence quality.</p><div className="table-scroll" role="region" aria-label="Sanction comparison table" tabIndex={0}><table aria-describedby="matrix-assumptions"><caption>Illustrative sanction comparison</caption><thead><tr>{['Player', 'Load units', 'Baseline', 'Reference credit', 'Context credit', 'Excess units'].map((title) => <th scope="col" key={title}>{title}</th>)}</tr></thead><tbody>{rows.map((row) => <tr key={row.dossierID}><th scope="row">{row.player}</th>{['load', 'baseline', 'referenceCredit', 'contextCredit', 'excess'].map((key) => <td key={key}>{row[key]}</td>)}</tr>)}</tbody></table></div></section>
+}

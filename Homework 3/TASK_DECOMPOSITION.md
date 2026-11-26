@@ -53,12 +53,12 @@ Acceptance criteria: Validation tests pass; no useEffect validation waterfall.
 
 Evidence / status: Complete 2026-11-26. Context provider, reusable accessible fields, live ShowData and pure cross-field validation. Validation errors derived synchronously, no validation effect/state. Component RED: 24 failed / 33 passed including previous validation RED. GREEN: 57 frontend + 1 backend tests pass; lint passes. Local memory only; keyed dossier changes reset drafts. Evidence verification/P3-07-*.txt.
 P3-08 — Disproportionality matrix
-- [ ] Complete and verify task.
+- [x] Complete and verify task.
 Scope: Define illustrative weights/criteria, write tests and implement pure calculation and table.
 
 Acceptance criteria: Expected calculations pass; assumptions shown in UI/docs.
 
-Evidence / status: Pending.
+Evidence / status: Complete 2026-11-26. Five matrix/table tests captured RED (5 failed / 57 passed). Pure dossier-linked calculations with explicit weights and accessible overview table; no redundant memoization/state. Final 62 frontend + 1 backend tests and lint pass. Initial test fixture date-field error fixed without changing expected results; audit/evidence P3-08-*.
 P3-09 — SLA timer RED tests
 - [ ] Complete and verify task.
 Scope: Test absolute time delta, expiry, invalid input, visibility changes and cleanup with controlled time.

@@ -225,6 +225,13 @@ h1 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(28px, 2.6v
 }
 
 .appeal-panel { overflow-wrap: anywhere; }
+.matrix-panel { margin-top: 24px; min-width: 0; }
+.matrix-panel > p { font-size: 13px; line-height: 1.7; }
+.table-scroll { max-width: 100%; overflow-x: auto; border: 1px solid #d6dfd8; border-radius: 8px; }
+.matrix-panel table { width: 100%; border-collapse: collapse; font-size: 12px; text-align: left; }
+.matrix-panel caption { text-align: left; padding: 14px; font-weight: 700; }
+.matrix-panel th, .matrix-panel td { padding: 12px; border-top: 1px solid #d6dfd8; }
+.matrix-panel thead { background: #edf3ed; }
 .appeal-panel > p { line-height: 1.7; }
 .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .form-field { min-width: 0; margin: 0 0 18px; padding: 0; border: 0; }
