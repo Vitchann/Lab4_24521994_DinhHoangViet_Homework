@@ -468,3 +468,13 @@ Answered status during ongoing P3-16: P3-11 through P3-15 committed; 106 fronten
 | P3-16 | Actual self-hash attached after commit in refs/notes/homework-3-development | test(hw3): verify full-stack MongoDB persistence and failure recovery |
 
 Each task used scoped `git add -- "Homework 3"`, inspected staged scope and executed `git commit -m` with its message. No empty commit, co-author trailer, backdating or history rewrite. Final self-hash/full ledger is written only after the commit exists as a local development note; read with `git log --show-notes=homework-3-development -1 -- "Homework 3/PROMPT_LOG.md"` from Lab4.
+
+## U007 - verbatim user prompt
+
+```text
+push lên github đi
+```
+
+### U007 development record (agent-generated)
+
+User explicitly authorized GitHub push on 2026-11-26. Verified origin is https://github.com/Vietomato/Lab4_24521994_DinhHoangViet_Homework, branch main at d1df36f with 23 commits ahead of the local origin/main reference. Only uncommitted change is the pre-existing Homework 1 checklist; it is excluded. Recording this request in a separate Homework 3 documentation commit, then pushing main normally without force. Push result is reported after actual execution; no success is presumed here.
