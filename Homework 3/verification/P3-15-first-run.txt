@@ -1,0 +1,5003 @@
+
+> hw3-frontend@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.2 C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework 3/frontend
+
+ ❯ src/components/AppealDeadline.test.jsx (3 tests | 3 failed) 573ms
+   × uses a nonannouncing accessible timer and disables the action on expiry 345ms
+   × fails closed for an invalid deadline 66ms
+   × rejects a late submission even when the displayed clock has not ticked 158ms
+ ❯ src/components/SimpleForm.test.jsx (4 tests | 3 failed) 654ms
+   ❯ Context appeal form (4)
+     × shares live values with ShowData and generates only a local review 348ms
+     × prevents invalid review and connects field errors to accessible controls 136ms
+     × validates representative authorization, evidence ownership and proportionality during render 92ms
+ ❯ src/routing/AppRoutes.test.jsx (16 tests | 11 failed) 940ms
+   ❯ P3-04 routing acceptance contract (16)
+     × renders the overview within a shared semantic layout and explicit simulation notice 266ms
+     × resolves dynamic dossier sim-himass without another case leaking into it 41ms
+     × resolves dynamic dossier sim-tanvuu without another case leaking into it 33ms
+     × shows demonstration sanction and an ordered timestamped case timeline 34ms
+     × handles unknown/invalid player ID unknown and recovers to registry 35ms
+     × handles unknown/invalid player ID toString and recovers to registry 27ms
+     × handles unknown/invalid player ID __proto__ and recovers to registry 23ms
+     × handles unknown/invalid player ID SIM-HIMASS and recovers to registry 26ms
+     × handles unknown/invalid player ID %00 and recovers to registry 22ms
+     × handles unknown/invalid player ID sim-missing and recovers to registry 27ms
+     × renders the default BrowserRouter application on an initially deep-linked URL 25ms
+npm.cmd : 
+At line:7 char:1
++ npm.cmd run test --workspace frontend *> verification/P3-15-first-run ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+⎯⎯⎯⎯⎯⎯ Failed Tests 17 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/components/AppealDeadline.test.jsx > uses a nonannouncing accessible timer and disables the action on expiry
+TestingLibraryElementError: Unable to find an accessible element with the role "button" and name "Review demo appeal"
+
+Here are the accessible roles:
+
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"eyebrow"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"field-hint"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"field-hint"[39m
+    [33mid[39m=[32m"_r_4_-hint"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"field-hint"[39m
+    [33mid[39m=[32m"_r_5_-hint"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Prepare a demonstration appeal":
+  [36m<h2 />[39m
+
+  Name "Demonstration appeal window":
+  [36m<h3 />[39m
+
+  Name "Appeal data review":
+  [36m<h3 />[39m
+
+  --------------------------------------------------
+  time:
+
+  Name "":
+  [36m<time[39m
+    [33mdatetime[39m=[32m"2026-12-05T09:00:00.000Z"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  timer:
+
+  Name "Time remaining":
+  [36m<span[39m
+    [33maria-label[39m=[32m"Time remaining"[39m
+    [33maria-live[39m=[32m"off"[39m
+    [33mclass[39m=[32m"sla-clock"[39m
+    [33mrole[39m=[32m"timer"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  status:
+
+  Name "":
+  [36m<p[39m
+    [33mrole[39m=[32m"status"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  form:
+
+  Name "Demo appeal form":
+  [36m<form[39m
+    [33maria-label[39m=[32m"Demo appeal form"[39m
+    [33mnovalidate[39m=[32m""[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  textbox:
+
+  Name "Applicant name":
+  [36m<input[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_0_"[39m
+    [33mname[39m=[32m"applicantName"[39m
+    [33mtype[39m=[32m"text"[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "Email":
+  [36m<input[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_1_"[39m
+    [33mname[39m=[32m"applicantEmail"[39m
+    [33mtype[39m=[32m"email"[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "Appeal reasons":
+  [36m<textarea[39m
+    [33maria-describedby[39m=[32m"_r_4_-hint"[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_4_"[39m
+    [33mname[39m=[32m"grounds"[39m
+    [33mrows[39m=[32m"5"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  combobox:
+
+  Name "Relationship":
+  [36m<select[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_2_"[39m
+    [33mname[39m=[32m"relationship"[39m
+  [36m/>[39m
+
+  Name "Reason category":
+  [36m<select[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_3_"[39m
+    [33mname[39m=[32m"reason"[39m
+  [36m/>[39m
+
+  Name "Requested outcome":
+  [36m<select[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_6_"[39m
+    [33mname[39m=[32m"requestedOutcome"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  option:
+
+  Name "Player":
+  [36m<option[39m
+    [33mvalue[39m=[32m"PLAYER"[39m
+  [36m/>[39m
+
+  Name "Representative":
+  [36m<option[39m
+    [33mvalue[39m=[32m"REPRESENTATIVE"[39m
+  [36m/>[39m
+
+  Name "Process review":
+  [36m<option[39m
+    [33mvalue[39m=[32m"PROCESS"[39m
+  [36m/>[39m
+
+  Name "New evidence":
+  [36m<option[39m
+    [33mvalue[39m=[32m"NEW_EVIDENCE"[39m
+  [36m/>[39m
+
+  Name "Proportionality":
+  [36m<option[39m
+    [33mvalue[39m=[32m"PROPORTIONALITY"[39m
+  [36m/>[39m
+
+  Name "Review":
+  [36m<option[39m
+    [33mvalue[39m=[32m"REVIEW"[39m
+  [36m/>[39m
+
+  Name "Reduce":
+  [36m<option[39m
+    [33mvalue[39m=[32m"REDUCE"[39m
+  [36m/>[39m
+
+  Name "Remove":
+  [36m<option[39m
+    [33mvalue[39m=[32m"REMOVE"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  group:
+
+  Name "Supporting evidence references":
+  [36m<fieldset[39m
+    [33maria-describedby[39m=[32m"_r_5_-hint"[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33mclass[39m=[32m"form-field"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  checkbox:
+
+  Name "Scrim replay index":
+  [36m<input[39m
+    [33mtype[39m=[32m"checkbox"[39m
+  [36m/>[39m
+
+  Name "Training rules briefing":
+  [36m<input[39m
+    [33mtype[39m=[32m"checkbox"[39m
+  [36m/>[39m
+
+  Name "I understand this is a local simulation.":
+  [36m<input[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_7_"[39m
+    [33mname[39m=[32m"acknowledged"[39m
+    [33mtype[39m=[32m"checkbox"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Submit simulation appeal":
+  [36m<button[39m
+    [33mclass[39m=[32m"primary-link"[39m
+    [33mdisabled[39m=[32m""[39m
+    [33mtype[39m=[32m"submit"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  region:
+
+  Name "Appeal data review":
+  [36m<section[39m
+    [33maria-label[39m=[32m"Appeal data review"[39m
+    [33mclass[39m=[32m"draft-review"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  term:
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  --------------------------------------------------
+  definition:
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd[39m
+    [33mclass[39m=[32m"draft-grounds"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33mclass[39m=[32m"panel appeal-panel"[39m
+    [36m>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"eyebrow"[39m
+      [36m>[39m
+        [0mSIMULATION APPEAL[0m
+      [36m</p>[39m
+      [36m<h2>[39m
+        [0mPrepare a demonstration appeal[0m
+      [36m</h2>[39m
+      [36m<p>[39m
+        [0mUse fictional details only. A successful submission saves the simulation appeal to the database. 
+Unsubmitted drafts are cleared on navigation or reload.[0m
+      [36m</p>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"sla-panel"[39m
+      [36m>[39m
+        [36m<h3>[39m
+          [0mDemonstration appeal window[0m
+        [36m</h3>[39m
+        [36m<p>[39m
+          [0mLocal review window is active.[0m
+          [0m Deadline: [0m
+          [36m<time[39m
+            [33mdatetime[39m=[32m"2026-12-05T09:00:00.000Z"[39m
+          [36m>[39m
+            [0m05 Dec 2026 UTC[0m
+            [0m at [0m
+            [0m09:00[0m
+          [36m</time>[39m
+          [0m.[0m
+        [36m</p>[39m
+        [36m<span[39m
+          [33maria-label[39m=[32m"Time remaining"[39m
+          [33maria-live[39m=[32m"off"[39m
+          [33mclass[39m=[32m"sla-clock"[39m
+          [33mrole[39m=[32m"timer"[39m
+        [36m>[39m
+          [0m00d 00:00:10[0m
+        [36m</span>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"field-hint"[39m
+        [36m>[39m
+          [0mClient-clock display only. The server independently enforces the deadline.[0m
+        [36m</p>[39m
+      [36m</div>[39m
+      [36m<p[39m
+        [33mrole[39m=[32m"status"[39m
+      [36m>[39m
+        [0mLoading [0m
+        [0mappeal status[0m
+        [0m…[0m
+      [36m</p>[39m
+      [36m<form[39m
+        [33maria-label[39m=[32m"Demo appeal form"[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-grid"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"form-field"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mfor[39m=[32m"_r_0_"[39m
+            [36m>[39m
+              [0mApplicant name[0m
+            [36m</label>[39m
+            [36m<input[39m
+              [33maria-invalid[39m=[32m"false"[39m
+              [33maria-required[39m=[32m"true"[39m
+              [33mid[39m=[32m"_r_0_"[39m
+              [33mname[39m=[32m"applicantName"[39m
+              [33mtype[39m=[32m"text"[39m
+              [33mvalue[39m=[32m""[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"form-field"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mfor[39m=[32m"_r_1_"[39m
+            [36m>[39m
+              [0mEmail[0m
+            [36m</label>[39m
+            [36m<input[39m
+              [33maria-invalid[39m=[32m"false"[39m
+              [33maria-required[39m=[32m"true"[39m
+              [33mid[39m=[32m"_r_1_"[39m
+              [33mname[39m=[32m"applicantEmail"[39m
+              [33mtype[39m=[32m"email"[39m
+              [33mvalue[39m=[32m""[39m
+            [36m/>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mfor[39m=[32m"_r_2_"[39m
+          [36m>[39m
+            [0mRelationship[0m
+          [36m</label>[39m
+          [36m<select[39m
+            [33maria-invalid[39m=[32m"false"[39m
+            [33maria-required[39m=[32m"true"[39m
+            [33mid[39m=[32m"_r_2_"[39m
+            [33mname[39m=[32m"relationship"[39m
+          [36m>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"PLAYER"[39m
+            [36m>[39m
+              [0mPlayer[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"REPRESENTATIVE"[39m
+            [36m>[39m
+              [0mRepresentative[0m
+            [36m</option>[39m
+          [36m</select>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mfor[39m=[32m"_r_3_"[39m
+          [36m>[39m
+            [0mReason category[0m
+          [36m</label>[39m
+          [36m<select[39m
+            [33maria-invalid[39m=[32m"false"[39m
+            [33maria-required[39m=[32m"true"[39m
+            [33mid[39m=[32m"_r_3_"[39m
+            [33mname[39m=[32m"reason"[39m
+          [36m>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"PROCESS"[39m
+            [36m>[39m
+              [0mProcess review[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"NEW_EVIDENCE"[39m
+            [36m>[39m
+              [0mNew evidence[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"PROPORTIONALITY"[39m
+            [36m>[39m
+              [0mProportionality[0m
+            [36m</option>[39m
+          [36m</select>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mfor[39m=[32m"_r_4_"[39m
+          [36m>[39m
+            [0mAppeal reasons[0m
+          [36m</label>[39m
+          [36m<textarea[39m
+            [33maria-describedby[39m=[32m"_r_4_-hint"[39m
+            [33maria-invalid[39m=[32m"false"[39m
+            [33maria-required[39m=[32m"true"[39m
+            [33mid[39m=[32m"_r_4_"[39m
+            [33mname[39m=[32m"grounds"[39m
+            [33mrows[39m=[32m"5"[39m
+          [36m/>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"field-hint"[39m
+            [33mid[39m=[32m"_r_4_-hint"[39m
+          [36m>[39m
+            [0mRequired: 30 to 4000 characters. Explain the fictional context.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<fieldset[39m
+          [33maria-describedby[39m=[32m"_r_5_-hint"[39m
+          [33maria-invalid[39m=[32m"false"[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<legend>[39m
+            [0mSupporting evidence references[0m
+          [36m</legend>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"check-label"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mtype[39m=[32m"checkbox"[39m
+            [36m/>[39m
+            [0mScrim replay index[0m
+          [36m</label>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"check-label"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mtype[39m=[32m"checkbox"[39m
+            [36m/>[39m
+            [0mTraining rules briefing[0m
+          [36m</label>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"field-hint"[39m
+            [33mid[39m=[32m"_r_5_-hint"[39m
+          [36m>[39m
+            [0mSelect existing simulation references; no files are uploaded.[0m
+          [36m</p>[39m
+        [36m</fieldset>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mfor[39m=[32m"_r_6_"[39m
+          [36m>[39m
+            [0mRequested outcome[0m
+          [36m</label>[39m
+          [36m<select[39m
+            [33maria-invalid[39m=[32m"false"[39m
+            [33maria-required[39m=[32m"true"[39m
+            [33mid[39m=[32m"_r_6_"[39m
+            [33mname[39m=[32m"requestedOutcome"[39m
+          [36m>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"REVIEW"[39m
+            [36m>[39m
+              [0mReview[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"REDUCE"[39m
+            [36m>[39m
+              [0mReduce[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"REMOVE"[39m
+            [36m>[39m
+              [0mRemove[0m
+            [36m</option>[39m
+          [36m</select>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"check-label"[39m
+            [33mfor[39m=[32m"_r_7_"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33maria-invalid[39m=[32m"false"[39m
+              [33maria-required[39m=[32m"true"[39m
+              [33mid[39m=[32m"_r_7_"[39m
+              [33mname[39m=[32m"acknowledged"[39m
+              [33mtype[39m=[32m"checkbox"[39m
+            [36m/>[39m
+            [0mI understand this is a local simulation.[0m
+          [36m</label>[39m
+        [36m</div>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"primary-link"[39m
+          [33mdisabled[39m=[32m""[39m
+          [33mtype[39m=[32m"submit"[39m
+        [36m>[39m
+          [0mSubmit simulation appeal[0m
+        [36m</button>[39m
+      [36m</form>[39m
+      [36m<section[39m
+        [33maria-label[39m=[32m"Appeal data review"[39m
+        [33mclass[39m=[32m"draft-review"[39m
+      [36m>[39m
+        [36m<h3>[39m
+          [0mAppeal data review[0m
+        [36m</h3>[39m
+        [36m<p>[39m
+          [0mDraft for [0m
+          [0mdemo-001[0m
+          [0m. Submit explicitly to save the simulation appeal.[0m
+        [36m</p>[39m
+        [36m<dl>[39m
+          [36m<dt>[39m
+            [0mApplicant[0m
+          [36m</dt>[39m
+          [36m<dd>[39m
+            [0mNot entered[0m
+          [36m</dd>[39m
+          [36m<dt>[39m
+            [0mEmail[0m
+          [36m</dt>[39m
+          [36m<dd>[39m
+            [0mNot entered[0m
+          [36m</dd>[39m
+          [36m<dt>[39m
+            [0mReason / outcome[0m
+          [36m</dt>[39m
+          [36m<dd>[39m
+            [0mPROCESS[0m
+            [0m / [0m
+            [0mREVIEW[0m
+          [36m</dd>[39m
+          [36m<dt>[39m
+            [0mSupporting references[0m
+          [36m</dt>[39m
+          [36m<dd>[39m
+            [0mNone selected[0m
+          [36m</dd>[39m
+          [36m<dt>[39m
+            [0mAppeal reasons[0m
+          [36m</dt>[39m
+          [36m<dd[39m
+            [33mclass[39m=[32m"draft-grounds"[39m
+          [36m>[39m
+            [0mNot entered[0m
+          [36m</dd>[39m
+        [36m</dl>[39m
+      [36m</section>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/AppealDeadline.test.jsx:16:17
+     14|   expect(screen.getByRole('timer')).toHaveAttribute('aria-live', 'off')
+     15|   expect(screen.getByRole('timer')).toHaveTextContent('00d 00:00:10')
+     16|   expect(screen.getByRole('button', { name: 'Review demo appeal' })).t…
+       |                 ^
+     17|   vi.setSystemTime(end)
+     18|   fireEvent(document, new Event('visibilitychange'))
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/12]⎯
+
+ FAIL  src/components/AppealDeadline.test.jsx > fails closed for an invalid deadline
+TestingLibraryElementError: Unable to find an accessible element with the role "button" and name "Review demo appeal"
+
+Here are the accessible roles:
+
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"eyebrow"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"field-hint"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"field-hint"[39m
+    [33mid[39m=[32m"_r_c_-hint"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"field-hint"[39m
+    [33mid[39m=[32m"_r_d_-hint"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Prepare a demonstration appeal":
+  [36m<h2 />[39m
+
+  Name "Demonstration appeal window":
+  [36m<h3 />[39m
+
+  Name "Appeal data review":
+  [36m<h3 />[39m
+
+  --------------------------------------------------
+  timer:
+
+  Name "Time remaining":
+  [36m<span[39m
+    [33maria-label[39m=[32m"Time remaining"[39m
+    [33maria-live[39m=[32m"off"[39m
+    [33mclass[39m=[32m"sla-clock"[39m
+    [33mrole[39m=[32m"timer"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  status:
+
+  Name "":
+  [36m<p[39m
+    [33mrole[39m=[32m"status"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  form:
+
+  Name "Demo appeal form":
+  [36m<form[39m
+    [33maria-label[39m=[32m"Demo appeal form"[39m
+    [33mnovalidate[39m=[32m""[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  textbox:
+
+  Name "Applicant name":
+  [36m<input[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_8_"[39m
+    [33mname[39m=[32m"applicantName"[39m
+    [33mtype[39m=[32m"text"[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "Email":
+  [36m<input[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_9_"[39m
+    [33mname[39m=[32m"applicantEmail"[39m
+    [33mtype[39m=[32m"email"[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "Appeal reasons":
+  [36m<textarea[39m
+    [33maria-describedby[39m=[32m"_r_c_-hint"[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_c_"[39m
+    [33mname[39m=[32m"grounds"[39m
+    [33mrows[39m=[32m"5"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  combobox:
+
+  Name "Relationship":
+  [36m<select[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_a_"[39m
+    [33mname[39m=[32m"relationship"[39m
+  [36m/>[39m
+
+  Name "Reason category":
+  [36m<select[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_b_"[39m
+    [33mname[39m=[32m"reason"[39m
+  [36m/>[39m
+
+  Name "Requested outcome":
+  [36m<select[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_e_"[39m
+    [33mname[39m=[32m"requestedOutcome"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  option:
+
+  Name "Player":
+  [36m<option[39m
+    [33mvalue[39m=[32m"PLAYER"[39m
+  [36m/>[39m
+
+  Name "Representative":
+  [36m<option[39m
+    [33mvalue[39m=[32m"REPRESENTATIVE"[39m
+  [36m/>[39m
+
+  Name "Process review":
+  [36m<option[39m
+    [33mvalue[39m=[32m"PROCESS"[39m
+  [36m/>[39m
+
+  Name "New evidence":
+  [36m<option[39m
+    [33mvalue[39m=[32m"NEW_EVIDENCE"[39m
+  [36m/>[39m
+
+  Name "Proportionality":
+  [36m<option[39m
+    [33mvalue[39m=[32m"PROPORTIONALITY"[39m
+  [36m/>[39m
+
+  Name "Review":
+  [36m<option[39m
+    [33mvalue[39m=[32m"REVIEW"[39m
+  [36m/>[39m
+
+  Name "Reduce":
+  [36m<option[39m
+    [33mvalue[39m=[32m"REDUCE"[39m
+  [36m/>[39m
+
+  Name "Remove":
+  [36m<option[39m
+    [33mvalue[39m=[32m"REMOVE"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  group:
+
+  Name "Supporting evidence references":
+  [36m<fieldset[39m
+    [33maria-describedby[39m=[32m"_r_d_-hint"[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33mclass[39m=[32m"form-field"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  checkbox:
+
+  Name "Scrim replay index":
+  [36m<input[39m
+    [33mtype[39m=[32m"checkbox"[39m
+  [36m/>[39m
+
+  Name "Training rules briefing":
+  [36m<input[39m
+    [33mtype[39m=[32m"checkbox"[39m
+  [36m/>[39m
+
+  Name "I understand this is a local simulation.":
+  [36m<input[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_f_"[39m
+    [33mname[39m=[32m"acknowledged"[39m
+    [33mtype[39m=[32m"checkbox"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Submit simulation appeal":
+  [36m<button[39m
+    [33mclass[39m=[32m"primary-link"[39m
+    [33mdisabled[39m=[32m""[39m
+    [33mtype[39m=[32m"submit"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  region:
+
+  Name "Appeal data review":
+  [36m<section[39m
+    [33maria-label[39m=[32m"Appeal data review"[39m
+    [33mclass[39m=[32m"draft-review"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  term:
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  --------------------------------------------------
+  definition:
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd[39m
+    [33mclass[39m=[32m"draft-grounds"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33mclass[39m=[32m"panel appeal-panel"[39m
+    [36m>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"eyebrow"[39m
+      [36m>[39m
+        [0mSIMULATION APPEAL[0m
+      [36m</p>[39m
+      [36m<h2>[39m
+        [0mPrepare a demonstration appeal[0m
+      [36m</h2>[39m
+      [36m<p>[39m
+        [0mUse fictional details only. A successful submission saves the simulation appeal to the database. 
+Unsubmitted drafts are cleared on navigation or reload.[0m
+      [36m</p>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"sla-panel"[39m
+      [36m>[39m
+        [36m<h3>[39m
+          [0mDemonstration appeal window[0m
+        [36m</h3>[39m
+        [36m<p>[39m
+          [0mDeadline unavailable. Local review is disabled.[0m
+        [36m</p>[39m
+        [36m<span[39m
+          [33maria-label[39m=[32m"Time remaining"[39m
+          [33maria-live[39m=[32m"off"[39m
+          [33mclass[39m=[32m"sla-clock"[39m
+          [33mrole[39m=[32m"timer"[39m
+        [36m>[39m
+          [0m00d 00:00:00[0m
+        [36m</span>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"field-hint"[39m
+        [36m>[39m
+          [0mClient-clock display only. The server independently enforces the deadline.[0m
+        [36m</p>[39m
+      [36m</div>[39m
+      [36m<p[39m
+        [33mrole[39m=[32m"status"[39m
+      [36m>[39m
+        [0mLoading [0m
+        [0mappeal status[0m
+        [0m…[0m
+      [36m</p>[39m
+      [36m<form[39m
+        [33maria-label[39m=[32m"Demo appeal form"[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-grid"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"form-field"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mfor[39m=[32m"_r_8_"[39m
+            [36m>[39m
+              [0mApplicant name[0m
+            [36m</label>[39m
+            [36m<input[39m
+              [33maria-invalid[39m=[32m"false"[39m
+              [33maria-required[39m=[32m"true"[39m
+              [33mid[39m=[32m"_r_8_"[39m
+              [33mname[39m=[32m"applicantName"[39m
+              [33mtype[39m=[32m"text"[39m
+              [33mvalue[39m=[32m""[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"form-field"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mfor[39m=[32m"_r_9_"[39m
+            [36m>[39m
+              [0mEmail[0m
+            [36m</label>[39m
+            [36m<input[39m
+              [33maria-invalid[39m=[32m"false"[39m
+              [33maria-required[39m=[32m"true"[39m
+              [33mid[39m=[32m"_r_9_"[39m
+              [33mname[39m=[32m"applicantEmail"[39m
+              [33mtype[39m=[32m"email"[39m
+              [33mvalue[39m=[32m""[39m
+            [36m/>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mfor[39m=[32m"_r_a_"[39m
+          [36m>[39m
+            [0mRelationship[0m
+          [36m</label>[39m
+          [36m<select[39m
+            [33maria-invalid[39m=[32m"false"[39m
+            [33maria-required[39m=[32m"true"[39m
+            [33mid[39m=[32m"_r_a_"[39m
+            [33mname[39m=[32m"relationship"[39m
+          [36m>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"PLAYER"[39m
+            [36m>[39m
+              [0mPlayer[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"REPRESENTATIVE"[39m
+            [36m>[39m
+              [0mRepresentative[0m
+            [36m</option>[39m
+          [36m</select>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mfor[39m=[32m"_r_b_"[39m
+          [36m>[39m
+            [0mReason category[0m
+          [36m</label>[39m
+          [36m<select[39m
+            [33maria-invalid[39m=[32m"false"[39m
+            [33maria-required[39m=[32m"true"[39m
+            [33mid[39m=[32m"_r_b_"[39m
+            [33mname[39m=[32m"reason"[39m
+          [36m>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"PROCESS"[39m
+            [36m>[39m
+              [0mProcess review[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"NEW_EVIDENCE"[39m
+            [36m>[39m
+              [0mNew evidence[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"PROPORTIONALITY"[39m
+            [36m>[39m
+              [0mProportionality[0m
+            [36m</option>[39m
+          [36m</select>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mfor[39m=[32m"_r_c_"[39m
+          [36m>[39m
+            [0mAppeal reasons[0m
+          [36m</label>[39m
+          [36m<textarea[39m
+            [33maria-describedby[39m=[32m"_r_c_-hint"[39m
+            [33maria-invalid[39m=[32m"false"[39m
+            [33maria-required[39m=[32m"true"[39m
+            [33mid[39m=[32m"_r_c_"[39m
+            [33mname[39m=[32m"grounds"[39m
+            [33mrows[39m=[32m"5"[39m
+          [36m/>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"field-hint"[39m
+            [33mid[39m=[32m"_r_c_-hint"[39m
+          [36m>[39m
+            [0mRequired: 30 to 4000 characters. Explain the fictional context.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<fieldset[39m
+          [33maria-describedby[39m=[32m"_r_d_-hint"[39m
+          [33maria-invalid[39m=[32m"false"[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<legend>[39m
+            [0mSupporting evidence references[0m
+          [36m</legend>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"check-label"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mtype[39m=[32m"checkbox"[39m
+            [36m/>[39m
+            [0mScrim replay index[0m
+          [36m</label>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"check-label"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mtype[39m=[32m"checkbox"[39m
+            [36m/>[39m
+            [0mTraining rules briefing[0m
+          [36m</label>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"field-hint"[39m
+            [33mid[39m=[32m"_r_d_-hint"[39m
+          [36m>[39m
+            [0mSelect existing simulation references; no files are uploaded.[0m
+          [36m</p>[39m
+        [36m</fieldset>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mfor[39m=[32m"_r_e_"[39m
+          [36m>[39m
+            [0mRequested outcome[0m
+          [36m</label>[39m
+          [36m<select[39m
+            [33maria-invalid[39m=[32m"false"[39m
+            [33maria-required[39m=[32m"true"[39m
+            [33mid[39m=[32m"_r_e_"[39m
+            [33mname[39m=[32m"requestedOutcome"[39m
+          [36m>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"REVIEW"[39m
+            [36m>[39m
+              [0mReview[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"REDUCE"[39m
+            [36m>[39m
+              [0mReduce[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"REMOVE"[39m
+            [36m>[39m
+              [0mRemove[0m
+            [36m</option>[39m
+          [36m</select>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"check-label"[39m
+            [33mfor[39m=[32m"_r_f_"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33maria-invalid[39m=[32m"false"[39m
+              [33maria-required[39m=[32m"true"[39m
+              [33mid[39m=[32m"_r_f_"[39m
+              [33mname[39m=[32m"acknowledged"[39m
+              [33mtype[39m=[32m"checkbox"[39m
+            [36m/>[39m
+            [0mI understand this is a local simulation.[0m
+          [36m</label>[39m
+        [36m</div>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"primary-link"[39m
+          [33mdisabled[39m=[32m""[39m
+          [33mtype[39m=[32m"submit"[39m
+        [36m>[39m
+          [0mSubmit simulation appeal[0m
+        [36m</button>[39m
+      [36m</form>[39m
+      [36m<section[39m
+        [33maria-label[39m=[32m"Appeal data review"[39m
+        [33mclass[39m=[32m"draft-review"[39m
+      [36m>[39m
+        [36m<h3>[39m
+          [0mAppeal data review[0m
+        [36m</h3>[39m
+        [36m<p>[39m
+          [0mDraft for [0m
+          [0mdemo-001[0m
+          [0m. Submit explicitly to save the simulation appeal.[0m
+        [36m</p>[39m
+        [36m<dl>[39m
+          [36m<dt>[39m
+            [0mApplicant[0m
+          [36m</dt>[39m
+          [36m<dd>[39m
+            [0mNot entered[0m
+          [36m</dd>[39m
+          [36m<dt>[39m
+            [0mEmail[0m
+          [36m</dt>[39m
+          [36m<dd>[39m
+            [0mNot entered[0m
+          [36m</dd>[39m
+          [36m<dt>[39m
+            [0mReason / outcome[0m
+          [36m</dt>[39m
+          [36m<dd>[39m
+            [0mPROCESS[0m
+            [0m / [0m
+            [0mREVIEW[0m
+          [36m</dd>[39m
+          [36m<dt>[39m
+            [0mSupporting references[0m
+          [36m</dt>[39m
+          [36m<dd>[39m
+            [0mNone selected[0m
+          [36m</dd>[39m
+          [36m<dt>[39m
+            [0mAppeal reasons[0m
+          [36m</dt>[39m
+          [36m<dd[39m
+            [33mclass[39m=[32m"draft-grounds"[39m
+          [36m>[39m
+            [0mNot entered[0m
+          [36m</dd>[39m
+        [36m</dl>[39m
+      [36m</section>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/AppealDeadline.test.jsx:24:17
+     22| it('fails closed for an invalid deadline', () => {
+     23|   render(<SimpleForm dossier={{ ...dossier, appealDeadline: 'broken' }…
+     24|   expect(screen.getByRole('button', { name: 'Review demo appeal' })).t…
+       |                 ^
+     25|   expect(screen.getByText(/Deadline unavailable/)).toBeVisible()
+     26| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/12]⎯
+
+ FAIL  src/components/AppealDeadline.test.jsx > rejects a late submission even when the displayed clock has not ticked
+TestingLibraryElementError: Unable to find an accessible element with the role "button" and name "Review demo appeal"
+
+Here are the accessible roles:
+
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"eyebrow"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"field-hint"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"field-hint"[39m
+    [33mid[39m=[32m"_r_k_-hint"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"field-hint"[39m
+    [33mid[39m=[32m"_r_l_-hint"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Prepare a demonstration appeal":
+  [36m<h2 />[39m
+
+  Name "Demonstration appeal window":
+  [36m<h3 />[39m
+
+  Name "Appeal data review":
+  [36m<h3 />[39m
+
+  --------------------------------------------------
+  time:
+
+  Name "":
+  [36m<time[39m
+    [33mdatetime[39m=[32m"2026-12-05T09:00:00.000Z"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  timer:
+
+  Name "Time remaining":
+  [36m<span[39m
+    [33maria-label[39m=[32m"Time remaining"[39m
+    [33maria-live[39m=[32m"off"[39m
+    [33mclass[39m=[32m"sla-clock"[39m
+    [33mrole[39m=[32m"timer"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  status:
+
+  Name "":
+  [36m<p[39m
+    [33mrole[39m=[32m"status"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  form:
+
+  Name "Demo appeal form":
+  [36m<form[39m
+    [33maria-label[39m=[32m"Demo appeal form"[39m
+    [33mnovalidate[39m=[32m""[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  textbox:
+
+  Name "Applicant name":
+  [36m<input[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_g_"[39m
+    [33mname[39m=[32m"applicantName"[39m
+    [33mtype[39m=[32m"text"[39m
+    [33mvalue[39m=[32m"Demo Applicant"[39m
+  [36m/>[39m
+
+  Name "Email":
+  [36m<input[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_h_"[39m
+    [33mname[39m=[32m"applicantEmail"[39m
+    [33mtype[39m=[32m"email"[39m
+    [33mvalue[39m=[32m"demo@example.test"[39m
+  [36m/>[39m
+
+  Name "Appeal reasons":
+  [36m<textarea[39m
+    [33maria-describedby[39m=[32m"_r_k_-hint"[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_k_"[39m
+    [33mname[39m=[32m"grounds"[39m
+    [33mrows[39m=[32m"5"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  combobox:
+
+  Name "Relationship":
+  [36m<select[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_i_"[39m
+    [33mname[39m=[32m"relationship"[39m
+  [36m/>[39m
+
+  Name "Reason category":
+  [36m<select[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_j_"[39m
+    [33mname[39m=[32m"reason"[39m
+  [36m/>[39m
+
+  Name "Requested outcome":
+  [36m<select[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_m_"[39m
+    [33mname[39m=[32m"requestedOutcome"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  option:
+
+  Name "Player":
+  [36m<option[39m
+    [33mvalue[39m=[32m"PLAYER"[39m
+  [36m/>[39m
+
+  Name "Representative":
+  [36m<option[39m
+    [33mvalue[39m=[32m"REPRESENTATIVE"[39m
+  [36m/>[39m
+
+  Name "Process review":
+  [36m<option[39m
+    [33mvalue[39m=[32m"PROCESS"[39m
+  [36m/>[39m
+
+  Name "New evidence":
+  [36m<option[39m
+    [33mvalue[39m=[32m"NEW_EVIDENCE"[39m
+  [36m/>[39m
+
+  Name "Proportionality":
+  [36m<option[39m
+    [33mvalue[39m=[32m"PROPORTIONALITY"[39m
+  [36m/>[39m
+
+  Name "Review":
+  [36m<option[39m
+    [33mvalue[39m=[32m"REVIEW"[39m
+  [36m/>[39m
+
+  Name "Reduce":
+  [36m<option[39m
+    [33mvalue[39m=[32m"REDUCE"[39m
+  [36m/>[39m
+
+  Name "Remove":
+  [36m<option[39m
+    [33mvalue[39m=[32m"REMOVE"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  group:
+
+  Name "Supporting evidence references":
+  [36m<fieldset[39m
+    [33maria-describedby[39m=[32m"_r_l_-hint"[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33mclass[39m=[32m"form-field"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  checkbox:
+
+  Name "Scrim replay index":
+  [36m<input[39m
+    [33mtype[39m=[32m"checkbox"[39m
+  [36m/>[39m
+
+  Name "Training rules briefing":
+  [36m<input[39m
+    [33mtype[39m=[32m"checkbox"[39m
+  [36m/>[39m
+
+  Name "I understand this is a local simulation.":
+  [36m<input[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_n_"[39m
+    [33mname[39m=[32m"acknowledged"[39m
+    [33mtype[39m=[32m"checkbox"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Submit simulation appeal":
+  [36m<button[39m
+    [33mclass[39m=[32m"primary-link"[39m
+    [33mdisabled[39m=[32m""[39m
+    [33mtype[39m=[32m"submit"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  region:
+
+  Name "Appeal data review":
+  [36m<section[39m
+    [33maria-label[39m=[32m"Appeal data review"[39m
+    [33mclass[39m=[32m"draft-review"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  term:
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  --------------------------------------------------
+  definition:
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd[39m
+    [33mclass[39m=[32m"draft-grounds"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33mclass[39m=[32m"panel appeal-panel"[39m
+    [36m>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"eyebrow"[39m
+      [36m>[39m
+        [0mSIMULATION APPEAL[0m
+      [36m</p>[39m
+      [36m<h2>[39m
+        [0mPrepare a demonstration appeal[0m
+      [36m</h2>[39m
+      [36m<p>[39m
+        [0mUse fictional details only. A successful submission saves the simulation appeal to the database. 
+Unsubmitted drafts are cleared on navigation or reload.[0m
+      [36m</p>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"sla-panel"[39m
+      [36m>[39m
+        [36m<h3>[39m
+          [0mDemonstration appeal window[0m
+        [36m</h3>[39m
+        [36m<p>[39m
+          [0mLocal review window is active.[0m
+          [0m Deadline: [0m
+          [36m<time[39m
+            [33mdatetime[39m=[32m"2026-12-05T09:00:00.000Z"[39m
+          [36m>[39m
+            [0m05 Dec 2026 UTC[0m
+            [0m at [0m
+            [0m09:00[0m
+          [36m</time>[39m
+          [0m.[0m
+        [36m</p>[39m
+        [36m<span[39m
+          [33maria-label[39m=[32m"Time remaining"[39m
+          [33maria-live[39m=[32m"off"[39m
+          [33mclass[39m=[32m"sla-clock"[39m
+          [33mrole[39m=[32m"timer"[39m
+        [36m>[39m
+          [0m00d 00:00:10[0m
+        [36m</span>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"field-hint"[39m
+        [36m>[39m
+          [0mClient-clock display only. The server independently enforces the deadline.[0m
+        [36m</p>[39m
+      [36m</div>[39m
+      [36m<p[39m
+        [33mrole[39m=[32m"status"[39m
+      [36m>[39m
+        [0mLoading [0m
+        [0mappeal status[0m
+        [0m…[0m
+      [36m</p>[39m
+      [36m<form[39m
+        [33maria-label[39m=[32m"Demo appeal form"[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-grid"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"form-field"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mfor[39m=[32m"_r_g_"[39m
+            [36m>[39m
+              [0mApplicant name[0m
+            [36m</label>[39m
+            [36m<input[39m
+              [33maria-invalid[39m=[32m"false"[39m
+              [33maria-required[39m=[32m"true"[39m
+              [33mid[39m=[32m"_r_g_"[39m
+              [33mname[39m=[32m"applicantName"[39m
+              [33mtype[39m=[32m"text"[39m
+              [33mvalue[39m=[32m"Demo Applicant"[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"form-field"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mfor[39m=[32m"_r_h_"[39m
+            [36m>[39m
+              [0mEmail[0m
+            [36m</label>[39m
+            [36m<input[39m
+              [33maria-invalid[39m=[32m"false"[39m
+              [33maria-required[39m=[32m"true"[39m
+              [33mid[39m=[32m"_r_h_"[39m
+              [33mname[39m=[32m"applicantEmail"[39m
+              [33mtype[39m=[32m"email"[39m
+              [33mvalue[39m=[32m"demo@example.test"[39m
+            [36m/>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mfor[39m=[32m"_r_i_"[39m
+          [36m>[39m
+            [0mRelationship[0m
+          [36m</label>[39m
+          [36m<select[39m
+            [33maria-invalid[39m=[32m"false"[39m
+            [33maria-required[39m=[32m"true"[39m
+            [33mid[39m=[32m"_r_i_"[39m
+            [33mname[39m=[32m"relationship"[39m
+          [36m>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"PLAYER"[39m
+            [36m>[39m
+              [0mPlayer[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"REPRESENTATIVE"[39m
+            [36m>[39m
+              [0mRepresentative[0m
+            [36m</option>[39m
+          [36m</select>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mfor[39m=[32m"_r_j_"[39m
+          [36m>[39m
+            [0mReason category[0m
+          [36m</label>[39m
+          [36m<select[39m
+            [33maria-invalid[39m=[32m"false"[39m
+            [33maria-required[39m=[32m"true"[39m
+            [33mid[39m=[32m"_r_j_"[39m
+            [33mname[39m=[32m"reason"[39m
+          [36m>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"PROCESS"[39m
+            [36m>[39m
+              [0mProcess review[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"NEW_EVIDENCE"[39m
+            [36m>[39m
+              [0mNew evidence[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"PROPORTIONALITY"[39m
+            [36m>[39m
+              [0mProportionality[0m
+            [36m</option>[39m
+          [36m</select>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mfor[39m=[32m"_r_k_"[39m
+          [36m>[39m
+            [0mAppeal reasons[0m
+          [36m</label>[39m
+          [36m<textarea[39m
+            [33maria-describedby[39m=[32m"_r_k_-hint"[39m
+            [33maria-invalid[39m=[32m"false"[39m
+            [33maria-required[39m=[32m"true"[39m
+            [33mid[39m=[32m"_r_k_"[39m
+            [33mname[39m=[32m"grounds"[39m
+            [33mrows[39m=[32m"5"[39m
+          [36m>[39m
+            [0mPlease review the fictional briefing context and demonstration record.[0m
+          [36m</textarea>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"field-hint"[39m
+            [33mid[39m=[32m"_r_k_-hint"[39m
+          [36m>[39m
+            [0mRequired: 30 to 4000 characters. Explain the fictional context.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<fieldset[39m
+          [33maria-describedby[39m=[32m"_r_l_-hint"[39m
+          [33maria-invalid[39m=[32m"false"[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<legend>[39m
+            [0mSupporting evidence references[0m
+          [36m</legend>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"check-label"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mtype[39m=[32m"checkbox"[39m
+            [36m/>[39m
+            [0mScrim replay index[0m
+          [36m</label>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"check-label"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mtype[39m=[32m"checkbox"[39m
+            [36m/>[39m
+            [0mTraining rules briefing[0m
+          [36m</label>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"field-hint"[39m
+            [33mid[39m=[32m"_r_l_-hint"[39m
+          [36m>[39m
+            [0mSelect existing simulation references; no files are uploaded.[0m
+          [36m</p>[39m
+        [36m</fieldset>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mfor[39m=[32m"_r_m_"[39m
+          [36m>[39m
+            [0mRequested outcome[0m
+          [36m</label>[39m
+          [36m<select[39m
+            [33maria-invalid[39m=[32m"false"[39m
+            [33maria-required[39m=[32m"true"[39m
+            [33mid[39m=[32m"_r_m_"[39m
+            [33mname[39m=[32m"requestedOutcome"[39m
+          [36m>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"REVIEW"[39m
+            [36m>[39m
+              [0mReview[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"REDUCE"[39m
+            [36m>[39m
+              [0mReduce[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"REMOVE"[39m
+            [36m>[39m
+              [0mRemove[0m
+            [36m</option>[39m
+          [36m</select>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"check-label"[39m
+            [33mfor[39m=[32m"_r_n_"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33maria-invalid[39m=[32m"false"[39m
+              [33maria-required[39m=[32m"true"[39m
+              [33mid[39m=[32m"_r_n_"[39m
+              [33mname[39m=[32m"acknowledged"[39m
+              [33mtype[39m=[32m"checkbox"[39m
+            [36m/>[39m
+            [0mI understand this is a local simulation.[0m
+          [36m</label>[39m
+        [36m</div>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"primary-link"[39m
+          [33mdisabled[39m=[32m""[39m
+          [33mtype[39m=[32m"submit"[39m
+        [36m>[39m
+          [0mSubmit simulation appeal[0m
+        [36m</button>[39m
+      [36m</form>[39m
+      [36m<section[39m
+        [33maria-label[39m=[32m"Appeal data review"[39m
+        [33mclass[39m=[32m"draft-review"[39m
+      [36m>[39m
+        [36m<h3>[39m
+          [0mAppeal data review[0m
+        [36m</h3>[39m
+        [36m<p>[39m
+          [0mDraft for [0m
+          [0mdemo-001[0m
+          [0m. Submit explicitly to save the simulation appeal.[0m
+        [36m</p>[39m
+        [36m<dl>[39m
+          [36m<dt>[39m
+            [0mApplicant[0m
+          [36m</dt>[39m
+          [36m<dd>[39m
+            [0mDemo Applicant[0m
+          [36m</dd>[39m
+          [36m<dt>[39m
+            [0mEmail[0m
+          [36m</dt>[39m
+          [36m<dd>[39m
+            [0mdemo@example.test[0m
+          [36m</dd>[39m
+          [36m<dt>[39m
+            [0mReason / outcome[0m
+          [36m</dt>[39m
+          [36m<dd>[39m
+            [0mPROCESS[0m
+            [0m / [0m
+            [0mREVIEW[0m
+          [36m</dd>[39m
+          [36m<dt>[39m
+            [0mSupporting references[0m
+          [36m</dt>[39m
+          [36m<dd>[39m
+            [0mNone selected[0m
+          [36m</dd>[39m
+          [36m<dt>[39m
+            [0mAppeal reasons[0m
+          [36m</dt>[39m
+          [36m<dd[39m
+            [33mclass[39m=[32m"draft-grounds"[39m
+          [36m>[39m
+            [0mPlease review the fictional briefing context and demonstration record.[0m
+          [36m</dd>[39m
+        [36m</dl>[39m
+      [36m</section>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/AppealDeadline.test.jsx:34:17
+     32|   fireEvent.click(screen.getByLabelText('I understand this is a local …
+     33|   vi.setSystemTime(end + 1)
+     34|   expect(screen.getByRole('button', { name: 'Review demo appeal' })).t…
+       |                 ^
+     35|   fireEvent.submit(screen.getByRole('form', { name: 'Demo appeal form'…
+     36|   expect(screen.queryByText(/Local review generated/)).not.toBeInTheDo…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/12]⎯
+
+ FAIL  src/components/SimpleForm.test.jsx > Context appeal form > shares live values with ShowData and generates only 
+a local review
+Error: expect(element).toHaveTextContent()
+
+Expected element to have text content:
+  Local review generated
+Received:
+  Loading appeal status…
+ ❯ src/components/SimpleForm.test.jsx:24:40
+     22|     expect(within(screen.getByRole('region', { name: 'Appeal data revi…
+     23|     fireEvent.submit(screen.getByRole('form', { name: 'Demo appeal for…
+     24|     expect(screen.getByRole('status')).toHaveTextContent('Local review…
+       |                                        ^
+     25|     await userEvent.type(screen.getByLabelText('Applicant name'), ' re…
+     26|     expect(screen.queryByText(/Local review generated/)).not.toBeInThe…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/12]⎯
+
+ FAIL  src/components/SimpleForm.test.jsx > Context appeal form > prevents invalid review and connects field errors to 
+accessible controls
+TestingLibraryElementError: Unable to find an accessible element with the role "alert"
+
+Here are the accessible roles:
+
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"eyebrow"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"field-hint"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"field-hint"[39m
+    [33mid[39m=[32m"_r_c_-hint"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"field-hint"[39m
+    [33mid[39m=[32m"_r_d_-hint"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Prepare a demonstration appeal":
+  [36m<h2 />[39m
+
+  Name "Demonstration appeal window":
+  [36m<h3 />[39m
+
+  Name "Appeal data review":
+  [36m<h3 />[39m
+
+  --------------------------------------------------
+  time:
+
+  Name "":
+  [36m<time[39m
+    [33mdatetime[39m=[32m"2026-12-05T09:00:00.000Z"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  timer:
+
+  Name "Time remaining":
+  [36m<span[39m
+    [33maria-label[39m=[32m"Time remaining"[39m
+    [33maria-live[39m=[32m"off"[39m
+    [33mclass[39m=[32m"sla-clock"[39m
+    [33mrole[39m=[32m"timer"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  status:
+
+  Name "":
+  [36m<p[39m
+    [33mrole[39m=[32m"status"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  form:
+
+  Name "Demo appeal form":
+  [36m<form[39m
+    [33maria-label[39m=[32m"Demo appeal form"[39m
+    [33mnovalidate[39m=[32m""[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  textbox:
+
+  Name "Applicant name":
+  [36m<input[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_8_"[39m
+    [33mname[39m=[32m"applicantName"[39m
+    [33mtype[39m=[32m"text"[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "Email":
+  [36m<input[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_9_"[39m
+    [33mname[39m=[32m"applicantEmail"[39m
+    [33mtype[39m=[32m"email"[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "Appeal reasons":
+  [36m<textarea[39m
+    [33maria-describedby[39m=[32m"_r_c_-hint"[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_c_"[39m
+    [33mname[39m=[32m"grounds"[39m
+    [33mrows[39m=[32m"5"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  combobox:
+
+  Name "Relationship":
+  [36m<select[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_a_"[39m
+    [33mname[39m=[32m"relationship"[39m
+  [36m/>[39m
+
+  Name "Reason category":
+  [36m<select[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_b_"[39m
+    [33mname[39m=[32m"reason"[39m
+  [36m/>[39m
+
+  Name "Requested outcome":
+  [36m<select[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_e_"[39m
+    [33mname[39m=[32m"requestedOutcome"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  option:
+
+  Name "Player":
+  [36m<option[39m
+    [33mvalue[39m=[32m"PLAYER"[39m
+  [36m/>[39m
+
+  Name "Representative":
+  [36m<option[39m
+    [33mvalue[39m=[32m"REPRESENTATIVE"[39m
+  [36m/>[39m
+
+  Name "Process review":
+  [36m<option[39m
+    [33mvalue[39m=[32m"PROCESS"[39m
+  [36m/>[39m
+
+  Name "New evidence":
+  [36m<option[39m
+    [33mvalue[39m=[32m"NEW_EVIDENCE"[39m
+  [36m/>[39m
+
+  Name "Proportionality":
+  [36m<option[39m
+    [33mvalue[39m=[32m"PROPORTIONALITY"[39m
+  [36m/>[39m
+
+  Name "Review":
+  [36m<option[39m
+    [33mvalue[39m=[32m"REVIEW"[39m
+  [36m/>[39m
+
+  Name "Reduce":
+  [36m<option[39m
+    [33mvalue[39m=[32m"REDUCE"[39m
+  [36m/>[39m
+
+  Name "Remove":
+  [36m<option[39m
+    [33mvalue[39m=[32m"REMOVE"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  group:
+
+  Name "Supporting evidence references":
+  [36m<fieldset[39m
+    [33maria-describedby[39m=[32m"_r_d_-hint"[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33mclass[39m=[32m"form-field"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  checkbox:
+
+  Name "Scrim replay index":
+  [36m<input[39m
+    [33mtype[39m=[32m"checkbox"[39m
+  [36m/>[39m
+
+  Name "Training rules briefing":
+  [36m<input[39m
+    [33mtype[39m=[32m"checkbox"[39m
+  [36m/>[39m
+
+  Name "I understand this is a local simulation.":
+  [36m<input[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33maria-required[39m=[32m"true"[39m
+    [33mid[39m=[32m"_r_f_"[39m
+    [33mname[39m=[32m"acknowledged"[39m
+    [33mtype[39m=[32m"checkbox"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Submit simulation appeal":
+  [36m<button[39m
+    [33mclass[39m=[32m"primary-link"[39m
+    [33mdisabled[39m=[32m""[39m
+    [33mtype[39m=[32m"submit"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  region:
+
+  Name "Appeal data review":
+  [36m<section[39m
+    [33maria-label[39m=[32m"Appeal data review"[39m
+    [33mclass[39m=[32m"draft-review"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  term:
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  --------------------------------------------------
+  definition:
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd[39m
+    [33mclass[39m=[32m"draft-grounds"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33mclass[39m=[32m"panel appeal-panel"[39m
+    [36m>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"eyebrow"[39m
+      [36m>[39m
+        [0mSIMULATION APPEAL[0m
+      [36m</p>[39m
+      [36m<h2>[39m
+        [0mPrepare a demonstration appeal[0m
+      [36m</h2>[39m
+      [36m<p>[39m
+        [0mUse fictional details only. A successful submission saves the simulation appeal to the database. 
+Unsubmitted drafts are cleared on navigation or reload.[0m
+      [36m</p>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"sla-panel"[39m
+      [36m>[39m
+        [36m<h3>[39m
+          [0mDemonstration appeal window[0m
+        [36m</h3>[39m
+        [36m<p>[39m
+          [0mLocal review window is active.[0m
+          [0m Deadline: [0m
+          [36m<time[39m
+            [33mdatetime[39m=[32m"2026-12-05T09:00:00.000Z"[39m
+          [36m>[39m
+            [0m05 Dec 2026 UTC[0m
+            [0m at [0m
+            [0m09:00[0m
+          [36m</time>[39m
+          [0m.[0m
+        [36m</p>[39m
+        [36m<span[39m
+          [33maria-label[39m=[32m"Time remaining"[39m
+          [33maria-live[39m=[32m"off"[39m
+          [33mclass[39m=[32m"sla-clock"[39m
+          [33mrole[39m=[32m"timer"[39m
+        [36m>[39m
+          [0m09d 09:00:00[0m
+        [36m</span>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"field-hint"[39m
+        [36m>[39m
+          [0mClient-clock display only. The server independently enforces the deadline.[0m
+        [36m</p>[39m
+      [36m</div>[39m
+      [36m<p[39m
+        [33mrole[39m=[32m"status"[39m
+      [36m>[39m
+        [0mLoading [0m
+        [0mappeal status[0m
+        [0m…[0m
+      [36m</p>[39m
+      [36m<form[39m
+        [33maria-label[39m=[32m"Demo appeal form"[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-grid"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"form-field"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mfor[39m=[32m"_r_8_"[39m
+            [36m>[39m
+              [0mApplicant name[0m
+            [36m</label>[39m
+            [36m<input[39m
+              [33maria-invalid[39m=[32m"false"[39m
+              [33maria-required[39m=[32m"true"[39m
+              [33mid[39m=[32m"_r_8_"[39m
+              [33mname[39m=[32m"applicantName"[39m
+              [33mtype[39m=[32m"text"[39m
+              [33mvalue[39m=[32m""[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"form-field"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mfor[39m=[32m"_r_9_"[39m
+            [36m>[39m
+              [0mEmail[0m
+            [36m</label>[39m
+            [36m<input[39m
+              [33maria-invalid[39m=[32m"false"[39m
+              [33maria-required[39m=[32m"true"[39m
+              [33mid[39m=[32m"_r_9_"[39m
+              [33mname[39m=[32m"applicantEmail"[39m
+              [33mtype[39m=[32m"email"[39m
+              [33mvalue[39m=[32m""[39m
+            [36m/>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mfor[39m=[32m"_r_a_"[39m
+          [36m>[39m
+            [0mRelationship[0m
+          [36m</label>[39m
+          [36m<select[39m
+            [33maria-invalid[39m=[32m"false"[39m
+            [33maria-required[39m=[32m"true"[39m
+            [33mid[39m=[32m"_r_a_"[39m
+            [33mname[39m=[32m"relationship"[39m
+          [36m>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"PLAYER"[39m
+            [36m>[39m
+              [0mPlayer[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"REPRESENTATIVE"[39m
+            [36m>[39m
+              [0mRepresentative[0m
+            [36m</option>[39m
+          [36m</select>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mfor[39m=[32m"_r_b_"[39m
+          [36m>[39m
+            [0mReason category[0m
+          [36m</label>[39m
+          [36m<select[39m
+            [33maria-invalid[39m=[32m"false"[39m
+            [33maria-required[39m=[32m"true"[39m
+            [33mid[39m=[32m"_r_b_"[39m
+            [33mname[39m=[32m"reason"[39m
+          [36m>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"PROCESS"[39m
+            [36m>[39m
+              [0mProcess review[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"NEW_EVIDENCE"[39m
+            [36m>[39m
+              [0mNew evidence[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"PROPORTIONALITY"[39m
+            [36m>[39m
+              [0mProportionality[0m
+            [36m</option>[39m
+          [36m</select>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mfor[39m=[32m"_r_c_"[39m
+          [36m>[39m
+            [0mAppeal reasons[0m
+          [36m</label>[39m
+          [36m<textarea[39m
+            [33maria-describedby[39m=[32m"_r_c_-hint"[39m
+            [33maria-invalid[39m=[32m"false"[39m
+            [33maria-required[39m=[32m"true"[39m
+            [33mid[39m=[32m"_r_c_"[39m
+            [33mname[39m=[32m"grounds"[39m
+            [33mrows[39m=[32m"5"[39m
+          [36m/>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"field-hint"[39m
+            [33mid[39m=[32m"_r_c_-hint"[39m
+          [36m>[39m
+            [0mRequired: 30 to 4000 characters. Explain the fictional context.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<fieldset[39m
+          [33maria-describedby[39m=[32m"_r_d_-hint"[39m
+          [33maria-invalid[39m=[32m"false"[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<legend>[39m
+            [0mSupporting evidence references[0m
+          [36m</legend>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"check-label"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mtype[39m=[32m"checkbox"[39m
+            [36m/>[39m
+            [0mScrim replay index[0m
+          [36m</label>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"check-label"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mtype[39m=[32m"checkbox"[39m
+            [36m/>[39m
+            [0mTraining rules briefing[0m
+          [36m</label>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"field-hint"[39m
+            [33mid[39m=[32m"_r_d_-hint"[39m
+          [36m>[39m
+            [0mSelect existing simulation references; no files are uploaded.[0m
+          [36m</p>[39m
+        [36m</fieldset>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mfor[39m=[32m"_r_e_"[39m
+          [36m>[39m
+            [0mRequested outcome[0m
+          [36m</label>[39m
+          [36m<select[39m
+            [33maria-invalid[39m=[32m"false"[39m
+            [33maria-required[39m=[32m"true"[39m
+            [33mid[39m=[32m"_r_e_"[39m
+            [33mname[39m=[32m"requestedOutcome"[39m
+          [36m>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"REVIEW"[39m
+            [36m>[39m
+              [0mReview[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"REDUCE"[39m
+            [36m>[39m
+              [0mReduce[0m
+            [36m</option>[39m
+            [36m<option[39m
+              [33mvalue[39m=[32m"REMOVE"[39m
+            [36m>[39m
+              [0mRemove[0m
+            [36m</option>[39m
+          [36m</select>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"form-field"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"check-label"[39m
+            [33mfor[39m=[32m"_r_f_"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33maria-invalid[39m=[32m"false"[39m
+              [33maria-required[39m=[32m"true"[39m
+              [33mid[39m=[32m"_r_f_"[39m
+              [33mname[39m=[32m"acknowledged"[39m
+              [33mtype[39m=[32m"checkbox"[39m
+            [36m/>[39m
+            [0mI understand this is a local simulation.[0m
+          [36m</label>[39m
+        [36m</div>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"primary-link"[39m
+          [33mdisabled[39m=[32m""[39m
+          [33mtype[39m=[32m"submit"[39m
+        [36m>[39m
+          [0mSubmit simulation appeal[0m
+        [36m</button>[39m
+      [36m</form>[39m
+      [36m<section[39m
+        [33maria-label[39m=[32m"Appeal data review"[39m
+        [33mclass[39m=[32m"draft-review"[39m
+      [36m>[39m
+        [36m<h3>[39m
+          [0mAppeal data review[0m
+        [36m</h3>[39m
+        [36m<p>[39m
+          [0mDraft for [0m
+          [0mdemo-001[0m
+          [0m. Submit explicitly to save the simulation appeal.[0m
+        [36m</p>[39m
+        [36m<dl>[39m
+          [36m<dt>[39m
+            [0mApplicant[0m
+          [36m</dt>[39m
+          [36m<dd>[39m
+            [0mNot entered[0m
+          [36m</dd>[39m
+          [36m<dt>[39m
+            [0mEmail[0m
+          [36m</dt>[39m
+          [36m<dd>[39m
+            [0mNot entered[0m
+          [36m</dd>[39m
+          [36m<dt>[39m
+            [0mReason / outcome[0m
+          [36m</dt>[39m
+          [36m<dd>[39m
+            [0mPROCESS[0m
+            [0m / [0m
+            [0mREVIEW[0m
+          [36m</dd>[39m
+          [36m<dt>[39m
+            [0mSupporting references[0m
+          [36m</dt>[39m
+          [36m<dd>[39m
+            [0mNone selected[0m
+          [36m</dd>[39m
+          [36m<dt>[39m
+            [0mAppeal reasons[0m
+          [36m</dt>[39m
+          [36m<dd[39m
+            [33mclass[39m=[32m"draft-grounds"[39m
+          [36m>[39m
+            [0mNot entered[0m
+          [36m</dd>[39m
+        [36m</dl>[39m
+      [36m</section>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/components/SimpleForm.test.jsx:31:19
+     29|     render(<SimpleForm dossier={dossier} evidence={evidence} />)
+     30|     fireEvent.submit(screen.getByRole('form', { name: 'Demo appeal for…
+     31|     expect(screen.getByRole('alert')).toHaveTextContent('Please correc…
+       |                   ^
+     32|     expect(screen.getByLabelText('Applicant name')).toHaveAttribute('a…
+     33|     expect(screen.getByLabelText('Applicant name')).toHaveAccessibleDe…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/12]⎯
+
+ FAIL  src/components/SimpleForm.test.jsx > Context appeal form > validates representative authorization, evidence 
+ownership and proportionality during render
+Error: expect(element).toHaveAttribute("aria-invalid", "true") // element.getAttribute("aria-invalid") === "true"
+
+Expected the element to have attribute:
+  aria-invalid="true"
+Received:
+  aria-invalid="false"
+ ❯ src/components/SimpleForm.test.jsx:42:82
+     40|     fireEvent.change(screen.getByLabelText('Reason category'), { targe…
+     41|     fireEvent.submit(screen.getByRole('form', { name: 'Demo appeal for…
+     42|     expect(screen.getByLabelText('I am authorized to represent the app…
+       |                                                                                  ^
+     43|     expect(screen.getByRole('group', { name: 'Supporting evidence refe…
+     44|     expect(screen.queryByText(simulation.evidence[2].title)).not.toBeI…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/12]⎯
+
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > renders the overview within a shared 
+semantic layout and explicit simulation notice
+TestingLibraryElementError: Unable to find an accessible element with the role "heading" and name "Fair play starts 
+with a fair review."
+
+Here are the accessible roles:
+
+  link:
+
+  Name "Skip to main content":
+  [36m<a[39m
+    [33mclass[39m=[32m"skip-link"[39m
+    [33mhref[39m=[32m"#main"[39m
+  [36m/>[39m
+
+  Name "fairplay.ESPORTS TRIBUNAL":
+  [36m<a[39m
+    [33maria-current[39m=[32m"page"[39m
+    [33mclass[39m=[32m"brand active"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/"[39m
+  [36m/>[39m
+
+  Name "Overview":
+  [36m<a[39m
+    [33maria-current[39m=[32m"page"[39m
+    [33mclass[39m=[32m"active"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/"[39m
+  [36m/>[39m
+
+  Name "Dossier registry":
+  [36m<a[39m
+    [33mclass[39m=[32m""[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/dossiers"[39m
+  [36m/>[39m
+
+  Name "Simulation guide":
+  [36m<a[39m
+    [33mclass[39m=[32m""[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/about"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  complementary:
+
+  Name "":
+  [36m<aside[39m
+    [33mclass[39m=[32m"sidebar"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"nav-label"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+  navigation:
+
+  Name "Primary navigation":
+  [36m<nav[39m
+    [33maria-label[39m=[32m"Primary navigation"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  strong:
+
+  Name "":
+  [36m<strong />[39m
+
+  Name "":
+  [36m<strong />[39m
+
+  Name "":
+  [36m<strong />[39m
+
+  Name "":
+  [36m<strong />[39m
+
+  --------------------------------------------------
+  banner:
+
+  Name "":
+  [36m<header[39m
+    [33mclass[39m=[32m"topbar"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  main:
+
+  Name "":
+  [36m<main[39m
+    [33mid[39m=[32m"main"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  note:
+
+  Name "Simulation notice":
+  [36m<div[39m
+    [33maria-label[39m=[32m"Simulation notice"[39m
+    [33mclass[39m=[32m"simulation-notice"[39m
+    [33mrole[39m=[32m"note"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  status:
+
+  Name "":
+  [36m<p[39m
+    [33mrole[39m=[32m"status"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  contentinfo:
+
+  Name "":
+  [36m<footer[39m
+    [33mclass[39m=[32m"workspace-footer"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"workspace"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"skip-link"[39m
+        [33mhref[39m=[32m"#main"[39m
+      [36m>[39m
+        [0mSkip to main content[0m
+      [36m</a>[39m
+      [36m<aside[39m
+        [33mclass[39m=[32m"sidebar"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33maria-current[39m=[32m"page"[39m
+          [33mclass[39m=[32m"brand active"[39m
+          [33mdata-discover[39m=[32m"true"[39m
+          [33mhref[39m=[32m"/"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"brand-symbol"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</span>[39m
+          [36m<span>[39m
+            [0mfairplay[0m
+            [36m<span[39m
+              [33mclass[39m=[32m"brand-period"[39m
+            [36m>[39m
+              [0m.[0m
+            [36m</span>[39m
+            [36m<small>[39m
+              [0mESPORTS TRIBUNAL[0m
+            [36m</small>[39m
+          [36m</span>[39m
+        [36m</a>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"nav-label"[39m
+        [36m>[39m
+          [0mREVIEW WORKSPACE[0m
+        [36m</p>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Primary navigation"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33maria-current[39m=[32m"page"[39m
+            [33mclass[39m=[32m"active"[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 3h7v7H3ZM14 3h7v7h-7ZM3 14h7v7H3ZM14 14h7v7h-7Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mOverview[0m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/dossiers"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 5h7l2 3h9v12H3Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mDossier registry[0m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"nav-count"[39m
+            [36m>[39m
+              [0m—[0m
+            [36m</span>[39m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/about"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 11v6M12 7v.2M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mSimulation guide[0m
+          [36m</a>[39m
+        [36m</nav>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sidebar-principle"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"22"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"1.6"[39m
+            [33mviewBox[39m=[32m"0 0 24 25"[39m
+            [33mwidth[39m=[32m"22"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<strong>[39m
+            [0mFair process.[0m
+            [36m<br />[39m
+            [0mBetter competition.[0m
+          [36m</strong>[39m
+          [36m<p>[39m
+            [0mContext, clarity and a chance to be heard.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"environment"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"status-dot"[39m
+          [36m/>[39m
+          [36m<div>[39m
+            [36m<strong>[39m
+              [0mTraining environment[0m
+            [36m</strong>[39m
+            [36m<small>[39m
+              [0mLocal demonstration · v0.1[0m
+            [36m</small>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</aside>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"workspace-body"[39m
+      [36m>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"topbar"[39m
+        [36m>[39m
+          [36m<div>[39m
+            [36m<span>[39m
+              [0mWorkspace[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+            [36m>[39m
+              [0m / [0m
+            [36m</span>[39m
+            [36m<strong>[39m
+              [0mOverview[0m
+            [36m</strong>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"workspace-identity"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"outline-badge"[39m
+            [36m>[39m
+              [0mLOCAL DEMO[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"operator-avatar"[39m
+            [36m>[39m
+              [0mFP[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</header>[39m
+        [36m<main[39m
+          [33mid[39m=[32m"main"[39m
+          [33mtabindex[39m=[32m"-1"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33maria-label[39m=[32m"Simulation notice"[39m
+            [33mclass[39m=[32m"simulation-notice"[39m
+            [33mrole[39m=[32m"note"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 11v6M12 7v.2M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [36m<div>[39m
+              [36m<strong>[39m
+                [0mSIMULATION WORKSPACE[0m
+              [36m</strong>[39m
+              [36m<p>[39m
+                [0mSimulation only — fictional training data, not official findings or real-world accusations.[0m
+              [36m</p>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<p[39m
+            [33mrole[39m=[32m"status"[39m
+          [36m>[39m
+            [0mLoading [0m
+            [0mdossiers[0m
+            [0m…[0m
+          [36m</p>[39m
+        [36m</main>[39m
+        [36m<footer[39m
+          [33mclass[39m=[32m"workspace-footer"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mFairplay Tribunal · Educational interface[0m
+          [36m</span>[39m
+          [36m<span>[39m
+            [0mNo official authority. No real-world disciplinary findings.[0m
+          [36m</span>[39m
+        [36m</footer>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/routing/AppRoutes.test.jsx:13:19
+     11|   it('renders the overview within a shared semantic layout and explici…
+     12|     visit('/')
+     13|     expect(screen.getByRole('heading', { level: 1, name: 'Fair play st…
+       |                   ^
+     14|     expect(screen.getAllByRole('main')).toHaveLength(1)
+     15|     expect(screen.getByRole('note', { name: 'Simulation notice' })).to…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/12]⎯
+
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > resolves dynamic dossier sim-himass 
+without another case leaking into it
+TestingLibraryElementError: Unable to find an accessible element with the role "heading" and name "Player Alpha"
+
+Here are the accessible roles:
+
+  link:
+
+  Name "Skip to main content":
+  [36m<a[39m
+    [33mclass[39m=[32m"skip-link"[39m
+    [33mhref[39m=[32m"#main"[39m
+  [36m/>[39m
+
+  Name "fairplay.ESPORTS TRIBUNAL":
+  [36m<a[39m
+    [33mclass[39m=[32m"brand"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/"[39m
+  [36m/>[39m
+
+  Name "Overview":
+  [36m<a[39m
+    [33mclass[39m=[32m""[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/"[39m
+  [36m/>[39m
+
+  Name "Dossier registry":
+  [36m<a[39m
+    [33mclass[39m=[32m""[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/dossiers"[39m
+  [36m/>[39m
+
+  Name "Simulation guide":
+  [36m<a[39m
+    [33mclass[39m=[32m""[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/about"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  complementary:
+
+  Name "":
+  [36m<aside[39m
+    [33mclass[39m=[32m"sidebar"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"nav-label"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+  navigation:
+
+  Name "Primary navigation":
+  [36m<nav[39m
+    [33maria-label[39m=[32m"Primary navigation"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  strong:
+
+  Name "":
+  [36m<strong />[39m
+
+  Name "":
+  [36m<strong />[39m
+
+  Name "":
+  [36m<strong />[39m
+
+  Name "":
+  [36m<strong />[39m
+
+  --------------------------------------------------
+  banner:
+
+  Name "":
+  [36m<header[39m
+    [33mclass[39m=[32m"topbar"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  main:
+
+  Name "":
+  [36m<main[39m
+    [33mid[39m=[32m"main"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  note:
+
+  Name "Simulation notice":
+  [36m<div[39m
+    [33maria-label[39m=[32m"Simulation notice"[39m
+    [33mclass[39m=[32m"simulation-notice"[39m
+    [33mrole[39m=[32m"note"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  status:
+
+  Name "":
+  [36m<p[39m
+    [33mrole[39m=[32m"status"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  contentinfo:
+
+  Name "":
+  [36m<footer[39m
+    [33mclass[39m=[32m"workspace-footer"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"workspace"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"skip-link"[39m
+        [33mhref[39m=[32m"#main"[39m
+      [36m>[39m
+        [0mSkip to main content[0m
+      [36m</a>[39m
+      [36m<aside[39m
+        [33mclass[39m=[32m"sidebar"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33mclass[39m=[32m"brand"[39m
+          [33mdata-discover[39m=[32m"true"[39m
+          [33mhref[39m=[32m"/"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"brand-symbol"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</span>[39m
+          [36m<span>[39m
+            [0mfairplay[0m
+            [36m<span[39m
+              [33mclass[39m=[32m"brand-period"[39m
+            [36m>[39m
+              [0m.[0m
+            [36m</span>[39m
+            [36m<small>[39m
+              [0mESPORTS TRIBUNAL[0m
+            [36m</small>[39m
+          [36m</span>[39m
+        [36m</a>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"nav-label"[39m
+        [36m>[39m
+          [0mREVIEW WORKSPACE[0m
+        [36m</p>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Primary navigation"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 3h7v7H3ZM14 3h7v7h-7ZM3 14h7v7H3ZM14 14h7v7h-7Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mOverview[0m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/dossiers"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 5h7l2 3h9v12H3Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mDossier registry[0m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"nav-count"[39m
+            [36m>[39m
+              [0m—[0m
+            [36m</span>[39m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/about"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 11v6M12 7v.2M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mSimulation guide[0m
+          [36m</a>[39m
+        [36m</nav>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sidebar-principle"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"22"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"1.6"[39m
+            [33mviewBox[39m=[32m"0 0 24 25"[39m
+            [33mwidth[39m=[32m"22"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<strong>[39m
+            [0mFair process.[0m
+            [36m<br />[39m
+            [0mBetter competition.[0m
+          [36m</strong>[39m
+          [36m<p>[39m
+            [0mContext, clarity and a chance to be heard.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"environment"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"status-dot"[39m
+          [36m/>[39m
+          [36m<div>[39m
+            [36m<strong>[39m
+              [0mTraining environment[0m
+            [36m</strong>[39m
+            [36m<small>[39m
+              [0mLocal demonstration · v0.1[0m
+            [36m</small>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</aside>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"workspace-body"[39m
+      [36m>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"topbar"[39m
+        [36m>[39m
+          [36m<div>[39m
+            [36m<span>[39m
+              [0mWorkspace[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+            [36m>[39m
+              [0m / [0m
+            [36m</span>[39m
+            [36m<strong>[39m
+              [0mDossier review[0m
+            [36m</strong>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"workspace-identity"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"outline-badge"[39m
+            [36m>[39m
+              [0mLOCAL DEMO[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"operator-avatar"[39m
+            [36m>[39m
+              [0mFP[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</header>[39m
+        [36m<main[39m
+          [33mid[39m=[32m"main"[39m
+          [33mtabindex[39m=[32m"-1"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33maria-label[39m=[32m"Simulation notice"[39m
+            [33mclass[39m=[32m"simulation-notice"[39m
+            [33mrole[39m=[32m"note"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 11v6M12 7v.2M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [36m<div>[39m
+              [36m<strong>[39m
+                [0mSIMULATION WORKSPACE[0m
+              [36m</strong>[39m
+              [36m<p>[39m
+                [0mSimulation only — fictional training data, not official findings or real-world accusations.[0m
+              [36m</p>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<p[39m
+            [33mrole[39m=[32m"status"[39m
+          [36m>[39m
+            [0mLoading [0m
+            [0mdossier[0m
+            [0m…[0m
+          [36m</p>[39m
+        [36m</main>[39m
+        [36m<footer[39m
+          [33mclass[39m=[32m"workspace-footer"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mFairplay Tribunal · Educational interface[0m
+          [36m</span>[39m
+          [36m<span>[39m
+            [0mNo official authority. No real-world disciplinary findings.[0m
+          [36m</span>[39m
+        [36m</footer>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/routing/AppRoutes.test.jsx:38:19
+     36|   ])('resolves dynamic dossier %s without another case leaking into it…
+     37|     visit(`/dossier/${id}`)
+     38|     expect(screen.getByRole('heading', { level: 1, name: player })).to…
+       |                   ^
+     39|     expect(screen.getByRole('heading', { name: title })).toBeVisible()
+     40|     expect(screen.queryByText(excluded)).not.toBeInTheDocument()
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/12]⎯
+
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > resolves dynamic dossier sim-tanvuu 
+without another case leaking into it
+TestingLibraryElementError: Unable to find an accessible element with the role "heading" and name "Player Beta"
+
+Here are the accessible roles:
+
+  link:
+
+  Name "Skip to main content":
+  [36m<a[39m
+    [33mclass[39m=[32m"skip-link"[39m
+    [33mhref[39m=[32m"#main"[39m
+  [36m/>[39m
+
+  Name "fairplay.ESPORTS TRIBUNAL":
+  [36m<a[39m
+    [33mclass[39m=[32m"brand"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/"[39m
+  [36m/>[39m
+
+  Name "Overview":
+  [36m<a[39m
+    [33mclass[39m=[32m""[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/"[39m
+  [36m/>[39m
+
+  Name "Dossier registry":
+  [36m<a[39m
+    [33mclass[39m=[32m""[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/dossiers"[39m
+  [36m/>[39m
+
+  Name "Simulation guide":
+  [36m<a[39m
+    [33mclass[39m=[32m""[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/about"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  complementary:
+
+  Name "":
+  [36m<aside[39m
+    [33mclass[39m=[32m"sidebar"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"nav-label"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+  navigation:
+
+  Name "Primary navigation":
+  [36m<nav[39m
+    [33maria-label[39m=[32m"Primary navigation"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  strong:
+
+  Name "":
+  [36m<strong />[39m
+
+  Name "":
+  [36m<strong />[39m
+
+  Name "":
+  [36m<strong />[39m
+
+  Name "":
+  [36m<strong />[39m
+
+  --------------------------------------------------
+  banner:
+
+  Name "":
+  [36m<header[39m
+    [33mclass[39m=[32m"topbar"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  main:
+
+  Name "":
+  [36m<main[39m
+    [33mid[39m=[32m"main"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  note:
+
+  Name "Simulation notice":
+  [36m<div[39m
+    [33maria-label[39m=[32m"Simulation notice"[39m
+    [33mclass[39m=[32m"simulation-notice"[39m
+    [33mrole[39m=[32m"note"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  status:
+
+  Name "":
+  [36m<p[39m
+    [33mrole[39m=[32m"status"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  contentinfo:
+
+  Name "":
+  [36m<footer[39m
+    [33mclass[39m=[32m"workspace-footer"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"workspace"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"skip-link"[39m
+        [33mhref[39m=[32m"#main"[39m
+      [36m>[39m
+        [0mSkip to main content[0m
+      [36m</a>[39m
+      [36m<aside[39m
+        [33mclass[39m=[32m"sidebar"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33mclass[39m=[32m"brand"[39m
+          [33mdata-discover[39m=[32m"true"[39m
+          [33mhref[39m=[32m"/"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"brand-symbol"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</span>[39m
+          [36m<span>[39m
+            [0mfairplay[0m
+            [36m<span[39m
+              [33mclass[39m=[32m"brand-period"[39m
+            [36m>[39m
+              [0m.[0m
+            [36m</span>[39m
+            [36m<small>[39m
+              [0mESPORTS TRIBUNAL[0m
+            [36m</small>[39m
+          [36m</span>[39m
+        [36m</a>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"nav-label"[39m
+        [36m>[39m
+          [0mREVIEW WORKSPACE[0m
+        [36m</p>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Primary navigation"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 3h7v7H3ZM14 3h7v7h-7ZM3 14h7v7H3ZM14 14h7v7h-7Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mOverview[0m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/dossiers"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 5h7l2 3h9v12H3Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mDossier registry[0m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"nav-count"[39m
+            [36m>[39m
+              [0m—[0m
+            [36m</span>[39m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/about"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 11v6M12 7v.2M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mSimulation guide[0m
+          [36m</a>[39m
+        [36m</nav>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sidebar-principle"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"22"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"1.6"[39m
+            [33mviewBox[39m=[32m"0 0 24 25"[39m
+            [33mwidth[39m=[32m"22"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<strong>[39m
+            [0mFair process.[0m
+            [36m<br />[39m
+            [0mBetter competition.[0m
+          [36m</strong>[39m
+          [36m<p>[39m
+            [0mContext, clarity and a chance to be heard.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"environment"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"status-dot"[39m
+          [36m/>[39m
+          [36m<div>[39m
+            [36m<strong>[39m
+              [0mTraining environment[0m
+            [36m</strong>[39m
+            [36m<small>[39m
+              [0mLocal demonstration · v0.1[0m
+            [36m</small>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</aside>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"workspace-body"[39m
+      [36m>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"topbar"[39m
+        [36m>[39m
+          [36m<div>[39m
+            [36m<span>[39m
+              [0mWorkspace[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+            [36m>[39m
+              [0m / [0m
+            [36m</span>[39m
+            [36m<strong>[39m
+              [0mDossier review[0m
+            [36m</strong>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"workspace-identity"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"outline-badge"[39m
+            [36m>[39m
+              [0mLOCAL DEMO[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"operator-avatar"[39m
+            [36m>[39m
+              [0mFP[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</header>[39m
+        [36m<main[39m
+          [33mid[39m=[32m"main"[39m
+          [33mtabindex[39m=[32m"-1"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33maria-label[39m=[32m"Simulation notice"[39m
+            [33mclass[39m=[32m"simulation-notice"[39m
+            [33mrole[39m=[32m"note"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 11v6M12 7v.2M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [36m<div>[39m
+              [36m<strong>[39m
+                [0mSIMULATION WORKSPACE[0m
+              [36m</strong>[39m
+              [36m<p>[39m
+                [0mSimulation only — fictional training data, not official findings or real-world accusations.[0m
+              [36m</p>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<p[39m
+            [33mrole[39m=[32m"status"[39m
+          [36m>[39m
+            [0mLoading [0m
+            [0mdossier[0m
+            [0m…[0m
+          [36m</p>[39m
+        [36m</main>[39m
+        [36m<footer[39m
+          [33mclass[39m=[32m"workspace-footer"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mFairplay Tribunal · Educational interface[0m
+          [36m</span>[39m
+          [36m<span>[39m
+            [0mNo official authority. No real-world disciplinary findings.[0m
+          [36m</span>[39m
+        [36m</footer>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/routing/AppRoutes.test.jsx:38:19
+     36|   ])('resolves dynamic dossier %s without another case leaking into it…
+     37|     visit(`/dossier/${id}`)
+     38|     expect(screen.getByRole('heading', { level: 1, name: player })).to…
+       |                   ^
+     39|     expect(screen.getByRole('heading', { name: title })).toBeVisible()
+     40|     expect(screen.queryByText(excluded)).not.toBeInTheDocument()
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/12]⎯
+
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > shows demonstration sanction and an 
+ordered timestamped case timeline
+TestingLibraryElementError: Unable to find an accessible element with the role "region" and name "Demonstration 
+sanction"
+
+Here are the accessible roles:
+
+  link:
+
+  Name "Skip to main content":
+  [36m<a[39m
+    [33mclass[39m=[32m"skip-link"[39m
+    [33mhref[39m=[32m"#main"[39m
+  [36m/>[39m
+
+  Name "fairplay.ESPORTS TRIBUNAL":
+  [36m<a[39m
+    [33mclass[39m=[32m"brand"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/"[39m
+  [36m/>[39m
+
+  Name "Overview":
+  [36m<a[39m
+    [33mclass[39m=[32m""[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/"[39m
+  [36m/>[39m
+
+  Name "Dossier registry":
+  [36m<a[39m
+    [33mclass[39m=[32m""[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/dossiers"[39m
+  [36m/>[39m
+
+  Name "Simulation guide":
+  [36m<a[39m
+    [33mclass[39m=[32m""[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/about"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  complementary:
+
+  Name "":
+  [36m<aside[39m
+    [33mclass[39m=[32m"sidebar"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"nav-label"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+  navigation:
+
+  Name "Primary navigation":
+  [36m<nav[39m
+    [33maria-label[39m=[32m"Primary navigation"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  strong:
+
+  Name "":
+  [36m<strong />[39m
+
+  Name "":
+  [36m<strong />[39m
+
+  Name "":
+  [36m<strong />[39m
+
+  Name "":
+  [36m<strong />[39m
+
+  --------------------------------------------------
+  banner:
+
+  Name "":
+  [36m<header[39m
+    [33mclass[39m=[32m"topbar"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  main:
+
+  Name "":
+  [36m<main[39m
+    [33mid[39m=[32m"main"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  note:
+
+  Name "Simulation notice":
+  [36m<div[39m
+    [33maria-label[39m=[32m"Simulation notice"[39m
+    [33mclass[39m=[32m"simulation-notice"[39m
+    [33mrole[39m=[32m"note"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  status:
+
+  Name "":
+  [36m<p[39m
+    [33mrole[39m=[32m"status"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  contentinfo:
+
+  Name "":
+  [36m<footer[39m
+    [33mclass[39m=[32m"workspace-footer"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"workspace"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"skip-link"[39m
+        [33mhref[39m=[32m"#main"[39m
+      [36m>[39m
+        [0mSkip to main content[0m
+      [36m</a>[39m
+      [36m<aside[39m
+        [33mclass[39m=[32m"sidebar"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33mclass[39m=[32m"brand"[39m
+          [33mdata-discover[39m=[32m"true"[39m
+          [33mhref[39m=[32m"/"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"brand-symbol"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</span>[39m
+          [36m<span>[39m
+            [0mfairplay[0m
+            [36m<span[39m
+              [33mclass[39m=[32m"brand-period"[39m
+            [36m>[39m
+              [0m.[0m
+            [36m</span>[39m
+            [36m<small>[39m
+              [0mESPORTS TRIBUNAL[0m
+            [36m</small>[39m
+          [36m</span>[39m
+        [36m</a>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"nav-label"[39m
+        [36m>[39m
+          [0mREVIEW WORKSPACE[0m
+        [36m</p>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Primary navigation"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 3h7v7H3ZM14 3h7v7h-7ZM3 14h7v7H3ZM14 14h7v7h-7Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mOverview[0m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/dossiers"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 5h7l2 3h9v12H3Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mDossier registry[0m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"nav-count"[39m
+            [36m>[39m
+              [0m—[0m
+            [36m</span>[39m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/about"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 11v6M12 7v.2M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mSimulation guide[0m
+          [36m</a>[39m
+        [36m</nav>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sidebar-principle"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"22"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"1.6"[39m
+            [33mviewBox[39m=[32m"0 0 24 25"[39m
+            [33mwidth[39m=[32m"22"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<strong>[39m
+            [0mFair process.[0m
+            [36m<br />[39m
+            [0mBetter competition.[0m
+          [36m</strong>[39m
+          [36m<p>[39m
+            [0mContext, clarity and a chance to be heard.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"environment"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"status-dot"[39m
+          [36m/>[39m
+          [36m<div>[39m
+            [36m<strong>[39m
+              [0mTraining environment[0m
+            [36m</strong>[39m
+            [36m<small>[39m
+              [0mLocal demonstration · v0.1[0m
+            [36m</small>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</aside>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"workspace-body"[39m
+      [36m>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"topbar"[39m
+        [36m>[39m
+          [36m<div>[39m
+            [36m<span>[39m
+              [0mWorkspace[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+            [36m>[39m
+              [0m / [0m
+            [36m</span>[39m
+            [36m<strong>[39m
+              [0mDossier review[0m
+            [36m</strong>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"workspace-identity"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"outline-badge"[39m
+            [36m>[39m
+              [0mLOCAL DEMO[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"operator-avatar"[39m
+            [36m>[39m
+              [0mFP[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</header>[39m
+        [36m<main[39m
+          [33mid[39m=[32m"main"[39m
+          [33mtabindex[39m=[32m"-1"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33maria-label[39m=[32m"Simulation notice"[39m
+            [33mclass[39m=[32m"simulation-notice"[39m
+            [33mrole[39m=[32m"note"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 11v6M12 7v.2M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [36m<div>[39m
+              [36m<strong>[39m
+                [0mSIMULATION WORKSPACE[0m
+              [36m</strong>[39m
+              [36m<p>[39m
+                [0mSimulation only — fictional training data, not official findings or real-world accusations.[0m
+              [36m</p>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<p[39m
+            [33mrole[39m=[32m"status"[39m
+          [36m>[39m
+            [0mLoading [0m
+            [0mdossier[0m
+            [0m…[0m
+          [36m</p>[39m
+        [36m</main>[39m
+        [36m<footer[39m
+          [33mclass[39m=[32m"workspace-footer"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mFairplay Tribunal · Educational interface[0m
+          [36m</span>[39m
+          [36m<span>[39m
+            [0mNo official authority. No real-world disciplinary findings.[0m
+          [36m</span>[39m
+        [36m</footer>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/routing/AppRoutes.test.jsx:49:29
+     47|   it('shows demonstration sanction and an ordered timestamped case tim…
+     48|     visit('/dossier/sim-himass')
+     49|     const sanction = screen.getByRole('region', { name: 'Demonstration…
+       |                             ^
+     50|     expect(within(sanction).getByRole('heading', { name: '7-day traini…
+     51|     expect(sanction).toHaveTextContent(/not an official decision/i)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/12]⎯
+
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID unknown 
+and recovers to registry
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID toString 
+and recovers to registry
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID 
+__proto__ and recovers to registry
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID 
+SIM-HIMASS and recovers to registry
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID %00 and 
+recovers to registry
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID 
+sim-missing and recovers to registry
+TestingLibraryElementError: Unable to find an accessible element with the role "heading" and name "Dossier not found"
+
+Here are the accessible roles:
+
+  link:
+
+  Name "Skip to main content":
+  [36m<a[39m
+    [33mclass[39m=[32m"skip-link"[39m
+    [33mhref[39m=[32m"#main"[39m
+  [36m/>[39m
+
+  Name "fairplay.ESPORTS TRIBUNAL":
+  [36m<a[39m
+    [33mclass[39m=[32m"brand"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/"[39m
+  [36m/>[39m
+
+  Name "Overview":
+  [36m<a[39m
+    [33mclass[39m=[32m""[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/"[39m
+  [36m/>[39m
+
+  Name "Dossier registry":
+  [36m<a[39m
+    [33mclass[39m=[32m""[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/dossiers"[39m
+  [36m/>[39m
+
+  Name "Simulation guide":
+  [36m<a[39m
+    [33mclass[39m=[32m""[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/about"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  complementary:
+
+  Name "":
+  [36m<aside[39m
+    [33mclass[39m=[32m"sidebar"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"nav-label"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+  navigation:
+
+  Name "Primary navigation":
+  [36m<nav[39m
+    [33maria-label[39m=[32m"Primary navigation"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  strong:
+
+  Name "":
+  [36m<strong />[39m
+
+  Name "":
+  [36m<strong />[39m
+
+  Name "":
+  [36m<strong />[39m
+
+  Name "":
+  [36m<strong />[39m
+
+  --------------------------------------------------
+  banner:
+
+  Name "":
+  [36m<header[39m
+    [33mclass[39m=[32m"topbar"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  main:
+
+  Name "":
+  [36m<main[39m
+    [33mid[39m=[32m"main"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  note:
+
+  Name "Simulation notice":
+  [36m<div[39m
+    [33maria-label[39m=[32m"Simulation notice"[39m
+    [33mclass[39m=[32m"simulation-notice"[39m
+    [33mrole[39m=[32m"note"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  status:
+
+  Name "":
+  [36m<p[39m
+    [33mrole[39m=[32m"status"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  contentinfo:
+
+  Name "":
+  [36m<footer[39m
+    [33mclass[39m=[32m"workspace-footer"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"workspace"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"skip-link"[39m
+        [33mhref[39m=[32m"#main"[39m
+      [36m>[39m
+        [0mSkip to main content[0m
+      [36m</a>[39m
+      [36m<aside[39m
+        [33mclass[39m=[32m"sidebar"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33mclass[39m=[32m"brand"[39m
+          [33mdata-discover[39m=[32m"true"[39m
+          [33mhref[39m=[32m"/"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"brand-symbol"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</span>[39m
+          [36m<span>[39m
+            [0mfairplay[0m
+            [36m<span[39m
+              [33mclass[39m=[32m"brand-period"[39m
+            [36m>[39m
+              [0m.[0m
+            [36m</span>[39m
+            [36m<small>[39m
+              [0mESPORTS TRIBUNAL[0m
+            [36m</small>[39m
+          [36m</span>[39m
+        [36m</a>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"nav-label"[39m
+        [36m>[39m
+          [0mREVIEW WORKSPACE[0m
+        [36m</p>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Primary navigation"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 3h7v7H3ZM14 3h7v7h-7ZM3 14h7v7H3ZM14 14h7v7h-7Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mOverview[0m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/dossiers"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 5h7l2 3h9v12H3Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mDossier registry[0m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"nav-count"[39m
+            [36m>[39m
+              [0m—[0m
+            [36m</span>[39m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/about"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 11v6M12 7v.2M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mSimulation guide[0m
+          [36m</a>[39m
+        [36m</nav>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sidebar-principle"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"22"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"1.6"[39m
+            [33mviewBox[39m=[32m"0 0 24 25"[39m
+            [33mwidth[39m=[32m"22"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<strong>[39m
+            [0mFair process.[0m
+            [36m<br />[39m
+            [0mBetter competition.[0m
+          [36m</strong>[39m
+          [36m<p>[39m
+            [0mContext, clarity and a chance to be heard.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"environment"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"status-dot"[39m
+          [36m/>[39m
+          [36m<div>[39m
+            [36m<strong>[39m
+              [0mTraining environment[0m
+            [36m</strong>[39m
+            [36m<small>[39m
+              [0mLocal demonstration · v0.1[0m
+            [36m</small>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</aside>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"workspace-body"[39m
+      [36m>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"topbar"[39m
+        [36m>[39m
+          [36m<div>[39m
+            [36m<span>[39m
+              [0mWorkspace[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+            [36m>[39m
+              [0m / [0m
+            [36m</span>[39m
+            [36m<strong>[39m
+              [0mDossier review[0m
+            [36m</strong>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"workspace-identity"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"outline-badge"[39m
+            [36m>[39m
+              [0mLOCAL DEMO[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"operator-avatar"[39m
+            [36m>[39m
+              [0mFP[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</header>[39m
+        [36m<main[39m
+          [33mid[39m=[32m"main"[39m
+          [33mtabindex[39m=[32m"-1"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33maria-label[39m=[32m"Simulation notice"[39m
+            [33mclass[39m=[32m"simulation-notice"[39m
+            [33mrole[39m=[32m"note"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 11v6M12 7v.2M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [36m<div>[39m
+              [36m<strong>[39m
+                [0mSIMULATION WORKSPACE[0m
+              [36m</strong>[39m
+              [36m<p>[39m
+                [0mSimulation only — fictional training data, not official findings or real-world accusations.[0m
+              [36m</p>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<p[39m
+            [33mrole[39m=[32m"status"[39m
+          [36m>[39m
+            [0mLoading [0m
+            [0mdossier[0m
+            [0m…[0m
+          [36m</p>[39m
+        [36m</main>[39m
+        [36m<footer[39m
+          [33mclass[39m=[32m"workspace-footer"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mFairplay Tribunal · Educational interface[0m
+          [36m</span>[39m
+          [36m<span>[39m
+            [0mNo official authority. No real-world disciplinary findings.[0m
+          [36m</span>[39m
+        [36m</footer>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/routing/AppRoutes.test.jsx:62:19
+     60|     const user = userEvent.setup()
+     61|     visit(`/dossier/${id}`)
+     62|     expect(screen.getByRole('heading', { level: 1, name: 'Dossier not …
+       |                   ^
+     63|     expect(screen.queryByRole('heading', { name: 'Player Alpha' })).no…
+     64|     expect(screen.getByRole('note', { name: 'Simulation notice' })).to…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/12]⎯
+
+ FAIL  src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > renders the default BrowserRouter 
+application on an initially deep-linked URL
+TestingLibraryElementError: Unable to find an accessible element with the role "heading" and name "Player Beta"
+
+Here are the accessible roles:
+
+  link:
+
+  Name "Skip to main content":
+  [36m<a[39m
+    [33mclass[39m=[32m"skip-link"[39m
+    [33mhref[39m=[32m"#main"[39m
+  [36m/>[39m
+
+  Name "fairplay.ESPORTS TRIBUNAL":
+  [36m<a[39m
+    [33mclass[39m=[32m"brand"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/"[39m
+  [36m/>[39m
+
+  Name "Overview":
+  [36m<a[39m
+    [33mclass[39m=[32m""[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/"[39m
+  [36m/>[39m
+
+  Name "Dossier registry":
+  [36m<a[39m
+    [33mclass[39m=[32m""[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/dossiers"[39m
+  [36m/>[39m
+
+  Name "Simulation guide":
+  [36m<a[39m
+    [33mclass[39m=[32m""[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/about"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  complementary:
+
+  Name "":
+  [36m<aside[39m
+    [33mclass[39m=[32m"sidebar"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"nav-label"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+  navigation:
+
+  Name "Primary navigation":
+  [36m<nav[39m
+    [33maria-label[39m=[32m"Primary navigation"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  strong:
+
+  Name "":
+  [36m<strong />[39m
+
+  Name "":
+  [36m<strong />[39m
+
+  Name "":
+  [36m<strong />[39m
+
+  Name "":
+  [36m<strong />[39m
+
+  --------------------------------------------------
+  banner:
+
+  Name "":
+  [36m<header[39m
+    [33mclass[39m=[32m"topbar"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  main:
+
+  Name "":
+  [36m<main[39m
+    [33mid[39m=[32m"main"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  note:
+
+  Name "Simulation notice":
+  [36m<div[39m
+    [33maria-label[39m=[32m"Simulation notice"[39m
+    [33mclass[39m=[32m"simulation-notice"[39m
+    [33mrole[39m=[32m"note"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  status:
+
+  Name "":
+  [36m<p[39m
+    [33mrole[39m=[32m"status"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  contentinfo:
+
+  Name "":
+  [36m<footer[39m
+    [33mclass[39m=[32m"workspace-footer"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"workspace"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"skip-link"[39m
+        [33mhref[39m=[32m"#main"[39m
+      [36m>[39m
+        [0mSkip to main content[0m
+      [36m</a>[39m
+      [36m<aside[39m
+        [33mclass[39m=[32m"sidebar"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33mclass[39m=[32m"brand"[39m
+          [33mdata-discover[39m=[32m"true"[39m
+          [33mhref[39m=[32m"/"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"brand-symbol"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</span>[39m
+          [36m<span>[39m
+            [0mfairplay[0m
+            [36m<span[39m
+              [33mclass[39m=[32m"brand-period"[39m
+            [36m>[39m
+              [0m.[0m
+            [36m</span>[39m
+            [36m<small>[39m
+              [0mESPORTS TRIBUNAL[0m
+            [36m</small>[39m
+          [36m</span>[39m
+        [36m</a>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"nav-label"[39m
+        [36m>[39m
+          [0mREVIEW WORKSPACE[0m
+        [36m</p>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Primary navigation"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 3h7v7H3ZM14 3h7v7h-7ZM3 14h7v7H3ZM14 14h7v7h-7Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mOverview[0m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/dossiers"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 5h7l2 3h9v12H3Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mDossier registry[0m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"nav-count"[39m
+            [36m>[39m
+              [0m—[0m
+            [36m</span>[39m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/about"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 11v6M12 7v.2M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mSimulation guide[0m
+          [36m</a>[39m
+        [36m</nav>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sidebar-principle"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"22"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"1.6"[39m
+            [33mviewBox[39m=[32m"0 0 24 25"[39m
+            [33mwidth[39m=[32m"22"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<strong>[39m
+            [0mFair process.[0m
+            [36m<br />[39m
+            [0mBetter competition.[0m
+          [36m</strong>[39m
+          [36m<p>[39m
+            [0mContext, clarity and a chance to be heard.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"environment"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"status-dot"[39m
+          [36m/>[39m
+          [36m<div>[39m
+            [36m<strong>[39m
+              [0mTraining environment[0m
+            [36m</strong>[39m
+            [36m<small>[39m
+              [0mLocal demonstration · v0.1[0m
+            [36m</small>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</aside>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"workspace-body"[39m
+      [36m>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"topbar"[39m
+        [36m>[39m
+
+ Test Files  3 failed | 9 passed (12)
+      Tests  17 failed | 81 passed (98)
+   Start at  22:45:32
+   Duration  7.94s (environment 63%, setup 24%, tests 7%, transform 3%, import 3%)
+          [36m<div>[39m
+            [36m<span>[39m
+              [0mWorkspace[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+            [36m>[39m
+              [0m / [0m
+            [36m</span>[39m
+            [36m<strong>[39m
+              [0mDossier review[0m
+            [36m</strong>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"workspace-identity"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"outline-badge"[39m
+            [36m>[39m
+              [0mLOCAL DEMO[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"operator-avatar"[39m
+            [36m>[39m
+              [0mFP[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</header>[39m
+        [36m<main[39m
+          [33mid[39m=[32m"main"[39m
+          [33mtabindex[39m=[32m"-1"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33maria-label[39m=[32m"Simulation notice"[39m
+            [33mclass[39m=[32m"simulation-notice"[39m
+            [33mrole[39m=[32m"note"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 11v6M12 7v.2M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [36m<div>[39m
+              [36m<strong>[39m
+                [0mSIMULATION WORKSPACE[0m
+              [36m</strong>[39m
+              [36m<p>[39m
+                [0mSimulation only — fictional training data, not official findings or real-world accusations.[0m
+              [36m</p>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<p[39m
+            [33mrole[39m=[32m"status"[39m
+          [36m>[39m
+            [0mLoading [0m
+            [0mdossier[0m
+            [0m…[0m
+          [36m</p>[39m
+        [36m</main>[39m
+        [36m<footer[39m
+
+          [33mclass[39m=[32m"workspace-footer"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mFairplay Tribunal · Educational interface[0m
+          [36m</span>[39m
+          [36m<span>[39m
+            [0mNo official authority. No real-world disciplinary findings.[0m
+          [36m</span>[39m
+        [36m</footer>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/routing/AppRoutes.test.jsx:88:21
+     86|     try {
+     87|       render(<App />)
+     88|       expect(screen.getByRole('heading', { level: 1, name: 'Player Bet…
+       |                     ^
+     89|     } finally { window.history.replaceState({}, '', '/') }
+     90|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/12]⎯
+
+npm error Lifecycle script `test` failed with error:
+npm error code 1
+npm error path C:\Users\LENOVO\OneDrive\Desktop\Lab4\Homework 3\frontend
+npm error workspace hw3-frontend@0.1.0
+npm error location C:\Users\LENOVO\OneDrive\Desktop\Lab4\Homework 3\frontend
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run

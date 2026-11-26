@@ -52,3 +52,9 @@ Actual pre-implementation run: 37 failed / 8 passed, exit 1 (P3-13-RED.txt). Exi
 ### P3-14
 
 First implemented API run passed all 45 tests against real MongoDB (P3-14-first-run.txt), including atomic duplicate race and server expiry. No accidental API failure observed. The former skeleton test now requests an unknown endpoint because its original endpoint became implemented; its 404/security assertions are retained. Standard runs skip opt-in database cases explicitly; only test:db execution is real persistence evidence.
+
+### P3-15 test setup and asynchronous migration
+
+Initial new-test run executed no tests because apiMock.js traversed four parent directories instead of three to shared/data. Corrected test-only import and reran before implementation: 10 failed / 88 passed (P3-15-RED.txt). Raw setup failure is P3-15-test-setup-failure.txt.
+
+After API integration, 17 legacy tests failed because they expected synchronous fixtures and a local receipt; those contracts intentionally changed to asynchronous persisted submission. Updated readiness waits and asserted SUBMITTED/locked form instead, retaining case isolation, accessible validation, invalid-draft rejection and exact stale-clock behavior. A missed hydration wait in one deadline case reproduced 1 failure / 97 passes (P3-15-timing-failure.txt); corrected the wait, not the enabled-before-submit assertion. Final 98 frontend tests pass. Lint/build pass. Mocked frontend status restoration is explicitly not claimed as real MongoDB verification.

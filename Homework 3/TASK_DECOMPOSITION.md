@@ -102,12 +102,12 @@ Acceptance criteria: API tests pass; errors handled safely.
 
 Evidence / status: Complete 2026-11-26. Routes/controllers/services and centralized async errors implemented; strict server validation, server acceptance timestamps, durable one-appeal-per-dossier unique index, public status projection, startup connection/index readiness and graceful shutdown. First explicit real MongoDB suite 45/45 passed. Standard frontend/backend, lint and backend syntax checks recorded. Evidence P3-14-*.
 P3-15 — Full-stack integration
-- [ ] Complete and verify task.
+- [x] Complete and verify task.
 Scope: Connect dossier loading, form submission and status display to API; handle cancellation and failures.
 
 Acceptance criteria: Verify valid/invalid submissions and reload persistence where DB available.
 
-Evidence / status: Pending.
+Evidence / status: Complete 2026-11-26. API-driven normalized overview/matrix and individual cases, abortable loaders and error/empty/retry states. Context form sends one POST, validates server responses, reads back ambiguous errors and restores persisted status on remount. Frontend RED 10 failed / 88 passed after test setup correction; final 98 frontend + 6 backend pass (39 DB cases explicitly skipped in standard command). Lint/build pass. Existing routing/form/timing assertions migrated to async persisted behavior. Evidence P3-15-*.
 P3-16 — Integration and timer verification
 - [ ] Complete and verify task.
 Scope: Test routing, context form, matrix, SLA and API interactions together.

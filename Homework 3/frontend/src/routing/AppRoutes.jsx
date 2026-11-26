@@ -2,14 +2,11 @@ import { Outlet, Route, Routes } from 'react-router-dom'
 import DashboardLayout from '../components/DashboardLayout.jsx'
 import { OverviewPage, DossierIndex, AboutPage, NotFoundPage } from '../pages/WorkspacePages.jsx'
 import DossierPage from '../pages/DossierPage.jsx'
-import { simulation } from '../data/simulation.js'
-import { validateDataset } from '../domain/validateDataset.js'
-
-validateDataset(simulation)
+import TribunalProvider from '../components/TribunalProvider.jsx'
 
 export default function AppRoutes() {
   return (
-    <Routes>
+    <TribunalProvider><Routes>
       <Route element={<DashboardLayout />}>
         <Route index element={<OverviewPage />} />
         <Route path="dossiers" element={<DossierIndex />} />
@@ -20,6 +17,6 @@ export default function AppRoutes() {
         <Route path="about" element={<AboutPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
-    </Routes>
+    </Routes></TribunalProvider>
   )
 }

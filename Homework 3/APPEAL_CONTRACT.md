@@ -37,3 +37,7 @@ Pure `calculateMatrix(dataset)` validates the frozen dataset and derives a row p
 Submission also checks `calculateSla(deadline, Date.now())` at the actual submit event and refreshes the clock, so stale UI scheduling cannot permit a late review. Timer UI uses a non-live timer to avoid announcing every second, and a stable status message for active/expired/invalid. This client clock is demonstration-only and can be tampered with; future server code must enforce deadlines independently.
 
 Test active/expired/invalid and exact-boundary calculations, delayed callbacks, background visibility synchronization, deadline replacement, StrictMode/listener/interval cleanup, and late submit while a displayed clock is stale. Controlled clock tests must not weaken assertions to hide drift. No backend endpoint/persistence is included through P3-10.
+
+## U005 persisted submission supersedes the local-only review boundary
+
+P3-15 now sends the ten draft fields to the REST API. FormContext shares render-derived field errors plus distinct server feedback. The form loads persisted status, disables concurrent requests, aborts on unmount and shows a server-owned submission receipt. A persisted receipt survives reload through GET and cannot be cleared by editing. Unsent drafts remain in memory. API_CONTRACT.md defines independent server validation, one appeal per dossier, server time and privacy projection. The matrix/absolute-clock calculations remain unchanged.

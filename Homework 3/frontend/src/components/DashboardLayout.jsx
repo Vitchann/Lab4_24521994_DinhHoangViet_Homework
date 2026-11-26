@@ -1,9 +1,10 @@
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { SIMULATION_NOTICE } from '../domain/models.js'
-import { simulation } from '../data/simulation.js'
+import { useTribunal } from '../context/TribunalContext.js'
 import Icon from './Icon.jsx'
 
 export default function DashboardLayout() {
+  const { data } = useTribunal()
   const { pathname } = useLocation()
   const section = pathname.startsWith('/dossier/') ? 'Dossier review' : pathname === '/dossiers' ? 'Dossier registry' : pathname === '/about' ? 'Simulation guide' : 'Overview'
   return (
@@ -14,7 +15,7 @@ export default function DashboardLayout() {
         <p className="nav-label">REVIEW WORKSPACE</p>
         <nav aria-label="Primary navigation">
           <NavLink to="/" end><Icon name="grid" />Overview</NavLink>
-          <NavLink to="/dossiers"><Icon name="folder" />Dossier registry<span className="nav-count" aria-hidden="true">{String(simulation.dossiers.length).padStart(2, '0')}</span></NavLink>
+          <NavLink to="/dossiers"><Icon name="folder" />Dossier registry<span className="nav-count" aria-hidden="true">{data ? String(data.dossiers.length).padStart(2, '0') : '—'}</span></NavLink>
           <NavLink to="/about"><Icon name="info" />Simulation guide</NavLink>
         </nav>
         <div className="sidebar-principle"><Icon name="shield" /><strong>Fair process.<br />Better competition.</strong><p>Context, clarity and a chance to be heard.</p></div>

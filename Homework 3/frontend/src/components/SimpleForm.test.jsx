@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
-import { render, screen, fireEvent, within } from '@testing-library/react'
+import { render, screen, fireEvent, within, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import SimpleForm from './SimpleForm.jsx'
 import { simulation } from '../data/simulation.js'
@@ -16,25 +16,30 @@ function fillValid() {
   fireEvent.click(screen.getByLabelText('I understand this is a local simulation.'))
 }
 describe('Context appeal form', () => {
-  it('shares live values with ShowData and generates only a local review', async () => {
+  it('shares live values with ShowData and confirms an immutable persisted submission', async () => {
     render(<SimpleForm dossier={dossier} evidence={evidence} />)
+    await waitFor(() => expect(screen.getByRole('button', { name: 'Submit simulation appeal' })).toBeEnabled())
     fillValid()
     expect(within(screen.getByRole('region', { name: 'Appeal data review' })).getByText('Demo Applicant')).toBeVisible()
     fireEvent.submit(screen.getByRole('form', { name: 'Demo appeal form' }))
-    expect(screen.getByRole('status')).toHaveTextContent('Local review generated')
+    expect(await screen.findByText(/Persisted appeal status: SUBMITTED/)).toBeVisible()
     await userEvent.type(screen.getByLabelText('Applicant name'), ' revised')
-    expect(screen.queryByText(/Local review generated/)).not.toBeInTheDocument()
+    expect(screen.getByLabelText('Applicant name')).toHaveValue('Demo Applicant')
+    expect(screen.getByLabelText('Applicant name')).toBeDisabled()
+    expect(screen.getByText(/Persisted appeal status: SUBMITTED/)).toBeVisible()
   })
-  it('prevents invalid review and connects field errors to accessible controls', () => {
+  it('prevents invalid review and connects field errors to accessible controls', async () => {
     render(<SimpleForm dossier={dossier} evidence={evidence} />)
+    await waitFor(() => expect(screen.getByRole('button', { name: 'Submit simulation appeal' })).toBeEnabled())
     fireEvent.submit(screen.getByRole('form', { name: 'Demo appeal form' }))
     expect(screen.getByRole('alert')).toHaveTextContent('Please correct')
     expect(screen.getByLabelText('Applicant name')).toHaveAttribute('aria-invalid', 'true')
     expect(screen.getByLabelText('Applicant name')).toHaveAccessibleDescription(/2.*80/)
-    expect(screen.queryByText(/Local review generated/)).not.toBeInTheDocument()
+    expect(screen.queryByText(/Persisted appeal status/)).not.toBeInTheDocument()
   })
-  it('validates representative authorization, evidence ownership and proportionality during render', () => {
+  it('validates representative authorization, evidence ownership and proportionality during render', async () => {
     render(<SimpleForm dossier={dossier} evidence={evidence} />)
+    await waitFor(() => expect(screen.getByRole('button', { name: 'Submit simulation appeal' })).toBeEnabled())
     fillValid()
     fireEvent.change(screen.getByLabelText('Relationship'), { target: { value: 'REPRESENTATIVE' } })
     fireEvent.change(screen.getByLabelText('Reason category'), { target: { value: 'NEW_EVIDENCE' } })
@@ -49,7 +54,7 @@ describe('Context appeal form', () => {
     fireEvent.change(screen.getByLabelText('Requested outcome'), { target: { value: 'REDUCE' } })
     expect(screen.getByLabelText('Requested outcome')).toHaveAttribute('aria-invalid', 'false')
     fireEvent.submit(screen.getByRole('form', { name: 'Demo appeal form' }))
-    expect(screen.getByRole('status')).toHaveTextContent('Local review generated')
+    expect(await screen.findByText(/Persisted appeal status: SUBMITTED/)).toBeVisible()
   })
   it('starts a fresh draft when a different keyed dossier is selected', () => {
     const { rerender } = render(<SimpleForm key={dossier.dossierID} dossier={dossier} evidence={evidence} />)

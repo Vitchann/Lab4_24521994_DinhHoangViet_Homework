@@ -1,0 +1,50 @@
+
+> hw3-frontend@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.2 C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework 3/frontend
+
+ ❯ src/components/AppealDeadline.test.jsx (3 tests | 1 failed) 371ms
+   × rejects a late submission even when the displayed clock has not ticked 70ms
+npm.cmd : 
+At line:28 char:1
++ npm.cmd run test --workspace frontend *> verification/P3-15-GREEN.txt ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/components/AppealDeadline.test.jsx > rejects a late submission even when the displayed clock has not ticked
+Error: expect(element).toBeEnabled()
+
+Received element is not enabled:
+  <button
+  class="primary-link"
+  disabled=""
+  type="submit"
+/>
+ ❯ src/components/AppealDeadline.test.jsx:34:76
+     32|   fireEvent.click(screen.getByLabelText('I understand this is a local …
+     33|   vi.setSystemTime(end + 1)
+     34|   expect(screen.getByRole('button', { name: 'Submit simulation appeal'…
+       |                                                                            ^
+     35|   fireEvent.submit(screen.getByRole('form', { name: 'Demo appeal form'…
+     36|   expect(screen.queryByText(/Persisted appeal status/)).not.toBeInTheD…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 11 passed (12)
+      Tests  1 failed | 97 passed (98)
+   Start at  22:46:29
+   Duration  6.29s (environment 60%, setup 23%, tests 9%, import 4%, transform 4%)
+
+npm error Lifecycle script `test` failed with error:
+npm error code 1
+npm error path C:\Users\LENOVO\OneDrive\Desktop\Lab4\Homework 3\frontend
+npm error workspace hw3-frontend@0.1.0
+npm error location C:\Users\LENOVO\OneDrive\Desktop\Lab4\Homework 3\frontend
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run

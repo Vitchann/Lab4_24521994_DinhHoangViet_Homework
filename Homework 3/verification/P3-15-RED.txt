@@ -1,0 +1,1699 @@
+
+> hw3-frontend@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.2 C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework 3/frontend
+
+ ❯ src/api/client.test.js (5 tests | 5 failed) 40ms
+   × requests actual API paths with AbortSignal and validates the normalized dataset 10ms
+   × rejects malformed JSON and structurally invalid successes 13ms
+   × rejects cross-case data and malformed persisted status instead of showing the wrong player 5ms
+   × retains structured server rejection codes without converting errors into success 3ms
+   × propagates network and abort errors for loader handling 6ms
+ ❯ src/routing/ApiIntegration.test.jsx (5 tests | 5 failed) 4325ms
+   × shows loading and retries a network failure without falling back to bundled fixtures 146ms
+   × handles a valid empty API snapshot 1058ms
+   × aborts a pending data request on unmount 1025ms
+   × submits once during concurrent events and restores persisted status on remount 1055ms
+   × recovers an ambiguous lost POST response by reading persisted status without a second POST 1040ms
+npm.cmd : 
+At line:6 char:1
++ npm.cmd run test --workspace frontend *> verification/P3-15-RED.txt;  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+⎯⎯⎯⎯⎯⎯ Failed Tests 10 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/api/client.test.js > requests actual API paths with AbortSignal and validates the normalized dataset
+Error: Not implemented: API transport
+ ❯ requestApi src/api/client.js:1:44
+      1| export async function requestApi() { throw new Error('Not implemented:…
+       |                                            ^
+      2| export function parseDataset() { throw new Error('Not implemented: dat…
+      3| export function parseCase() { throw new Error('Not implemented: case r…
+ ❯ src/api/client.test.js:8:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/10]⎯
+
+ FAIL  src/api/client.test.js > rejects malformed JSON and structurally invalid successes
+AssertionError: expected Error: Not implemented: API transport to match object { code: 'INVALID_RESPONSE' }
+
+- Expected
++ Received
+
+- {
+-   "code": "INVALID_RESPONSE",
++ Error {
++   "message": "Not implemented: API transport",
+  }
+
+ ❯ src/api/client.test.js:13:58
+     11| it('rejects malformed JSON and structurally invalid successes', async …
+     12|   vi.mocked(fetch).mockResolvedValueOnce({ ok: true, status: 200, json…
+     13|   await expect(requestApi('/dossiers', {}, parseDataset)).rejects.toMa…
+       |                                                          ^
+     14|   vi.mocked(fetch).mockResolvedValueOnce(jsonResponse({ data: {} }))
+     15|   await expect(requestApi('/dossiers', {}, parseDataset)).rejects.toMa…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/10]⎯
+
+ FAIL  src/api/client.test.js > rejects cross-case data and malformed persisted status instead of showing the wrong 
+player
+AssertionError: expected Error: Not implemented: API transport to match object { code: 'INVALID_RESPONSE' }
+
+- Expected
++ Received
+
+- {
+-   "code": "INVALID_RESPONSE",
++ Error {
++   "message": "Not implemented: API transport",
+  }
+
+ ❯ src/api/client.test.js:20:66
+     18|   const wrong = await (await fetch('http://test/api/dossiers/sim-tanvu…
+     19|   vi.mocked(fetch).mockResolvedValueOnce(jsonResponse(wrong))
+     20|   await expect(requestApi('/dossiers/sim-himass', {}, parseCase)).reje…
+       |                                                                  ^
+     21|   vi.mocked(fetch).mockResolvedValueOnce(jsonResponse({ data: { ...per…
+     22|   await expect(requestApi('/dossiers/sim-himass/appeal', {}, parseAppe…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/10]⎯
+
+ FAIL  src/api/client.test.js > retains structured server rejection codes without converting errors into success
+AssertionError: expected Error: Not implemented: API transport to match object { status: 410, …(1) }
+
+- Expected
++ Received
+
+- {
+-   "code": "DEADLINE_EXPIRED",
+-   "status": 410,
++ Error {
++   "message": "Not implemented: API transport",
+  }
+
+ ❯ src/api/client.test.js:26:92
+     24| it('retains structured server rejection codes without converting error…
+     25|   vi.mocked(fetch).mockResolvedValueOnce(jsonResponse({ error: { code:…
+     26|   await expect(requestApi('/dossiers/sim-himass/appeals', { method: 'P…
+       |                                                                                            ^
+     27| })
+     28| it('propagates network and abort errors for loader handling', async ()…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/10]⎯
+
+ FAIL  src/api/client.test.js > propagates network and abort errors for loader handling
+AssertionError: expected [Function] to throw error including 'Network failed' but got 'Not implemented: API transport'
+
+Expected: "Network failed"
+Received: "Not implemented: API transport"
+
+ ❯ src/api/client.test.js:30:58
+     28| it('propagates network and abort errors for loader handling', async ()…
+     29|   vi.mocked(fetch).mockRejectedValueOnce(new TypeError('Network failed…
+     30|   await expect(requestApi('/dossiers', {}, parseDataset)).rejects.toTh…
+       |                                                          ^
+     31| })
+     32|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/10]⎯
+
+ FAIL  src/routing/ApiIntegration.test.jsx > shows loading and retries a network failure without falling back to 
+bundled fixtures
+TestingLibraryElementError: Unable to find an element with the text: /Loading dossiers/. This could be because the 
+text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your 
+matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"workspace"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"skip-link"[39m
+        [33mhref[39m=[32m"#main"[39m
+      [36m>[39m
+        [0mSkip to main content[0m
+      [36m</a>[39m
+      [36m<aside[39m
+        [33mclass[39m=[32m"sidebar"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33maria-current[39m=[32m"page"[39m
+          [33mclass[39m=[32m"brand active"[39m
+          [33mdata-discover[39m=[32m"true"[39m
+          [33mhref[39m=[32m"/"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"brand-symbol"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</span>[39m
+          [36m<span>[39m
+            [0mfairplay[0m
+            [36m<span[39m
+              [33mclass[39m=[32m"brand-period"[39m
+            [36m>[39m
+              [0m.[0m
+            [36m</span>[39m
+            [36m<small>[39m
+              [0mESPORTS TRIBUNAL[0m
+            [36m</small>[39m
+          [36m</span>[39m
+        [36m</a>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"nav-label"[39m
+        [36m>[39m
+          [0mREVIEW WORKSPACE[0m
+        [36m</p>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Primary navigation"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33maria-current[39m=[32m"page"[39m
+            [33mclass[39m=[32m"active"[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 3h7v7H3ZM14 3h7v7h-7ZM3 14h7v7H3ZM14 14h7v7h-7Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mOverview[0m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/dossiers"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 5h7l2 3h9v12H3Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mDossier registry[0m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"nav-count"[39m
+            [36m>[39m
+              [0m02[0m
+            [36m</span>[39m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/about"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 11v6M12 7v.2M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mSimulation guide[0m
+          [36m</a>[39m
+        [36m</nav>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sidebar-principle"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"22"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"1.6"[39m
+            [33mviewBox[39m=[32m"0 0 24 25"[39m
+            [33mwidth[39m=[32m"22"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<strong>[39m
+            [0mFair process.[0m
+            [36m<br />[39m
+            [0mBetter competition.[0m
+          [36m</strong>[39m
+          [36m<p>[39m
+            [0mContext, clarity and a chance to be heard.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"environment"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"status-dot"[39m
+          [36m/>[39m
+          [36m<div>[39m
+            [36m<strong>[39m
+              [0mTraining environment[0m
+            [36m</strong>[39m
+            [36m<small>[39m
+              [0mLocal demonstration · v0.1[0m
+            [36m</small>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</aside>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"workspace-body"[39m
+      [36m>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"topbar"[39m
+        [36m>[39m
+          [36m<div>[39m
+            [36m<span>[39m
+              [0mWorkspace[0m
+     ...
+ ❯ Object.getElementError ../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/routing/ApiIntegration.test.jsx:20:17
+     18|   vi.mocked(fetch).mockRejectedValueOnce(new TypeError('offline'))
+     19|   visit()
+     20|   expect(screen.getByText(/Loading dossiers/)).toBeVisible()
+       |                 ^
+     21|   expect(await screen.findByRole('alert')).toHaveTextContent(/Unable t…
+     22|   expect(screen.queryByText('Training protocol review')).not.toBeInThe…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/10]⎯
+
+ FAIL  src/routing/ApiIntegration.test.jsx > handles a valid empty API snapshot
+TestingLibraryElementError: Unable to find role="heading" and name "No simulation dossiers"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"workspace"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"skip-link"[39m
+        [33mhref[39m=[32m"#main"[39m
+      [36m>[39m
+        [0mSkip to main content[0m
+      [36m</a>[39m
+      [36m<aside[39m
+        [33mclass[39m=[32m"sidebar"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33maria-current[39m=[32m"page"[39m
+          [33mclass[39m=[32m"brand active"[39m
+          [33mdata-discover[39m=[32m"true"[39m
+          [33mhref[39m=[32m"/"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"brand-symbol"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</span>[39m
+          [36m<span>[39m
+            [0mfairplay[0m
+            [36m<span[39m
+              [33mclass[39m=[32m"brand-period"[39m
+            [36m>[39m
+              [0m.[0m
+            [36m</span>[39m
+            [36m<small>[39m
+              [0mESPORTS TRIBUNAL[0m
+            [36m</small>[39m
+          [36m</span>[39m
+        [36m</a>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"nav-label"[39m
+        [36m>[39m
+          [0mREVIEW WORKSPACE[0m
+        [36m</p>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Primary navigation"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33maria-current[39m=[32m"page"[39m
+            [33mclass[39m=[32m"active"[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 3h7v7H3ZM14 3h7v7h-7ZM3 14h7v7H3ZM14 14h7v7h-7Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mOverview[0m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/dossiers"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 5h7l2 3h9v12H3Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mDossier registry[0m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"nav-count"[39m
+            [36m>[39m
+              [0m02[0m
+            [36m</span>[39m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/about"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 11v6M12 7v.2M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mSimulation guide[0m
+          [36m</a>[39m
+        [36m</nav>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sidebar-principle"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"22"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"1.6"[39m
+            [33mviewBox[39m=[32m"0 0 24 25"[39m
+            [33mwidth[39m=[32m"22"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<strong>[39m
+            [0mFair process.[0m
+            [36m<br />[39m
+            [0mBetter competition.[0m
+          [36m</strong>[39m
+          [36m<p>[39m
+            [0mContext, clarity and a chance to be heard.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"environment"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"status-dot"[39m
+          [36m/>[39m
+          [36m<div>[39m
+            [36m<strong>[39m
+              [0mTraining environment[0m
+            [36m</strong>[39m
+            [36m<small>[39m
+              [0mLocal demonstration · v0.1[0m
+            [36m</small>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</aside>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"workspace-body"[39m
+      [36m>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"topbar"[39m
+        [36m>[39m
+          [36m<div>[39m
+            [36m<span>[39m
+              [0mWorkspace[0m
+     ...
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"workspace"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"skip-link"[39m
+        [33mhref[39m=[32m"#main"[39m
+      [36m>[39m
+        [0mSkip to main content[0m
+      [36m</a>[39m
+      [36m<aside[39m
+        [33mclass[39m=[32m"sidebar"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33maria-current[39m=[32m"page"[39m
+          [33mclass[39m=[32m"brand active"[39m
+          [33mdata-discover[39m=[32m"true"[39m
+          [33mhref[39m=[32m"/"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"brand-symbol"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</span>[39m
+          [36m<span>[39m
+            [0mfairplay[0m
+            [36m<span[39m
+              [33mclass[39m=[32m"brand-period"[39m
+            [36m>[39m
+              [0m.[0m
+            [36m</span>[39m
+            [36m<small>[39m
+              [0mESPORTS TRIBUNAL[0m
+            [36m</small>[39m
+          [36m</span>[39m
+        [36m</a>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"nav-label"[39m
+        [36m>[39m
+          [0mREVIEW WORKSPACE[0m
+        [36m</p>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Primary navigation"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33maria-current[39m=[32m"page"[39m
+            [33mclass[39m=[32m"active"[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 3h7v7H3ZM14 3h7v7h-7ZM3 14h7v7H3ZM14 14h7v7h-7Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mOverview[0m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/dossiers"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 5h7l2 3h9v12H3Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mDossier registry[0m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"nav-count"[39m
+            [36m>[39m
+              [0m02[0m
+            [36m</span>[39m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/about"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 11v6M12 7v.2M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mSimulation guide[0m
+          [36m</a>[39m
+        [36m</nav>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sidebar-principle"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"22"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"1.6"[39m
+            [33mviewBox[39m=[32m"0 0 24 25"[39m
+            [33mwidth[39m=[32m"22"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<strong>[39m
+            [0mFair process.[0m
+            [36m<br />[39m
+            [0mBetter competition.[0m
+          [36m</strong>[39m
+          [36m<p>[39m
+            [0mContext, clarity and a chance to be heard.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"environment"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"status-dot"[39m
+          [36m/>[39m
+          [36m<div>[39m
+            [36m<strong>[39m
+              [0mTraining environment[0m
+            [36m</strong>[39m
+            [36m<small>[39m
+              [0mLocal demonstration · v0.1[0m
+            [36m</small>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</aside>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"workspace-body"[39m
+      [36m>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"topbar"[39m
+        [36m>[39m
+          [36m<div>[39m
+            [36m<span>[39m
+              [0mWorkspace[0m
+     ...
+ ❯ waitForWrapper ../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/routing/ApiIntegration.test.jsx:30:23
+     28|   vi.mocked(fetch).mockResolvedValueOnce(jsonResponse({ data: { notice…
+     29|   visit()
+     30|   expect(await screen.findByRole('heading', { name: 'No simulation dos…
+       |                       ^
+     31| })
+     32| it('aborts a pending data request on unmount', async () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/10]⎯
+
+ FAIL  src/routing/ApiIntegration.test.jsx > aborts a pending data request on unmount
+AssertionError: expected "vi.fn()" to be called at least once
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"workspace"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33mclass[39m=[32m"skip-link"[39m
+          [33mhref[39m=[32m"#main"[39m
+        [36m>[39m
+          [0mSkip to main content[0m
+        [36m</a>[39m
+        [36m<aside[39m
+          [33mclass[39m=[32m"sidebar"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33maria-current[39m=[32m"page"[39m
+            [33mclass[39m=[32m"brand active"[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"brand-symbol"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"22"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"1.6"[39m
+                [33mviewBox[39m=[32m"0 0 24 25"[39m
+                [33mwidth[39m=[32m"22"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</span>[39m
+            [36m<span>[39m
+              [0mfairplay[0m
+              [36m<span[39m
+                [33mclass[39m=[32m"brand-period"[39m
+              [36m>[39m
+                [0m.[0m
+              [36m</span>[39m
+              [36m<small>[39m
+                [0mESPORTS TRIBUNAL[0m
+              [36m</small>[39m
+            [36m</span>[39m
+          [36m</a>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"nav-label"[39m
+          [36m>[39m
+            [0mREVIEW WORKSPACE[0m
+          [36m</p>[39m
+          [36m<nav[39m
+            [33maria-label[39m=[32m"Primary navigation"[39m
+          [36m>[39m
+            [36m<a[39m
+              [33maria-current[39m=[32m"page"[39m
+              [33mclass[39m=[32m"active"[39m
+              [33mdata-discover[39m=[32m"true"[39m
+              [33mhref[39m=[32m"/"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"22"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"1.6"[39m
+                [33mviewBox[39m=[32m"0 0 24 25"[39m
+                [33mwidth[39m=[32m"22"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M3 3h7v7H3ZM14 3h7v7h-7ZM3 14h7v7H3ZM14 14h7v7h-7Z"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [0mOverview[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m""[39m
+              [33mdata-discover[39m=[32m"true"[39m
+              [33mhref[39m=[32m"/dossiers"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"22"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"1.6"[39m
+                [33mviewBox[39m=[32m"0 0 24 25"[39m
+                [33mwidth[39m=[32m"22"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M3 5h7l2 3h9v12H3Z"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [0mDossier registry[0m
+              [36m<span[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"nav-count"[39m
+              [36m>[39m
+                [0m02[0m
+              [36m</span>[39m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m""[39m
+              [33mdata-discover[39m=[32m"true"[39m
+              [33mhref[39m=[32m"/about"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"22"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"1.6"[39m
+                [33mviewBox[39m=[32m"0 0 24 25"[39m
+                [33mwidth[39m=[32m"22"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M12 11v6M12 7v.2M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [0mSimulation guide[0m
+            [36m</a>[39m
+          [36m</nav>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"sidebar-principle"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [36m<strong>[39m
+              [0mFair process.[0m
+              [36m<br />[39m
+              [0mBetter competition.[0m
+            [36m</strong>[39m
+            [36m<p>[39m
+              [0mContext, clarity and a chance to be heard.[0m
+            [36m</p>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"environment"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"status-dot"[39m
+            [36m/>[39m
+            [36m<div>[39m
+              [36m<strong>[39m
+                [0mTraining environment[0m
+              [36m</strong>[39m
+              [36m<small>[39m
+                [0mLocal demonstration · v0.1[0m...
+ ❯ src/routing/ApiIntegration.test.jsx:35:37
+     33|   vi.mocked(fetch).mockImplementation(() => new Promise(() => {}))
+     34|   const { unmount } = visit()
+     35|   await waitFor(() => expect(fetch).toHaveBeenCalled())
+       |                                     ^
+     36|   const signal = vi.mocked(fetch).mock.calls[0][1].signal
+     37|   unmount()
+ ❯ runWithExpensiveErrorDiagnosticsDisabled ../node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback ../node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback ../node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/10]⎯
+
+ FAIL  src/routing/ApiIntegration.test.jsx > submits once during concurrent events and restores persisted status on 
+remount
+TestingLibraryElementError: Unable to find role="button" and name "Submit simulation appeal"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"workspace"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"skip-link"[39m
+        [33mhref[39m=[32m"#main"[39m
+      [36m>[39m
+        [0mSkip to main content[0m
+      [36m</a>[39m
+      [36m<aside[39m
+        [33mclass[39m=[32m"sidebar"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33mclass[39m=[32m"brand"[39m
+          [33mdata-discover[39m=[32m"true"[39m
+          [33mhref[39m=[32m"/"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"brand-symbol"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</span>[39m
+          [36m<span>[39m
+            [0mfairplay[0m
+            [36m<span[39m
+              [33mclass[39m=[32m"brand-period"[39m
+            [36m>[39m
+              [0m.[0m
+            [36m</span>[39m
+            [36m<small>[39m
+              [0mESPORTS TRIBUNAL[0m
+            [36m</small>[39m
+          [36m</span>[39m
+        [36m</a>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"nav-label"[39m
+        [36m>[39m
+          [0mREVIEW WORKSPACE[0m
+        [36m</p>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Primary navigation"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 3h7v7H3ZM14 3h7v7h-7ZM3 14h7v7H3ZM14 14h7v7h-7Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mOverview[0m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/dossiers"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 5h7l2 3h9v12H3Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mDossier registry[0m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"nav-count"[39m
+            [36m>[39m
+              [0m02[0m
+            [36m</span>[39m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/about"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 11v6M12 7v.2M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mSimulation guide[0m
+          [36m</a>[39m
+        [36m</nav>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sidebar-principle"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"22"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"1.6"[39m
+            [33mviewBox[39m=[32m"0 0 24 25"[39m
+            [33mwidth[39m=[32m"22"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<strong>[39m
+            [0mFair process.[0m
+            [36m<br />[39m
+            [0mBetter competition.[0m
+          [36m</strong>[39m
+          [36m<p>[39m
+            [0mContext, clarity and a chance to be heard.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"environment"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"status-dot"[39m
+          [36m/>[39m
+          [36m<div>[39m
+            [36m<strong>[39m
+              [0mTraining environment[0m
+            [36m</strong>[39m
+            [36m<small>[39m
+              [0mLocal demonstration · v0.1[0m
+            [36m</small>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</aside>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"workspace-body"[39m
+      [36m>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"topbar"[39m
+        [36m>[39m
+          [36m<div>[39m
+            [36m<span>[39m
+              [0mWorkspace[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+         ...
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"workspace"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"skip-link"[39m
+        [33mhref[39m=[32m"#main"[39m
+      [36m>[39m
+        [0mSkip to main content[0m
+      [36m</a>[39m
+      [36m<aside[39m
+        [33mclass[39m=[32m"sidebar"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33mclass[39m=[32m"brand"[39m
+          [33mdata-discover[39m=[32m"true"[39m
+          [33mhref[39m=[32m"/"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"brand-symbol"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</span>[39m
+          [36m<span>[39m
+            [0mfairplay[0m
+            [36m<span[39m
+              [33mclass[39m=[32m"brand-period"[39m
+            [36m>[39m
+              [0m.[0m
+            [36m</span>[39m
+            [36m<small>[39m
+              [0mESPORTS TRIBUNAL[0m
+            [36m</small>[39m
+          [36m</span>[39m
+        [36m</a>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"nav-label"[39m
+        [36m>[39m
+          [0mREVIEW WORKSPACE[0m
+        [36m</p>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Primary navigation"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 3h7v7H3ZM14 3h7v7h-7ZM3 14h7v7H3ZM14 14h7v7h-7Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mOverview[0m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/dossiers"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 5h7l2 3h9v12H3Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mDossier registry[0m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"nav-count"[39m
+            [36m>[39m
+              [0m02[0m
+            [36m</span>[39m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/about"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 11v6M12 7v.2M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mSimulation guide[0m
+          [36m</a>[39m
+        [36m</nav>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sidebar-principle"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"22"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"1.6"[39m
+            [33mviewBox[39m=[32m"0 0 24 25"[39m
+            [33mwidth[39m=[32m"22"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<strong>[39m
+            [0mFair process.[0m
+            [36m<br />[39m
+            [0mBetter competition.[0m
+          [36m</strong>[39m
+          [36m<p>[39m
+            [0mContext, clarity and a chance to be heard.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"environment"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"status-dot"[39m
+          [36m/>[39m
+          [36m<div>[39m
+            [36m<strong>[39m
+              [0mTraining environment[0m
+            [36m</strong>[39m
+            [36m<small>[39m
+              [0mLocal demonstration · v0.1[0m
+            [36m</small>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</aside>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"workspace-body"[39m
+      [36m>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"topbar"[39m
+        [36m>[39m
+          [36m<div>[39m
+            [36m<span>[39m
+              [0mWorkspace[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+         ...
+ ❯ waitForWrapper ../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/routing/ApiIntegration.test.jsx:46:31
+     44|   visit('/dossier/sim-himass')
+     45|   await screen.findByLabelText('Applicant name')
+     46|   const button = await screen.findByRole('button', { name: 'Submit sim…
+       |                               ^
+     47|   await waitFor(() => expect(button).toBeEnabled())
+     48|   fillValid()
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/10]⎯
+
+ FAIL  src/routing/ApiIntegration.test.jsx > recovers an ambiguous lost POST response by reading persisted status 
+without a second POST
+TestingLibraryElementError: Unable to find role="button" and name "Submit simulation appeal"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"workspace"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"skip-link"[39m
+        [33mhref[39m=[32m"#main"[39m
+      [36m>[39m
+        [0mSkip to main content[0m
+      [36m</a>[39m
+      [36m<aside[39m
+        [33mclass[39m=[32m"sidebar"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33mclass[39m=[32m"brand"[39m
+          [33mdata-discover[39m=[32m"true"[39m
+          [33mhref[39m=[32m"/"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"brand-symbol"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</span>[39m
+          [36m<span>[39m
+            [0mfairplay[0m
+            [36m<span[39m
+              [33mclass[39m=[32m"brand-period"[39m
+            [36m>[39m
+              [0m.[0m
+            [36m</span>[39m
+            [36m<small>[39m
+              [0mESPORTS TRIBUNAL[0m
+            [36m</small>[39m
+          [36m</span>[39m
+        [36m</a>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"nav-label"[39m
+        [36m>[39m
+          [0mREVIEW WORKSPACE[0m
+        [36m</p>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Primary navigation"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 3h7v7H3ZM14 3h7v7h-7ZM3 14h7v7H3ZM14 14h7v7h-7Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mOverview[0m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/dossiers"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 5h7l2 3h9v12H3Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mDossier registry[0m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"nav-count"[39m
+            [36m>[39m
+              [0m02[0m
+            [36m</span>[39m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m""[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/about"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 11v6M12 7v.2M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mSimulation guide[0m
+          [36m</a>[39m
+        [36m</nav>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sidebar-principle"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"22"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"1.6"[39m
+            [33mviewBox[39m=[32m"0 0 24 25"[39m
+            [33mwidth[39m=[32m"22"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<strong>[39m
+            [0mFair process.[0m
+            [36m<br />[39m
+            [0mBetter competition.[0m
+          [36m</strong>[39m
+          [36m<p>[39m
+            [0mContext, clarity and a chance to be heard.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"environment"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"status-dot"[39m
+          [36m/>[39m
+          [36m<div>[39m
+            [36m<strong>[39m
+              [0mTraining environment[0m
+            [36m</strong>[39m
+            [36m<small>[39m
+              [0mLocal demonstration · v0.1[0m
+            [36m</small>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</aside>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"workspace-body"[39m
+      [36m>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"topbar"[39m
+        [36m>[39m
+          [36m<div>[39m
+            [36m<span>[39m
+              [0mWorkspace[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+         ...
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"workspace"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33mclass[39m=[32m"skip-link"[39m
+          [33mhref[39m=[32m"#main"[39m
+        [36m>[39m
+          [0mSkip to main content[0m
+        [36m</a>[39m
+        [36m<aside[39m
+          [33mclass[39m=[32m"sidebar"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m"brand"[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"brand-symbol"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"22"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"1.6"[39m
+                [33mviewBox[39m=[32m"0 0 24 25"[39m
+                [33mwidth[39m=[32m"22"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+                [36m/>[39m
+
+ Test Files  2 failed | 10 passed (12)
+      Tests  10 failed | 88 passed (98)
+   Start at  22:43:19
+   Duration  9.54s (environment 57%, setup 23%, tests 14%, transform 3%, import 3%)
+              [36m</svg>[39m
+            [36m</span>[39m
+            [36m<span>[39m
+              [0mfairplay[0m
+              [36m<span[39m
+                [33mclass[39m=[32m"brand-period"[39m
+              [36m>[39m
+                [0m.[0m
+              [36m</span>[39m
+              [36m<small>[39m
+                [0mESPORTS TRIBUNAL[0m
+              [36m</small>[39m
+            [36m</span>[39m
+          [36m</a>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"nav-label"[39m
+          [36m>[39m
+            [0mREVIEW WORKSPACE[0m
+          [36m</p>[39m
+          [36m<nav[39m
+            [33maria-label[39m=[32m"Primary navigation"[39m
+          [36m>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m""[39m
+              [33mdata-discover[39m=[32m"true"[39m
+              [33mhref[39m=[32m"/"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"22"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"1.6"[39m
+                [33mviewBox[39m=[32m"0 0 24 25"[39m
+                [33mwidth[39m=[32m"22"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M3 3h7v7H3ZM14 3h7v7h-7ZM3 14h7v7H3ZM14 14h7v7h-7Z"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [0mOverview[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m""[39m
+              [33mdata-discover[39m=[32m"true"[39m
+              [33mhref[39m=[32m"/dossiers"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"22"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"1.6"[39m
+                [33mviewBox[39m=[32m"0 0 24 25"[39m
+                [33mwidth[39m=[32m"22"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M3 5h7l2 3h9v12H3Z"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [0mDossier registry[0m
+              [36m<span[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"nav-count"[39m
+              [36m>[39m
+                [0m02[0m
+              [36m</span>[39m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m""[39m
+              [33mdata-discover[39m=[32m"true"[39m
+              [33mhref[39m=[32m"/about"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"22"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"1.6"[39m
+                [33mviewBox[39m=[32m"0 0 24 25"[39m
+                [33mwidth[39m=[32m"22"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M12 11v6M12 7v.2M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [0mSimulation guide[0m
+            [36m</a>[39m
+          [36m</nav>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"sidebar-principle"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"22"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"1.6"[39m
+              [33mviewBox[39m=[32m"0 0 24 25"[39m
+              [33mwidth[39m=[32m"22"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 2 21 6v6c0 6-9 11-9 11S3 18 3 12V6ZM8 12l3 3 5-6"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [36m<strong>[39m
+
+              [0mFair process.[0m
+              [36m<br />[39m
+              [0mBetter competition.[0m
+            [36m</strong>[39m
+            [36m<p>[39m
+              [0mContext, clarity and a chance to be heard.[0m
+            [36m</p>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"environment"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"status-dot"[39m
+            [36m/>[39m
+            [36m<div>[39m
+              [36m<strong>[39m
+                [0mTraining environment[0m
+              [36m</strong>[39m
+              [36m<small>[39m
+                [0mLocal demonstration · v0.1[0m
+              [36m</small>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</aside>[39m
+  ...
+ ❯ waitForWrapper ../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ src/routing/ApiIntegration.test.jsx:70:9
+     68|   visit('/dossier/sim-himass')
+     69|   await screen.findByLabelText('Applicant name')
+     70|   await waitFor(() => expect(screen.getByRole('button', { name: 'Submi…
+       |         ^
+     71|   fillValid(); fireEvent.submit(screen.getByRole('form', { name: 'Demo…
+     72|   expect(await screen.findByText(/Persisted appeal status: SUBMITTED/)…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/10]⎯
+
+npm error Lifecycle script `test` failed with error:
+npm error code 1
+npm error path C:\Users\LENOVO\OneDrive\Desktop\Lab4\Homework 3\frontend
+npm error workspace hw3-frontend@0.1.0
+npm error location C:\Users\LENOVO\OneDrive\Desktop\Lab4\Homework 3\frontend
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run

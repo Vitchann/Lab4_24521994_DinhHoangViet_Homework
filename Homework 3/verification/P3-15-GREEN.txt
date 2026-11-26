@@ -1,0 +1,30 @@
+
+> hw3-esports-fair-play-tribunal@0.1.0 test
+> npm run test --workspaces --if-present
+
+
+> hw3-frontend@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.2 C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework 3/frontend
+
+
+ Test Files  12 passed (12)
+      Tests  98 passed (98)
+   Start at  22:46:54
+   Duration  5.65s (environment 64%, setup 23%, tests 7%, import 3%, transform 3%)
+
+
+> hw3-backend@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.2 C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework 3/backend
+
+
+ Test Files  3 passed | 2 skipped (5)
+      Tests  6 passed | 39 skipped (45)
+   Start at  22:47:00
+   Duration  1.24s (import 91%, transform 5%, tests 3%, worker 1%)
+

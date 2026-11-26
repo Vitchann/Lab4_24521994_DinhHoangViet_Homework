@@ -423,3 +423,12 @@ Read canonical project_rule.md, task decomposition, prompt/audit/contracts and e
 - `npm.cmd run test:db`: first run 45/45 passed against real MongoDB, exit 0 (P3-14-first-run.txt). Concurrent HTTP requests verify one 201/one 409 and one document.
 - Updated former scaffold 404 test to an actually unknown route because /api/dossiers is now implemented; retained safe 404/code/header assertions. Dataset validator now permits the explicitly contracted fully empty snapshot while retaining ownership checks.
 - `npm.cmd test`, `npm.cmd run lint`, `npm.cmd run check:backend` executed; standard test output P3-14-GREEN.txt. No accidental API implementation failure observed in this task.
+
+### P3-15 development record (agent-generated task)
+
+- P3-14 commit: c23dcd4 feat(hw3): implement validated persistent tribunal REST API.
+- Added five transport and five routing/submission contracts before implementation. First attempt had a test-only relative import path error and executed no tests (P3-15-test-setup-failure.txt); fixed path and reran before behavior: actual RED 10 failed / 88 passed, exit 1 (P3-15-RED.txt).
+- Implemented validated API client, abortable keyed resource hook, Context dataset provider, API-driven overview/registry/cases/matrix and empty/error/retry feedback. Removed production fixture imports. Form validation remains render-derived; only external submission/status errors are stored. Uses a synchronous in-flight ref, disabled pending controls, POST abort cleanup, persisted public status and readback after ambiguous failure.
+- First integrated run: 17 failed / 81 passed (P3-15-first-run.txt): previous tests assumed synchronous fixture reads/local receipts. Migrated tests to await API readiness and assert actual persisted status/locked submitted form, preserving routing ownership, field errors and deadline assertions. One remaining test did not await appeal-status hydration: 1 failed / 97 passed (P3-15-timing-failure.txt). Added async act readiness; did not remove its stale-clock enabled-before-submit assertion.
+- Final `npm.cmd test`: 98 frontend + 6 backend passed; 39 real database cases explicitly skipped by the standard command (P3-15-GREEN.txt). Prior explicit test:db result remains 45 real MongoDB passes; frontend transport tests use a documented mock, not database persistence evidence. `npm.cmd run lint` and `npm.cmd run build`: exit 0.
+- Updated README with actual API, database/seed/startup commands and limitations. API calls persist simulated appeals only; no authentication or official decisions are implied.

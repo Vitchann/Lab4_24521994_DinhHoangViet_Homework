@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom'
-import { simulation } from '../data/simulation.js'
 import Icon from './Icon.jsx'
 
-export default function DossierCards() {
+export default function DossierCards({ dataset: simulation }) {
   return <ul className="dossier-grid" aria-label="Simulation dossiers">{simulation.dossiers.map((dossier, index) => {
     const player = simulation.players.find((item) => item.playerID === dossier.playerID)
     return <li key={dossier.dossierID}><article className="dossier-card">
