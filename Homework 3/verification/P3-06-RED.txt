@@ -1,0 +1,243 @@
+
+> hw3-frontend@0.1.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v5.1.2 C:/Users/LENOVO/OneDrive/Desktop/Lab4/Homework 3/frontend
+
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > has two explicitly simulated case-study references with valid relationships 6ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > deeply freezes the fixtures and keeps real reference labels out of synthetic handles 2ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > finds a dossier by stable player ID without mutating it 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID undefined 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID toString 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID __proto__ 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID SIM-HIMASS 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > returns undefined for invalid/unknown ID unknown 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects false simulation flag 1ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects duplicate player ID 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects broken evidence link 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects cross-case evidence 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects external evidence source 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects invalid chronology 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects unsorted timeline 0ms
+ ✓ src/data/simulation.test.js > P3-03 simulation integrity > rejects invalid sanction duration 0ms
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > creates fresh empty drafts and independent reference arrays 5ms
+   → Not implemented: appeal draft
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > accepts valid simulated applicant data without mutating inputs 1ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantName " " 1ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantName "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantEmail "bad-address" 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantEmail "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid grounds "short" 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid grounds "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid relationship "OTHER" 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid reason "UNKNOWN" 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid requestedOutcome "PUNISH" 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid acknowledged false 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid acknowledged "true" 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid evidenceIDs "ev-hm-replay" 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid evidenceIDs ["ev-tv-notice"] 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid evidenceIDs ["ev-hm-replay","ev-hm-replay"] 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > requires representative authorization 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > requires same-dossier references for new-evidence reasons 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > requires a specified reduction/removal for proportionality 0ms
+   → Not implemented: appeal validation
+ × src/domain/appealValidation.test.js > P3-06 appeal validation > counts trimmed grounds and handles malformed payload/context without crashing 0ms
+   → Not implemented: appeal validation
+ ✓ src/App.test.jsx > renders a clearly labeled simulation application 94ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > renders the overview within a shared semantic layout and explicit simulation notice 90ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > navigates through registry and dossier while preserving the shared layout 243ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > resolves dynamic dossier sim-himass without another case leaking into it 51ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > resolves dynamic dossier sim-tanvuu without another case leaking into it 35ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > shows demonstration sanction and an ordered timestamped case timeline 26ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID unknown and recovers to registry 84ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID toString and recovers to registry 61ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID __proto__ and recovers to registry 64ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID SIM-HIMASS and recovers to registry 79ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID %00 and recovers to registry 45ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown/invalid player ID sim-missing and recovers to registry 77ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown route /missing in the shared layout 14ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown route /dossier in the shared layout 12ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > handles unknown route /dossier/sim-himass/extra in the shared layout 12ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > explains reference labels and does not introduce an appeal form 12ms
+ ✓ src/routing/AppRoutes.test.jsx > P3-04 routing acceptance contract > renders the default BrowserRouter application on an initially deep-linked URL 24ms
+npm.cmd : 
+At line:2 char:1
++ npm.cmd run test --workspace frontend -- --reporter=verbose *> verifi ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+⎯⎯⎯⎯⎯⎯ Failed Tests 20 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > creates fresh empty drafts and independent 
+reference arrays
+Error: Not implemented: appeal draft
+ ❯ createAppealValues src/domain/appealValidation.js:2:46
+      1| // P3-06 resolvable contracts only; behavior follows after RED.
+      2| export function createAppealValues() { throw new Error('Not implemente…
+       |                                              ^
+      3| export function validateAppeal() { throw new Error('Not implemented: a…
+      4|
+ ❯ src/domain/appealValidation.test.js:11:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/7]⎯
+
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > accepts valid simulated applicant data without 
+mutating inputs
+Error: Not implemented: appeal validation
+ ❯ validateAppeal src/domain/appealValidation.js:3:42
+      1| // P3-06 resolvable contracts only; behavior follows after RED.
+      2| export function createAppealValues() { throw new Error('Not implemente…
+      3| export function validateAppeal() { throw new Error('Not implemented: a…
+       |                                          ^
+      4|
+ ❯ src/domain/appealValidation.test.js:20:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/7]⎯
+
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantName " "
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantName 
+"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantEmail "bad-address"
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid applicantEmail "xxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+x"
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid grounds "short"
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid grounds "xxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid relationship "OTHER"
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid reason "UNKNOWN"
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid requestedOutcome "PUNISH"
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid acknowledged false
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid acknowledged "true"
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid evidenceIDs "ev-hm-replay"
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid evidenceIDs ["ev-tv-notice"]
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > rejects invalid evidenceIDs 
+["ev-hm-replay","ev-hm-replay"]
+Error: Not implemented: appeal validation
+ ❯ validateAppeal src/domain/appealValidation.js:3:42
+      1| // P3-06 resolvable contracts only; behavior follows after RED.
+      2| export function createAppealValues() { throw new Error('Not implemente…
+      3| export function validateAppeal() { throw new Error('Not implemented: a…
+       |                                          ^
+      4|
+ ❯ src/domain/appealValidation.test.js:28:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/7]⎯
+
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > requires representative authorization
+Error: Not implemented: appeal validation
+ ❯ validateAppeal src/domain/appealValidation.js:3:42
+      1| // P3-06 resolvable contracts only; behavior follows after RED.
+      2| export function createAppealValues() { throw new Error('Not implemente…
+      3| export function validateAppeal() { throw new Error('Not implemented: a…
+       |                                          ^
+      4|
+ ❯ src/domain/appealValidation.test.js:31:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/7]⎯
+
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > requires same-dossier references for 
+new-evidence reasons
+Error: Not implemented: appeal validation
+ ❯ validateAppeal src/domain/appealValidation.js:3:42
+      1| // P3-06 resolvable contracts only; behavior follows after RED.
+      2| export function createAppealValues() { throw new Error('Not implemente…
+      3| export function validateAppeal() { throw new Error('Not implemented: a…
+       |                                          ^
+      4|
+ ❯ src/domain/appealValidation.test.js:35:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/7]⎯
+
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > requires a specified reduction/removal for 
+proportionality
+Error: Not implemented: appeal validation
+ ❯ validateAppeal src/domain/appealValidation.js:3:42
+      1| // P3-06 resolvable contracts only; behavior follows after RED.
+      2| export function createAppealValues() { throw new Error('Not implemente…
+      3| export function validateAppeal() { throw new Error('Not implemented: a…
+       |                                          ^
+      4|
+ ❯ src/domain/appealValidation.test.js:39:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/7]⎯
+
+ FAIL  src/domain/appealValidation.test.js > P3-06 appeal validation > counts trimmed grounds and handles malformed 
+payload/context without crashing
+Error: Not implemented: appeal validation
+ ❯ validateAppeal src/domain/appealValidation.js:3:42
+      1| // P3-06 resolvable contracts only; behavior follows after RED.
+      2| export function createAppealValues() { throw new Error('Not implemente…
+      3| export function validateAppeal() { throw new Error('Not implemented: a…
+       |                                          ^
+      4|
+ ❯ src/domain/appealValidation.test.js:43:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/7]⎯
+
+
+ Test Files  1 failed | 3 passed (4)
+      Tests  20 failed | 33 passed (53)
+   Start at  22:11:31
+   Duration  3.77s (environment 50%, setup 28%, tests 14%, import 4%, transform 3%, worker 1%)
+
+npm error Lifecycle script `test` failed with error:
+npm error code 1
+npm error path C:\Users\LENOVO\OneDrive\Desktop\Lab4\Homework 3\frontend
+npm error workspace hw3-frontend@0.1.0
+npm error location C:\Users\LENOVO\OneDrive\Desktop\Lab4\Homework 3\frontend
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --reporter=verbose

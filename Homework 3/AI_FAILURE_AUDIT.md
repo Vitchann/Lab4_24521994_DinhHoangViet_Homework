@@ -12,3 +12,7 @@ P3-03 expected RED context: the empty fixture/stub contract produced 16 failures
 | P3-05 / QA tooling | First browser helper failed with SyntaxError: missing ) after argument list (P3-05-browser-first-failure.txt) | Nested quoting in a CDP-evaluated CSS selector produced invalid JavaScript | Use template literals with single-quoted selector expressions; no application/test assertion changed | Nine direct routes, keyboard/internal navigation, deep reload, four widths and error diagnostics pass; P3-05-BROWSER.json |
 
 Final scope: no real disciplinary finding is asserted. API/persistence, appeal form, SLA/matrix, physical devices, screen readers and full accessibility/Lighthouse checks were not implemented/verified; no fabricated result or history.
+
+### P3-06 verification boundary
+
+Expected TDD RED: 20 validation cases fail on explicit unimplemented functions; 33 existing cases pass (verification/P3-06-RED.txt). This is planned evidence, not an accidental implementation failure. No new observed implementation defect to report.

@@ -7,6 +7,7 @@ Actual user messages are stored verbatim once. Generated task plans and executed
 | U001 | 2026-11-25 | P3-01–P3-05 | Verbatim below | Completed sequentially across pause/resume: setup/contracts/fixtures/routing RED/UI GREEN, actual hw3 commits. Stopped after P3-05; no push. |
 | U002 | 2026-11-25 | Pause | tôi ngắt bạn một chút, tí nx tôi prompt lại thì làm nhé | Paused immediately during P3-03 after the actual RED run; no task marked complete. |
 | U003 | 2026-11-26 | Resume | continue to do | Completed P3-03–P3-05 from existing state: frontend 33/backend scaffold 1 tests pass; lint/build/syntax and production-browser/deep-link checks pass. No other project changed or pushed. |
+| U004 | 2026-11-26 | P3-06–P3-10 | Verbatim below | In progress; local-only form/matrix/SLA tasks executed sequentially with actual RED/GREEN and task commits. |
 
 ## U001 — verbatim user prompt
 
@@ -145,3 +146,105 @@ continue to do
 - Project docs/config/lockfile plus isolated frontend/backend npm workspaces. Domain models/validator, frozen data/provenance, route tests/tree, reusable components/pages/CSS and browser QA helper. Real outputs/screenshots under verification/.
 - P3-06 onward remains unchecked; no appeal form, matrix, live SLA, business API or MongoDB persistence added. Homework 1/2 source and runtime processes were not modified by this work; pre-existing Homework 1 task-list modification preserved.
 - Final document/evidence consistency check passed: seven documentation files, no broken local Markdown links, three actual prompt blocks, exactly P3-01–P3-05 checked and P3-06–P3-19 pending; parsed browser report and verified captured 33/1 test counts. Evidence verification/P3-05-doc-check.json. Owned preview stopped; QA browser closed. New P3-05 text captures normalized to UTF-8 without changing observed content.
+
+## U004 — verbatim user prompt
+
+```text
+Continue developing the "Esports Fair-Play Appeal Tribunal" application.
+
+
+
+Read project-rules.md, TASK_DECOMPOSITION.md and previous development records before making changes.
+
+
+
+Record this actual user prompt verbatim in PROMPT_LOG.md.
+
+
+
+Execute tasks P3-06 through P3-10 sequentially.
+
+
+
+**Appeal Form Contract**
+
+- Define appeal submission fields, business rules and validation requirements.
+- Include applicant information, appeal reasons and supporting evidence references.
+- Define required fields and appropriate cross-field validation rules.
+- Write and execute failing validation tests before implementation.
+
+**Context Form Engine**
+
+- Implement FormContext.js.
+- Implement SimpleForm.jsx.
+- Implement reusable InputField components.
+- Implement ShowData.jsx for reviewing form data.
+- Share form values and update handlers through React Context.
+- Calculate validation errors synchronously during render.
+- Do not store redundant validation state.
+- Do not use useEffect to synchronize form validation.
+- Provide accessible labels, error descriptions and validation feedback.
+- Prevent invalid submissions.
+
+**Disproportionality Matrix**
+
+- Define transparent demonstration scoring criteria for sanction comparisons.
+- Implement matrix calculations as pure functions.
+- Derive matrix values from dossier data.
+- Use useMemo only where appropriate.
+- Display comparison results in an accessible table.
+- Document all scoring assumptions.
+- Do not present simulated results as authoritative disciplinary judgments.
+
+**SLA Timer Testing**
+
+- Write failing unit tests for countdown calculations.
+- Test active, expired and invalid deadlines.
+- Test delayed interval execution.
+- Test background-tab synchronization.
+- Test interval and event-listener cleanup.
+
+**Zero-Drift SLA Countdown**
+
+- Implement the custom hook useAppealSlaTimer().
+- Use an absolute deadline timestamp as the source of truth.
+- Calculate remaining time using deadline - Date.now().
+- Clamp remaining time to zero.
+- Do not implement the timer by decrementing a counter every second.
+- Resynchronize on visibilitychange.
+- Clean up intervals and event listeners.
+- Disable appeal submission after the deadline.
+
+**Engineering Verification**
+
+- Execute existing and new tests.
+- Fix observed failures without weakening test assertions.
+- Verify Context state management and derived validation.
+- Verify that the SLA timer does not accumulate interval drift.
+
+Create actual atomic Git commits after completing each logically independent task.
+
+
+
+Update TASK_DECOMPOSITION.md, PROMPT_LOG.md and AI_FAILURE_AUDIT.md using actual development evidence.
+
+
+
+Stop after P3-10. Use local demonstration data until backend integration. Do not modify other projects or push to GitHub.
+
+
+
+Report implemented features, actual test results, commit hashes and unresolved limitations.
+```
+
+### U004 — intake (2026-11-26)
+
+- Read project_rule.md (the existing canonical rules filename), TASK_DECOMPOSITION.md, domain contract and previous records; inspected clean Homework 3 state at baseline 30f2a7f. Existing unrelated Homework 1 modification remains untouched.
+- Generated sequence: P3-06 contract/validation RED; P3-07 pure validation/Context form/GREEN; P3-08 matrix contract/RED/pure calculations/table/GREEN; P3-09 timer calculation/hook/cleanup/expiry RED; P3-10 absolute clock hook and form expiry/GREEN. One actual hw3 task commit after verification each time, no push.
+- Existing dependencies reused; no backend integration or database behavior inferred. Domain fixture dates stay fixed, and all new outcomes/reviews remain explicitly local simulations.
+
+### P3-06 development record (agent-generated task)
+
+- Defined APPEAL_CONTRACT.md and 20 validation tests before behavior.
+- Executed `npm.cmd run test --workspace frontend -- --reporter=verbose`: exit 1, 20 failed / 33 passed. Expected RED from explicit unimplemented draft/validator; existing tests remain green. Evidence: verification/P3-06-RED.txt.
+- This task intentionally ends at RED; implementation follows in P3-07. No implementation defect observed in this task.

@@ -44,7 +44,7 @@ Scope: Define fields, validation rules and cross-field dependencies; test invali
 
 Acceptance criteria: Document contract and capture failing tests.
 
-Evidence / status: Pending.
+Evidence / status: Complete 2026-11-26. APPEAL_CONTRACT.md defines fields, cross-field validation, local review boundary, matrix assumptions and absolute-deadline contract. Actual pre-implementation frontend run: 20 new tests failed / 33 existing passed, exit 1. Resolvable functions throw explicit not-implemented errors. Evidence verification/P3-06-RED.txt.
 P3-07 — Context form engine
 - [ ] Complete and verify task.
 Scope: Implement FormContext, SimpleForm, InputField and ShowData with synchronous validation.
